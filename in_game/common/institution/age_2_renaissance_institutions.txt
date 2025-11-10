@@ -1,0 +1,161 @@
+﻿renaissance = {
+	age = age_2_renaissance 
+	
+	
+	can_spawn = {
+		OR = {
+			AND = {
+				has_game_rule = institution_spawn_random_city
+				location_rank = location_rank:city
+			}
+			AND = {
+				has_game_rule = institution_spawn_fixed_historical
+				this = location:florence
+			}
+			AND = {
+				has_game_rule = institution_spawn_plausible
+				has_owner = yes
+				OR = {
+					area = area:emilia_area
+					area = area:lombardy_area
+				}
+				OR = {
+					location_rank = location_rank:city
+					has_building_with_at_least_one_level = university
+				}
+				custom_tooltip = {
+					text = dominant_culture_is_owners_culture
+					dominant_culture = owner.culture
+				}
+			}
+		}
+	}
+	
+
+	promote_chance = {
+		add = {
+			value = average_location_literacy
+		}
+		add = {
+			value = num_pop_type:burghers
+			multiply = 10
+		}
+	}
+	
+	#hardcoded spreads for optimisations..
+	spread_from_friendly_coast_border_location = institution_base_spread_from_friendly_neighbor_with_early
+	spread_from_any_coast_border_location = institution_base_spread_from_neighbor_with_early
+	spread_from_any_import = institution_trade_spread_value_early
+	spread_from_was_possible_spawn = institution_spread_from_was_possible_spawn_early
+	spread_scale_on_control_if_owner_embraced = 2
+	spread_embraced_to_capital = institution_total_embraced_to_capital_early
+	spread_to_market_member = institution_spread_to_market_member_early
+}
+
+banking = {
+	age = age_2_renaissance 
+	
+	
+	can_spawn = {
+		OR = {
+			AND = {
+				has_game_rule = institution_spawn_fixed_historical
+				this = location:genoa
+			}
+			AND = {
+				has_game_rule = institution_spawn_random_city
+				location_rank = location_rank:city
+			}
+			AND = {
+				has_game_rule = institution_spawn_plausible
+				has_owner = yes
+				num_pop_type:burghers > 1.0
+				custom_tooltip = {
+					text = dominant_culture_is_owners_culture
+					dominant_culture = owner.culture
+				}
+				OR = {
+					continent = continent:europe
+					sub_continent = sub_continent:north_africa
+					sub_continent = sub_continent:middle_east
+				}
+				
+				owner = {
+					societal_value:capital_economy_vs_traditional_economy < -50
+				}
+			}
+		}
+	}
+
+	promote_chance = {
+		add = {
+			value = average_location_literacy
+		}
+		add = {
+			value = num_pop_type:burghers
+			multiply = 10
+		}
+	}
+	
+	#hardcoded spreads for optimisations..
+	spread_from_friendly_coast_border_location = institution_base_spread_from_friendly_neighbor_with_early
+	spread_from_any_coast_border_location = institution_base_spread_from_neighbor_with_early
+	spread_from_any_import = institution_trade_spread_value_early
+	spread_from_was_possible_spawn = institution_spread_from_was_possible_spawn_early
+	spread_scale_on_control_if_owner_embraced = 2
+	spread_embraced_to_capital = institution_total_embraced_to_capital_early
+	spread_to_market_member = institution_spread_to_market_member_early	
+}
+
+
+professional_armies = {
+	age = age_2_renaissance 
+	
+	
+	can_spawn = {
+		OR = {
+			AND = {
+				has_game_rule = institution_spawn_random_city
+				location_rank = location_rank:city
+			}
+			AND = {
+				has_game_rule = institution_spawn_fixed_historical
+				this = location:paris
+			}
+			AND = {
+				has_game_rule = institution_spawn_plausible
+				continent = continent:europe
+				has_owner = yes
+
+				custom_tooltip = {
+					text = dominant_culture_is_owners_culture
+					dominant_culture = owner.culture
+				}
+				modifier:local_manpower > 0
+				
+				owner = {
+					societal_value:quality_vs_quantity < -10
+				}
+			}
+		}
+	}
+	promote_chance = {
+		add = {
+			value = average_location_literacy
+		}
+		add = {
+			value = modifier:local_manpower
+			multiply = 2
+		}
+
+	}
+	
+	#hardcoded spreads for optimisations..
+	spread_from_friendly_coast_border_location = institution_base_spread_from_friendly_neighbor_with_early
+	spread_from_any_coast_border_location = institution_base_spread_from_neighbor_with_early
+	spread_from_any_import = institution_trade_spread_value_early
+	spread_from_was_possible_spawn = institution_spread_from_was_possible_spawn_early
+	spread_scale_on_control_if_owner_embraced = 2
+	spread_embraced_to_capital = institution_total_embraced_to_capital_early
+	spread_to_market_member = institution_spread_to_market_member_early	
+}
