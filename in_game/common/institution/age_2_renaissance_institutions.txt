@@ -15,10 +15,11 @@
 			AND = {
 				has_game_rule = institution_spawn_plausible
 				has_owner = yes
-				OR = {
-					area = area:emilia_area
-					area = area:lombardy_area
-				}
+				region = region:italy_region
+				#OR = {
+					#area = area:emilia_area
+					#area = area:lombardy_area
+				#}
 				OR = {
 					location_rank = location_rank:city
 					has_building_with_at_least_one_level = university
