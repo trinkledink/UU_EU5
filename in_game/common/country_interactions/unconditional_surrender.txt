@@ -4,6 +4,7 @@
 
     block_when_at_war = no # Allow while at war with target
     use_enroute = no # Ignores "diplomat enroute" feature
+    ai_tick = never
 
     potential = {
         scope:actor = {
