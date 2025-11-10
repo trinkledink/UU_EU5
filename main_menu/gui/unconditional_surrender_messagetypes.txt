@@ -1,0 +1,18 @@
+﻿WE_PERFORM_unconditional_surrender_ACTION = {
+    log=yes
+    onmap=no
+    popup=yes
+    idle=no
+    option=yes
+    pausepopup=yes
+    message_category = diplomacy
+}
+ACTION_unconditional_surrender_PERFORMED_ON_US = {
+    log=yes
+    onmap=no
+    popup=yes
+    idle=no
+    option=yes
+    pausepopup=yes
+    message_category = diplomacy
+}

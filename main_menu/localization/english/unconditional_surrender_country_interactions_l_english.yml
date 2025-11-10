@@ -1,0 +1,8 @@
+﻿l_english:
+  unconditional_surrender: "Unconditionally Surrender"
+  unconditional_surrender_act: "Instantly allow occupation of all locations to [SCOPE.sCountry('recipient').GetName]"
+  unconditional_surrender_desc: "We will surrender all of our locations allowing them to instantly occupy them."
+  unconditional_surrender_effect_text: "[SCOPE.sCountry('actor').GetName] unconditionally surrendered to [SCOPE.sCountry('recipient').GetName]"
+  unconditional_surrender_effect_text_past: "[SCOPE.sCountry('actor').GetName] unconditionally surrendered to [SCOPE.sCountry('recipient').GetName]"
+  PROPOSE_unconditional_surrender: "Unconditionally surrender to $RECIPIENT$?\n$INFO$."
+  choose_war_to_unconditional_surrender: "Click to select a country that we should unconditionally surrender to."
