@@ -1,0 +1,12 @@
+﻿{
+	"name":	"UU MP Balancing",
+	"id":	"",
+	"version":	"0.1",
+    "game_id":  "eu5",
+    "supported_game_version":	"1.0.3",
+	"short_description":	"",
+	"tags":	["Diplomacy", "Gameplay"],
+	"relationships":	[],
+	"game_custom_data":	{
+}
+}

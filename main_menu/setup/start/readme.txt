@@ -1,0 +1,1 @@
+Important note: while almost all other files require UTF-8 with BOM encoding, the setup files here require no BOM encoding!

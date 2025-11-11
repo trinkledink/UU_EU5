@@ -2,12 +2,13 @@
     type = diplomacy
     category = CATEGORY_HOSTILE_ACTIONS
 
-    block_when_at_war = no
-    use_enroute = no
+    block_when_at_war = no # Allow while at war with target
+    use_enroute = no # Ignores "diplomat enroute" feature
+    ai_tick = never
 
     potential = {
         scope:actor = {
-            at_war = yes
+            at_war = yes # Only appear if you are at war
             is_ai = no
         }
     }
@@ -36,9 +37,9 @@
             data = name
         }
         visible = {
-            is_at_war_with = scope:actor
+            is_at_war_with = scope:actor # Show all enemies in the list
         }
-        enabled = {
+        enabled = { # Only allow enemies that are enemy war leaders to be clickable to surrender to
             scope:actor = {
                 any_current_war = {
                     scope:recipient = {
@@ -51,14 +52,14 @@
 
     effect = {
         scope:actor = {
-            every_owned_location = {
+            every_owned_location = { # surrender all of your locations
                 limit = {
-                    controller ?= scope:actor
+                    controller ?= scope:actor # only if you are active controller
                 }
                 change_location_controller = scope:recipient
             }
             every_subject = {
-                every_owned_location = {
+                every_owned_location = { # surrender all subject locations
                     limit = {
                         controller ?= prev
                     }
