@@ -1,0 +1,3 @@
+﻿NDiplomacy = {
+	SEND_GIFT_COOLDOWN = 0 #uu change from 120
+}
