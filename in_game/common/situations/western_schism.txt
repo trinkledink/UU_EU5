@@ -1,0 +1,302 @@
+﻿western_schism = {
+	monthly_spawn_chance = monthly_spawn_chance_ultimate_high
+	hint_tag = hint_western_schism
+	resolution = "western_schism_resolution"
+	international_organization_type = catholic_church
+	
+	can_start = {
+		always = no #UU
+		current_date > 1360.1.1
+		current_date < 1402.1.1
+		country_exists = c:PAP
+		c:PAP = {
+			has_regent = yes
+			regency_type = regency_type:papal_election_regency
+			num_cardinals > 0
+		}
+	}
+	
+	can_end = {
+		western_schism_end_trigger = yes
+	}
+	
+	visible = {
+		religion = religion:catholic
+	}
+
+	on_start = {
+		religion:catholic = {
+			add_religion_modifier = {
+				modifier = western_schism_modifier
+				days = -1
+			}
+		}
+
+		set_papal_states_schism_cardinal = yes
+		add_to_global_variable_list = { name = western_schism_possible_votes target = c:PAP } 
+
+		c:PAP = {
+			set_variable = {
+				name = western_schism_vote_weight
+				value = 0
+			}
+		}
+
+		set_variable = { name = western_schism_vote_counter value = 1 }
+		set_variable = { name = western_schism_pope_score value = 0 }
+		set_variable = { name = western_schism_anti_pope_score value = 0 }
+		set_variable = { name = western_schism_cardinal_weight_bonus value = 0 }
+	
+		start_western_schism_resolution = yes
+
+		religion:catholic = {
+			every_country_in_religion = {
+				trigger_event_non_silently = western_schism.1
+			}
+		}
+
+		location:prague.owner = {
+			trigger_event_non_silently = {
+				id = western_schism.4
+				trigger_on_next_date = 1402.3.14 #Hus appointed preacher at the Bethlem Chappel
+			}
+		}
+
+		c:FRA ?= {
+			trigger_event_non_silently = flavor_fra.1150
+		}
+	}
+
+	on_monthly = {
+		#if the cardinals get lost for whatever reason, then we need to make new ones
+		set_papal_states_schism_cardinal = yes
+		set_schism_opponent_country = yes
+
+		hidden_effect = {
+			religion:catholic = {
+				#event for neutral countries
+				every_cardinal_country = {
+					limit = {
+						save_temporary_scope_as = voter
+						international_organization:catholic_church = {
+							"active_resolution(resolution:western_schism_resolution)" ?= {
+								not = {
+									exists = "vote_in_active_resolution(scope:voter)"
+								}
+							}
+						}
+					}
+					random_list = {
+						3 = { trigger_event_non_silently = western_schism.3 }
+						100 = { }
+					}
+				}
+				#random events during the schism for cardinal countries who support PAP
+				every_cardinal_country = {
+					limit = {
+						NOT = { tag = PAP }
+						this != root.var:schism_opponent_country
+						any_owned_location = {
+							any_pop = {
+								religion = religion:catholic
+							}
+						}
+						save_temporary_scope_as = voter
+						international_organization:catholic_church = {
+							has_voted_for = {
+								voter = scope:voter
+								resolution = resolution:western_schism_resolution
+								vote = c:PAP
+							}
+						}
+					}
+
+					random_list = {
+						1 = { trigger_event_non_silently = western_schism.7 }
+						1 = { trigger_event_non_silently = western_schism.8 }
+						1 = { trigger_event_non_silently = western_schism.13 }
+						1 = { trigger_event_non_silently = western_schism.14 }
+						1 = { trigger_event_non_silently = western_schism.15 }
+						100 = { }
+					}
+				}
+				#random events during the schism for cardinal countries who support the not PAP side
+				every_cardinal_country = {
+					limit = {
+						NOT = { tag = PAP }
+						this != root.var:schism_opponent_country
+						save_temporary_scope_as = voter
+						international_organization:catholic_church = {
+							has_voted_for = {
+								voter = scope:voter
+								resolution = resolution:western_schism_resolution
+								vote = situation:western_schism.var:schism_opponent_country
+							}
+						}
+					}
+					random_list = {
+						1 = { trigger_event_non_silently = western_schism.9 }
+						1 = { trigger_event_non_silently = western_schism.10 }
+						1 = { trigger_event_non_silently = western_schism.13 }
+						1 = { trigger_event_non_silently = western_schism.14 }
+						1 = { trigger_event_non_silently = western_schism.15 }
+						100 = { }
+					}
+				}
+				#random events during the schism for non cardinal countries
+				every_country_in_religion = {
+					limit = {
+						num_cardinals = 0
+						NOT = {
+							tag = PAP
+						}
+					}
+					random_list = {
+						1 = { trigger_event_non_silently = western_schism.5 }
+						1 = { trigger_event_non_silently = western_schism.6 }
+						1 = { trigger_event_non_silently = western_schism.11 }
+						1 = { trigger_event_non_silently = western_schism.12 }
+						1 = { trigger_event_non_silently = western_schism.13 }
+						1 = { trigger_event_non_silently = western_schism.14 }
+						1 = { trigger_event_non_silently = western_schism.15 }
+						1 = { trigger_event_non_silently = western_schism.1100 }
+						100 = { }
+					}
+				}
+			}
+			c:PAP = {
+				random_list = {
+					1 = { trigger_event_non_silently = western_schism.15 }
+					1 = { trigger_event_non_silently = western_schism.1200 }
+					100 = { }
+				}
+			}
+			international_organization:catholic_church = {
+				"active_resolution(resolution:western_schism_resolution)" ?= {
+					save_temporary_scope_as = resolution
+					every_voter = {
+						save_temporary_scope_as = voter
+						scope:resolution = {
+							"vote_in_active_resolution(scope:voter)" ?= {
+								change_variable = {
+									name = western_schism_vote_weight
+									add = {
+										value = "scope:voter.num_cardinals"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			change_variable = { name = western_schism_cardinal_weight_bonus add = 1 }
+		}
+	}
+
+	on_ended = {
+		religion:catholic = {
+			remove_religion_modifier = western_schism_modifier
+			every_country_in_religion = {
+				remove_variable = schism_cardinal
+				set_variable = { name = schism_pope_cardinal value = root.var:schism_pope_cardinal }
+				set_variable = { name = schism_opponent_cardinal value = root.var:schism_opponent_cardinal }
+				set_variable = { name = western_schism_vote_counter value = root.var:western_schism_vote_counter }
+				set_variable = { name = western_schism_pope_score value = root.var:western_schism_pope_score }
+				set_variable = { name = western_schism_anti_pope_score value = root.var:western_schism_anti_pope_score }
+				set_variable = { name = western_schism_cardinal_weight_bonus value = root.var:western_schism_cardinal_weight_bonus }
+				trigger_event_non_silently = western_schism.2000
+			}
+		}
+		remove_variable = schism_pope_cardinal
+		remove_variable = schism_opponent_cardinal
+		remove_variable = western_schism_vote_counter
+		remove_variable = western_schism_pope_score
+		remove_variable = western_schism_anti_pope_score
+		remove_variable = western_schism_cardinal_weight_bonus
+		clear_global_variable_list = western_schism_possible_votes
+
+	}
+
+	tooltip = {
+		if = {
+			limit = {
+				has_owner = yes
+				international_organization:catholic_church = {
+					"active_resolution(resolution:western_schism_resolution)" ?= {
+						"vote_in_active_resolution(root.owner)" ?= c:PAP
+					}
+				}
+			}
+			custom_tooltip = "SCHISM_SIDE_WITH_ROME"
+		}
+		else_if = {
+			limit = {
+				has_owner = yes
+				international_organization:catholic_church = {
+					"active_resolution(resolution:western_schism_resolution)" ?= {
+						"vote_in_active_resolution(root.owner)" ?= resolution_proposer
+					}
+				}
+			}
+			custom_tooltip = "SCHISM_OPPOSES_ROME"
+		}
+		else_if = {
+			limit = {
+				has_owner = yes
+				owner = { num_cardinals > 0	}
+			}
+			custom_tooltip = "SCHISM_NEUTRAL"
+		}
+	}
+
+	map_color = {
+		if = {
+			limit = {	
+				has_owner = yes
+				international_organization:catholic_church = {
+					"active_resolution(resolution:western_schism_resolution)" ?= {
+						"vote_in_active_resolution(root.owner)" ?= c:PAP
+					}
+				}
+			}
+			value = yellow_dark
+		}
+		else_if = {
+			limit = {	
+				has_owner = yes
+				international_organization:catholic_church = {
+					"active_resolution(resolution:western_schism_resolution)" ?= {
+						"vote_in_active_resolution(root.owner)" ?= resolution_proposer
+					}
+				}
+			}
+			value = blue
+		}
+		else_if = {
+			limit = {	
+				has_owner = yes
+				owner = { num_cardinals > 0	}
+			}
+			value = green
+		}
+		else = {
+			value = define:NMapColors|DEFAULT_COLOR
+		}
+	}
+	
+	legend_key = {
+		desc = "PAP"
+		color = yellow_dark
+		require_color_on_map = yes
+	}
+	legend_key = {
+		desc = "avignon"
+		color = blue
+		require_color_on_map = yes
+	}
+	legend_key = {
+		desc = "[cardinals|e]"
+		color = green
+		require_color_on_map = yes
+	}
+}

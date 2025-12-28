@@ -2,7 +2,7 @@
 
 Current Features:
 - Unconditional Surrender Diplomacy Action Added
-- Expanded Renaissance spawn area to all of Italy
+- Western Schism Removed
 
 # Working in this Repo
 
