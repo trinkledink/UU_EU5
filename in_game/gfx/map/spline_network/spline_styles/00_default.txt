@@ -1,4 +1,4 @@
-@default_uv_scale = @[128/256]
+﻿@default_uv_scale = @[128/256]
 @default_width = 0.5
 @default_uv_rounding = yes
 @default_smooth_fade_distance = 10

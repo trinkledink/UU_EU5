@@ -7,9 +7,8 @@ colors = {
 	map_GBR = hsv360 { 355 95 60 }
 	map_sardinia = rgb { 97 209 251 }	#EU4 Sardinia-Piedmont
 	map_ITA = hsv360 { 110 60 70 }		#UU EU4 Italy
-	map_tlemcen = rgb { 21  98  168 }	#UU EU4 Blue Tlemcen
-	map_arpitan = rgb { 235 196 231 } 	#UU swapped with Savoy 
-	map_savoy = rgb { 235 196 231 } 	#UU swapped with Arpitan culture/Kingdom of Burgundy
+	map_tlemcen = rgb { 21 98 168 }		#UU EU4 Blue Tlemcen
+	map_arpitan = rgb { 99 14 87 }	 	#UU EU4 Burgundy
 
 	########################
 
@@ -728,7 +727,7 @@ colors = {
 	map_saluzzo = rgb { 87 56 177 }
 	map_sansepolcro = rgb { 136 120 120 }
 	# map_sardinia = rgb { 117 146 167 }	#UU
-	# map_savoy = rgb { 235 196 231 }		#UU
+	map_savoy = rgb { 235 196 231 }
 	map_sicily = rgb { 100 100 0 }
 	map_siena = rgb { 105 111 55 }
 	map_sovana = rgb { 232 232 232 }
@@ -754,7 +753,7 @@ colors = {
 	map_sanhaja = rgb { 14 101 15 }
 	map_masmuda = rgb { 84 242 223 }
 	map_sus = rgb { 255 255 240 }
-	map_tlemcen = rgb { 57 160 101 }
+	# map_tlemcen = rgb { 57 160 101 }	#UU
 	map_algiers = rgb { 230 225 110 }
 	map_hassaniya = rgb { 128 156 143 }
 	map_TGT = rgb { 90 140 190 }

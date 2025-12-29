@@ -14419,7 +14419,7 @@ countries = {
 			individualism_vs_communalism = -50
 			outward_vs_inward = -10
 			reforms = {
-				french_ducal_vassal_reform
+				#french_ducal_vassal_reform	#UU removed, BRI is vassal of ENG
 			}
 
 		}
