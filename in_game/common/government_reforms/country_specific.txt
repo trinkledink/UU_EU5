@@ -894,7 +894,7 @@ french_feudal_nobility = { # French Feudalism
 	country_modifier = {
 		has_appanages_subjects = yes
 		diplomatic_capacity = 1
-		cultures_capacity = 1 #uu change from 2
+		cultures_capacity = 1	#UU Decrease from 2
 		monthly_towards_serfdom = societal_value_large_monthly_move
 		monthly_towards_aristocracy = societal_value_monthly_move
 	}
@@ -915,8 +915,8 @@ french_centralized_monarchy = { # Centralized French Monarchy
 	}
 	country_modifier = {
 		nobles_estate_target_satisfaction = small_permanent_target_satisfaction
-		cultures_capacity = 1 #uu added
 		legislative_efficiency = 0.10
+		cultures_capacity = 1	#UU Increase from 0
 		power_projection = 5
 		revoke_privilege_cost_modifier = -0.1
 	}
