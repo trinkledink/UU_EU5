@@ -1,0 +1,163 @@
+@default_uv_scale = @[128
+/
+256]
+@default_width = 0.5
+@default_uv_rounding = yes
+@default_smooth_fade_distance = 10
+@default_smooth_iterations = 0
+@default_smooth_kernel_size = 1
+@default_tesselation_max_angle = 5
+@default_tesselation_min_distance = 0.05
+@default_tesselation_max_distance = 0.25
+@default_opacity_fade_distance = 0.625
+gravel_road = {
+	id = 0
+	spline = {
+		uv_scale = @default_uv_scale
+		width = @default_width
+		uv_rounding = @default_uv_rounding
+		smooth_fade_distance = @default_smooth_fade_distance
+		smooth_iterations = @default_smooth_iterations
+		smooth_kernel_size = @default_smooth_kernel_size
+		tesselation_max_angle = @default_tesselation_max_angle
+		tesselation_min_distance = @default_tesselation_min_distance
+		tesselation_max_distance = @default_tesselation_max_distance
+		opacity_fade_distance = @default_opacity_fade_distance
+	}
+	effect = {
+		effectname = "SingleTexturePass"
+		shaderfile = "gfx/FX/road_gravel.shader"
+		texture_set = {
+			name = ""
+			texture = {
+				file = "gfx/map/spline_network/road_dirt_diffuse.dds"
+			}
+			texture = {
+				file = "gfx/map/spline_network/road_dirt_normal.dds"
+				srgb = no
+			}
+			texture = {
+				file = "gfx/map/spline_network/road_dirt_properties.dds"
+			}
+			texture = {
+				file = "gfx/map/spline_network/road_flatmap.dds"
+			}
+		}
+	}
+	connections = none
+	heightmap = none
+}
+
+paved_road = {
+	id = 1
+	spline = {
+		uv_scale = @default_uv_scale
+		width = @default_width
+		uv_rounding = @default_uv_rounding
+		smooth_fade_distance = @default_smooth_fade_distance
+		smooth_iterations = @default_smooth_iterations
+		smooth_kernel_size = @default_smooth_kernel_size
+		tesselation_max_angle = @default_tesselation_max_angle
+		tesselation_min_distance = @default_tesselation_min_distance
+		tesselation_max_distance = @default_tesselation_max_distance
+		opacity_fade_distance = @default_opacity_fade_distance
+	}
+	effect = {
+		effectname = "SingleTexturePass"
+		shaderfile = "gfx/FX/road_paved.shader"
+		texture_set = {
+			name = ""
+			texture = {
+				file = "gfx/map/spline_network/road_paviment_diffuse.dds"
+			}
+			texture = {
+				file = "gfx/map/spline_network/road_paviment_normal.dds"
+				srgb = no
+			}
+			texture = {
+				file = "gfx/map/spline_network/road_paviment_properties.dds"
+			}
+			texture = {
+				file = "gfx/map/spline_network/road_flatmap.dds"
+			}
+		}
+	}
+	connections = none
+	heightmap = none
+}
+
+modern_road = {
+	id = 2
+	spline = {
+		uv_scale = @default_uv_scale
+		width = @default_width
+		uv_rounding = @default_uv_rounding
+		smooth_fade_distance = @default_smooth_fade_distance
+		smooth_iterations = @default_smooth_iterations
+		smooth_kernel_size = @default_smooth_kernel_size
+		tesselation_max_angle = @default_tesselation_max_angle
+		tesselation_min_distance = @default_tesselation_min_distance
+		tesselation_max_distance = @default_tesselation_max_distance
+		opacity_fade_distance = @default_opacity_fade_distance
+	}
+	effect = {
+		effectname = "SingleTexturePass"
+		shaderfile = "gfx/FX/road_modern.shader"
+		texture_set = {
+			name = ""
+			texture = {
+				file = "gfx/map/spline_network/road_modern_diffuse.dds"
+			}
+			texture = {
+				file = "gfx/map/spline_network/road_modern_normal.dds"
+				srgb = no
+			}
+			texture = {
+				file = "gfx/map/spline_network/road_modern_properties.dds"
+			}
+			texture = {
+				file = "gfx/map/spline_network/road_flatmap.dds"
+			}
+		}
+	}
+	connections = none
+	heightmap = none
+}
+
+rail_road = {
+	id = 3
+	spline = {
+		uv_scale = @default_uv_scale
+		width = @default_width
+		uv_rounding = @default_uv_rounding
+		smooth_fade_distance = @default_smooth_fade_distance
+		smooth_iterations = @default_smooth_iterations
+		smooth_kernel_size = @default_smooth_kernel_size
+		tesselation_max_angle = @default_tesselation_max_angle
+		tesselation_min_distance = @default_tesselation_min_distance
+		tesselation_max_distance = @default_tesselation_max_distance
+		opacity_fade_distance = @default_opacity_fade_distance
+	}
+	effect = {
+		effectname = "SingleTexturePass"
+		shaderfile = "gfx/FX/road_rail.shader"
+		texture_set = {
+			name = ""
+			texture = {
+				file = "gfx/map/spline_network/road_rails_diffuse.dds"
+			}
+			texture = {
+				file = "gfx/map/spline_network/road_rails_normal.dds"
+				srgb = no
+			}
+			texture = {
+				file = "gfx/map/spline_network/road_rails_properties.dds"
+			}
+			texture = {
+				file = "gfx/map/spline_network/road_flatmap.dds"
+			}
+		}
+	}
+	connections = none
+	heightmap = none
+}
