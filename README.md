@@ -2,7 +2,14 @@
 
 Current Features:
 - Unconditional Surrender Diplomacy Action Added
-- Western Schism Removed
+- Western Schism Removed, PAP French Cardinals privilege removed
+- Renaissance spawn area expanded to all of Italy
+- France and England can't hold parliament until the end of the 100yr War
+- Flanders starts independent and as an HRE prince
+- Brittany is a vassal of England instead of France
+- Removed crownpower malice from having debt
+- Centralization gives upto +25% integration speed
+- French unique gov reforms both give 1 cultures_capacity
 
 # Working in this Repo
 
