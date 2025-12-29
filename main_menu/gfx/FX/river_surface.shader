@@ -1,10 +1,3 @@
-// Quick edit guide:
-// - Colors are set near the bottom: search for `BaseRiverColor` and `FlowHighlight`.
-//   `BaseRiverColor` = gaps, `FlowHighlight` = pulses.
-//   You can also tweak `FlowSpeed`, `GradientRepeat`, and `PulseWidth`.
-// - Sentinel detection uses `GB_GradientWidth` from map modes:
-//     0.111 = rivers only, 0.333 = roads + rivers
-
 Includes = {
 	"river_surface.fxh"
 	"standardfuncsgfx.fxh"
@@ -16,8 +9,6 @@ Includes = {
 	"river_vertex_shader.fxh"
 	"terrain.fxh"
 }
-
-
 VertexShader = 
 {
 	MainCode CaesarRiverVertexShader

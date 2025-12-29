@@ -1,14 +1,110 @@
-
+﻿
 ###############################################
 # Rivers in Roads map modes, created by GDI_JeffL
 ###############################################
-
-
 ###############################
 # Enable roads/rivers in any map mode:
 # gradient_width = 0.111   # Rivers only
 # gradient_width = 0.222   # Roads only
 # gradient_width = 0.333   # Roads + Rivers
+###############################
+# Instructions: Scroll down past the parameter defaults to the MAP MODES section
+###############################################
+# PARAMETER DEFAULTS
+###############################################
+@zoom_step_flatmap_far = 21# the furthest zoom out
+@zoom_step_flatmap = 12# zoom step where the paper map kicks in
+@zoom_step_far = 11# furthest zoom before the paper map
+@zoom_step_mid = 4# intorduce some color
+@zoom_step_near = 2# closest zoom
+# Zoomed in terrain map
+@hollow_near_gradient_alpha_inside = 0
+@hollow_near_gradient_alpha_outside = 0
+@hollow_near_gradient_width = 0
+@hollow_near_gradient_color_mult = 0.25
+@hollow_near_edge_width = 0
+@hollow_near_edge_sharpness = 0
+@hollow_near_edge_alpha = 0.5
+@hollow_near_edge_color_mult = 0.7
+@hollow_near_before_lighting_blend = 0.5
+@hollow_near_after_lighting_blend = 0
+# Mid zoom terrain map
+@hollow_mid_gradient_alpha_inside = 0
+@hollow_mid_gradient_alpha_outside = 0.25
+@hollow_mid_gradient_width = 0.1
+@hollow_mid_gradient_color_mult = @hollow_near_gradient_color_mult
+@hollow_mid_edge_width = 0
+@hollow_mid_edge_sharpness = @hollow_near_edge_sharpness
+@hollow_mid_edge_alpha = @hollow_near_edge_alpha
+@hollow_mid_edge_color_mult = @hollow_near_edge_color_mult
+@hollow_mid_before_lighting_blend = @hollow_near_before_lighting_blend
+@hollow_mid_after_lighting_blend = @hollow_near_after_lighting_blend
+# Zoomed out terrain map
+@hollow_far_gradient_alpha_inside = 0.25
+@hollow_far_gradient_alpha_outside = 1
+@hollow_far_gradient_width = 0.25
+@hollow_far_gradient_color_mult = @hollow_mid_gradient_color_mult
+@hollow_far_edge_width = 0
+@hollow_far_edge_sharpness = @hollow_mid_edge_sharpness
+@hollow_far_edge_alpha = 0
+@hollow_far_edge_color_mult = @hollow_mid_edge_color_mult
+@hollow_far_before_lighting_blend = @hollow_mid_before_lighting_blend
+@hollow_far_after_lighting_blend = @hollow_mid_after_lighting_blend
+# Paper map
+@flatmap_gradient_alpha_inside = 0.75
+@flatmap_gradient_alpha_outside = 1
+@flatmap_gradient_width = 0.25
+@flatmap_gradient_color_mult = 0.9
+@flatmap_edge_width = 0.03
+@flatmap_edge_sharpness = 0.01
+@flatmap_edge_alpha = 1
+@flatmap_edge_color_mult = @hollow_near_edge_color_mult
+@flatmap_before_lighting_blend = 0.5
+@flatmap_after_lighting_blend = 0.5
+# Paper map (far out)
+@flatmap_far_gradient_alpha_inside = @flatmap_gradient_alpha_inside
+@flatmap_far_gradient_alpha_outside = @flatmap_gradient_alpha_outside
+@flatmap_far_gradient_width = @[flatmap_edge_color_mult*1.25]
+@flatmap_far_gradient_color_mult = @flatmap_gradient_color_mult
+@flatmap_far_edge_width = @[flatmap_edge_width*1.5]
+@flatmap_far_edge_sharpness = @flatmap_edge_sharpness
+@flatmap_far_edge_alpha = @flatmap_edge_alpha
+@flatmap_far_edge_color_mult = @flatmap_edge_color_mult
+@flatmap_far_before_lighting_blend = @flatmap_before_lighting_blend
+@flatmap_far_after_lighting_blend = @flatmap_after_lighting_blend
+# Zoomed out political map
+@filled_far_gradient_alpha_inside = 1
+@filled_far_gradient_alpha_outside = 1
+@filled_far_gradient_width = 1
+@filled_far_gradient_color_mult = 0.4
+@filled_far_edge_width = 0.03
+@filled_far_edge_sharpness = @hollow_mid_edge_sharpness
+@filled_far_edge_alpha = 1
+@filled_far_edge_color_mult = 0.3
+@filled_far_before_lighting_blend = 1
+@filled_far_after_lighting_blend = 0.5
+# Zoomed in political map
+@filled_near_gradient_alpha_inside = 1
+@filled_near_gradient_alpha_outside = 1
+@filled_near_gradient_width = 1
+@filled_near_gradient_color_mult = 0.4
+@filled_near_edge_width = 0.03
+@filled_near_edge_sharpness = @hollow_mid_edge_sharpness
+@filled_near_edge_alpha = 1
+@filled_near_edge_color_mult = 0.3
+@filled_near_before_lighting_blend = 1
+@filled_near_after_lighting_blend = 0.25
+# Map mode that works well with data and heatmaps
+@data_gradient_alpha_inside = 1
+@data_gradient_alpha_outside = 1
+@data_gradient_width = @flatmap_far_gradient_width
+@data_gradient_color_mult = @flatmap_far_gradient_color_mult
+@data_edge_width = 0
+@data_edge_sharpness = @flatmap_far_edge_sharpness
+@data_edge_alpha = 0
+@data_edge_color_mult = 0
+@data_before_lighting_blend = @flatmap_far_before_lighting_blend
+@data_after_lighting_blend = @flatmap_far_after_lighting_blend
 ###############################################
 # MAP MODES
 ###############################################

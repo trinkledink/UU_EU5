@@ -1,10 +1,3 @@
-// Quick edit guide:
-// - Colors per road type are set in the ROAD_TYPE_ID blocks.
-//   Search for `RoadTypeColor` to tweak RGB values for:
-//     0 = gravel, 1 = paved, 2 = modern, 3 = rail
-// - Sentinel detection uses `GB_GradientWidth` from map modes:
-//     0.222 = roads only, 0.333 = roads + rivers
-
 Includes = {
 	"cw/shadow.fxh"
 	"cw/terrain.fxh"
