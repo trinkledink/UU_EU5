@@ -1,0 +1,2417 @@
+﻿namespace = flavor_bav
+
+#Elector at last!
+flavor_bav.1 = {
+	type = country_event
+
+	title = flavor_bav.1.title
+	desc = flavor_bav.1.desc
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = BAV
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 20
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	trigger = {
+		international_organization:hre = {
+			country_has_special_status = {
+				type = special_status:elector
+				country = ROOT
+			}
+
+		}
+		has_ruler = yes
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		international_organization:hre = {
+			leader_country = {
+				ruler ?= {
+					save_scope_as = hre_emperor
+				}
+			}
+		}
+		ruler = {
+			save_scope_as = target_ruler
+		}
+	}
+
+	option = {
+		name = flavor_bav.1.a
+		add_gold = { value = c:BAV.monthly_income_trade_and_tax multiply = -4.00 }
+		add_prestige = prestige_mild_bonus
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_bonus }
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_bonus }
+	}
+	option = {
+		name = flavor_bav.1.b
+		add_prestige = prestige_weak_penalty
+	}
+}
+
+#A new Law for a New Country
+flavor_bav.2 = {
+	type = country_event
+
+	title = flavor_bav.2.title
+	desc = flavor_bav.2.desc
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = BAV
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 50
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	trigger = {
+		has_ruler = yes
+		succession_law = heir_selection:partition_inheritance
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		ruler ?= {
+			save_scope_as = ruler_scope
+		}
+	}
+
+	option = {
+		name = flavor_bav.2.a
+		trigger = {
+			has_estate_privilege = estate_privilege:right_to_inherit
+		}
+		revoke_estate_privilege = estate_privilege:right_to_inherit
+		change_heir_selection = heir_selection:cognatic_primogeniture
+
+		add_prestige = prestige_mild_bonus
+		add_stability = stability_radical_penalty
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_radical_penalty }
+	}
+	option = {
+		name = flavor_bav.2.b
+		trigger = {
+			not = {has_estate_privilege = estate_privilege:right_to_inherit}
+		}
+		change_heir_selection = heir_selection:cognatic_primogeniture
+
+		add_prestige = prestige_mild_bonus
+		add_stability = stability_extreme_penalty
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_extreme_penalty }
+	}
+	option = {
+		name = flavor_bav.2.c
+		add_prestige = prestige_mild_penalty
+		add_stability = stability_mild_bonus
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_bonus }
+	}
+}
+
+flavor_bav.3 = { #LBV comes under Ludwigs Rule
+	type = country_event
+	title = flavor_bav.3.title
+	desc = flavor_bav.3.desc
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UBV
+		from = 1337.1.1
+		to = 1345.1.1
+		monthly_chance = 20
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+
+		character:ubv_ludwig_iv_wittelsbach = {
+			save_scope_as = target_ruler
+		}
+
+		character:lbv_heinrich_xiv_wittelsbach = {
+			save_scope_as = target_cousin
+		}
+	}
+
+	trigger = {
+		c:LBV = {
+			has_ruler = no
+		}
+		character:ubv_ludwig_iv_wittelsbach = {
+			is_alive = yes
+		}
+	}
+
+	#Align it closely to ourselves.
+	option = {
+		name = flavor_bav.3.a
+		historical_option = yes
+
+		drop_antagonism_bomb = {
+			target = c:LBV.capital
+			modifier = antagonism_bav_ignore_feudal_traditions_mild
+		}
+		if = {
+			limit = {
+				c:LBV = {
+					is_subject = no
+				}
+			}
+			c:LBV = {
+				make_subject_of = {
+					target = c:UBV
+					type = subject_type:vassal
+				}
+			}
+		}
+		else = {
+			add_casus_belli = {
+				target = c:LBV
+				type = casus_belli:cb_subjugation
+			}
+		}
+	}
+
+	#Annex it directly!
+	option = {
+		name = flavor_bav.3.b
+
+		trigger = {
+			c:LBV = {
+				is_human = no
+				is_subject = no
+			}
+		}
+		add_stability = stability_severe_penalty
+		add_legitimacy = legitimacy_extreme_penalty #uu changed from ultimate (-50 --> -20)
+		c:LBV = {
+			every_owned_location = {
+				root = {
+					drop_antagonism_bomb = {
+						target = prev
+						modifier = antagonism_taking_land
+						is_taking_land = yes
+					}
+				}
+			}
+			every_core_location = {
+				add_core = c:UBV
+			}
+		}
+		annex_country = { country = c:LBV }
+	}
+
+	#Let us not meddle in their affairs.
+	option = {
+		name = flavor_bav.3.c
+
+		add_legitimacy = legitimacy_severe_bonus
+		add_opinion = {
+			target = c:LBV
+			modifier = opinion_pleased
+		}
+	}
+}
+
+flavor_bav.4 = { #Wittelsbacher-Luxembourg Relations
+	type = country_event
+	title = flavor_bav.4.title
+	desc = flavor_bav.4.desc
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UBV
+		from = 1337.1.1
+		to = 1367.1.1
+		monthly_chance = 1
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+
+		ruler = {
+			save_scope_as = target_ruler
+		}
+		c:BOH.ruler ?= {
+			save_scope_as = target_rival
+		}
+	}
+
+	trigger = {
+		has_ruler = yes
+		ruler.dynasty ?= dynasty:wittelsbach_dynasty
+		c:BOH = {
+			has_ruler = yes
+			is_rival_of = root
+			NOT = {
+				has_truce_with = root
+				is_at_war_with = root
+			}
+		}
+	}
+
+	option = {
+		name = flavor_bav.4.a
+
+		remove_rival = c:BOH
+		change_societal_value = {
+			type = belligerent_vs_conciliatory
+			value = societal_value_move_to_right
+		}
+		add_opinion = {
+			target = c:BOH
+			modifier = opinion_good_relations
+		}
+		c:BOH = {
+			add_opinion = {
+				target = c:UBV
+				modifier = opinion_good_relations
+			}
+		}
+	}
+
+	option = {
+		name = flavor_bav.4.b
+
+		change_societal_value = {
+			type = belligerent_vs_conciliatory
+			value = societal_value_move_to_left
+		}
+		c:BOH = {
+			add_opinion = {
+				target = c:UBV
+				modifier = opinion_irritated
+			}
+		}
+	}
+}
+
+flavor_bav.5 = { #Wittelsbacher-Habsburg Relations
+	hide_portraits = yes
+	type = country_event
+	title = flavor_bav.5.title
+	desc = flavor_bav.5.desc
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UBV
+		from = 1337.1.1
+		to = 1367.1.1
+		monthly_chance = 1
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+
+		ruler = {
+			save_scope_as = target_ruler
+		}
+		c:HAB.ruler ?= {
+			save_scope_as = target_rival
+		}
+	}
+
+	trigger = {
+		has_ruler = yes
+		ruler.dynasty ?= dynasty:wittelsbach_dynasty
+		c:HAB = {
+			is_rival_of = root
+			NOT = {
+				has_truce_with = root
+				is_at_war_with = root
+			}
+		}
+	}
+
+	option = {
+		name = flavor_bav.5.a
+
+		remove_rival = c:HAB
+		change_societal_value = {
+			type = belligerent_vs_conciliatory
+			value = societal_value_move_to_right
+		}
+		add_opinion = {
+			target = c:HAB
+			modifier = opinion_good_relations
+		}
+		c:HAB = {
+			add_opinion = {
+				target = c:UBV
+				modifier = opinion_good_relations
+			}
+		}
+	}
+
+	option = {
+		name = flavor_bav.5.b
+
+		change_societal_value = {
+			type = belligerent_vs_conciliatory
+			value = societal_value_move_to_left
+		}
+		c:HAB = {
+			add_opinion = {
+				target = c:UBV
+				modifier = opinion_irritated
+			}
+		}
+	}
+}
+
+flavor_bav.6 = { #Support the Habsburg Emperor?
+	hide_portraits = yes
+	type = country_event
+	title = flavor_bav.6.title
+	desc = flavor_bav.6.desc
+
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UBV
+		from = 1400.1.1
+		to = 1500.1.1
+		monthly_chance = 2
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		ruler = {
+			save_scope_as = target_ruler
+		}
+		c:HAB = {
+			ruler = {
+				save_scope_as = hre_ruler
+			}
+		}
+	}
+
+	trigger = {
+		has_ruler = yes
+		ruler.dynasty = dynasty:wittelsbach_dynasty
+		is_subject = no
+		international_organization:hre.leader_country = c:HAB
+		c:HAB = {
+			has_ruler = yes
+			ruler.dynasty = dynasty:habsburg_dynasty
+		}
+	}
+
+	option = {
+		name = flavor_bav.6.a
+		historical_option = yes
+
+		c:HAB = {
+			add_opinion = { target = root modifier = bav_reconcile_habsburg }
+		}
+		add_country_modifier = {
+			modifier = competent_diplomacy
+			years = 10
+			mode = add_and_extend
+		}
+	}
+
+	option = {
+		name = flavor_bav.6.b
+
+		c:HAB = {
+			add_opinion = { target = root modifier = bav_against_habsburg }
+		}
+		change_societal_value = {
+			type = belligerent_vs_conciliatory
+			value = societal_value_large_move_to_left
+		}
+	}
+}
+
+#Eight questions on the power of the pope
+flavor_bav.7 = {
+	type = country_event
+
+	title = flavor_bav.7.title
+	desc = flavor_bav.7.desc
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UBV
+		from = 1337.1.1
+		to = 1347.4.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+
+	trigger = {
+		exists = character:ubv_william_ockham
+		character:ubv_william_ockham = {
+			is_alive = yes
+			owner = root
+		}
+		international_organization:hre = {
+			international_organization_has_leader = yes
+			leader_country = {
+				has_ruler = yes
+			}
+		}
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+		international_organization:hre = {
+			leader_country = {
+				ruler ?= {
+					save_scope_as = hre_emperor
+				}
+			}
+		}
+		character:ubv_william_ockham = {
+			save_scope_as = william_ockham_scope
+		}
+	}
+
+	option = {
+		name = flavor_bav.7.a
+		historical_option = yes
+		religion:catholic = { add_reform_desire = reform_desire_mild_increase }
+		capital = {
+			create_art = {
+				artist = scope:william_ockham_scope
+				quality = 47
+				type = work_of_art_type:treatise
+				key = eight_questions_on_the_power_of_the_pope
+			}
+		}
+		c:PAP = {
+			add_opinion = { target = root modifier = opinion_backward_monarch }
+		}
+	}
+	option = {
+		name = flavor_bav.7.b
+		add_policy = policy:strict_censorship
+		c:PAP = {
+			add_opinion = { target = root modifier = opinion_supportive_monarch }
+		}
+	}
+}
+
+#A new map for [ROOT.GetCountry.GetLongName]
+flavor_bav.8 = {
+	type = country_event
+
+	title = flavor_bav.8.title
+	desc = flavor_bav.8.desc
+	historical_info = flavor_bav.8.historical_info
+
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UBV
+		tag = BAV
+		from = 1554.1.1
+		to = 1600.1.1
+		monthly_chance = 2
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	trigger = {
+		owns = location:tubingen
+		religion:calvinist = {
+			is_religion_enabled = yes
+		}
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+
+		create_character = { #https://en.wikipedia.org/wiki/Philipp_Apian
+			first_name = name_philip
+			last_name = Apian
+			birth_date = 1531.9.14
+			birth_location = location:ingolstadt
+			culture = culture:danube_bavarian
+			religion = religion:calvinist
+			adm = 81
+			dip = 57
+			mil = 41
+			estate = estate_type:burghers_estate
+			artist = scientist
+			script = philipp_apian_script
+			save_scope_as = philipp_apian_scope
+			create_in_limbo = yes
+		}
+	}
+
+	option = {
+		name = flavor_bav.8.a
+		historical_option = yes
+		change_gold_effect = { scale = -10.00 }
+
+		add_country_modifier = {
+			modifier = ubv_philipp_apian_map
+			years = 15
+			mode = add_and_extend
+		}
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_penalty }
+		c:PAP = {
+			add_opinion = { target = root modifier = opinion_backward_monarch }
+		}
+	}
+	option = {
+		name = flavor_bav.8.b
+
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_bonus }
+		c:PAP = {
+			add_opinion = { target = root modifier = opinion_supportive_monarch }
+		}
+	}
+}
+
+#"The old Marienkapelle"
+flavor_bav.9 = { #https://en.wikipedia.org/wiki/Frauenkirche,_Munich
+	type = country_event
+
+	title = flavor_bav.9.title
+	desc = flavor_bav.9.desc
+
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UBV
+		tag = BAV
+		from = 1462.1.1
+		to = 1500.1.1
+		monthly_chance = 2
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	trigger = {
+		owns = location:munich
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+
+		create_character = {
+			first_name = name_george # should be name_george.low_german_dialect.alternative "Jörg"
+			last_name = von_halsbach
+			birth_location = location:braunau
+			estate = estate_type:burghers_estate
+			birth_date = 1441.1.1
+			adm = 32
+			dip = 74
+			mil = 18
+			artist_skill = 0.79
+			artist = architect
+			culture = culture:danube_bavarian
+			save_scope_as = george_halsbach_scope
+		}
+	}
+
+	option = {
+		name = flavor_bav.9.a
+		historical_option = yes
+
+		if = {
+			limit = {
+				location:munich = {
+					NOT = { has_building = building_type:cathedral }
+				}
+			}
+			location:munich = {
+				construct_building = {
+					building_type = building_type:cathedral
+					cost_multiplier = 0.90
+					cost_multiplier_reason = "clergy_cheap_sponsorship"
+				}
+			}
+		}
+		else = {
+			change_gold_effect = { scale = -4.00 }
+			location:munich = {
+				create_art = {
+					artist = scope:george_halsbach_scope
+					quality = 79
+					type = work_of_art_type:monument
+					key = frauenkirche
+				}
+			}
+			destroy_art = work_of_art:marienkapelle
+		}
+		add_prestige = prestige_weak_bonus
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_severe_bonus }
+	}
+	option = {
+		name = flavor_bav.9.b
+
+		add_prestige = prestige_weak_penalty
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_penalty }
+	}
+}
+
+#The heresy sanctuary
+flavor_bav.10 = {
+	type = country_event
+
+	title = flavor_bav.10.title
+	desc = flavor_bav.10.desc
+	historical_info = flavor_bav.10.historical_info
+
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UBV
+		from = 1337.1.1
+		to = 1350.1.1
+		monthly_chance = 5
+	}
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+
+	trigger = {
+		character:ubv_william_ockham ?= {
+			owner = root
+			is_alive = yes
+		}
+		character:ubv_michael_cesena ?= {
+			owner = root
+			is_alive = yes
+		}
+		international_organization:hre = {
+			international_organization_has_leader = yes
+			leader_country = {
+				has_ruler = yes
+				ruler = root.ruler
+			}
+		}
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:nobles_estate }
+		international_organization:hre = {
+			leader_country = {
+				ruler ?= {
+					save_scope_as = hre_emperor
+				}
+			}
+		}
+		character:ubv_william_ockham = {
+			save_scope_as = william_ockham_scope
+		}
+		character:ubv_michael_cesena = {
+			save_scope_as = michael_cesena_scope
+		}
+	}
+
+	option = {
+		name = flavor_bav.10.a
+		historical_option = yes
+
+		add_prestige = prestige_severe_penalty
+
+		c:PAP = {
+			add_opinion = { target = root modifier = opinion_bad_monarch }
+		}
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_mild_penalty }
+	}
+	option = {
+		name = flavor_bav.10.b
+		scope:william_ockham_scope = { move_country = location:guildford.owner }
+		scope:michael_cesena_scope = { move_country = location:cesena.owner }
+		add_prestige = prestige_severe_bonus
+		c:PAP = {
+			add_opinion = { target = root modifier = opinion_reconcile }
+		}
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_severe_bonus }
+	}
+}
+
+flavor_bav.11 = { #The History of Bavaria
+	type = country_event
+	title = flavor_bav.11.title
+	desc = flavor_bav.11.desc
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UBV
+		tag = BAV
+		from = 1510.1.1
+		to = 1534.1.1
+		monthly_chance = 1
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:nobles_estate }
+
+		create_character = {
+			first_name = name_john
+			last_name = Aventinus
+			birth_location = location:ingolstadt
+			estate = estate_type:burghers_estate
+			birth_date = 1477.7.4
+			adm = 78
+			dip = 43
+			mil = 15
+			artist_skill = 0.8
+			artist = writer
+			culture = culture:danube_bavarian
+			save_scope_as = target_artist
+		}
+		ruler = {
+			save_scope_as = target_ruler
+		}
+		random_neighbor_country = {
+			save_scope_as = exile_destination
+		}
+	}
+
+	trigger = {
+		has_ruler = yes
+	}
+
+	option = {
+		name = flavor_bav.11.a
+		historical_option = yes
+
+		change_gold_effect = { scale = -2.00 }
+		capital = {
+			create_art = {
+				artist = scope:target_artist
+				quality = 85
+				type = work_of_art_type:chronicle
+				key = annales_bojorum
+			}
+		}
+
+
+	}
+	option = {
+		name = flavor_bav.11.b
+
+		scope:target_character = {
+			move_country = scope:exile_destination
+		}
+	}
+}
+
+# The Codification of Bavarian Law
+flavor_bav.20 = {
+    type = country_event
+    title = flavor_bav.20.title
+    desc = flavor_bav.20.desc
+
+    fire_only_once = yes
+    dynamic_historical_event = {
+        tag = BAV
+        from = 1400.1.1
+        to = 1550.1.1
+        monthly_chance = 3
+    }
+
+    illustration_tags = {
+        10 = regular
+        10 = interior
+    }
+
+    trigger = {
+        has_ruler = yes
+        stability >= 20
+        ruler = { adm >= 60 }
+    }
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		save_scope_as = target_country
+		ruler ?= {
+			save_scope_as = target_ruler
+		}
+		previous_ruler ?= {
+			save_scope_as = previous_ruler
+		}
+	}
+
+    option = {
+        name = flavor_bav.20.a
+		add_stability = stability_mild_penalty
+        add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_severe_penalty }
+		change_societal_value = { type = centralization_vs_decentralization value = societal_value_move_to_left }
+		unlock_policy_effect = { type = bav_codex_bavarica }
+		add_policy = policy:bav_codex_bavarica
+        add_prestige = prestige_mild_bonus
+    }
+
+    option = {
+        name = flavor_bav.20.b
+        add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_bonus }
+ 		add_stability = stability_mild_bonus
+   }
+}
+
+# Founding of the Bavarian Academy of Sciences
+flavor_bav.23 = {
+    type = country_event
+    title = flavor_bav.23.title
+    desc = flavor_bav.23.desc
+
+    fire_only_once = yes
+    dynamic_historical_event = {
+        tag = BAV
+        from = 1700.1.1
+        to = 1800.1.1
+        monthly_chance = 2
+    }
+
+    illustration_tags = {
+        10 = happy
+        10 = interior
+    }
+
+    trigger = {
+		has_ruler = yes
+        capital = {
+			development >= 30
+		}
+    }
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		save_scope_as = target_country
+		ruler ?= {
+			save_scope_as = target_ruler
+		}
+		capital = {
+			save_scope_as = target_city
+		}
+	}
+
+    option = {
+        name = flavor_bav.23.a
+
+		capital = {
+			construct_building = {
+				building_type = building_type:bavarian_academy_of_sciences
+			}
+		}
+        add_research_progress = research_progress_mild_bonus
+    }
+    option = {
+        name = flavor_bav.23.b
+
+		add_army_tradition = army_tradition_mild_bonus
+		add_country_modifier = { modifier = military_improvements years = 10 mode = add_and_extend }
+		change_gold_effect = { scale = -6.00 }
+    }
+}
+
+flavor_bav.24 = {
+	type = country_event
+	title = flavor_bav.24.title
+	desc = flavor_bav.24.desc
+
+	fire_only_once = yes
+
+	dynamic_historical_event = {
+		tag = BAV
+		tag = UBV
+		tag = FRE
+		tag = LBV
+		tag = SLZ
+		tag = PSS
+		tag = BRC
+		tag = GRF
+		from = 1518.1.1
+		to = 1548.1.1
+		monthly_chance = 1
+	}
+
+	image = "gfx/interface/illustrations/institutions/renaissance.dds"
+
+	immediate = {
+		create_character = {
+			first_name = name_andrew
+			last_name = Maler
+			min_age = 26
+			birth_location = location:nuremberg
+			culture = culture:east_franconian
+			adm = { 50 90 }
+			dip = { 50 90 }
+			mil = { 40 70 }
+			estate = estate_type:burghers_estate
+			artist = painter
+			artist_skill = { 0.7 0.85 }
+			save_scope_as = target_artist
+			create_in_limbo = yes
+		}
+
+		random_neighbor_country = {
+			save_scope_as = exile_destination
+		}
+	}
+
+	trigger = {
+		owns = location:garmisch
+		location:garmisch = {
+			has_building_with_at_least_one_level = scriptorium
+		}
+	}
+
+	option = {
+		name = flavor_bav.24.a
+
+		scope:target_artist = {
+			move_country = root
+		}
+	}
+	option = {
+		name = flavor_bav.24.b
+
+		scope:target_artist = {
+			move_country = scope:exile_destination
+		}
+	}
+}
+
+
+
+# Introduction of the Reinheitsgebot
+flavor_bav.25 = {
+    type = country_event
+    title = flavor_bav.25.title
+    desc = flavor_bav.25.desc
+
+    fire_only_once = yes
+    dynamic_historical_event = {
+        tag = BAV
+        from = 1500.1.1
+        to = 1600.1.1
+        monthly_chance = 3
+    }
+
+	image = "gfx/interface/icons/trade_goods/illustrations/icon_goods_beer.dds"
+
+    trigger = {
+        has_ruler = yes
+        ruler = { adm >= 50 }
+		stability >= 10
+    }
+
+	immediate = {
+		save_scope_as = target_country
+		capital = { save_scope_as = target_location }
+		ruler ?= { save_scope_as = target_ruler }
+	}
+
+    option = {
+        name = flavor_bav.25.a
+        add_country_modifier = { modifier = bav_reinheitsgebot }
+        add_stability = stability_weak_penalty
+    }
+    option = {
+        name = flavor_bav.25.b
+        add_stability = stability_mild_bonus
+
+    }
+}
+
+# The University of Ingolstadt's Foundation
+flavor_bav.27 = {
+    type = country_event
+    title = flavor_bav.27.title
+    desc = flavor_bav.27.desc
+
+	historical_info = flavor_bav.27.historical_info
+
+    fire_only_once = yes
+    dynamic_historical_event = {
+        tag = BAV
+        from = 1450.1.1
+        to = 1520.1.1
+        monthly_chance = 3
+    }
+
+    illustration_tags = {
+        10 = happy
+        10 = interior
+    }
+
+    trigger = {
+        location:ingolstadt = {
+			owner = root
+			development >= 20
+			NOT = {
+				has_building = building_type:university
+			}
+		}
+        has_ruler = yes
+        ruler = { adm >= 50 }
+    }
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		save_scope_as = target_country
+		location:ingolstadt = { save_scope_as = target_location }
+		ruler ?= { save_scope_as = target_ruler }
+	}
+
+    option = {
+        name = flavor_bav.27.a
+		historical_option = yes
+
+		location:ingolstadt = {
+			construct_building = {
+				building_type = building_type:university
+			}
+		}
+
+		change_societal_value = {
+			type = traditionalist_vs_innovative
+			value = societal_value_large_move_to_right
+		}
+		add_research_progress = research_progress_severe_bonus
+    }
+    option = {
+        name = flavor_bav.27.b
+
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_extreme_bonus }
+		change_societal_value = {
+			type = traditionalist_vs_innovative
+			value = societal_value_large_move_to_left
+		}
+    }
+}
+
+# Elevation to Electorate (1623)
+flavor_bav.28 = {
+	hide_portraits = yes
+    type = country_event
+    title = flavor_bav.28.title
+    desc = flavor_bav.28.desc
+
+	historical_info = flavor_bav.28.historical_info
+
+	fire_only_once = yes
+    dynamic_historical_event = {
+        tag = BAV
+        from = 1600.1.1
+        to = 1700.1.1
+        monthly_chance = 5
+    }
+
+    illustration_tags = {
+        10 = regular
+        10 = interior
+    }
+
+    trigger = {
+		# Bavaria must be a member of the HRE
+		is_member_of_international_organization = international_organization:hre
+
+		# Bavaria must not already be an elector
+		NOT = {
+			international_organization:hre = {
+				country_has_special_status = {
+					type = special_status:elector
+					country = root
+				}
+			}
+		}
+        has_ruler = yes
+        ruler = { dip >= 60 }
+
+		# Bavaria cannot be emperor itself
+		NOT = { is_leader_of_international_organization = international_organization:hre }
+
+		# HRE must have a ruler
+		international_organization:hre = {
+			international_organization_has_leader = yes
+			leader_country = {
+				has_ruler = yes
+			}
+		}
+
+		# Bavaria is at war together with the emperor against an elector
+		any_country_together_in_war_with = {
+			is_leader_of_international_organization = international_organization:hre
+		}
+		any_country_at_war_with = {
+			OR = { # Elector somehow family or dynastic related to Bavaria
+				has_royal_marriage_with = root
+				ruler.dynasty = root.ruler.dynasty
+				ruler = {
+					OR = {
+						is_sibling_of = root.ruler
+						is_close_relative = root.ruler
+					}
+				}
+			}
+			international_organization:hre = {
+				country_has_special_status = {
+					type = special_status:elector
+					country = prev
+				}
+			}
+		}
+
+		# War of Religions situation is active
+		situation:war_of_religions = {
+			situation_is_active = yes
+		}
+    }
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		save_scope_as = bavaria_country
+		ruler ?= { save_scope_as = home_ruler }
+		international_organization:hre = {
+			leader_country ?= {
+				save_scope_as = emperor_country
+				ruler ?= { save_scope_as = emperor_ruler }
+			}
+		}
+		# Country that is the elector, which fights the emperor
+		random_country = {
+			limit = {
+				international_organization:hre = {
+					country_has_special_status = {
+						type = special_status:elector
+						country = prev
+					}
+				}
+				any_country_at_war_with = {
+					is_leader_of_international_organization = international_organization:hre
+				}
+			}
+			save_scope_as = elector_at_war
+		}
+	}
+
+	option = {
+		name = flavor_bav.28.a
+		historical_option = yes
+
+		scope:emperor_country = { trigger_event_non_silently = flavor_bav.29 }
+	}
+
+	option = {
+		name = flavor_bav.28.b
+		add_stability = stability_mild_bonus
+		add_prestige = prestige_mild_penalty
+	}
+}
+
+# Emperor: Answer request for electorate award
+flavor_bav.29 = {
+    type = country_event
+    title = flavor_bav.29.title
+    desc = flavor_bav.29.desc
+
+	historical_info = flavor_bav.29.historical_info
+
+    illustration_tags = {
+        10 = regular
+        10 = interior
+    }
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = flavor_bav.29.a
+		historical_option = yes
+
+		scope:bavaria_country = {
+			trigger_event_non_silently = flavor_bav.30
+			add_opinion = {
+				target = root
+				modifier = bav_awarded_with_electorship
+			}
+		}
+		add_prestige = prestige_mild_bonus
+
+	}
+	option = {
+		name = flavor_bav.29.b
+
+		scope:bavaria_country = {
+			trigger_event_non_silently = flavor_bav.31
+			add_opinion = {
+				target = root
+				modifier = bav_refused_electorship
+			}
+		}
+		add_stability = stability_mild_bonus
+	}
+}
+
+# awarded with electorate
+flavor_bav.30 = {
+    type = country_event
+    title = flavor_bav.30.title
+    desc = flavor_bav.30.desc
+
+    illustration_tags = {
+        10 = happy
+        10 = interior
+    }
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = flavor_bav.30.a
+
+		international_organization:hre = {
+			international_organization_remove_special_status = {
+				type = special_status:elector
+				country = scope:elector_at_war
+			}
+		}
+		scope:elector_at_war = { trigger_event_non_silently = flavor_bav.32 }
+		international_organization:hre = {
+			international_organization_add_special_status = {
+				type = special_status:elector
+				country = scope:bavaria_country
+			}
+		}
+		add_prestige = prestige_extreme_bonus
+	}
+}
+
+# Not awarded with electorate
+flavor_bav.31 = {
+    type = country_event
+    title = flavor_bav.31.title
+    desc = flavor_bav.31.desc
+
+    illustration_tags = {
+        10 = angry
+        10 = interior
+    }
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = flavor_bav.31.a
+
+		add_prestige = prestige_mild_penalty
+	}
+}
+
+# Inform previous elector about loss of their electorate
+flavor_bav.32 = {
+    type = country_event
+    title = flavor_bav.32.title
+    desc = flavor_bav.32.desc
+
+    illustration_tags = {
+        10 = angry
+        10 = interior
+    }
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = flavor_bav.32.a
+
+		add_prestige = prestige_ultimate_penalty
+	}
+}
+
+# Herrenchiemsee Abbey Baroque Reconstruction
+flavor_bav.33 = {
+    type = country_event
+    title = flavor_bav.33.title
+    desc = flavor_bav.33.desc
+
+    fire_only_once = yes
+    dynamic_historical_event = {
+        tag = BAV
+        from = 1642.1.1
+        to = 1731.1.1
+        monthly_chance = 5
+    }
+
+    illustration_tags = {
+        10 = regular
+        10 = interior
+    }
+
+    trigger = {
+        is_member_of_international_organization = international_organization:hre
+        capital = { this = location:munich }
+        has_ruler = yes
+        ruler = { adm >= 50 }
+    }
+
+    immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+        save_scope_as = target_country
+        ruler ?= { save_scope_as = target_ruler }
+    }
+
+    option = {
+        name = flavor_bav.33.a
+		location:munich = {
+			construct_building = {
+				building_type = building_type:herrenchiemsee_abbey
+			}
+		}
+        add_prestige = prestige_mild_bonus
+    }
+    option = {
+        name = flavor_bav.33.b
+ 		change_gold_effect = { scale = 2.00 }
+       	add_prestige = prestige_weak_penalty
+    }
+}
+
+
+#The Cologne Secundogeniture
+flavor_bav.1000 = {
+	type = country_event
+
+	title = flavor_bav.1000.title
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					c:KOL = { is_rival_of = root }
+				}
+				desc = flavor_bav.1000.desc_rival
+			}
+			triggered_desc = {
+				desc = flavor_bav.1000.desc
+			}
+		}
+	}
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = BAV
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 20
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	trigger = {
+		#Cologne exists, we are not at war, is an elector and is of our dynasty
+		international_organization:hre = {
+			country_has_special_status = {
+				type = special_status:elector
+				country = c:KOL
+			}
+		}
+		c:KOL ?= {
+			NOT = { is_at_war_with = root }
+			ruler ?= {
+				this != root.ruler
+				dynasty = root.ruler.dynasty
+			}
+		}
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		c:KOL.ruler = {
+			save_scope_as = kol_ruler
+		}
+	}
+
+
+	option = {
+		name = flavor_bav.1000.a
+		trigger = {
+			NOT = {c:KOL = { is_rival_of = root }}
+		}
+		add_gold = { value = c:KOL.monthly_income_trade_and_tax multiply = -5.00 }
+		c:KOL = {
+			trigger_event_non_silently = flavor_bav.1001
+			add_opinion = { target = root modifier = opinion_bolster_up_our_dynasty_member }
+		}
+	}
+	option = {
+		name = flavor_bav.1000.b
+		trigger = {
+			c:KOL = { is_rival_of = root }
+		}
+		remove_rival = c:KOL
+		add_gold = { value = c:KOL.monthly_income_trade_and_tax multiply = -5.00 }
+		c:KOL = {
+			trigger_event_non_silently = flavor_bav.1001
+			add_opinion = { target = root modifier = opinion_bolster_up_our_dynasty_member }
+		}
+	}
+	option = {
+		name = flavor_bav.1000.c
+	}
+}
+
+flavor_bav.1001 = { #"Our Kin from [BAV.GetCountry.GetNameWithNoTooltip]"
+	type = country_event
+
+	title = flavor_bav.1001.title
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					c:BAV.ruler = scope:kol_ruler
+				}
+				desc = flavor_bav.1001.desc_union
+			}
+			triggered_desc = {
+				trigger = {
+					c:BAV = { is_rival_of = root }
+				}
+				desc = flavor_bav.1001.desc_rival
+			}
+			triggered_desc = {
+				desc = flavor_bav.1001.desc
+			}
+		}
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		c:BAV.ruler = {
+			if = {
+				limit = {
+					NOT = {this = scope:kol_ruler }
+				}
+				save_scope_as = bav_ruler
+			}
+		}
+	}
+
+
+	option = {
+		name = flavor_bav.1001.a
+		trigger = {
+			NOT = {c:BAV = { is_rival_of = root }}
+		}
+		add_gold = { value =root.monthly_income_trade_and_tax multiply = 5.00 }
+	}
+	option = {
+		name = flavor_bav.1001.b
+		trigger = {
+			c:BAV = { is_rival_of = root }
+		}
+		remove_rival = c:BAV
+		change_gold_effect = { scale = 5.00 }
+	}
+	option = {
+		name = flavor_bav.1001.c
+
+		c:BAV = {
+			trigger_event_non_silently = flavor_bav.1002
+		}
+	}
+}
+
+flavor_bav.1002 = { #"Rebuffed by [KOL.GetCountry.GetNameWithNoTooltip]"
+	type = country_event
+	title = flavor_bav.1002.title
+	desc = flavor_bav.1002.desc
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		c:KOL.ruler = {
+			save_scope_as = kol_ruler
+		}
+	}
+
+	option = {
+		name = flavor_bav.1002.a
+		add_gold = { value = c:KOL.monthly_income_trade_and_tax multiply = 5.00 }
+	}
+}
+
+#A Fortress in Ingolstadt
+#Preview event making sure the castle exists for the other events
+flavor_bav.1100 = {
+	type = country_event
+
+	title = flavor_bav.1100.title
+	desc = flavor_bav.1100.desc
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = BAV
+		from = 1350.1.1
+		to = 1500.1.1
+		monthly_chance = 2
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	trigger = {
+		owns = location:ingolstadt
+		location:ingolstadt = {
+			integration_level = core
+			NOT = { has_building = building_type:castle }
+		}
+		any_cabinet_character = { mil >= 60 }
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+
+		ordered_cabinet_character = {
+			order_by = mil
+			max = 1
+			save_scope_as = mil_advisor
+		}
+	}
+
+	option = {
+		name = flavor_bav.1100.a
+		historical_option = yes
+		location:ingolstadt = {
+			construct_building = {
+				building_type = building_type:castle
+				cost_multiplier = 0.90
+				cost_multiplier_reason = "military_cheap_sponsorship"
+			}
+		}
+		change_societal_value = { type = offensive_vs_defensive value = societal_value_minor_move_to_right }
+	}
+	option = {
+		name = flavor_bav.1100.b
+		add_prestige = prestige_mild_penalty
+	}
+}
+
+#[reginar_solms_scope.] in in Ingolstadt
+flavor_bav.1101 = {
+	type = country_event
+
+	title = flavor_bav.1101.title
+	desc = flavor_bav.1101.desc
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = BAV
+		from = 1537.1.1
+		to = 1580.1.1
+		monthly_chance = 2
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	trigger = {
+		has_ruler = yes
+		owns = location:ingolstadt
+		location:ingolstadt = {
+			integration_level = core
+			has_building = building_type:castle
+			NOT = { has_building = building_type:bastion }
+		}
+		has_advance = bastion_advance
+	}
+
+	immediate = {
+		event_illustration_poptype_effect = { foreground = pop_type:soldiers background = pop_type:soldiers }
+
+		create_character = { #https://de.wikipedia.org/wiki/Reinhard_zu_Solms
+			first_name = name_reginar
+			last_name = Solms
+			birth_date = 1491.10.12
+			adm = 65
+			dip = 54
+			mil = 81
+			birth_location = location:giessen
+			culture = culture:rhine_franconian
+			religion = religion:catholic
+			estate = estate_type:nobles_estate
+			script = reginar_solms_script
+			save_scope_as = reginar_solms_scope
+			create_in_limbo = yes
+		}
+		ruler = {
+			save_scope_as = target_ruler
+		}
+	}
+
+	option = {
+		name = flavor_bav.1101.a
+		historical_option = yes
+
+		location:ingolstadt = {
+			destroy_building = "building(building_type:castle|owner)"
+			construct_building = {
+				building_type = building_type:bastion
+				cost_multiplier = 1.2
+				cost_multiplier_reason = "military_expensive_sponsorship"
+			}
+		}
+		scope:reginar_solms_scope = { move_country = root }
+		change_societal_value = { type = offensive_vs_defensive value = societal_value_minor_move_to_right }
+	}
+	option = {
+		name = flavor_bav.1101.b
+		add_prestige = prestige_mild_penalty
+	}
+}
+
+#Ingolstadt , the City of 100 towers
+flavor_bav.1102 = {
+	type = country_event
+
+	title = flavor_bav.1102.title
+	desc = flavor_bav.1102.desc
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = BAV
+		from = 1637.1.1
+		to = 1680.1.1
+		monthly_chance = 4
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	trigger = {
+		owns = location:ingolstadt
+		location:ingolstadt = {
+			integration_level = core
+			has_building = building_type:bastion
+			NOT = { has_building = building_type:star_fort }
+		}
+		has_advance = star_fort_advance
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = flavor_bav.1102.a
+		historical_option = yes
+
+		location:ingolstadt = {
+			destroy_building = "building(building_type:bastion|owner)"
+			construct_building = {
+				building_type = building_type:star_fort
+				cost_multiplier = 1.2
+				cost_multiplier_reason = "military_expensive_sponsorship"
+			}
+		}
+		change_societal_value = { type = offensive_vs_defensive value = societal_value_minor_move_to_right }
+	}
+	option = {
+		name = flavor_bav.1102.b
+		add_prestige = prestige_mild_penalty
+	}
+}
+
+#The Theatinerkirche
+flavor_bav.1200 = {
+	type = country_event
+
+	title = flavor_bav.1200.title
+	desc = flavor_bav.1200.desc
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = BAV
+		from = 1660.1.1
+		to = 1750.1.1
+		monthly_chance = 2
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	trigger = {
+		government_type = government_type:monarchy
+		has_regent = no
+		has_consort = yes
+		consort = { is_female = yes }
+		has_heir = no
+		religion.group = religion_group:christian
+		owns = location:munich
+		location:munich = {
+			integration_level = core
+			NOT = { has_building = building_type:cathedral }
+		}
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		ruler ?= {
+			save_scope_as = ruler_scope
+		}
+		consort = {
+			save_scope_as = consort_scope
+		}
+		create_character = { #https://en.wikipedia.org/wiki/Agostino_Barelli
+			first_name = name_augustine
+			last_name = Barelli
+			birth_date = 1627.10.26
+			birth_location = location:bologna
+			culture = culture:emilian
+			religion = religion:catholic
+			estate = estate_type:burghers_estate
+			artist = architect
+			artist_skill = 0.76
+			script = agostino_barelli_script
+			save_scope_as = agostino_barelli_scope
+			create_in_limbo = yes
+		}
+	}
+
+	option = {
+		name = flavor_bav.1200.a
+		historical_option = yes
+		if = {
+			limit = {
+				location:munich = {
+					NOT = { has_building = building_type:cathedral }
+				}
+			}
+			location:munich = {
+				construct_building = {
+					building_type = building_type:cathedral
+					cost_multiplier = 1.1
+					cost_multiplier_reason = "clergy_expensive_sponsorship"
+				}
+			}
+		}
+		else = {
+			change_gold_effect = { scale = -4.00 }
+			location:munich = {
+				create_art = {
+					artist = scope:agostino_barelli_scope
+					quality = 72
+					type = work_of_art_type:monument
+					key = theatinerkirche_art
+				}
+			}
+			trigger_event_silently = {
+				id = flavor_bav.1201
+				years = 1
+			}
+		}
+		add_prestige = prestige_mild_bonus
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_bonus }
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
+
+		scope:agostino_barelli_scope = { move_country = root }
+	}
+	option = {
+		name = flavor_bav.1200.b
+
+		add_prestige = prestige_mild_penalty
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_penalty }
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_penalty }
+		scope:agostino_barelli_scope = { move_country = location:bologna.owner }
+	}
+}
+
+#An architectural argument
+flavor_bav.1201 = {
+	type = country_event
+
+	title = flavor_bav.1201.title
+	desc = flavor_bav.1201.desc
+
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+
+	trigger = {
+		owns = location:munich
+		exists = character:agostino_barelli_script
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:clergy_estate }
+
+		create_character = { #https://en.wikipedia.org/wiki/Enrico_Zuccalli
+			first_name = name_henry
+			last_name = Zuccalli
+			birth_date = 1642.1.1
+			birth_location = location:bellinzona
+			culture = culture:lombard
+			religion = religion:catholic
+			estate = estate_type:burghers_estate
+			artist = architect
+			artist_skill = 0.77
+			script = henry_zuccalli_script
+			save_scope_as = henry_zuccalli_scope
+		}
+		character:agostino_barelli_script = {
+			save_scope_as = agostino_barelli_scope
+		}
+		if = {
+			limit = { exists = work_of_art:theatinerkirche_art }
+			destroy_art = work_of_art:theatinerkirche_art
+		}
+	}
+
+	option = {
+		name = flavor_bav.1201.a
+		historical_option = yes
+		add_prestige = prestige_mild_bonus
+		scope:agostino_barelli_scope = { move_country = location:bologna.owner }
+		scope:henry_zuccalli_scope = { move_country = root }
+		location:munich = {
+			create_art = {
+				artist = scope:henry_zuccalli_scope
+				quality = {
+					integer_range = {
+						min = {
+							value = 100
+							multiply = scope:henry_zuccalli_scope.artist_skill
+						}
+						max = 95
+					}
+				}
+				type = work_of_art_type:monument
+				key = theatinerkirche_art
+			}
+		}
+	}
+	option = {
+		name = flavor_bav.1201.b
+
+		add_prestige = prestige_mild_penalty
+		scope:henry_zuccalli_scope = { move_country = location:bellinzona.owner }
+		location:munich = {
+			create_art = {
+				artist = scope:agostino_barelli_scope
+				quality = {
+					integer_range = {
+						min = {
+							value = 100
+							multiply = scope:agostino_barelli_scope.artist_skill
+						}
+						max = 95
+					}
+				}
+				type = work_of_art_type:monument
+				key = theatinerkirche_art
+			}
+		}
+	}
+}
+
+flavor_bav.1300 = { #The Inheritance of Ludwig IV
+	hide_portraits = yes
+	type = country_event
+	title = flavor_bav.1300.title
+	desc = flavor_bav.1300.desc
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UBV
+		from = 1337.1.1
+		to = 1367.1.1
+		monthly_chance = 20
+	}
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+
+		ruler = {
+			save_scope_as = target_ruler
+		}
+		character:ubv_ludwig_iv_wittelsbach = {
+			save_scope_as = target_ancestor
+		}
+		previous_ruler ?= {
+			save_scope_as = old_ruler
+		}
+	}
+
+	trigger = {
+		has_ruler = yes
+		character:ubv_ludwig_iv_wittelsbach = {
+			is_alive = no
+		}
+		previous_ruler ?= {
+			any_child = {
+				is_ruler = no
+				is_alive = yes
+				is_female = no
+			}
+		}
+		succession_law = heir_selection:partition_inheritance
+	}
+
+	option = {
+		name = flavor_bav.1300.a
+
+		set_variable = bavarian_inheritance_split
+		grant_estate_privilege = estate_privilege:bavarian_share_of_land
+	}
+}
+
+flavor_bav.1301 = { #Centralization of Bavaria
+	type = country_event
+	title = flavor_bav.1301.title
+	desc = flavor_bav.1301.desc
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = UBV
+		from = 1367.1.1
+		to = 1567.1.1
+		monthly_chance = 20
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+
+		ruler = {
+			save_scope_as = target_ruler
+		}
+		character:ubv_ludwig_iv_wittelsbach = {
+			save_scope_as = target_ancestor
+		}
+	}
+
+	trigger = {
+		has_ruler = yes
+		societal_value:centralization_vs_decentralization < 25
+	}
+
+	option = {
+		name = flavor_bav.1301.a
+
+		remove_variable = bavarian_inheritance_split
+		revoke_estate_privilege = estate_privilege:bavarian_share_of_land
+	}
+}
+
+# The Bavarian Division of 1392
+flavor_bav.1302 = {
+    type = country_event
+    title = flavor_bav.1302.title
+    desc = flavor_bav.1302.desc
+
+	historical_info = flavor_bav.1302.historical_info
+
+	fire_only_once = yes
+    dynamic_historical_event = {
+        tag = UBV
+        from = 1350.1.1
+        to = 1420.1.1
+        monthly_chance = 4
+    }
+
+    illustration_tags = {
+        10 = angry
+        10 = interior
+    }
+
+    trigger = {
+        has_ruler = yes
+		any_character = {
+			is_alive = yes
+			OR = {
+				is_sibling_of = root.ruler
+				is_close_relative = root.ruler
+				is_child_of = root.ruler
+			}
+			dynasty = root.ruler.dynasty
+			is_female = no
+			is_ruler = no
+  			is_heir = no
+  			age_in_years >= 16
+		}
+ 		OR = {
+			AND = {
+				country_exists = c:LBV
+				c:LBV = {
+					is_subject_of = c:UBV
+					OR = {
+                        opinion = {
+                            target = root
+                            value <= 50
+                        }
+						liberty_desire > 50
+						great_power_score > root.great_power_score
+					}
+                 }
+			}
+			AND = {
+				NOT = { country_exists = c:LBV }
+				owns = location:landshut
+				OR = {
+					stability <= 0
+					area:bavaria_area = {
+						any_location_in_area = {
+							owner = root
+							average_satisfaction <= 50
+							count > 3
+						}
+					}
+				}
+			}
+		}
+    }
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		save_scope_as = target_country
+		capital = { save_scope_as = target_location }
+		ruler ?= {
+			save_scope_as = target_ruler
+		}
+		if = {
+			limit = {
+				country_exists = c:LBV
+				NOT = { c:LBV.ruler = c:UBV.ruler }
+			}
+
+			c:LBV.ruler ?= { save_scope_as = rival_brother }
+		}
+		else = {
+			random_character = {
+				limit = {
+					is_alive = yes
+					OR = {
+						is_sibling_of = root.ruler
+						is_close_relative = root.ruler
+						is_child_of = root.ruler
+					}
+					dynasty = root.ruler.dynasty
+					is_female = no
+					is_ruler = no
+					is_heir = no
+					age_in_years >= 16
+				}
+				save_scope_as = rival_brother
+			}
+		}
+	}
+
+	option = {
+		name = flavor_bav.1302.a
+		historical_option = yes
+
+        if = {
+			limit = {
+				NOT = { country_exists = c:LBV }
+				owns = location:landshut
+			}
+
+			create_country_from_cores_in_our_locations = c:LBV
+
+			hidden_effect = {
+				international_organization:hre = {
+					add_country_to_international_organization = c:LBV
+				}
+			}
+			c:LBV = {
+				set_new_ruler = scope:rival_brother
+			}
+		}
+		else = {
+			cancel_subject = c:LBV
+		}
+
+	}
+
+    option = {
+        name = flavor_bav.1302.b
+        if = {
+			limit = {
+				NOT = { country_exists = c:LBV }
+				owns = location:landshut
+			}
+
+			create_country_from_cores_in_our_locations = c:LBV
+
+			hidden_effect = {
+				international_organization:hre = {
+					add_country_to_international_organization = c:LBV
+				}
+			}
+
+			c:LBV = {
+				declare_war_with_cb = {
+					target = root
+					type = casus_belli:cb_subject_broke_free
+				}
+				set_new_ruler = scope:rival_brother
+			}
+		}
+		else = {
+			c:LBV = {
+				declare_war_with_cb = {
+					target = root
+					type = casus_belli:cb_independence_war
+				}
+				set_new_ruler = scope:rival_brother
+			}
+		}
+    }
+    option = {
+        name = flavor_bav.1302.c
+		trigger = {
+			NOT = { country_exists = c:LBV }
+			owns = location:landshut
+		}
+
+		area:bavaria_area = {
+			every_location_in_area = {
+				limit = { owner = root }
+				add_location_modifier = { modifier = bavaria_internal_division years = 25 mode=add_and_extend }
+
+				every_pop = {
+					limit = {
+						religion = root.religion
+						culture = root.culture
+					}
+					add_pop_satisfaction = pop_satisfaction_ultimate_penalty
+				}
+			}
+		}
+        add_stability = stability_extreme_penalty
+    }
+}
+
+# Founding of the Munich Residenz
+flavor_bav.1400 = {
+    type = country_event
+    title = flavor_bav.1400.title
+    desc = flavor_bav.1400.desc
+
+    fire_only_once = yes
+    dynamic_historical_event = {
+        tag = BAV
+		tag = UBV
+        from = 1385.1.1
+        to = 1450.1.1
+        monthly_chance = 3
+    }
+
+    illustration_tags = {
+        10 = regular
+        10 = interior
+    }
+
+    trigger = {
+        capital = { this = location:munich }
+		has_ruler = yes
+        ruler = { adm >= 50 }
+    }
+
+	immediate = {
+		event_illustration_poptype_effect = { foreground = pop_type:soldiers background = pop_type:soldiers }
+		save_scope_as = target_country
+		capital = { save_scope_as = target_location }
+		ruler ?= { save_scope_as = target_ruler }
+	}
+
+    option = {
+        name = flavor_bav.1400.a
+		location:munich = {
+			construct_building = {
+				building_type = building_type:munich_residenz_founding
+			}
+		}
+        add_prestige = prestige_weak_bonus
+    }
+    option = {
+        name = flavor_bav.1400.b
+		change_gold_effect = { scale = 1 }
+        add_prestige = prestige_weak_penalty
+    }
+}
+
+# Renaissance Expansion of the Residenz
+flavor_bav.1401 = {
+    type = country_event
+    title = flavor_bav.1401.title
+    desc = flavor_bav.1401.desc
+
+    fire_only_once = yes
+    dynamic_historical_event = {
+        tag = BAV
+        from = 1550.1.1
+        to = 1600.1.1
+        monthly_chance = 4
+    }
+
+    illustration_tags = {
+        10 = regular
+        10 = interior
+    }
+
+    trigger = {
+        capital = {
+			this = location:munich
+			has_building = building_type:munich_residenz_founding
+		}
+		has_ruler = yes
+        ruler = { adm >= 50 }
+		has_embraced_institution = institution:renaissance
+    }
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		save_scope_as = target_country
+		capital = { save_scope_as = target_location }
+		ruler ?= { save_scope_as = target_ruler }
+	}
+
+    option = {
+        name = flavor_bav.1401.a
+		location:munich = {
+			construct_building = {
+				building_type = building_type:munich_residenz_renaissance_expansion
+			}
+		}
+		add_country_modifier = { modifier = bav_renaissance_patronage years = 10 mode = add_and_extend }
+    }
+    option = {
+        name = flavor_bav.1401.b
+		change_gold_effect = { scale = 1 }
+        add_prestige = prestige_weak_penalty
+    }
+}
+
+# Baroque Expansion of the Residenz
+flavor_bav.1402 = {
+    type = country_event
+    title = flavor_bav.1402.title
+    desc = flavor_bav.1402.desc
+
+    fire_only_once = yes
+    dynamic_historical_event = {
+        tag = BAV
+        from = 1690.1.1
+        to = 1800.1.1
+        monthly_chance = 3
+    }
+
+	image = "gfx/interface/illustrations/institutions/renaissance.dds"
+
+    trigger = {
+        capital = {
+			this = location:munich
+			has_building = building_type:munich_residenz_renaissance_expansion
+		}
+		has_ruler = yes
+        ruler = { adm >= 50 }
+		has_embraced_institution = institution:enlightenment
+    }
+
+	immediate = {
+		save_scope_as = target_country
+		capital = { save_scope_as = target_location }
+		ruler ?= { save_scope_as = target_ruler }
+	}
+
+    option = {
+        name = flavor_bav.1402.a
+		location:munich = {
+			construct_building = {
+				building_type = building_type:munich_residenz_baroque_expansion
+			}
+		}
+        add_prestige = prestige_mild_bonus
+    }
+    option = {
+        name = flavor_bav.1402.b
+		change_gold_effect = { scale = 2.00 }
+        add_prestige = prestige_mild_penalty
+    }
+}
