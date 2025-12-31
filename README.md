@@ -9,6 +9,7 @@ Current Features:
 - Removed crownpower malus from having debt
 - Centralization gives upto +25% integration speed
 - French unique gov reforms both give 1 cultures_capacity
+- Bohemia no longer in German culture Group
 
 
 

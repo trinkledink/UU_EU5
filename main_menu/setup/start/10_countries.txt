@@ -1829,7 +1829,7 @@ countries = {
 			budejovice j_hradec benesov mlada_boleslav kourim kutna_hora
 			bechyne jicin podebrady caslav nachod nemecky_brod
 			chrudim hradec_kralove klodzko litomysl trebon
-			bautzen gorlitz hoyerswerda rothenburg_oberlausitz marienstern
+			bautzen gorlitz hoyerswerda rothenburg_oberlausitz marienstern zittau #uu zittau given to BOH
 		}
 
 		starting_technology_level = 3
@@ -39409,335 +39409,17 @@ countries = {
 
 	#-------------------------- Silesia + Poland + Lithuania + Ruthenia ----------------------------
 
-	ZAG = { #Zagan
+	SIL = {	#uu formed Silesia independent from BOH
 		own_control_core = {
+			glogow gora kozuchow szprotawa zielona_gora
+			legnica boleslawiec jawor wolow zlotoryja
+			olesnica milicz namyslow sycow trzebnica
+			opava fryvaldov glubczyce hlucin krnov
+			opole kluczbork lubliniec olesno prudnik strzelce_opolskie
+			swidnica kamienna_gora rychbach niemcza ziebice
+			tesin bielsko bytom kozle pszczyna raciborz siewierz toszek
+			wroclaw brzeg grodkow nysa niemodlin olawa sroda_slaska
 			zagan krosno_odrzanskie sulechow zary
-		}
-
-		starting_technology_level = 3
-		include = "expl_eastern_europe"
-		include = "eastern_european_catholic_monarchy_no_coast"
-		include = "eastern_european_catholic"
-		country_rank = rank_duchy
-		government = {
-			type = monarchy
-			heir_selection = cognatic_primogeniture
-			ruler = zag_henryk_iv_wierny_piast
-			ruler_term = {	character = glg_henryk_iii_piast start_date = 1304.1.1 end_date = 1310.12.11 regnal_number = 3	}
-			ruler_term = {	character = zag_henryk_iv_wierny_piast start_date = 1310.12.11 regnal_number = 4	}
-
-			regnal_numbers = {
-				name_henry = 4
-				Przemko = 1
-			}
-		}
-
-		tolerated_cultures = {
-			german_silesian
-			sorbian
-		}
-
-		capital = zagan
-		dynasty = piast_dynasty
-	}
-
-	LGC = { #Legnica
-		own_control_core = {
-			legnica zlotoryja #Duchy of Legnica
-			kluczbork #Duchy of Brzeg
-		}
-
-		starting_technology_level = 3
-		include = "expl_eastern_europe"
-		include = "eastern_european_catholic_monarchy_no_coast"
-		include = "eastern_european_catholic"
-		country_rank = rank_duchy
-		government = {
-			type = monarchy
-			heir_selection = cognatic_primogeniture
-			ruler = lgc_boleslaw_iii_the_generous_piast
-			ruler_term = {	character = lgc_henryk_v_the_fat_piast start_date = 1278.1.1 end_date = 1296.2.22 regnal_number = 5	}
-			ruler_term = {	character = lgc_boleslaw_iii_the_generous_piast start_date = 1296.2.22 regnal_number = 3	}
-
-			regnal_numbers = {
-				name_henry = 5
-				name_boleslav = 3
-			}
-		}
-
-		tolerated_cultures = {
-			german_silesian
-		}
-
-		capital = legnica
-		dynasty = piast_dynasty
-	}
-
-	OEL = { #Oels
-		own_control_core = {
-			olesnica milicz sycow trzebnica
-		}
-
-		starting_technology_level = 3
-		include = "expl_eastern_europe"
-		include = "eastern_european_catholic_monarchy_no_coast"
-		include = "eastern_european_catholic"
-		country_rank = rank_duchy
-		government = {
-			type = monarchy
-			heir_selection = cognatic_primogeniture
-			ruler = oel_konrad_i_piast
-			ruler_term = {	character = oel_konrad_i_piast start_date = 1321.1.1 regnal_number = 1	}
-
-			regnal_numbers = {
-				name_conrad = 1
-			}
-		}
-
-		tolerated_cultures = {
-			german_silesian
-		}
-
-		capital = olesnica
-		dynasty = piast_dynasty
-	}
-
-	JAW = { #Jawor
-		own_control_core = {
-			jawor boleslawiec #Duchy of Jawor
-			zittau
-		}
-
-		starting_technology_level = 3
-		include = "catholic_monarchy_no_coast"
-		include = "expl_northern_europe"
-		country_rank = rank_duchy
-		government = {
-			type = monarchy
-			heir_selection = cognatic_primogeniture
-
-			ruler = jaw_henryk_i_javorski
-
-			ruler_term = {	character = jaw_bolko_i_the_strict start_date = 1278.1.1 end_date = 1301.11.9 regnal_number = 1	}
-			ruler_term = {	character = jaw_henryk_i_javorski start_date = 1301.11.9 regnal_number = 1	}
-
-			regnal_numbers = {
-				Bolko = 1
-				name_henry = 1
-			}
-		}
-
-		tolerated_cultures = {
-			german_silesian
-			sorbian
-		}
-
-		capital = jawor
-		dynasty = piast_dynasty
-	}
-
-	OPL = {	#Opole
-		own_control_core = {
-			opole olesno #Duchy of Opole
-			lubliniec #Duchy of Strzelce
-		}
-
-		starting_technology_level = 3
-		include = "catholic_monarchy_no_coast"
-		include = "expl_northern_europe"
-		country_rank = rank_duchy
-		government = {
-			type = monarchy
-			heir_selection = cognatic_primogeniture
-			ruler = opl_boleslaw_ii_piast
-			ruler_term = {	character = opl_boleslaw_i_piast start_date = 1281.5.14 end_date = 1313.5.14 regnal_number = 1	}
-			ruler_term = {	character = opl_boleslaw_ii_piast start_date = 1313.5.14 regnal_number = 2	}
-			regnal_numbers = {
-				Bolko = 2
-			}
-		}
-
-		tolerated_cultures = {
-			german_silesian
-			moravian
-		}
-
-		capital = opole
-		dynasty = piast_dynasty
-	}
-
-	PDK = {	#Prudnik
-		own_control_core = {
-			prudnik #Duchy of Prudnik
-		}
-
-		starting_technology_level = 3
-		include = "catholic_monarchy_no_coast"
-		include = "expl_northern_europe"
-		country_rank = rank_duchy
-		government = {
-			type = monarchy
-			heir_selection = cognatic_primogeniture
-			ruler = nmd_boleslaw_elder
-			ruler_term = {	character = opv_mikolaj_ii_premyslid start_date = 1318.1.1 end_date = 1337.1.1 regnal_number = 1	}
-			ruler_term = {	character = nmd_boleslaw_elder start_date = 1337.1.1 regnal_number = 1	}
-		}
-
-		capital = prudnik
-		dynasty = piast_dynasty
-	}
-
-	BYM = {	#Bytom
-		own_control_core = {
-			bytom kozle toszek
-		}
-
-		starting_technology_level = 3
-		include = "catholic_monarchy_no_coast"
-		include = "expl_northern_europe"
-		country_rank = rank_duchy
-		government = {
-			type = monarchy
-			heir_selection = cognatic_primogeniture
-			ruler = bym_wladislaw_i_piast
-			ruler_term = {	character = bym_kazimierz_i_piast start_date = 1281.5.14 end_date = 1312.3.10 regnal_number = 1	}
-			ruler_term = {	character = bym_wladislaw_i_piast start_date = 1313.5.14 regnal_number = 1	}
-			regnal_numbers = {
-				name_casimir = 1
-				name_vladislav = 1
-			}
-		}
-
-		tolerated_cultures = {
-			german_silesian
-		}
-
-		capital = bytom
-		dynasty = piast_dynasty
-	}
-
-	OPV = {	#Opava
-		own_control_core = {
-			opava hlucin #Duchy of Opava
-			krnov glubczyce #Duchy of Krnov
-		}
-
-		starting_technology_level = 3
-		include = "catholic_monarchy_no_coast"
-		include = "expl_northern_europe"
-		country_rank = rank_duchy
-		government = {
-			type = monarchy
-			heir_selection = cognatic_primogeniture
-
-			ruler = opv_mikolaj_ii_premyslid
-			ruler_term = {	character = opv_mikolaj_ii_premyslid start_date = 1318.2.22 regnal_number = 2	}
-
-			regnal_numbers = {
-				name_nicholas = 2
-			}
-		}
-
-		tolerated_cultures = {
-			german_silesian
-			moravian
-		}
-
-		capital = raciborz
-		dynasty = premyslid_dynasty
-	}
-
-	RCB = {	#Racibórz
-		own_control_core = {
-			raciborz #Duchy of Raciborz
-			pszczyna #Duchy of Pszczyna
-		}
-
-		starting_technology_level = 3
-		include = "catholic_monarchy_no_coast"
-		include = "expl_northern_europe"
-		country_rank = rank_duchy
-		government = {
-			type = monarchy
-			heir_selection = cognatic_primogeniture
-
-			ruler = opv_mikolaj_ii_premyslid
-			ruler_term = {	character = opv_mikolaj_ii_premyslid start_date = 1318.2.22 regnal_number = 2	}
-
-			regnal_numbers = {
-				name_nicholas = 2
-			}
-		}
-
-		tolerated_cultures = {
-			german_silesian
-		}
-
-		capital = raciborz
-		dynasty = premyslid_dynasty
-	}
-
-	TES = {	#Tesin
-		own_control_core = {
-			tesin bielsko #Duchy of Cieszyn
-		}
-		starting_technology_level = 3
-		include = "catholic_monarchy_no_coast"
-		include = "expl_northern_europe"
-		country_rank = rank_duchy
-		government = {
-			type = monarchy
-			heir_selection = cognatic_primogeniture
-
-			ruler = tes_kazimir_piast
-			ruler_term = {	character = tes_kazimir_piast start_date = 1315.1.1 regnal_number = 1	}
-
-			regnal_numbers = {
-				Miszko = 1
-				Kazimir = 1
-			}
-		}
-
-		tolerated_cultures = {
-			german_silesian
-			moravian
-		}
-
-		capital = tesin
-		dynasty = piast_dynasty
-	}
-
-	OSW = {	#Oświęcim
-		own_control_core = {
-			oswiecim zywiec
-		}
-		starting_technology_level = 3
-		include = "catholic_monarchy_no_coast"
-		include = "expl_northern_europe"
-		country_rank = rank_duchy
-		government = {
-			type = monarchy
-			heir_selection = cognatic_primogeniture
-			ruler = osw_jan_piast
-			ruler_term = {	character = osw_wladyslaw_piast start_date = 1315.1.1 end_date = 1324.5.15 regnal_number = 1	}
-			ruler_term = {	character = osw_jan_piast start_date = 1324.5.15 regnal_number = 1	}
-			regnal_numbers = {
-				name_john = 1
-				name_vladislav = 1
-			}
-		}
-
-		tolerated_cultures = {
-			lesser_polish
-		}
-
-		capital = oswiecim
-		dynasty = piast_dynasty
-	}
-
-	SWD = {	#Świdnica
-		own_control_core = {
-			kamienna_gora swidnica rychbach
 		}
 		starting_technology_level = 3
 		include = "catholic_monarchy_no_coast"
@@ -39760,273 +39442,632 @@ countries = {
 			german_silesian
 		}
 
-		capital = swidnica
+		capital = opole
 		dynasty = piast_dynasty
 	}
 
-	SCI = {	#Ścinawa
-		own_control_core = {
-			wolow gora
-		}
-		starting_technology_level = 3
-		include = "catholic_monarchy_no_coast"
-		include = "expl_northern_europe"
-		country_rank = rank_duchy
-		government = {
-			type = monarchy
-			heir_selection = cognatic_primogeniture
-			ruler = sci_jan_scinawski
-			ruler_term = {	character = sci_jan_scinawski start_date = 1324.5.15 regnal_number = 1	}
-			regnal_numbers = {
-				name_john = 1
-			}
-		}
+	# ZAG = { #Zagan
+	# 	own_control_core = {
+	# 		zagan krosno_odrzanskie sulechow zary
+	# 	}
 
-		tolerated_cultures = {
-			german_silesian
-		}
+	# 	starting_technology_level = 3
+	# 	include = "expl_eastern_europe"
+	# 	include = "eastern_european_catholic_monarchy_no_coast"
+	# 	include = "eastern_european_catholic"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
+	# 		ruler = zag_henryk_iv_wierny_piast
+	# 		ruler_term = {	character = glg_henryk_iii_piast start_date = 1304.1.1 end_date = 1310.12.11 regnal_number = 3	}
+	# 		ruler_term = {	character = zag_henryk_iv_wierny_piast start_date = 1310.12.11 regnal_number = 4	}
 
-		capital = wolow
-		dynasty = piast_dynasty
-	}
+	# 		regnal_numbers = {
+	# 			name_henry = 4
+	# 			Przemko = 1
+	# 		}
+	# 	}
 
-	ZIE = {	#Ziębice
-		own_control_core = {
-			ziebice
-		}
-		starting_technology_level = 3
-		include = "catholic_monarchy_no_coast"
-		include = "expl_northern_europe"
-		country_rank = rank_duchy
-		government = {
-			type = monarchy
-			heir_selection = cognatic_primogeniture
-			ruler = zie_bolko_ii_ziebice
-			ruler_term = { character = zie_bolko_ii_ziebice start_date = 1324.5.15 regnal_number = 2 }
-			regnal_numbers = {
-				Bolko = 2
-			}
-		}
+	# 	tolerated_cultures = {
+	# 		german_silesian
+	# 		sorbian
+	# 	}
 
-		tolerated_cultures = {
-			german_silesian
-		}
+	# 	capital = zagan
+	# 	dynasty = piast_dynasty
+	# }
 
-		capital = ziebice
-		dynasty = piast_dynasty
-	}
+	# LGC = { #Legnica
+	# 	own_control_core = {
+	# 		legnica zlotoryja #Duchy of Legnica
+	# 		kluczbork #Duchy of Brzeg
+	# 	}
 
-	BRZ = {	#Brzeg
-		own_control_core = {
-			brzeg olawa niemcza
-		}
-		starting_technology_level = 3
-		include = "catholic_monarchy_no_coast"
-		include = "expl_northern_europe"
-		country_rank = rank_duchy
-		government = {
-			type = monarchy
-			heir_selection = cognatic_primogeniture
-			ruler = lgc_boleslaw_iii_the_generous_piast
-			ruler_term = {	character = lgc_boleslaw_iii_the_generous_piast start_date = 1296.2.22 regnal_number = 1	}
-			regnal_numbers = {
-				name_boleslav = 1
-			}
-		}
+	# 	starting_technology_level = 3
+	# 	include = "expl_eastern_europe"
+	# 	include = "eastern_european_catholic_monarchy_no_coast"
+	# 	include = "eastern_european_catholic"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
+	# 		ruler = lgc_boleslaw_iii_the_generous_piast
+	# 		ruler_term = {	character = lgc_henryk_v_the_fat_piast start_date = 1278.1.1 end_date = 1296.2.22 regnal_number = 5	}
+	# 		ruler_term = {	character = lgc_boleslaw_iii_the_generous_piast start_date = 1296.2.22 regnal_number = 3	}
 
-		tolerated_cultures = {
-			german_silesian
-		}
+	# 		regnal_numbers = {
+	# 			name_henry = 5
+	# 			name_boleslav = 3
+	# 		}
+	# 	}
 
-		capital = brzeg
-		dynasty = piast_dynasty
-	}
+	# 	tolerated_cultures = {
+	# 		german_silesian
+	# 		moravian
+	# 	}
 
-	NMS = {	#Namysłów
-		own_control_core = {
-			namyslow
-		}
-		starting_technology_level = 3
-		include = "catholic_monarchy_no_coast"
-		include = "expl_northern_europe"
-		country_rank = rank_duchy
-		government = {
-			type = monarchy
-			heir_selection = cognatic_primogeniture
-			ruler = tes_kazimir_piast
-			ruler_term = {	character = tes_kazimir_piast start_date = 1321.1.1 regnal_number = 1	}
-			regnal_numbers = {
-				Kazimir = 1
-			}
-		}
+	# 	capital = legnica
+	# 	dynasty = piast_dynasty
+	# }
 
-		tolerated_cultures = {
-			german_silesian
-		}
+	# OEL = { #Oels
+	# 	own_control_core = {
+	# 		olesnica milicz sycow trzebnica
+	# 		jawor boleslawiec
+	# 		opole olesno
+	# 		lubliniec
+	# 	}
 
-		capital = namyslow
-		dynasty = piast_dynasty
-	}
+	# 	starting_technology_level = 3
+	# 	include = "expl_eastern_europe"
+	# 	include = "eastern_european_catholic_monarchy_no_coast"
+	# 	include = "eastern_european_catholic"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
+	# 		ruler = oel_konrad_i_piast
+	# 		ruler_term = {	character = oel_konrad_i_piast start_date = 1321.1.1 regnal_number = 1	}
 
-	STZ = {	#Strzelce
-		own_control_core = {
-			strzelce_opolskie
-		}
-		starting_technology_level = 3
-		include = "catholic_monarchy_no_coast"
-		include = "expl_northern_europe"
-		country_rank = rank_duchy
-		government = {
-			type = monarchy
-			heir_selection = cognatic_primogeniture
-			ruler = stz_albert_strzelce
-			ruler_term = {	character = stz_albert_strzelce start_date = 1323.1.1 regnal_number = 1	}
-			regnal_numbers = {
-				name_albert = 1
-			}
-		}
+	# 		regnal_numbers = {
+	# 			name_conrad = 1
+	# 		}
+	# 	}
 
-		tolerated_cultures = {
-			german_silesian
-		}
+	# 	tolerated_cultures = {
+	# 		german_silesian
+	# 	}
 
-		capital = strzelce_opolskie
-		dynasty = piast_dynasty
-	}
+	# 	capital = olesnica
+	# 	dynasty = piast_dynasty
+	# }
 
-	NMD = {	#Niemodlin
-		own_control_core = {
-			niemodlin
-		}
-		starting_technology_level = 3
-		include = "catholic_monarchy_no_coast"
-		include = "expl_northern_europe"
-		country_rank = rank_duchy
-		government = {
-			type = monarchy
-			heir_selection = cognatic_primogeniture
-			ruler = nmd_boleslaw_elder
-			ruler_term = {	character = nmd_boleslaw_elder start_date = 1313.1.1 regnal_number = 1	}
-			regnal_numbers = {
-				name_boleslav = 1
-			}
-		}
+	# JAW = { #Jawor
+	# 	own_control_core = {
+	# 		jawor boleslawiec #Duchy of Jawor
+	# 		zittau
+	# 	}
 
-		tolerated_cultures = {
-			german_silesian
-		}
+	# 	starting_technology_level = 3
+	# 	include = "catholic_monarchy_no_coast"
+	# 	include = "expl_northern_europe"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
 
-		capital = niemodlin
-		dynasty = piast_dynasty
-	}
+	# 		ruler = jaw_henryk_i_javorski
 
-	SIZ = {	#Siewierz
-		own_control_core = {
-			siewierz
-		}
-		starting_technology_level = 3
-		include = "catholic_monarchy_no_coast"
-		include = "expl_northern_europe"
-		country_rank = rank_duchy
-		government = {
-			type = monarchy
-			heir_selection = cognatic_primogeniture
-			ruler = tes_kazimir_piast
-			ruler_term = {	character = tes_kazimir_piast start_date = 1337.1.1 regnal_number = 1	}
-			regnal_numbers = {
-				Kazimir = 1
-			}
-		}
+	# 		ruler_term = {	character = jaw_bolko_i_the_strict start_date = 1278.1.1 end_date = 1301.11.9 regnal_number = 1	}
+	# 		ruler_term = {	character = jaw_henryk_i_javorski start_date = 1301.11.9 regnal_number = 1	}
 
-		tolerated_cultures = {
-			german_silesian
-			lesser_polish
-		}
+	# 		regnal_numbers = {
+	# 			Bolko = 1
+	# 			name_henry = 1
+	# 		}
+	# 	}
 
-		capital = siewierz
-		dynasty = piast_dynasty
-	}
+	# 	tolerated_cultures = {
+	# 		german_silesian
+	# 		sorbian
+	# 	}
 
-	WRC = {	#Wrocław
-		own_control_core = {
-			wroclaw sroda_slaska
-		}
-		starting_technology_level = 3
-		include = "catholic_monarchy_no_coast"
-		include = "expl_northern_europe"
-		country_rank = rank_duchy
-		government = {
-			type = monarchy
-			heir_selection = cognatic_primogeniture
-			ruler = boh_john_luxembourg
-			ruler_term = {	character = boh_john_luxembourg start_date = 1335.11.24 regnal_number = 1	}
-		}
+	# 	capital = jawor
+	# 	dynasty = piast_dynasty
+	# }
 
-		tolerated_cultures = {
-			silesian
-		}
+	# OPL = {	#Opole
+	# 	own_control_core = {
+	# 		opole olesno #Duchy of Opole
+	# 		lubliniec #Duchy of Strzelce
+	# 	}
 
-		capital = wroclaw
-	}
+	# 	starting_technology_level = 3
+	# 	include = "catholic_monarchy_no_coast"
+	# 	include = "expl_northern_europe"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
+	# 		ruler = opl_boleslaw_ii_piast
+	# 		ruler_term = {	character = opl_boleslaw_i_piast start_date = 1281.5.14 end_date = 1313.5.14 regnal_number = 1	}
+	# 		ruler_term = {	character = opl_boleslaw_ii_piast start_date = 1313.5.14 regnal_number = 2	}
+	# 		regnal_numbers = {
+	# 			Bolko = 2
+	# 		}
+	# 	}
 
-	NYS = {	#Nysa
-		own_control_core = {
-			nysa grodkow fryvaldov
-		}
-		starting_technology_level = 3
-		include = "catholic_german_bishopric_no_coast"
-		include = "expl_northern_europe"
-		country_rank = rank_duchy
-		government = {
-			type = theocracy
-			ruler = nys_nanker
-			ruler_term = {	character = nys_nanker start_date = 1326.1.1 regnal_number = 1	}
-			regnal_numbers = {
-				name_john = 1
-			}
+	# 	tolerated_cultures = {
+	# 		german_silesian
+	# 		moravian
+	# 	}
 
-			laws = {
-				mining_law = nobles_mining_law
-			}
-		}
+	# 	capital = opole
+	# 	dynasty = piast_dynasty
+	# }
 
-		tolerated_cultures = {
-			german_silesian
-			moravian
-		}
+	# PDK = {	#Prudnik
+	# 	own_control_core = {
+	# 		prudnik #Duchy of Prudnik
+	# 	}
 
-		capital = nysa
-		dynasty = piast_dynasty
-	}
+	# 	starting_technology_level = 3
+	# 	include = "catholic_monarchy_no_coast"
+	# 	include = "expl_northern_europe"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
+	# 		ruler = nmd_boleslaw_elder
+	# 		ruler_term = {	character = opv_mikolaj_ii_premyslid start_date = 1318.1.1 end_date = 1337.1.1 regnal_number = 1	}
+	# 		ruler_term = {	character = nmd_boleslaw_elder start_date = 1337.1.1 regnal_number = 1	}
+	# 	}
 
-	GLO = {	#Głogów
-		own_control_core = {
-			glogow szprotawa kozuchow wschowa zielona_gora
-		}
-		starting_technology_level = 3
-		include = "catholic_monarchy_no_coast"
-		include = "expl_northern_europe"
-		country_rank = rank_duchy
-		government = {
-			type = monarchy
-			heir_selection = cognatic_primogeniture
-			ruler = jaw_henryk_i_javorski
+	# 	capital = prudnik
+	# 	dynasty = piast_dynasty
+	# }
 
-			ruler_term = {	character = glg_mechthild_von_braunschweig_luneburg start_date = 1310.12.11 end_date = 1318.4.26 regnal_number = 1 }
-			ruler_term = {	character = jaw_henryk_i_javorski start_date = 1337.1.1 regnal_number = 1	}
+	# BYM = {	#Bytom
+	# 	own_control_core = {
+	# 		bytom kozle toszek
+	# 	}
+
+	# 	starting_technology_level = 3
+	# 	include = "catholic_monarchy_no_coast"
+	# 	include = "expl_northern_europe"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
+	# 		ruler = bym_wladislaw_i_piast
+	# 		ruler_term = {	character = bym_kazimierz_i_piast start_date = 1281.5.14 end_date = 1312.3.10 regnal_number = 1	}
+	# 		ruler_term = {	character = bym_wladislaw_i_piast start_date = 1313.5.14 regnal_number = 1	}
+	# 		regnal_numbers = {
+	# 			name_casimir = 1
+	# 			name_vladislav = 1
+	# 		}
+	# 	}
+
+	# 	tolerated_cultures = {
+	# 		german_silesian
+	# 	}
+
+	# 	capital = bytom
+	# 	dynasty = piast_dynasty
+	# }
+
+	# OPV = {	#Opava
+	# 	own_control_core = {
+	# 		opava hlucin #Duchy of Opava
+	# 		krnov glubczyce #Duchy of Krnov
+	# 	}
+
+	# 	starting_technology_level = 3
+	# 	include = "catholic_monarchy_no_coast"
+	# 	include = "expl_northern_europe"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
+
+	# 		ruler = opv_mikolaj_ii_premyslid
+	# 		ruler_term = {	character = opv_mikolaj_ii_premyslid start_date = 1318.2.22 regnal_number = 2	}
+
+	# 		regnal_numbers = {
+	# 			name_nicholas = 2
+	# 		}
+	# 	}
+
+	# 	tolerated_cultures = {
+	# 		german_silesian
+	# 		moravian
+	# 	}
+
+	# 	capital = raciborz
+	# 	dynasty = premyslid_dynasty
+	# }
+
+	# RCB = {	#Racibórz
+	# 	own_control_core = {
+	# 		raciborz #Duchy of Raciborz
+	# 		pszczyna #Duchy of Pszczyna
+	# 	}
+
+	# 	starting_technology_level = 3
+	# 	include = "catholic_monarchy_no_coast"
+	# 	include = "expl_northern_europe"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
+
+	# 		ruler = opv_mikolaj_ii_premyslid
+	# 		ruler_term = {	character = opv_mikolaj_ii_premyslid start_date = 1318.2.22 regnal_number = 2	}
+
+	# 		regnal_numbers = {
+	# 			name_nicholas = 2
+	# 		}
+	# 	}
+
+	# 	tolerated_cultures = {
+	# 		german_silesian
+	# 	}
+
+	# 	capital = raciborz
+	# 	dynasty = premyslid_dynasty
+	# }
+
+	# TES = {	#Tesin
+	# 	own_control_core = {
+	# 		tesin bielsko #Duchy of Cieszyn
+	# 	}
+	# 	starting_technology_level = 3
+	# 	include = "catholic_monarchy_no_coast"
+	# 	include = "expl_northern_europe"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
+
+	# 		ruler = tes_kazimir_piast
+	# 		ruler_term = {	character = tes_kazimir_piast start_date = 1315.1.1 regnal_number = 1	}
+
+	# 		regnal_numbers = {
+	# 			Miszko = 1
+	# 			Kazimir = 1
+	# 		}
+	# 	}
+
+	# 	tolerated_cultures = {
+	# 		german_silesian
+	# 		moravian
+	# 	}
+
+	# 	capital = tesin
+	# 	dynasty = piast_dynasty
+	# }
+
+	# OSW = {	#Oświęcim
+	# 	own_control_core = {
+	# 		oswiecim zywiec
+	# 	}
+	# 	starting_technology_level = 3
+	# 	include = "catholic_monarchy_no_coast"
+	# 	include = "expl_northern_europe"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
+	# 		ruler = osw_jan_piast
+	# 		ruler_term = {	character = osw_wladyslaw_piast start_date = 1315.1.1 end_date = 1324.5.15 regnal_number = 1	}
+	# 		ruler_term = {	character = osw_jan_piast start_date = 1324.5.15 regnal_number = 1	}
+	# 		regnal_numbers = {
+	# 			name_john = 1
+	# 			name_vladislav = 1
+	# 		}
+	# 	}
+
+	# 	tolerated_cultures = {
+	# 		lesser_polish
+	# 	}
+
+	# 	capital = oswiecim
+	# 	dynasty = piast_dynasty
+	# }
+
+	# SWD = {	#Świdnica
+	# 	own_control_core = {
+	# 		kamienna_gora swidnica rychbach
+	# 	}
+	# 	starting_technology_level = 3
+	# 	include = "catholic_monarchy_no_coast"
+	# 	include = "expl_northern_europe"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
+	# 		ruler = swd_bolko_ii_small
+
+	# 		ruler_term = { character = swd_bernard_ii_swidnicki start_date = 1301.1.1 end_date = 1326.5.6 regnal_number = 2 }
+	# 		ruler_term = { character = swd_bolko_ii_small start_date = 1326.5.6 regnal_number = 2 }
+
+	# 		regnal_numbers = {
+	# 			Bolko = 2
+	# 		}
+	# 	}
+
+	# 	tolerated_cultures = {
+	# 		german_silesian
+	# 	}
+
+	# 	capital = swidnica
+	# 	dynasty = piast_dynasty
+	# }
+
+	# SCI = {	#Ścinawa
+	# 	own_control_core = {
+	# 		wolow gora
+	# 	}
+	# 	starting_technology_level = 3
+	# 	include = "catholic_monarchy_no_coast"
+	# 	include = "expl_northern_europe"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
+	# 		ruler = sci_jan_scinawski
+	# 		ruler_term = {	character = sci_jan_scinawski start_date = 1324.5.15 regnal_number = 1	}
+	# 		regnal_numbers = {
+	# 			name_john = 1
+	# 		}
+	# 	}
+
+	# 	tolerated_cultures = {
+	# 		german_silesian
+	# 	}
+
+	# 	capital = wolow
+	# 	dynasty = piast_dynasty
+	# }
+
+	# ZIE = {	#Ziębice
+	# 	own_control_core = {
+	# 		ziebice 
+	# 	}
+	# 	starting_technology_level = 3
+	# 	include = "catholic_monarchy_no_coast"
+	# 	include = "expl_northern_europe"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
+	# 		ruler = zie_bolko_ii_ziebice
+	# 		ruler_term = { character = zie_bolko_ii_ziebice start_date = 1324.5.15 regnal_number = 2 }
+	# 		regnal_numbers = {
+	# 			Bolko = 2
+	# 		}
+	# 	}
+
+	# 	tolerated_cultures = {
+	# 		german_silesian
+	# 	}
+
+	# 	capital = ziebice
+	# 	dynasty = piast_dynasty
+	# }
+
+	# BRZ = {	#Brzeg
+	# 	own_control_core = {
+	# 		brzeg olawa niemcza
+	# 	}
+	# 	starting_technology_level = 3
+	# 	include = "catholic_monarchy_no_coast"
+	# 	include = "expl_northern_europe"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
+	# 		ruler = lgc_boleslaw_iii_the_generous_piast
+	# 		ruler_term = {	character = lgc_boleslaw_iii_the_generous_piast start_date = 1296.2.22 regnal_number = 1	}
+	# 		regnal_numbers = {
+	# 			name_boleslav = 1
+	# 		}
+	# 	}
+
+	# 	tolerated_cultures = {
+	# 		german_silesian
+	# 	}
+
+	# 	capital = brzeg
+	# 	dynasty = piast_dynasty
+	# }
+
+	# NMS = {	#Namysłów
+	# 	own_control_core = {
+	# 		namyslow
+	# 	}
+	# 	starting_technology_level = 3
+	# 	include = "catholic_monarchy_no_coast"
+	# 	include = "expl_northern_europe"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
+	# 		ruler = tes_kazimir_piast
+	# 		ruler_term = {	character = tes_kazimir_piast start_date = 1321.1.1 regnal_number = 1	}
+	# 		regnal_numbers = {
+	# 			Kazimir = 1
+	# 		}
+	# 	}
+
+	# 	tolerated_cultures = {
+	# 		german_silesian
+	# 	}
+
+	# 	capital = namyslow
+	# 	dynasty = piast_dynasty
+	# }
+
+	# STZ = {	#Strzelce
+	# 	own_control_core = {
+	# 		strzelce_opolskie
+	# 	}
+	# 	starting_technology_level = 3
+	# 	include = "catholic_monarchy_no_coast"
+	# 	include = "expl_northern_europe"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
+	# 		ruler = stz_albert_strzelce
+	# 		ruler_term = {	character = stz_albert_strzelce start_date = 1323.1.1 regnal_number = 1	}
+	# 		regnal_numbers = {
+	# 			name_albert = 1
+	# 		}
+	# 	}
+
+	# 	tolerated_cultures = {
+	# 		german_silesian
+	# 	}
+
+	# 	capital = strzelce_opolskie
+	# 	dynasty = piast_dynasty
+	# }
+
+	# NMD = {	#Niemodlin
+	# 	own_control_core = {
+	# 		niemodlin
+	# 	}
+	# 	starting_technology_level = 3
+	# 	include = "catholic_monarchy_no_coast"
+	# 	include = "expl_northern_europe"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
+	# 		ruler = nmd_boleslaw_elder
+	# 		ruler_term = {	character = nmd_boleslaw_elder start_date = 1313.1.1 regnal_number = 1	}
+	# 		regnal_numbers = {
+	# 			name_boleslav = 1
+	# 		}
+	# 	}
+
+	# 	tolerated_cultures = {
+	# 		german_silesian
+	# 	}
+
+	# 	capital = niemodlin
+	# 	dynasty = piast_dynasty
+	# }
+
+	# SIZ = {	#Siewierz
+	# 	own_control_core = {
+	# 		siewierz
+	# 	}
+	# 	starting_technology_level = 3
+	# 	include = "catholic_monarchy_no_coast"
+	# 	include = "expl_northern_europe"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
+	# 		ruler = tes_kazimir_piast
+	# 		ruler_term = {	character = tes_kazimir_piast start_date = 1337.1.1 regnal_number = 1	}
+	# 		regnal_numbers = {
+	# 			Kazimir = 1
+	# 		}
+	# 	}
+
+	# 	tolerated_cultures = {
+	# 		german_silesian
+	# 		lesser_polish
+	# 	}
+
+	# 	capital = siewierz
+	# 	dynasty = piast_dynasty
+	# }
+
+	# WRC = {	#Wrocław
+	# 	own_control_core = {
+	# 		wroclaw sroda_slaska
+	# 	}
+	# 	starting_technology_level = 3
+	# 	include = "catholic_monarchy_no_coast"
+	# 	include = "expl_northern_europe"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
+	# 		ruler = boh_john_luxembourg
+	# 		ruler_term = {	character = boh_john_luxembourg start_date = 1335.11.24 regnal_number = 1	}
+	# 	}
+
+	# 	tolerated_cultures = {
+	# 		silesian
+	# 	}
+
+	# 	capital = wroclaw
+	# }
+
+	# NYS = {	#Nysa
+	# 	own_control_core = {
+	# 		nysa grodkow fryvaldov
+	# 	}
+	# 	starting_technology_level = 3
+	# 	include = "catholic_german_bishopric_no_coast"
+	# 	include = "expl_northern_europe"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = theocracy
+	# 		ruler = nys_nanker
+	# 		ruler_term = {	character = nys_nanker start_date = 1326.1.1 regnal_number = 1	}
+	# 		regnal_numbers = {
+	# 			name_john = 1
+	# 		}
+
+	# 		laws = {
+	# 			mining_law = nobles_mining_law
+	# 		}
+	# 	}
+
+	# 	tolerated_cultures = {
+	# 		german_silesian
+	# 		moravian
+	# 	}
+
+	# 	capital = nysa
+	# 	dynasty = piast_dynasty
+	# }
+
+	# GLO = {	#Głogów
+	# 	own_control_core = {
+	# 		glogow szprotawa kozuchow wschowa zielona_gora
+	# 	}
+	# 	starting_technology_level = 3
+	# 	include = "catholic_monarchy_no_coast"
+	# 	include = "expl_northern_europe"
+	# 	country_rank = rank_duchy
+	# 	government = {
+	# 		type = monarchy
+	# 		heir_selection = cognatic_primogeniture
+	# 		ruler = jaw_henryk_i_javorski
+
+	# 		ruler_term = {	character = glg_mechthild_von_braunschweig_luneburg start_date = 1310.12.11 end_date = 1318.4.26 regnal_number = 1 }
+	# 		ruler_term = {	character = jaw_henryk_i_javorski start_date = 1337.1.1 regnal_number = 1	}
 			
-			regnal_numbers = {
-				name_henry = 1
-			}
-		}
+	# 		regnal_numbers = {
+	# 			name_henry = 1
+	# 		}
+	# 	}
 
-		tolerated_cultures = {
-			german_silesian
-		}
+	# 	tolerated_cultures = {
+	# 		german_silesian
+	# 	}
 
-		capital = glogow
-		dynasty = piast_dynasty
-	}
+	# 	capital = glogow
+	# 	dynasty = piast_dynasty
+	# }
 
 	POL = {	#Poland
 		own_control_core = {
