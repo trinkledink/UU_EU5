@@ -10,7 +10,7 @@ Current Features:
 - Centralization gives upto +25% integration speed
 - French unique gov reforms both give 1 cultures_capacity
 - Bohemia no longer in German culture Group
-
+- Bohemian regional silver and 2 gold removed. Added 1 gold in Berchtesgaten, 1 silver in Prüm
 
 
 Integration of UI mods:
