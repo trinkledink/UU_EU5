@@ -1,0 +1,157 @@
+﻿namespace = flavor_fra_nrm
+
+
+flavor_fra_nrm.1 = { # Growing Disloyalty
+	type = country_event
+	title = flavor_fra_nrm.1.title
+	desc = flavor_fra_nrm.1.desc
+
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = NRM
+		from = 1376.1.1
+		to = 1402.1.1
+		monthly_chance = 20
+	}
+
+
+	trigger = {
+		country_exists = c:ENG
+		c:FRA ?= {
+			has_ruler = yes
+			OR = {
+				is_rival_of = c:ENG
+				c:ENG = {
+					is_rival_of = c:FRA		
+					is_independent_or_autonomous_subject = yes	
+				}			
+			}				
+		}	
+		is_subject_of = c:FRA		
+		is_situation_active = situation:hundred_years_war			
+	}
+	
+	immediate = {
+        c:FRA = {
+			save_scope_as = french_nation
+            ruler ?= {
+                save_scope_as = fra_ruler
+            }
+        }
+		root = {
+			save_scope_as = norman_nation
+		}
+	}	
+	
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}	
+
+
+	option = {
+		name = flavor_fra_nrm.1.a	
+		historical_option = yes
+		add_country_modifier = { modifier = fra_nrm_seeking_support_abroad years = 8 mode = add } 
+		set_variable = norman_lords_revolt
+		c:FRA ?= {
+       		set_variable = norman_lords_disloyal 
+			trigger_event_non_silently = flavor_fra.1175			
+		}		
+		custom_tooltip = flavor_fra_nrm_tt
+	}
+}
+
+flavor_fra_nrm.2 = { # Election of <nrm_leader>
+	type = country_event
+	title = flavor_fra_nrm.2.title
+	desc = flavor_fra_nrm.2.desc
+
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = NRM
+		from = 1376.1.1
+		to = 1402.1.1
+		monthly_chance = 20
+	}
+
+
+	trigger = {
+		has_ruler = yes
+		has_variable = norman_lords_revolt
+		has_variable = new_norman_duke
+		is_situation_active = situation:hundred_years_war	
+		c:FRA ?= {
+			has_ruler = yes			
+		}	
+		c:ENG ?= {
+			has_ruler = yes			
+		}							
+	}
+	
+	immediate = {
+		ruler ?= {
+            save_scope_as = nrm_ruler
+        }
+		root = {
+			save_scope_as = norman_nation
+		}
+        c:FRA ?= {
+			save_scope_as = french_nation
+            ruler_or_regent ?= {
+                save_scope_as = fra_ruler
+            }
+        }
+		 c:ENG ?= {
+			save_scope_as = english_nation
+            ruler_or_regent ?= {
+                save_scope_as = eng_ruler
+            }
+        }
+	}	
+	
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}	
+
+
+	option = {
+		name = flavor_fra_nrm.2.a 	
+		historical_option = yes
+		add_army_tradition = army_tradition_extreme_bonus
+		show_as_tooltip = {
+			make_subject_of = {
+				target = c:ENG
+				type = subject_type:vassal
+			}
+			c:FRA ?= {
+				add_casus_belli =  { 
+					type = casus_belli:cb_annex
+					target = c:NRM
+				}	
+			}
+		}	
+		if = {
+			limit = {
+				c:NRM ?= {
+					num_locations < 30
+				}
+			}
+			custom_tooltip = {
+				text = fra_cores_on_normandy_nrm
+				c:NRM ?= {
+					every_core_location = {
+						add_core = c:FRA
+					}
+				}
+			}	
+		}
+	}
+	after = {
+		remove_variable = norman_lords_revolt
+		remove_variable = new_norman_duke
+	}
+}

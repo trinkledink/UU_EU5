@@ -1,0 +1,922 @@
+﻿namespace = flavor_fra_sco
+# David Brus in France
+flavor_fra_sco.101 = {
+	hide_portraits = yes
+	type = country_event
+	title = flavor_fra_sco.101.title
+	desc = flavor_fra_sco.101.desc
+
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = FRA
+		from = 1337.9.1
+		to = 1342.1.1
+		monthly_chance = 20
+	}
+
+
+	trigger = {
+		character:sco_david_ii = {
+			is_alive = yes
+			owner = ROOT
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		character:sco_david_ii = {
+			save_scope_as = david_ii_bruce
+		}
+		if = {
+			limit = {
+				country_exists = c:SBL
+			}
+			c:SBL = {
+				add_country_modifier = {
+					modifier = balliol_claims_to_scotland
+					months = 240
+					mode = add_and_extend
+				}
+			}
+		}
+	}
+
+	option = { # Provide David resources of the Court
+		name = flavor_fra_sco.101.b
+		historical_option = yes
+		ai_chance = {
+			base = 20
+		}
+		add_gold = -300
+		add_country_modifier = { modifier = fra_scottish_exiles_upkeep months = 60 mode = add_and_extend }
+		set_variable = { name = fra_asylum_for_david_II value = 1 }
+		scope:david_ii_bruce = {
+			add_character_modifier = {
+				modifier = french_court_education_medium
+				months = 60
+				mode = add_and_extend
+			}
+		}
+	}
+
+	option = { # Support David's Cause
+		name = flavor_fra_sco.101.a
+		trigger = {
+			gold > 500
+		}
+		ai_chance = {
+			base = 70
+		}
+		add_gold = -500
+		c:SCO = {
+			add_gold = 500
+			add_country_modifier = { modifier = fra_sco_expanded_support_for_david months = 60 mode = add_and_extend }
+			set_variable = { name = fra_expanded_support_to_sco value = 1 }
+			trigger_event_silently = {  id = flavor_fra_sco.108 days = { 4 5 } }
+		}
+		add_country_modifier = { modifier = fra_scottish_exiles_upkeep months = 60 mode = add_and_extend }
+		set_variable = { name = fra_asylum_for_david_II value = 1 }
+		scope:david_ii_bruce = {
+			add_character_modifier = {
+				modifier = french_court_education_large
+				months = 60
+				mode = add_and_extend
+			}
+		}
+	}
+
+	option = { # David II must return home
+		name = flavor_fra_sco.101.c
+		add_prestige = prestige_mild_penalty
+		add_legitimacy = legitimacy_mild_penalty
+		c:SCO = {
+			add_opinion = { target = root modifier = opinion_no_extra_support_for_david_ii }
+			set_variable = { name = fra_forces_david_ii_return value = 1 }
+			trigger_event_silently = {  id = flavor_fra_sco.109 days = { 4 5 } }
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+
+	option = { # Offer him to Balliol in return for Support
+		name = flavor_fra_sco.101.d
+		custom_tooltip = sco_will_be_angry_for_using_david_tt
+		custom_tooltip = lord_balliol_recieves_david_ii_tt
+		c:SBL = { set_variable = { name = fra_reaching_out_to_balliol value = 1 } trigger_event_silently = {  id = flavor_fra_sco.103 days = { 3 5 } } }
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+flavor_fra_sco.102 = { # David II comes of Age
+	randomlog = yes  # Tracking desync 20251121
+	hide_portraits = yes
+	type = country_event
+	title = flavor_fra_sco.102.title
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { country_exists = c:SBL }
+				}
+				desc = flavor_fra_sco.102.ballioldefeated.desc
+			}
+			triggered_desc = {
+				trigger = {
+					country_exists = c:SBL
+				}
+				desc = flavor_fra_sco.102.warongoing.desc
+			}
+		}
+	}
+
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = FRA
+		from = 1342.1.1
+		to = 1343.1.1
+		monthly_chance = 100
+	}
+
+
+	trigger = {
+		has_variable = fra_asylum_for_david_II
+		OR = {
+			has_variable = scotland_did_not_extend_regency
+			character:sco_david_ii = {
+				is_alive = yes
+				owner = ROOT
+				age_in_years >= 18
+			}
+		}
+		NOT = {
+			c:SCO = {
+				has_country_modifier = balliol_claims_to_scotland
+				at_war = no
+			}				
+		}
+		can_build_units_of_category = sub_unit_category:army_infantry #Check that the country can have infantry in the first place for the mercs
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:sco_david_ii = {
+			save_scope_as = david_ii_bruce
+		}
+		hidden_effect = { # Generate a few generic mercenary variants in case you hire them
+			create_mercenary = {
+				name = french_levy_retinue
+				home = location:paris
+				categories = {
+					army_infantry = 15
+				}
+				save_scope_as = french_levy_retinue
+			}
+			create_mercenary = {
+				name = french_elite_retinue
+				home = location:paris
+				categories = {
+					army_infantry = 5
+					army_cavalry = 10
+				}
+				save_scope_as = french_elite_retinue
+			}
+		}
+	}
+
+
+	option = { # Provide David II with Quality troops and Advisors, cost more
+		name = flavor_fra_sco.102.a
+		historical_option = yes
+		trigger = {
+			country_exists = c:SBL
+		}
+		ai_chance = {
+			base = 70
+		}
+		add_gold = -750
+		remove_country_modifier = fra_scottish_exiles_upkeep
+		custom_tooltip = fra_two_french_advisors_for_david_tt
+		hidden_effect = {
+			create_character = {
+				adm = 66
+				culture = c:FRA.culture
+				save_scope_as = fra_sco_advisor_for_david_1
+				female = no
+				add_character_modifier = {
+					modifier = french_advisor_to_david_ii
+					months = 240
+					mode = add_and_extend
+				}
+			}
+			create_character = {
+				dip = 66
+				culture = c:FRA.culture
+				save_scope_as = fra_sco_advisor_for_david_2
+				female = no
+				add_character_modifier = {
+					modifier = french_advisor_to_david_ii
+					months = 240
+					mode = add_and_extend
+				}
+			}
+		}
+		c:SCO = {
+			custom_tooltip = fra_grant_sco_footmen_regiments_tt
+			add_opinion = { target = c:FRA modifier = opinion_big_support_for_david_ii }
+			hidden_effect = {
+				scope:fra_sco_advisor_for_david_1 = { move_country = c:SCO }
+				scope:fra_sco_advisor_for_david_2 = { move_country = c:SCO }
+			}
+			add_army_tradition = army_tradition_ultimate_bonus
+			hidden_effect = {
+				hire_mercenary = scope:french_elite_retinue
+			}
+		}
+	}
+
+	option = { # Provide David II with basic levies
+		name = flavor_fra_sco.102.b
+		ai_chance = {
+			base = 20
+		}
+		trigger = {
+			country_exists = c:SBL
+		}
+		add_gold = -250
+		remove_country_modifier = fra_scottish_exiles_upkeep
+		custom_tooltip = fra_one_french_advisors_for_david_tt
+		hidden_effect = {
+			create_character = {
+				adm = 55
+				culture = c:FRA.culture
+				save_scope_as = fra_sco_advisor_for_david_1
+				female = no
+				add_character_modifier = {
+					modifier = french_advisor_to_david_ii
+					months = 240
+					mode = add_and_extend
+				}
+			}
+		}
+		c:SCO = {
+			add_opinion = { target = c:FRA modifier = opinion_medium_support_for_david_ii }
+			add_army_tradition = army_tradition_extreme_bonus
+			custom_tooltip = fra_grant_sco_large_levy_tt
+			hidden_effect = {
+				scope:fra_sco_advisor_for_david_1 = { move_country = c:SCO }
+			}
+			hidden_effect = {
+				hire_mercenary = scope:french_levy_retinue
+			}
+		}
+	}
+	option = { # He will manage by himself
+		name = flavor_fra_sco.102.c
+		trigger = {
+			country_exists = c:SBL
+		}
+		remove_country_modifier = fra_scottish_exiles_upkeep
+		add_prestige = prestige_mild_penalty
+		c:SCO = {
+			add_opinion = { target = c:FRA modifier = opinion_no_extra_support_for_david_ii }
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+
+	option = { # Offer him some advisors to assist in his rule
+		name = flavor_fra_sco.102.d
+		trigger = {
+			NOT = { country_exists = c:SBL }
+		}
+		add_gold = -500
+		custom_tooltip = fra_three_french_advisors_for_david_tt
+		remove_country_modifier = fra_scottish_exiles_upkeep
+		hidden_effect = {
+			create_character = {
+				adm = 66
+				culture = c:FRA.culture
+				save_scope_as = fra_sco_advisor_for_david_1
+				female = no
+				add_character_modifier = {
+					modifier = french_advisor_to_david_ii
+					months = 240
+					mode = add_and_extend
+				}
+			}
+			create_character = {
+				dip = 66
+				culture = c:FRA.culture
+				save_scope_as = fra_sco_advisor_for_david_2
+				female = no
+				add_character_modifier = {
+					modifier = french_advisor_to_david_ii
+					months = 240
+					mode = add_and_extend
+				}
+			}
+			create_character = {
+				mil = 66
+				culture = c:FRA.culture
+				save_scope_as = fra_sco_advisor_for_david_3
+				female = no
+				add_character_modifier = {
+					modifier = french_advisor_to_david_ii
+					months = 240
+					mode = add_and_extend
+				}
+			}
+		}
+		c:SCO = {
+			add_opinion = { target = c:FRA modifier = opinion_medium_support_for_david_ii }
+			hidden_effect = {
+				scope:fra_sco_advisor_for_david_1 = { move_country = c:SCO }
+				scope:fra_sco_advisor_for_david_2 = { move_country = c:SCO }
+				scope:fra_sco_advisor_for_david_3 = { move_country = c:SCO }
+			}
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+
+	option = { # We have supported him as much as we can
+		name = flavor_fra_sco.102.e
+		trigger = {
+			NOT = { country_exists = c:SBL }
+		}
+		add_prestige = prestige_mild_penalty
+		remove_country_modifier = fra_scottish_exiles_upkeep
+		c:SCO = {
+			add_opinion = { target = c:FRA modifier = opinion_no_extra_support_for_david_ii }
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	after = {
+		remove_variable = fra_asylum_for_david_II
+	}
+}
+
+
+flavor_fra_sco.103 = { # French offer David II to Balliol for support
+	hide_portraits = yes
+	type = country_event
+	title = flavor_fra_sco.103.title
+	desc = flavor_fra_sco.103.desc
+
+
+	fire_only_once = yes
+
+
+	trigger = {
+		has_variable = fra_reaching_out_to_balliol
+		character:sco_david_ii = {
+			is_alive = yes
+		}
+	}
+
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		character:sco_david_ii = {
+			save_scope_as = david_ii_bruce
+		}
+		scope:david_ii_bruce = {
+			move_country = c:SBL
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+
+	option = { # The French would be greater allies than the English
+		name = flavor_fra_sco.103.a
+		ai_chance = {
+			base = 45
+		}
+		add_country_modifier = { modifier = sbl_david_is_prisoner months = 60 mode = add_and_extend }
+		c:ENG = {
+			add_opinion = { target = root modifier = opinion_swapped_allegiances_to_france }
+		}
+		c:SCO = {
+			set_variable = { name = sco_david_ii_in_sbl_custody value = 1 }
+			add_country_modifier = { modifier = david_ii_is_prisoner months = 60 mode = add_and_extend }
+			add_opinion = { target = root modifier = opinion_has_our_king_captive }
+			trigger_event_silently = {  id = flavor_fra_sco.106 days = { 4 5 } }
+		}
+		c:FRA = {
+		  trigger_event_silently = {  id = flavor_fra_sco.104 days = { 4 5 } }
+		  set_variable = { name = balliol_accepts_fra_backing value = 1 }
+		  add_opinion = { target = root modifier = opinion_accepted_french_support }
+		  reverse_add_opinion = { target = root modifier = opinion_recieved_french_backing }
+		}
+		show_as_tooltip = {
+			scope:david_ii_bruce = {
+				move_country = c:SBL
+			}
+		}
+	}
+
+	option = { # Refuse the offer, but allow the retinue to walk free
+		name = flavor_fra_sco.103.b
+		ai_chance = {
+			base = 20
+		}
+		add_prestige = prestige_mild_bonus
+		c:SCO = {
+			trigger_event_silently = {  id = flavor_fra_sco.109 days = { 1 2 } }
+			set_variable = { name = fra_david_ii_returns_after_balliol value = 1 }
+		}
+		c:FRA = {
+			set_variable = { name = balliol_refuses_french_support value = 1 }
+			trigger_event_silently = {  id = flavor_fra_sco.105 days = { 3 5 } }
+		}
+		scope:david_ii_bruce = {
+			move_country = c:SCO
+		}
+	}
+	option = { # Execute David along with the retinue!
+		name = flavor_fra_sco.103.c
+		kill_character = {
+			target = scope:david_ii_bruce
+			reason = execution
+			killer = ruler
+		}
+		add_prestige = prestige_mild_penalty
+		add_legitimacy = legitimacy_mild_penalty
+		c:SCO = {
+			add_opinion = { target = root modifier = opinion_sbl_executed_scottish_king }
+			add_country_modifier = { modifier = david_ii_has_been_executed months = 60 mode = add_and_extend }
+			add_opinion = { target = c:FRA modifier = opinion_surrendered_our_king }
+			set_variable = { name = sco_david_ii_executed_by_sbl value = 1 }
+			trigger_event_silently = {  id = flavor_fra_sco.107 days = { 3 5 } }
+		}
+		c:FRA = {
+			add_opinion = { target = root modifier = opinion_executed_fra_delegation }
+			set_variable = { name = david_ii_executed_by_sbl value = 1 }
+			trigger_event_silently = {  id = flavor_fra_sco.105 days = { 3 5 } }
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+
+}
+
+
+flavor_fra_sco.104 = { # Balliol switches allegiances to us
+	type = country_event
+	title = flavor_fra_sco.104.title
+	desc = flavor_fra_sco.104.desc
+
+
+	fire_only_once = yes
+	trigger = {
+		has_variable = balliol_accepts_fra_backing
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}	
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+	}
+	option = {
+		name = flavor_fra_sco.104.a
+		add_prestige = prestige_mild_bonus
+		show_as_tooltip = {
+			reverse_add_opinion = { target = c:SCO modifier = opinion_surrendered_our_king }
+			reverse_add_opinion = { target = c:SBL modifier = opinion_accepted_french_support }
+		 	add_opinion = { target = c:SBL modifier = opinion_recieved_french_backing }
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+flavor_fra_sco.105 = { # Balliol refuses support/executes
+	type = country_event
+	title = flavor_fra_sco.105.title
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					has_variable = balliol_refuses_french_support
+				}
+				desc = flavor_fra_sco.105.balliol_refuses.desc
+			}
+			triggered_desc = {
+				trigger = {
+					has_variable = david_ii_executed_by_sbl
+				}
+				desc = flavor_fra_sco.105.balliol_executes_delegation.desc
+			}
+		}
+	}
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			has_variable = balliol_refuses_french_support
+			has_variable = david_ii_executed_by_sbl
+		}
+	}
+
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}	
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+	}
+	
+	option = { # This has been a complete failure
+		name = flavor_fra_sco.105.a
+		trigger = {
+			has_variable = david_ii_executed_by_sbl
+		}
+		add_prestige = prestige_extreme_penalty
+		show_as_tooltip = {
+			c:SBL = {
+				kill_character = {
+					target = scope:david_ii_bruce
+					reason = execution
+					killer = ruler
+				}
+			}
+			reverse_add_opinion = { target = c:SCO modifier = opinion_surrendered_our_king }
+			add_opinion = { target = c:SBL modifier = opinion_executed_fra_delegation }
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+
+	option = { # Failure but worst diplomatically
+		trigger = {
+			has_variable = balliol_refuses_french_support
+		}
+		name = flavor_fra_sco.105.a
+		add_prestige = prestige_extreme_penalty
+		show_as_tooltip = {
+			reverse_add_opinion = { target = c:SCO modifier = opinion_attempted_surrender_of_king }
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+
+flavor_fra_sco.106 = { # Balliol gains custody of David II ## Scotland
+	type = country_event
+	title = flavor_fra_sco.106.title
+	desc = flavor_fra_sco.106.desc
+
+	fire_only_once = yes
+
+	trigger = {
+		has_variable = sco_david_ii_in_sbl_custody
+	}
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+	}	
+	
+
+	option = {
+		name = flavor_fra_sco.106.a
+		show_as_tooltip = {
+			set_variable = { name = sco_david_ii_in_sbl_custody value = 1 }
+			add_country_modifier = { modifier = david_ii_is_prisoner months = 60 mode = add_and_extend }
+			add_opinion = { target = c:SBL modifier = opinion_has_our_king_captive }
+		}
+		add_opinion = { target = c:FRA modifier = opinion_surrendered_our_king }
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+flavor_fra_sco.107 = { # Balliol executes David II ## Scotland
+	type = country_event
+	title = flavor_fra_sco.107.title
+	desc = flavor_fra_sco.107.desc
+
+	fire_only_once = yes
+
+	trigger = {
+		has_variable = sco_david_ii_executed_by_sbl
+	}
+
+
+	illustration_tags = {
+		10 = angry
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		if = {
+			limit = {
+				has_regent = yes
+			}
+			regent = { save_scope_as = target_regent }
+		}
+	}
+
+
+
+	option = {
+		name = flavor_fra_sco.107.a
+		add_stability = stability_mild_penalty
+		show_as_tooltip = {
+			reverse_add_opinion = { target = c:SBL modifier = opinion_sbl_executed_scottish_king }
+			add_country_modifier = { modifier = david_ii_has_been_executed months = 60 mode = add_and_extend }
+			add_opinion = { target = c:FRA modifier = opinion_surrendered_our_king }
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+flavor_fra_sco.108 = { # Support arrives from France ## Scotland
+	type = country_event
+	title = flavor_fra_sco.108.title
+	desc = flavor_fra_sco.108.desc
+
+
+	fire_only_once = yes
+
+	trigger = {
+		has_variable = fra_expanded_support_to_sco
+	}
+	image = "gfx/interface/illustrations/institutions/banking.dds"
+
+
+
+	option = {
+		name = flavor_fra_sco.108.a
+		ai_chance = {
+			base = 1
+		}
+		show_as_tooltip = {
+			add_gold = 500
+			add_country_modifier = { modifier = fra_sco_expanded_support_for_david months = 60 mode = add_and_extend }
+			custom_tooltip = sco_fra_court_education_of_david_II_tt
+		}
+	}
+}
+
+flavor_fra_sco.109 = { # France ends Asylum of David II ## Scotland
+	hide_portraits = yes
+	type = country_event
+	title = flavor_fra_sco.109.title
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					has_variable = fra_forces_david_ii_return
+				}
+				desc = flavor_fra_sco.109.desc
+			}
+			triggered_desc = {
+				trigger = {
+					has_variable = fra_david_ii_returns_after_balliol
+				}
+				desc = flavor_fra_sco.109.desc_b
+			}
+		}
+	}
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			has_variable = fra_forces_david_ii_return
+			has_variable = fra_david_ii_returns_after_balliol
+		}
+		character:sco_david_ii = {
+			is_alive = yes
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		character:sco_david_ii = {
+			save_scope_as = david_ii_bruce
+		}
+		scope:david_ii_bruce = {
+			move_country = c:SCO
+		}
+	}
+
+
+	option = { # It seems Scotland is no longer of interest to France
+		name = flavor_fra_sco.109.a
+		trigger = {
+			has_variable = fra_forces_david_ii_return
+		}
+		add_opinion = { target = c:FRA modifier = opinion_no_extra_support_for_david_ii }
+		ai_chance = {
+			base = 1
+		}
+	}
+
+	option = { # How dare they negotiate, risking the life of our King
+		name = flavor_fra_sco.109.b
+		trigger = {
+			has_variable = fra_david_ii_returns_after_balliol
+		}
+		add_opinion = { target = c:FRA modifier = opinion_attempted_surrender_of_king }
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+
+flavor_fra_sco.110 = { # Balliol prevails in Scotland ## France
+	hide_portraits = yes
+	type = country_event
+	title = flavor_fra_sco.110.title
+	desc = flavor_fra_sco.110.desc
+
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = FRA
+		from = 1370.1.1
+		to = 1837.6.1
+		monthly_chance = 100
+	}
+
+
+	trigger = {
+		tag = FRA
+		at_war = no
+		has_variable = balliol_accepts_fra_backing
+		c:SCO = {
+			has_country_modifier = balliol_claims_to_scotland
+			at_war = no
+			has_regent = no
+		}
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+    immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+        ruler = {
+            save_scope_as = scope_rule_fra
+        }
+        c:SCO = {
+            ruler = {
+                save_scope_as = scope_rule_sbl
+            }
+        }
+    }
+
+
+
+	option = { # Our bond with Scotland is stronger than ever
+		name = flavor_fra_sco.110.a
+		hidden_effect = {
+			c:SCO = {
+				trigger_event_silently = { id = flavor_fra_sco.111 days = 1 }
+				set_variable = { name = france_fulfills_alliance value = 1 }
+			}
+			c:SBL = { # Fallback
+				trigger_event_silently = { id = flavor_fra_sco.111 days = 1 }
+				set_variable = { name = france_fulfills_alliance value = 1 }
+			}
+		}
+		if = {
+			limit = {
+				is_allied_with = { target = c:SCO }
+			}
+			add_opinion = { target = c:SCO modifier = opinion_renewed_french_scottish_bond }
+			reverse_add_opinion = { target = c:SCO modifier = opinion_renewed_french_scottish_bond }
+		}
+		if = {
+			limit = {
+				NOT = { is_allied_with = { target = c:SCO } }
+			}
+			create_relation = {
+				first = this
+				second = c:SCO
+				type = relation_type:alliance
+			}
+			add_opinion = { target = c:SCO modifier = opinion_renewed_french_scottish_bond }
+			reverse_add_opinion = { target = c:SCO modifier = opinion_renewed_french_scottish_bond }
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+flavor_fra_sco.111 = { # Alliance with the French ## Balliol when they secure victory and have French backing
+	hide_portraits = yes
+	type = country_event
+	title = flavor_fra_sco.111.title
+	desc = flavor_fra_sco.111.desc
+
+	fire_only_once = yes
+
+	trigger = {
+		has_country_modifier = balliol_claims_to_scotland
+		has_variable = france_fulfills_alliance
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+    immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+        ruler = {
+            save_scope_as = scope_rule_sbl
+        }
+        c:FRA = {
+            ruler = {
+                save_scope_as = scope_rule_fra
+            }
+        }
+    }
+
+
+
+	option = {
+		name = flavor_fra_sco.111.a
+		add_prestige = prestige_mild_bonus
+		add_stability = stability_extreme_bonus
+		show_as_tooltip = {
+			if = {
+				limit = {
+					is_allied_with = { target = c:FRA }
+				}
+				add_opinion = { target = c:FRA modifier = opinion_renewed_french_scottish_bond }
+				reverse_add_opinion = { target = c:FRA modifier = opinion_renewed_french_scottish_bond }
+			}
+			if = {
+				limit = {
+					NOT = { is_allied_with = { target = c:FRA } }
+				}
+				create_relation = {
+					first = this
+					second = c:FRA
+					type = relation_type:alliance
+				}
+				add_opinion = { target = c:FRA modifier = opinion_renewed_french_scottish_bond }
+				reverse_add_opinion = { target = c:FRA modifier = opinion_renewed_french_scottish_bond }
+			}
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}

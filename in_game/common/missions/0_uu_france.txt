@@ -1,0 +1,49 @@
+﻿uu_france_missions = {
+	icon = generic_capable_cabinet
+	repeatable = no
+	chance = 3600
+	player_playstyle = diplomatic
+	visible = {
+		game_has_missions_enabled = yes
+		tag = FRA
+	}
+	on_start = {
+
+	}
+
+	on_abort = {
+
+	}
+
+	on_completion = {
+
+	}
+
+    mission_uufra_integrate_appanages = { #Princes of the Blood
+        icon = crown_power_advance_renaissance
+        visible = { has_variable = uu_mtstart_fra_integrate_appanages_var }
+        enabled = { #Triggered by flavor_fra.1100
+            has_reform = government_reform:french_feudal_nobility
+			any_subject = {
+				is_subject_type = appanage
+				count < 1
+			}
+        }
+        duration = 0
+        on_completion = {   #Reward is flavor_fra.1103
+            set_variable = uu_mtend_fra_integrate_appanages_var 
+            trigger_event_non_silently = { id = flavor_fra.1103 }
+            show_as_tooltip = {
+                remove_reform = government_reform:french_feudal_nobility
+                set_variable = { name = enable_centralized_fra_reform value = 1 }
+                add_reform = government_reform:french_centralized_monarchy
+                change_societal_value = {
+                    type = centralization_vs_decentralization
+                    value = societal_value_huge_move_to_left
+                }
+                add_prestige = prestige_extreme_bonus
+                add_legitimacy = legitimacy_extreme_bonus
+            }
+        }
+    }
+} 

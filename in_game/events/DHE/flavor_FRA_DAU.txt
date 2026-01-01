@@ -1,0 +1,158 @@
+﻿namespace = flavor_fra_dau
+
+flavor_fra_dau.101 = { # The Sale of Viennois # For Viennois
+    type = country_event
+    title = flavor_fra_dau.101.title
+    desc = flavor_fra_dau.101.desc
+
+    fire_only_once = yes
+    dynamic_historical_event = {
+        tag = DAU
+        from = 1348.1.1 
+        to = 1351.1.1 
+        monthly_chance = 25
+    }
+
+
+    trigger = {
+        at_war = no
+        exists = ruler
+        exists = character:dau_humbert_ii_sancerre
+        ruler = character:dau_humbert_ii_sancerre
+        country_exists = c:FRA
+        c:FRA = {
+            has_ruler = yes
+        }
+    }
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}	
+
+    immediate = {
+        event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+        ruler ?= {
+            save_scope_as = scope_rule_dau
+        }
+        c:FRA = {
+            save_scope_as = target_country
+            ruler ?= {
+                save_scope_as = scope_rule_fra
+            }
+        }
+    }
+    
+
+    option = { # Offer the agreement to the French Court
+        name = flavor_fra_dau.101.a    
+        historical_option = yes        
+        ai_chance = {
+            base = 95
+        }            
+        custom_tooltip = dau_sale_of_viennois_tt    
+        scope:target_country = {
+            set_variable = { name = sale_of_viennois_offer value = 1 }            
+        }
+    }
+    option = { # We will never sell out our independence!
+        name = flavor_fra_dau.101.b
+        ai_chance = {
+            base = 5
+        }            
+        add_prestige = prestige_severe_bonus
+        add_inflation = inflation_extreme_penalty        
+    }
+}
+
+
+
+
+flavor_fra_dau.100 = { # Delphinal Statute
+    type = country_event
+    title = flavor_fra_dau.100.title
+    desc = flavor_fra_dau.100.desc
+
+    fire_only_once = yes
+    dynamic_historical_event = {
+        tag = FRA
+        from = 1348.1.1 
+        to = 1351.1.1 
+        monthly_chance = 100
+    }
+
+
+    trigger = {
+        country_exists = c:DAU
+        has_variable = sale_of_viennois_offer
+        exists = ruler
+        exists = character:dau_humbert_ii_sancerre
+        c:DAU = {
+            ruler ?= character:dau_humbert_ii_sancerre
+        }
+    }
+	
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}	
+
+
+    immediate = {
+        event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+        ruler = {
+            save_scope_as = scope_rule_fra
+        }
+        c:DAU = {
+            save_scope_as = target_country
+            ruler = {
+                save_scope_as = scope_rule_dau
+            }            
+        }
+    }    
+    
+    option = { # We shall accept his offer and make Dauphin a distinct royal title
+        name = flavor_fra_dau.100.a    
+        historical_option = yes        
+        ai_chance = {
+            base = 70
+        }            
+        set_variable = { name = adopted_the_title_dauphin value = 1 }
+        custom_tooltip = heirs_will_inherit_dauphin_title
+        add_legitimacy = 15
+        add_gold = {
+            value = root.monthly_income_trade_and_tax
+            multiply = -12
+        }         
+        scope:target_country = {
+            add_gold = {
+                value = 1000
+            }                 
+            set_new_ruler = c:FRA.ruler    
+        }            
+    }
+    option = { # Accept his offer, but merge it with other royal titles
+        name = flavor_fra_dau.100.b        
+        ai_chance = {
+            base = 10
+        }                
+        add_legitimacy = -10
+        add_gold = {
+            value = root.monthly_income_trade_and_tax
+            multiply = -8
+        }         
+        scope:target_country = {
+            add_gold = {
+                value = 1000
+            }                 
+            set_new_ruler = c:FRA.ruler    
+        }                    
+    }    
+    option = { # The Crown will not bail him out under no circumstances
+        name = flavor_fra_dau.100.c
+        ai_chance = {
+            base = 20
+        }                
+        add_prestige = 10        
+    }    
+}
