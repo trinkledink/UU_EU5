@@ -854,8 +854,9 @@ ancient_french_taxation = {
 
 	locked = {
 		custom_tooltip = {
-			text = fra_ancient_french_taxation_removal_conditions
-			societal_value:centralization_vs_decentralization >= -50
+			text = uu_france_mission_2_CRITERIA_DESCRIPTION	#UU
+			#societal_value:centralization_vs_decentralization >= -50	#uu moved to a mission 
+			always = yes
 		}
 	}
 

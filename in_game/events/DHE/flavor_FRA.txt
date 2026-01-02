@@ -1,6 +1,6 @@
 ﻿namespace = flavor_fra
 
-flavor_fra.1 = { # Birth of a Permanent Taxation System
+flavor_fra.1 = { # Birth of a Permanent Taxation System			#UU integrated into missions
 	type = country_event
 	title = flavor_fra.1.title
 	desc = flavor_fra.1.desc
@@ -10,9 +10,13 @@ flavor_fra.1 = { # Birth of a Permanent Taxation System
 	fire_only_once = yes
 	dynamic_historical_event = {
 		tag = FRA
-		from = 1420.1.1
-		to = 1460.1.1
-		monthly_chance = 10
+		from = 1437.1.1
+		to = 1836.1.1
+		monthly_chance = 1 #uu should only fire when triggered
+	}
+
+	trigger = {
+		has_variable = uu_mtend_fra_reform_taxation_var
 	}
 
 	illustration_tags = {
@@ -2877,12 +2881,14 @@ flavor_fra.1103 = { # Consolidation of Appanage Lands
 	title = flavor_fra.1103.title
 	desc = flavor_fra.1103.desc
 
-	dynamic_historical_event = {
+	trigger = {
 		has_variable = uu_mtend_fra_integrate_appanages_var
+	}
+	dynamic_historical_event = {
 		tag = FRA
 		from = 1405.1.1
 		to = 1836.1.1
-		monthly_chance = 1	#should only fire when triggered
+		monthly_chance = 1	#uu should only fire when triggered
 	}
 	fire_only_once = yes
 
@@ -5222,7 +5228,7 @@ flavor_fra.1174 = { # Naval raids successful
 	}
 }
 
-flavor_fra.1175 = { # Disloyalty in Normandy
+flavor_fra.1175 = { # Disloyalty in Normandy							#UU integrated into missions
 	type = country_event
 	title = flavor_fra.1175.title
 	desc = flavor_fra.1175.desc
@@ -5233,7 +5239,7 @@ flavor_fra.1175 = { # Disloyalty in Normandy
 		tag = FRA
 		from = 1376.1.1
 		to = 1395.1.1
-		monthly_chance = 100
+		monthly_chance = 1	#uu should only fire when triggered 
 	}
 
 	trigger = {
@@ -5254,6 +5260,7 @@ flavor_fra.1175 = { # Disloyalty in Normandy
 	}
 
 	immediate = {
+		set_variable = uu_mtstart_fra_normandy_var
 		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
 		ruler ?= {
             save_scope_as = fra_ruler
@@ -5275,6 +5282,7 @@ flavor_fra.1175 = { # Disloyalty in Normandy
 	option = { # Clamp down on the Norman lords
 		name = flavor_fra.1175.a
 		historical_option = yes
+		custom_tooltip = uu_mtstart_fra_normandy
 		add_stability = stability_mild_bonus
 		c:NRM = {
 			add_country_modifier = { modifier = fra_disloyal_norman_lords years = 10 mode = add }
@@ -5284,6 +5292,7 @@ flavor_fra.1175 = { # Disloyalty in Normandy
 	
 	option = { # Appease the Norman lords to avoid enraging other subjects
 		name = flavor_fra.1175.b
+		custom_tooltip = uu_mtstart_fra_normandy
 		add_legitimacy = legitimacy_mild_penalty
 		add_country_modifier = { modifier = fra_appeasing_norman_lords years = 10 mode = add }
 		c:NRM = {
@@ -5302,11 +5311,13 @@ flavor_fra.1176 = { # Consolidating the Norman Domain
 	dynamic_historical_event = {
 		tag = FRA
 		from = 1380.1.1
-		to = 1410.1.1
-		monthly_chance = 12
+		to = 1836.1.1
+		monthly_chance = 1	#uu should only fire when triggered
 	}
 
 	trigger = {
+		has_variable = uu_mtend_fra_normandy_var
+		NOT = { has_variable = uu_mtfail_fra_normandy_var }
 		has_variable = disloyal_normandy_fired
 		has_ruler = yes
 		country_exists = c:NRM
@@ -5400,6 +5411,7 @@ flavor_fra.1177 = { # Norman Lords Swear Fealty to England
 	}
 
 	immediate = {
+		set_variable = uu_mtfail_fra_normandy_var
 		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
 		root = {
 			save_scope_as = french_nation
@@ -5439,6 +5451,7 @@ flavor_fra.1177 = { # Norman Lords Swear Fealty to England
 
 	option = { # We will reclaim Normandy and execute the traitors!
 		name = flavor_fra.1177.a
+		set_variable = uu_mtend_fra_normandy_var
 		c:NRM = {
 			set_variable = new_norman_duke
 			trigger_event_non_silently = flavor_fra_nrm.2

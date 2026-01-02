@@ -1,23 +1,45 @@
 ﻿l_english:
- #Please do not rename this file. It stops working for whatever reason if you rename it from generic_missions_l_english.yml
- uu_france_missions: "Princes of the Blood"
- uu_france_missions_DESCRIPTION: "$flavor_fra.1100.historical_info$"
- uu_france_missions_CRITERIA_DESCRIPTION: "France has no more subjects of the Appanage subject type"
- uu_france_missions_BUTTON_TOOLTIP: "The Appanage system once provided us with stability, but now it only weakens the Crown and divides our strength. We must be rid of this system to become a more centralized and modern nation."
- uu_france_missions_BUTTON_DETAILS: "$uu_france_missions_BUTTON_TOOLTIP$"
+ #N/B: Please do not rename this file. It stops working for whatever reason if you rename it from generic_missions_l_english.yml
+ uu_france_mission_1: "Princes of the Blood"
+ uu_france_mission_1_DESCRIPTION: "$flavor_fra.1100.historical_info$"
+ uu_france_mission_1_CRITERIA_DESCRIPTION: "France has no more subjects of the Appanage subject type"
+ uu_france_mission_1_BUTTON_TOOLTIP: "The Appanage system once provided us with stability, but now it only weakens the Crown and divides our strength. We must be rid of this system to become a more centralized and modern nation."
+ uu_france_mission_1_BUTTON_DETAILS: "$uu_france_mission_1_BUTTON_TOOLTIP$"
 
- mission_uufra_integrate_appanages: "Princes of the Blood"
- mission_uufra_integrate_appanages_desc: "The Appanage system once provided us with stability, but now it only weakens the Crown and divides our strength. We must be rid of this system to become a more centralized and modern nation."
+ mission_uufra_integrate_appanages: "$uu_france_mission_1$"
+ mission_uufra_integrate_appanages_desc: "$uu_france_mission_1_BUTTON_TOOLTIP$"
  mission_uufra_integrate_appanages_tip: "@arrow_bonus_tier_1! Appanages require 190 opinion to begin integration, instead of 150.\n@arrow_bonus_tier_1! If the ruler of an Appanage becomes our king, the Appanage will become a Fiefdom automatically."
 
- uu_mtstart_fra_integrate_appanages: "Begin mission #italic Princes of the Blood#!"
+ uu_mtstart_fra_integrate_appanages: "Starts mission #italic Princes of the Blood#!"
+
+ uu_france_mission_2: "Establishing a New #italic Taille#!"
+ uu_france_mission_2_DESCRIPTION: "$flavor_fra.1.historical_info$"
+ uu_france_mission_2_CRITERIA_DESCRIPTION: "We have #G +50.00#! [ShowSocietyDirectionName('centralization')|l], or the year is at least 1437"
+ uu_france_mission_2_BUTTON_TOOLTIP: "The old taxation system, which was only collected in 'exceptional' circumstances, is not efficient enough to fund a modern state with a professional army. We should reform the taxation system to allow us to collect tax on a yearly basis."
+ uu_france_mission_2_BUTTON_DETAILS: "$uu_france_mission_2_BUTTON_TOOLTIP$"
+
+ mission_uufra_reform_taxation: "$uu_france_mission_2$"
+ mission_uufra_reform_taxation_desc: "$uu_france_mission_2_BUTTON_TOOLTIP$"
+ mission_uufra_reform_taxation_tip: "@arrow_bonus_tier_1! Integrating subjects can make it easier to increase [ShowSocietyDirectionName('centralization')|l]."
+
+ mission_uufra_reform_taxation_tt: "We have greater than +50.00#! [ShowSocietyDirectionName('centralization')|Y]"
+
+ uu_france_mission_3: "The Question of Normandy"
+ uu_france_mission_3_DESCRIPTION: "$flavor_fra.1.historical_info$"
+ uu_france_mission_3_CRITERIA_DESCRIPTION: "Normandy is our subject with under #G 30#! [locations|e], and over #G 85.00%#! loyalty"
+ uu_france_mission_3_BUTTON_TOOLTIP: "Normandy has long been among the most powerful and autonomous appanages, and the Crown is eager to quash its power."
+ uu_france_mission_3_BUTTON_DETAILS: "$uu_france_mission_3_BUTTON_TOOLTIP$"
+
+ mission_uufra_normandy: "$uu_france_mission_3$"
+ mission_uufra_normandy_desc: "$uu_france_mission_3_BUTTON_TOOLTIP$"
+ mission_uufra_normandy_tip: "$normandy_event_chain_reward$"
+
+ mission_uufra_normandy_tt: "Has has the event 'Disloyalty in Normandy'"
+ mission_uufra_normandy_tt2: "Normandy has broken free (Mission failure)"
+ uu_mtstart_fra_normandy: "Starts mission #italic The Question of Normandy#!" 
 
 
-
-
-
-
- #Do not delete the following. It is important to keep
+ #N/B: Do not delete the following. It is important to keep
 
  mission_select_market: "Select a [market|e] for the [mission|e]"
  mission_no_markets: "$no_valid_markets$"

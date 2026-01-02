@@ -1,8 +1,8 @@
 ﻿namespace = flavor_fra_nrm
 
 
-flavor_fra_nrm.1 = { # Growing Disloyalty
-	type = country_event
+flavor_fra_nrm.1 = { # Growing Disloyalty						#UU integrated into missions
+	type = country_event	
 	title = flavor_fra_nrm.1.title
 	desc = flavor_fra_nrm.1.desc
 
@@ -12,7 +12,7 @@ flavor_fra_nrm.1 = { # Growing Disloyalty
 		tag = NRM
 		from = 1376.1.1
 		to = 1402.1.1
-		monthly_chance = 20
+		monthly_chance = 100	#UU
 	}
 
 

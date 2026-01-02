@@ -1,11 +1,12 @@
-﻿uu_france_missions = {
+﻿uu_france_mission_1 = { #Integrate Appanages
 	icon = generic_capable_cabinet
 	repeatable = no
 	chance = 3600
 	player_playstyle = diplomatic
-	visible = {
-		game_has_missions_enabled = yes
+	visible = {                                                             #Triggered by flavor_fra.1100
 		tag = FRA
+        has_variable = uu_mtstart_fra_integrate_appanages_var
+        NOT = { has_variable = uu_mtend_fra_integrate_appanages_var }       
 	}
 	on_start = {
 
@@ -15,14 +16,26 @@
 
 	}
 
-	on_completion = {
-
+	on_completion = {                                                       #Reward is flavor_fra.1103
+        set_variable = uu_mtend_fra_integrate_appanages_var
+        remove_variable = uu_mtstart_fra_integrate_appanages_var
+        trigger_event_non_silently = { id = flavor_fra.1103 } 
+        show_as_tooltip = {
+            remove_reform = government_reform:french_feudal_nobility
+            set_variable = { name = enable_centralized_fra_reform value = 1 }
+            add_reform = government_reform:french_centralized_monarchy
+            change_societal_value = {
+                type = centralization_vs_decentralization
+                value = societal_value_huge_move_to_left
+            }
+            add_prestige = prestige_extreme_bonus
+            add_legitimacy = legitimacy_extreme_bonus
+        }
 	}
 
     mission_uufra_integrate_appanages = { #Princes of the Blood
         icon = crown_power_advance_renaissance
-        visible = { has_variable = uu_mtstart_fra_integrate_appanages_var }
-        enabled = { #Triggered by flavor_fra.1100
+        enabled = { 
             has_reform = government_reform:french_feudal_nobility
 			any_subject = {
 				is_subject_type = appanage
@@ -30,20 +43,134 @@
 			}
         }
         duration = 0
-        on_completion = {   #Reward is flavor_fra.1103
-            set_variable = uu_mtend_fra_integrate_appanages_var 
-            trigger_event_non_silently = { id = flavor_fra.1103 }
+        on_completion = {   
             show_as_tooltip = {
-                remove_reform = government_reform:french_feudal_nobility
-                set_variable = { name = enable_centralized_fra_reform value = 1 }
-                add_reform = government_reform:french_centralized_monarchy
-                change_societal_value = {
-                    type = centralization_vs_decentralization
-                    value = societal_value_huge_move_to_left
-                }
-                add_prestige = prestige_extreme_bonus
-                add_legitimacy = legitimacy_extreme_bonus
+                trigger_event_non_silently = { id = flavor_fra.1103 }
             }
         }
     }
 } 
+
+uu_france_mission_2 = {
+	icon = generic_capital_economy
+	repeatable = no
+	chance = 3600
+	player_playstyle = administrative
+	visible = {                                                             #Visible from game start
+		tag = FRA
+        has_reform = government_reform:ancient_french_taxation
+        NOT = { has_variable = uu_mtend_fra_reform_taxation_var }
+	}
+	on_start = {
+
+	}
+
+	on_abort = {
+
+	}
+
+	on_completion = {                                                       #Reward is flavor_fra.1
+        set_variable = uu_mtend_fra_reform_taxation_var
+        trigger_event_non_silently = { id = flavor_fra.1 }
+        show_as_tooltip = {
+		    remove_reform = government_reform:ancient_french_taxation
+        }
+        custom_tooltip = enables_taille_laws
+	}
+
+    mission_uufra_reform_taxation = { #The Taille
+        icon = court_accounting
+        visible = {  }
+        enabled = {
+            owns = location:paris
+            stability > 25
+            at_war = no
+            has_ruler = yes
+            OR = {
+                current_year >= 1437
+                custom_tooltip = {
+                    text = mission_uufra_reform_taxation_tt
+                    societal_value:centralization_vs_decentralization < -50
+                }
+            }
+        }
+        duration = 0
+        on_completion = { 
+            show_as_tooltip = {
+                trigger_event_non_silently = { id = flavor_fra.1 }
+            }
+        }
+    }
+}
+
+uu_france_mission_3 = {
+    icon = generic_vassal_ties
+	repeatable = no
+	chance = 3600
+	player_playstyle = diplomatic
+	visible = {                                                             #Only visible when HYW appears
+		tag = FRA
+        country_exists = c:NRM
+		c:NRM ?= {
+			is_subject_of = c:FRA
+		}
+        is_situation_active = situation:hundred_years_war
+	}
+
+    enabled = {
+        current_year >= 1376
+        is_situation_active = situation:hundred_years_war
+        OR = {
+			is_rival_of = c:ENG
+			c:ENG = {
+				is_rival_of = c:FRA
+				is_independent_or_autonomous_subject = yes
+			}
+		}
+        custom_tooltip = {
+            text = mission_uufra_normandy_tt
+            has_variable = uu_mtstart_fra_normandy_var
+        }
+    }
+	on_start = {
+	}
+
+	on_abort = {
+
+	}
+
+    on_completion = {                                                       #Reward is flavor_fra.1176
+        set_variable = uu_mtend_fra_normandy_var
+	}
+
+    mission_uufra_normandy = { #Annex Normandy
+        icon = glorious_arms
+        visible = {  }
+        enabled = {
+            OR = {
+                c:NRM ?= {
+                    NOR = { 
+                        has_country_modifier = fra_appeasing_norman_lords
+                        has_country_modifier = fra_disloyal_norman_lords_appeased
+                    }
+                    is_subject_of = c:FRA
+                    subject_loyalty > 85
+                    num_locations < 30
+                }
+                custom_tooltip = {
+                    text = mission_uufra_normandy_tt2
+                    has_variable = uu_mtfail_fra_normandy_var
+                }
+            }
+        }
+        duration = 0
+        on_completion = {
+            if = {
+                limit = { NOT = { has_variable = uu_mtfail_fra_normandy_var } }
+                show_as_tooltip = {
+                    trigger_event_non_silently = { id = flavor_fra.1176 }
+                }
+            } 
+        }
+    }
+}
