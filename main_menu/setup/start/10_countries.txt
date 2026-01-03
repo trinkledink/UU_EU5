@@ -39420,7 +39420,7 @@ countries = {
 			tesin bielsko bytom kozle pszczyna raciborz siewierz toszek
 			wroclaw brzeg grodkow nysa niemodlin olawa sroda_slaska
 			zagan krosno_odrzanskie sulechow zary
-			oswiecim zywiec
+			oswiecim zywiec wschowa
 		}
 		starting_technology_level = 3
 		include = "catholic_monarchy_no_coast"
