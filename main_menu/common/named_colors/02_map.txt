@@ -2340,7 +2340,7 @@ colors = {
 	map_derung = rgb { 210 100 205 }
 	map_YUA = rgb { 16 95 135 }			#UU
 	#Chinese Revolters
-	map_MNG = rgb { 179 128 104 }
+	map_MNG = rgb { 239 67 70 } 		#UU
 	map_QNG = rgb { 237 152 18 }
 	map_CSO = rgb { 153 51 51 }
 	map_WUU = rgb { 126 87 198 }
@@ -2350,7 +2350,7 @@ colors = {
 	map_CXI = rgb { 140 183 154 }
 	map_CTG = rgb { 218 234 15 }
 	map_CFN = rgb { 239 228 176 }
-	map_CMO = rgb { 239 67 70 }
+	map_CMO = rgb { 179 128 104 }		#UU
 	map_CGU = rgb { 70 239 160 }
 	map_CNP = rgb { 254 173 200 }
 	map_CDN = rgb { 163 177 255 }
