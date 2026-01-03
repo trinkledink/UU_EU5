@@ -15,10 +15,6 @@ flavor_fra.1 = { # Birth of a Permanent Taxation System			#UU integrated into mi
 		monthly_chance = 1 #uu should only fire when triggered
 	}
 
-	trigger = {
-		has_variable = uu_mtend_fra_reform_taxation_var
-	}
-
 	illustration_tags = {
 		10 = angry
 		10 = interior
@@ -33,6 +29,7 @@ flavor_fra.1 = { # Birth of a Permanent Taxation System			#UU integrated into mi
 	}
 
 	trigger = {
+		has_variable = uu_mtend_fra_reform_taxation_var
 		owns = location:paris
 		stability > 25
 		at_war = no
@@ -2881,9 +2878,6 @@ flavor_fra.1103 = { # Consolidation of Appanage Lands
 	title = flavor_fra.1103.title
 	desc = flavor_fra.1103.desc
 
-	trigger = {
-		has_variable = uu_mtend_fra_integrate_appanages_var
-	}
 	dynamic_historical_event = {
 		tag = FRA
 		from = 1405.1.1
@@ -2905,6 +2899,7 @@ flavor_fra.1103 = { # Consolidation of Appanage Lands
 	}
 
 	trigger = {
+		has_variable = uu_mtend_fra_integrate_appanages_var
 		has_reform = government_reform:french_feudal_nobility
 		c:FRA = {
 			any_subject = {
