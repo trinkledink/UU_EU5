@@ -1,8 +1,4 @@
-﻿
-###############################################
-# Rivers in Roads map modes, created by GDI_JeffL
-###############################################
-###############################
+﻿###############################
 # Enable roads/rivers in any map mode:
 # gradient_width = 0.111   # Rivers only
 # gradient_width = 0.222   # Roads only
@@ -236,7 +232,7 @@ terrain = {	#UU This is unchanged from vanilla. This has only been added here to
 	color_and_names_refresh_counters = { LocationOwnerChanged CountryStatus }
 }
 
-roads = {
+roads = { 										#Better Road Builder, by GDI_JeffL
 	color_mode = roads
 	small_map_names = location
 	medium_map_names = country
@@ -277,7 +273,7 @@ roads = {
 	}
 }
 
-road_builder = {
+road_builder = {								#Better Road Builder, by GDI_JeffL
 	color_mode = road_builder
 	small_map_names = location
 	medium_map_names = location
@@ -312,4 +308,271 @@ road_builder = {
 	color_and_names_refresh_counters = {
 		ProductionList
 	}
+}
+
+max_tax_base = {								#New tax base mapmodes, by sebast28
+	map_color = {
+		if = {
+			limit = {
+				is_land = no
+			}
+			value = define:NMapColors|WATER_MAP_COLOR
+		}
+		else_if = {
+			limit = {
+				local_control = 0
+			}
+			value = define:NMapColors|DEFAULT_COLOR
+		}
+		else_if = {
+			limit = {
+				ntbmm_max_tax_base < 10
+			}
+			lerp = {
+				min_color = define:NMapColors|MAP_COLOR_MIN
+				max_color = define:NMapColors|MAP_COLOR_LOW
+				factor = {
+					value = ntbmm_max_tax_base
+					divide = 10
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ntbmm_max_tax_base < 30
+			}
+			lerp = {
+				min_color = define:NMapColors|MAP_COLOR_LOW
+				max_color = define:NMapColors|MAP_COLOR_MID
+				factor = {
+					value = ntbmm_max_tax_base
+					subtract = 10
+					divide = 20
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ntbmm_max_tax_base < 70
+			}
+			lerp = {
+				min_color = define:NMapColors|MAP_COLOR_MID
+				max_color = define:NMapColors|MAP_COLOR_HIGH
+				factor = {
+					value = ntbmm_max_tax_base
+					subtract = 30
+					divide = 40
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ntbmm_max_tax_base < 150
+			}
+			lerp = {
+				min_color = define:NMapColors|MAP_COLOR_HIGH
+				max_color = define:NMapColors|MAP_COLOR_MAX
+				factor = {
+					value = ntbmm_max_tax_base
+					subtract = 70
+					divide = 80
+				}
+			}
+		}
+		else = {
+			lerp = {
+				min_color = define:NMapColors|MAP_COLOR_MAX
+				max_color = define:NMapColors|MAP_COLOR_TOP
+				factor = {
+					value = ntbmm_max_tax_base
+					max = 310
+					subtract = 150
+					divide = 160
+				}
+			}
+		}
+	}
+	
+	tooltip_key = {
+		if = {
+			limit = {
+				is_land = no
+			}
+			value = NO_MAX_TAX_BASE_MAPMODE_TT
+		}
+		else = {
+			value = MAX_TAX_BASE_MAPMODE_TT
+		}
+	}
+
+	small_map_names = location
+	medium_map_names = country
+	large_map_names = country
+
+	small_tooltip_context = location
+	medium_tooltip_context = location
+	large_tooltip_context = country
+
+	flatmap_behaviour = Always
+	use_fow = no
+
+	category = economy
+	index = 0
+
+	map_markers = {
+		market_marker = no
+		fort_marker = no
+		toll_marker = no
+	}
+	
+	gradient_parameters = {
+		zoom_step = @zoom_step_near
+
+		gradient_alpha_inside = 	@data_gradient_alpha_inside
+		gradient_alpha_outside = 	@data_gradient_alpha_outside
+		gradient_width = 			@data_gradient_width
+		gradient_color_mult =		@data_gradient_color_mult
+		edge_width = 				@data_edge_width
+		edge_sharpness = 			@data_edge_sharpness
+		edge_alpha = 				@data_edge_alpha
+		edge_color_mult = 			@data_edge_color_mult
+		before_lighting_blend =		@data_before_lighting_blend
+		after_lighting_blend =		@data_after_lighting_blend
+	}
+	
+	color_refresh_counters = { LocationTaxBaseChanged }
+	color_and_names_refresh_counters = { LocationOwnerChanged CountryStatus }
+}
+
+uncontrolled_tax_base = {						#New tax base mapmodes, by sebast28
+	map_color = {
+		if = {
+			limit = {
+				is_land = no
+			}
+			value = define:NMapColors|WATER_MAP_COLOR
+		}
+		else_if = {
+			limit = {
+				local_control = 0
+			}
+			value = define:NMapColors|DEFAULT_COLOR
+		}
+		else_if = {
+			limit = {
+				ntbmm_uncontrolled_tax_base < 10
+			}
+			lerp = {
+				min_color = define:NMapColors|MAP_COLOR_MIN
+				max_color = define:NMapColors|MAP_COLOR_LOW
+				factor = {
+					value = ntbmm_uncontrolled_tax_base
+					divide = 10
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ntbmm_uncontrolled_tax_base < 30
+			}
+			lerp = {
+				min_color = define:NMapColors|MAP_COLOR_LOW
+				max_color = define:NMapColors|MAP_COLOR_MID
+				factor = {
+					value = ntbmm_uncontrolled_tax_base
+					subtract = 10
+					divide = 20
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ntbmm_uncontrolled_tax_base < 60
+			}
+			lerp = {
+				min_color = define:NMapColors|MAP_COLOR_MID
+				max_color = define:NMapColors|MAP_COLOR_HIGH
+				factor = {
+					value = ntbmm_uncontrolled_tax_base
+					subtract = 30
+					divide = 30
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ntbmm_uncontrolled_tax_base < 100
+			}
+			lerp = {
+				min_color = define:NMapColors|MAP_COLOR_HIGH
+				max_color = define:NMapColors|MAP_COLOR_MAX
+				factor = {
+					value = ntbmm_uncontrolled_tax_base
+					subtract = 60
+					divide = 40
+				}
+			}
+		}
+		else = {
+			lerp = {
+				min_color = define:NMapColors|MAP_COLOR_MAX
+				max_color = define:NMapColors|MAP_COLOR_TOP
+				factor = {
+					value = ntbmm_uncontrolled_tax_base
+					subtract = 100
+					divide = 50
+				}
+			}
+		}
+	}
+
+	tooltip_key = {
+		if = {
+			limit = {
+				is_land = no
+			}
+			value = NO_UNCONTROLLED_TAX_BASE_MAPMODE_TT
+		}
+		else = {
+			value = UNCONTROLLED_TAX_BASE_MAPMODE_TT
+		}
+	}
+
+	small_map_names = location
+	medium_map_names = country
+	large_map_names = country
+
+	small_tooltip_context = location
+	medium_tooltip_context = location
+	large_tooltip_context = country
+
+	flatmap_behaviour = Always
+	use_fow = no
+
+	category = economy
+	index = 0
+
+	map_markers = {
+		market_marker = no
+		fort_marker = no
+		toll_marker = no
+	}
+	
+	gradient_parameters = {
+		zoom_step = @zoom_step_near
+
+		gradient_alpha_inside = 	@data_gradient_alpha_inside
+		gradient_alpha_outside = 	@data_gradient_alpha_outside
+		gradient_width = 			@data_gradient_width
+		gradient_color_mult =		@data_gradient_color_mult
+		edge_width = 				@data_edge_width
+		edge_sharpness = 			@data_edge_sharpness
+		edge_alpha = 				@data_edge_alpha
+		edge_color_mult = 			@data_edge_color_mult
+		before_lighting_blend =		@data_before_lighting_blend
+		after_lighting_blend =		@data_after_lighting_blend
+	}
+	
+	color_refresh_counters = { LocationTaxBaseChanged }
+	color_and_names_refresh_counters = { LocationOwnerChanged CountryStatus }
 }

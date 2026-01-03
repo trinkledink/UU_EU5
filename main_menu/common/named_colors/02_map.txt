@@ -2338,7 +2338,7 @@ colors = {
 	map_bonan = rgb { 36 180 150 }
 	map_yugur = rgb { 195 230 225 }
 	map_derung = rgb { 210 100 205 }
-	map_YUA = hsv360 { 64 62 61 }
+	map_YUA = rgb { 16 95 135 }			#UU
 	#Chinese Revolters
 	map_MNG = rgb { 179 128 104 }
 	map_QNG = rgb { 237 152 18 }

@@ -14,10 +14,10 @@ Current Features:
 - Silesia starts independent and united
 
 
-Integration of UI mods:
+Integration of mods:
 - GDI_JeffL's **Better Road Builder**
   - Files changed (8):
-    - in_game\gfx\map\map_modes\00_GDI_JeffL_roads.txt
+    - in_game\gfx\map\map_modes\00_uu_mapmodes.txt
     - in_game\gfx\map\spline_network\spline_styles\00_default.txt
     - main_menu\gfx\FX\river_surface.shader
     - main_menu\gfx\FX\road_gravel.shader
@@ -31,6 +31,13 @@ Integration of UI mods:
 - Mazutaki's **Dense Tech Tree**
   - Files changed (1):
     - in_game\gui\technology_lateralview.gui
+- sebast28's **New tax base mapmodes**
+  - Files changed (5):
+    - in_game\gfx\map\map_modes\00_uu_mapmodes.txt
+    - main_menu\common\script_values\tax_base_values.txt
+    - main_menu\gfx\interface\icons\map_modes\max_tax_base.dds
+    - main_menu\gfx\interface\icons\map_modes\uncontrolled_tax_base.dds
+    - main_menu\localization\english\max_tax_base_interfaces_l_english.yml  
 
 
 # Working in this Repo
