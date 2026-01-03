@@ -10,6 +10,7 @@
  mission_uufra_integrate_appanages_desc: "$uu_france_mission_1_BUTTON_TOOLTIP$"
  mission_uufra_integrate_appanages_tip: "@arrow_bonus_tier_1! Appanages require 190 opinion to begin integration, instead of 150.\n@arrow_bonus_tier_1! If the ruler of an Appanage becomes our king, the Appanage will become a Fiefdom automatically."
 
+ mission_uufra_integrate_appanages_tt: "Has had the event 'Princes of the Blood'"
  uu_mtstart_fra_integrate_appanages: "Starts mission #italic Princes of the Blood#!"
 
  uu_france_mission_2: "Establishing a New #italic Taille#!"
@@ -25,7 +26,7 @@
  mission_uufra_reform_taxation_tt: "We have greater than +50.00#! [ShowSocietyDirectionName('centralization')|Y]"
 
  uu_france_mission_3: "The Question of Normandy"
- uu_france_mission_3_DESCRIPTION: "$flavor_fra.1.historical_info$"
+ uu_france_mission_3_DESCRIPTION: "Recent efforts to further consolidate power to the French crown have been met with fierce backlash in the Duchy of Normandy. While the territories of Normandy have long been closely managed as an extension of the French royal domain, they have also been one of the more autonomous regions. With the threat the rebellious lords within Normandy pose, the King desires to quickly quash them, while others within the court fear that such harsh action may enrage the other Appanages."
  uu_france_mission_3_CRITERIA_DESCRIPTION: "Normandy is our subject with under #G 30#! [locations|e], and over #G 85.00%#! loyalty"
  uu_france_mission_3_BUTTON_TOOLTIP: "Normandy has long been among the most powerful and autonomous appanages, and the Crown is eager to quash its power."
  uu_france_mission_3_BUTTON_DETAILS: "$uu_france_mission_3_BUTTON_TOOLTIP$"
@@ -34,7 +35,7 @@
  mission_uufra_normandy_desc: "$uu_france_mission_3_BUTTON_TOOLTIP$"
  mission_uufra_normandy_tip: "$normandy_event_chain_reward$"
 
- mission_uufra_normandy_tt: "Has has the event 'Disloyalty in Normandy'"
+ mission_uufra_normandy_tt: "Has had the event 'Disloyalty in Normandy'"
  mission_uufra_normandy_tt2: "Normandy has broken free (Mission failure)"
  uu_mtstart_fra_normandy: "Starts mission #italic The Question of Normandy#!" 
 

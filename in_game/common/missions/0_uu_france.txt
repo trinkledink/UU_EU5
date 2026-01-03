@@ -8,6 +8,13 @@
         has_variable = uu_mtstart_fra_integrate_appanages_var
         NOT = { has_variable = uu_mtend_fra_integrate_appanages_var }       
 	}
+
+    enabled = {
+        custom_tooltip = {
+            text = mission_uufra_integrate_appanages_tt
+            has_variable = uu_mtstart_fra_integrate_appanages_var
+        }
+    }
 	on_start = {
 
 	}
@@ -34,7 +41,9 @@
 	}
 
     mission_uufra_integrate_appanages = { #Princes of the Blood
+        final = yes
         icon = crown_power_advance_renaissance
+        visible = {  }
         enabled = { 
             has_reform = government_reform:french_feudal_nobility
 			any_subject = {
@@ -79,6 +88,7 @@ uu_france_mission_2 = {
 	}
 
     mission_uufra_reform_taxation = { #The Taille
+        final = yes
         icon = court_accounting
         visible = {  }
         enabled = {
@@ -114,7 +124,6 @@ uu_france_mission_3 = {
 		c:NRM ?= {
 			is_subject_of = c:FRA
 		}
-        is_situation_active = situation:hundred_years_war
 	}
 
     enabled = {
@@ -133,6 +142,7 @@ uu_france_mission_3 = {
         }
     }
 	on_start = {
+
 	}
 
 	on_abort = {
@@ -141,9 +151,16 @@ uu_france_mission_3 = {
 
     on_completion = {                                                       #Reward is flavor_fra.1176
         set_variable = uu_mtend_fra_normandy_var
+        annex_country = { country = c:NRM }
+        change_societal_value = {
+			type = centralization_vs_decentralization
+			value = societal_value_minor_move_to_left
+		}
+        trigger_event_silently = { id = flavor_fra.1176 }
 	}
 
     mission_uufra_normandy = { #Annex Normandy
+        final = yes
         icon = glorious_arms
         visible = {  }
         enabled = {
@@ -168,7 +185,11 @@ uu_france_mission_3 = {
             if = {
                 limit = { NOT = { has_variable = uu_mtfail_fra_normandy_var } }
                 show_as_tooltip = {
-                    trigger_event_non_silently = { id = flavor_fra.1176 }
+                    annex_country = { country = c:NRM }
+                    change_societal_value = {
+                        type = centralization_vs_decentralization
+                        value = societal_value_minor_move_to_left
+                    }
                 }
             } 
         }
