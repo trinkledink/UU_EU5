@@ -38,6 +38,16 @@ Integration of mods:
     - main_menu\gfx\interface\icons\map_modes\max_tax_base.dds
     - main_menu\gfx\interface\icons\map_modes\uncontrolled_tax_base.dds
     - main_menu\localization\english\max_tax_base_interfaces_l_english.yml  
+- nqwery's **Remove Start Game Smoke Effect**
+  - Files changed (8):
+    - main_menu\gfx\interface\animations\enter_game_smoke_center.dds
+    - main_menu\gfx\interface\animations\enter_game_smoke_left.dds
+    - main_menu\gfx\interface\animations\enter_game_smoke_right.dds
+    - main_menu\gfx\interface\animations\enter_game_smoke_mask.dds
+    - main_menu\gfx\interface\animations\rotate_glow_mask.dds
+    - main_menu\gfx\interface\animations\standard_appear_effect_animated_mask.dds
+    - main_menu\gfx\interface\animations\standard_appear_effect_texture.dds
+    - main_menu\gfx\interface\animations\standard_appear_effect_texture_mask.dds
 
 
 # Working in this Repo
