@@ -12,7 +12,7 @@ colors = {
 	map_ottomans = rgb { 40 110 27 }	#UU Divergences Green Ottomans
 	map_YUA = rgb { 16 95 135 }			#Blue Yuan
 	map_MNG = rgb { 239 67 70 }			#Red Ming 
-
+	map_ILK = rgb { 232 48 2 }		#EU4 Ilkhanate
 
 	########################
 
@@ -317,7 +317,7 @@ colors = {
 	map_shor = rgb { 66 179 210 }
 	map_MGE = rgb { 180 240 130 }
 	map_OIR = rgb { 204 184 177 }
-	map_ILK = rgb { 200 185 50 }
+	# map_ILK = rgb { 200 185 50 }		#UU
 
 	#Siberia
 	map_KMC = rgb { 182 143 149 } #same as in EU4
