@@ -155,7 +155,7 @@ ZAZ = {
 
 #Silesian Duchies --- UU consolidated
 SIL = {
-	color = rgb { 53 140 73 }
+	color = map_SIL
 
 	culture_definition = silesian
  	religion_definition = catholic

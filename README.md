@@ -11,7 +11,10 @@ Current Features:
 - French unique gov reforms both give 1 cultures_capacity
 - Bohemia no longer in German culture Group
 - Bohemian regional silver and 2 gold removed. Added 1 gold in Berchtesgaten, 1 silver in Prüm
-- Silesia starts independent and united
+- Silesia starts independent and united, and outside the HRE
+- Low relations no longer blocks players from forming alliances
+- Stability cost of deleting markets reduced to 10
+- GP score from country ranks halved
 
 
 Integration of mods:
