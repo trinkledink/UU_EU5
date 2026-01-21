@@ -1,6 +1,7 @@
 # A collection of UU developed mods for UU MP Gameplay and Balancing
 
 Current Features:
+- Removed hour ticks, combat adjusted accordingly
 - Unconditional Surrender Diplomacy Action Added
 - Western Schism Removed, PAP French Cardinals privilege removed
 - France and England can't hold parliament until the end of the 100yr War
@@ -8,8 +9,10 @@ Current Features:
 - Brittany is a vassal of England instead of France
 - Removed crownpower malus from having debt
 - Centralization gives up to +25% integration speed
-- French unique gov reforms both give 1 cultures_capacity
-- Bohemia no longer in German culture Group
+- Offensive gives up to +20% siege ability and assault ability, and -10% fort defense
+- Defensive gives up to +33% fort defense, and -10% siege ability. No longer affects army movement speed. 
+- French unique govt. reforms both give 1 cultures_capacity
+- Czech culture removed from German culture Group
 - Bohemian regional silver and 2 gold removed. Added 1 gold in Berchtesgaten, 1 silver in Prüm
 - Silesia starts independent and united, and outside the HRE
 - Low relations no longer blocks players from forming alliances

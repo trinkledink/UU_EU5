@@ -1,3 +1,38 @@
 ﻿NDiplomacy = {
-	SEND_GIFT_COOLDOWN = 0 #uu change from 120
+	SEND_GIFT_COOLDOWN = 0 					#was 120
+}
+
+NGame = {
+	HOUR_TICK = 24							#1 tick = 24 hours
+	MORNING_OFFSET = 8						#unchanged
+	
+	GAME_SPEED_TICKS = {					#unchanged
+		1
+		0.4
+		0.1
+		0.02
+		0.0
+	}
+
+	GAME_SPEED_FOR_MULTI_PLAYERS_WARS = 3	#was 2
+}
+
+NUnit = {
+
+	ARMY_MOVEMENT_SPEED = 0.7				#was 0.13	
+	NAVY_MOVEMENT_SPEED = 1.5				#was 0.5
+}
+
+
+NCombat = {
+	MINIMUM_COMBAT_DURATION = 12			#12 days. was 24 hours. 
+
+	BOMBARD_HOURS = 3						#was 5 | N/B: Damage/tick has been increased by about a factor of 5
+	HOURS_PER_PHASE = 3						#was 5
+
+	COMBAT_DAMAGE_MULT = 0.05 				#was 0.01 | 5x Damage per tick 
+	COMBAT_HOURLY_MORALE_TICK = 0.05		#was 0.01
+	
+	INITIATIVE_CHANCE_EACH = 0.06			#was 0.02 | Chance to engage per point of initiative
+	INITIATIVE_CHANCE_HOURS = 0.1			#was 0.01 | Chance to engage per hour passed (adds with INITIATIVE_CHANCE_EACH) 	
 }
