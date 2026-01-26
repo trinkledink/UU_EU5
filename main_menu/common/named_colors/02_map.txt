@@ -12,7 +12,8 @@ colors = {
 	map_ottomans = rgb { 40 110 27 }	#UU Divergences Green Ottomans
 	map_YUA = rgb { 16 95 135 }			#Blue Yuan
 	map_MNG = rgb { 239 67 70 }			#Red Ming 
-	map_ILK = rgb { 232 48 2 }		#EU4 Ilkhanate
+	map_ILK = rgb { 232 48 2 }			#EU4 Ilkhanate
+	map_croatian = rgb { 104 94 247 } 	#EU4 Croatia
 
 	########################
 
@@ -330,7 +331,7 @@ colors = {
 	map_FLA = rgb { 43 141 172 } #same as in EU4
 	
 	#Balkans
-	map_croatian = rgb { 174 227 95 } #same as in EU4
+	# map_croatian = rgb { 174 227 95 } #UU
 	map_morean = rgb { 113 150 11 } #same as in EU4
 	map_achaian = rgb { 85 177 213 } #new color
 	map_athenian = rgb { 45 84 173 } #same as in EU4
