@@ -1,0 +1,2171 @@
+﻿namespace = fall_of_delhi
+
+scripted_trigger valid_bahmanis_land = {
+	any_province = {
+		AND = {
+			OR = {
+				this = location:sindkedh.province
+				this = location:bijapur.province
+				area = area:telingana_area
+				area = area:maharashtra_area
+				area = area:konkan_area
+			}
+			NOT = { area = area:gondwana_area }
+		}
+		count > 4
+	}
+}
+
+scripted_trigger valid_malwa_land = {
+	any_province = {
+		OR = {
+			area = { this = area:malwa_area }
+			this = location:sabalgarh.province
+			this = location:bhojpur.province
+			this = location:deogarh.province
+			this = location:aklera.province
+			this = location:sheopur.province
+			this = location:ranthambore.province
+		}
+		count > 4
+	}
+}
+
+scripted_trigger valid_gujarat_land = {
+	any_province = {
+		area = area:gujarat_area
+		count > 2
+	}
+}
+
+scripted_trigger valid_jaunpur_land = {
+	any_province = {
+		OR = {
+			area = area:rokhilkhand_area
+			area = area:awadh_area
+			area = area:bhojpur_area
+			this = location:asni.province
+			this = location:kalpi.province
+		}
+		count > 4
+	}
+}
+
+scripted_effect pick_best_capital_bahmanis = {
+	if = {
+		limit = {
+			owns = location:gulbarga
+		}
+		location:gulbarga = { save_scope_as = target_location }
+	}
+	else = {
+		ordered_owned_location = {
+			limit = {
+				OR = {
+					province = location:sindkedh.province
+					province = location:bijapur.province
+					province = scope:target_province
+					area = area:telingana_area
+					area = area:maharashtra_area
+					area = area:konkan_area
+				}
+			}
+			order_by = population
+			check_range_bounds = no
+			max = 1
+			save_scope_as = target_location
+		}
+	}
+	scope:target_location = {
+		province = { save_scope_as = target_province }
+	}
+}
+
+scripted_effect pick_best_capital_malwa = {
+	if = {
+		limit = {
+			owns = location:dhar
+		}
+		location:dhar = { save_scope_as = target_location }
+	}
+	else = {
+		ordered_owned_location = {
+			limit = {
+				OR = {
+					area = area:malwa_area
+					province = location:sabalgarh.province
+					province = location:bhojpur.province
+					province = location:deogarh.province
+					province = location:aklera.province
+					province = location:sheopur.province
+					province = location:ranthambore.province
+				}
+			}
+			order_by = population
+			check_range_bounds = no
+			max = 1
+			save_scope_as = target_location
+		}
+	}
+	scope:target_location = {
+		province = { save_scope_as = target_province }
+	}
+}
+
+scripted_effect pick_best_capital_gujarat = {
+	if = {
+		limit = {
+			owns = location:khambat
+		}
+		location:khambat = { save_scope_as = target_location }
+	}
+	else = {
+		ordered_owned_location = {
+			limit = { area = area:gujarat_area }
+			order_by = population
+			check_range_bounds = no
+			max = 1
+			save_scope_as = target_location
+		}
+	}
+	scope:target_location = {
+		province = { save_scope_as = target_province }
+	}
+}
+
+scripted_effect pick_best_capital_jaunpur = {
+	if = {
+		limit = {
+			owns = location:jaunpur
+		}
+		location:jaunpur = {
+			save_scope_as = target_location
+		}
+	}
+	else = {
+		ordered_owned_location = {
+			limit = {
+				OR = {
+					area = area:rokhilkhand_area
+					area = area:awadh_area
+					area = area:bhojpur_area
+					province = location:asni.province
+					province = location:kalpi.province
+				}
+			}
+			order_by = population
+			check_range_bounds = no
+			max = 1
+			save_scope_as = target_location
+		}
+	}
+	scope:target_location = {
+		province = { save_scope_as = target_province }
+	}
+}
+
+scripted_effect release_bahmanis_effect = {
+	scope:target_location = {
+		create_country_from_location = {
+			set_variable = { name = bahmanis_var value = yes }
+			save_scope_as = target_bahmanis_revolter_scope
+			set_country_rank = country_rank:rank_kingdom
+		}
+	}
+	scope:target_bahmanis_revolter_scope = {
+		change_country_tag = BAH
+		change_country_name = BAH
+		change_country_adjective = BAH
+		change_country_color = map_bahmanis
+		change_country_flag = BAH
+		create_character = {
+			culture = culture:afghan_culture
+			religion = religion:sunni
+			dynasty = dynasty:bahman_dynasty
+			estate = estate_type:nobles_estate
+			first_name = Ismail
+			birth_date = 1292.6.1
+			add_trait = trait:conqueror
+			save_scope_as = target_character
+		}
+		set_new_ruler = scope:target_character
+		change_religion = religion:sunni
+		change_religion_for_ruler_and_family = { country = scope:target_bahmanis_revolter_scope religion = religion:sunni }
+		set_variable = {
+			name = delhi_claimants_variable
+			value = yes
+		}
+	}
+	every_owned_location = {
+		limit = {
+			OR = {
+				province = location:sindkedh.province
+				province = location:bijapur.province
+				province = scope:target_province
+				area = area:telingana_area
+				area = area:maharashtra_area
+				area = area:konkan_area
+			}
+		}
+		change_location_owner = scope:target_bahmanis_revolter_scope
+		add_core = scope:target_bahmanis_revolter_scope
+		change_integration_level = core
+	}
+}
+
+scripted_effect release_malwa_effect = {
+	scope:target_location = {
+		create_country_from_location = {
+			set_variable = { name = malwa_var value = yes }
+			save_scope_as = target_malwa_revolter_scope
+			set_country_rank = country_rank:rank_kingdom
+		}
+	}
+	scope:target_malwa_revolter_scope = {
+		change_country_tag = MLW
+		change_country_name = MLW
+		change_country_adjective = MLW_ADJ
+		change_country_color = map_malwa
+		change_country_flag = MLW
+		create_character = {
+			culture = root.culture
+			religion = religion:sunni
+			estate = estate_type:peasants_estate
+			first_name = name_amid
+			birth_date = 1301.6.1
+			save_scope_as = target_character
+		}
+		set_new_ruler = scope:target_character
+		change_religion = religion:sunni
+		change_religion_for_ruler_and_family = { country = scope:target_malwa_revolter_scope religion = religion:sunni }
+		set_variable = {
+			name = delhi_claimants_variable
+			value = yes
+		}
+	}
+	every_owned_location = {
+		limit = {
+			OR = {
+				area = area:malwa_area
+				province = location:sabalgarh.province
+				province = location:bhojpur.province
+				province = location:deogarh.province
+				province = location:aklera.province
+				province = location:sheopur.province
+				province = location:ranthambore.province
+			}
+		}
+		change_location_owner = scope:target_malwa_revolter_scope
+		add_core = scope:target_malwa_revolter_scope
+		change_integration_level = core
+	}
+}
+
+scripted_effect release_gujarat_effect = {
+	scope:target_location = {
+		create_country_from_location = {
+			set_variable = { name = gujarat_var value = yes }
+			save_scope_as = target_gujarat_revolter_scope
+			set_country_rank = country_rank:rank_kingdom
+		}
+	}
+	scope:target_gujarat_revolter_scope = {
+		change_country_tag = GJR
+		change_country_name = GJR
+		change_country_adjective = GJR_ADJ
+		change_country_color = map_gujarat
+		change_country_flag = GJR
+		create_character = {
+			culture = root.culture
+			religion = root.religion
+			estate = estate_type:peasants_estate
+			first_name = Zafar
+			last_name = name_muzaffar
+			birth_date = 1350.6.1
+			save_scope_as = target_character
+		}
+		set_new_ruler = scope:target_character
+		change_religion = religion:sunni
+		change_religion_for_ruler_and_family = { country = scope:target_gujarat_revolter_scope religion = religion:sunni }
+		set_variable = {
+			name = delhi_claimants_variable
+			value = yes
+		}
+	}
+	every_owned_location = {
+		limit = {
+			area = area:gujarat_area
+		}
+		change_location_owner = scope:target_gujarat_revolter_scope
+		add_core = scope:target_gujarat_revolter_scope
+		change_integration_level = core
+	}
+}
+
+scripted_effect release_jaunpur_effect = {
+	scope:target_location = {
+		create_country_from_location = {
+			set_variable = { name = jaunpur_var value = yes }
+			save_scope_as = target_jaunpur_revolter_scope
+			set_country_rank = country_rank:rank_kingdom
+		}
+	}
+	scope:target_jaunpur_revolter_scope = {
+		change_country_tag = JNP
+		change_country_name = JNP
+		change_country_adjective = JNP_ADJ
+		change_country_color = map_jaunpur
+		change_country_flag = JNP
+		create_character = {
+			culture = root.culture
+			religion = root.religion
+			estate = estate_type:peasants_estate
+			first_name = name_malik
+			last_name = Sarwar
+			birth_date = 1350.6.1
+			save_scope_as = target_character
+		}
+		set_new_ruler = scope:target_character
+		change_religion = religion:sunni
+		change_religion_for_ruler_and_family = { country = scope:target_jaunpur_revolter_scope religion = religion:sunni }
+		set_variable = {
+			name = delhi_claimants_variable
+			value = yes
+		}
+	}
+	every_owned_location = {
+		limit = {
+			OR = {
+				area = area:rokhilkhand_area
+				area = area:awadh_area
+				area = area:bhojpur_area
+				province = location:asni.province
+				province = location:kalpi.province
+			}
+		}
+		change_location_owner = scope:target_jaunpur_revolter_scope
+		add_core = scope:target_jaunpur_revolter_scope
+		change_integration_level = core
+	}
+}
+
+fall_of_delhi.1 = {
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.1.title
+	desc = delhi_situation.1.desc
+
+	image = "gfx/interface/illustrations/situation/fall_of_delhi.dds"
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = DLH
+		from = 1300.1.1
+		to = 1345.1.1
+		monthly_chance = 25
+	}
+
+	immediate = {
+		set_variable = { name = starts_fall_of_delhi_variable value = yes }
+
+		if = {
+			limit = {
+				exists = ruler
+			}
+			ruler = { save_scope_as = target_character }
+		}
+		else_if = {
+			limit = {
+				exists = regent
+			}
+			regent = { save_scope_as = target_character }
+		}
+
+		#UU
+		pick_best_capital_bahmanis = yes
+		pick_best_capital_malwa = yes
+		pick_best_capital_gujarat = yes
+		pick_best_capital_jaunpur = yes
+	}
+
+	option = {
+		name = delhi_situation.1.a
+		custom_tooltip = delhi_situation_info_tt
+		custom_tooltip = delhi_win_lose_conditions_tt
+
+		if = {		#UU Release Malwa, Gujarat, Jaunpur, Bahmanis instantly
+			limit = {
+				sub_continent:south_asia = {
+					any_location_in_sub_continent = {
+						is_core_of = ROOT
+						owner != ROOT
+						count >20
+					}
+				}
+			}
+			custom_tooltip = we_will_lose_all_cores_tt
+			hidden_effect = {
+				sub_continent:south_asia = {
+					every_location_in_sub_continent = {
+						limit = {
+							is_core_of = ROOT
+							owner != ROOT
+						}
+						remove_core = ROOT
+					}
+				}
+			}
+			custom_tooltip = {
+				text = powerful_warlords_will_rise_tt
+				if = {
+					limit = {
+						NOT = {
+							any_known_country = {
+								has_variable = bahmanis_var
+								count > 0
+							}
+						}
+						valid_bahmanis_land = yes
+					}
+					release_bahmanis_effect = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_known_country = {
+								has_variable = malwa_var
+								count > 0
+							}
+						}
+						valid_malwa_land = yes
+
+					}
+					release_malwa_effect = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_known_country = {
+								has_variable = gujarat_var
+								count > 0
+							}
+						}
+						valid_gujarat_land = yes
+					}
+					release_gujarat_effect = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_known_country = {
+								has_variable = jaunpur_var
+								count > 0
+							}
+						}
+						valid_jaunpur_land = yes
+					}
+					release_jaunpur_effect = yes
+				}
+			}
+		}
+
+		every_subject = { #UU Cancel Delhi subjects
+			overlord = { cancel_subject = PREV }
+		}
+	}
+
+}
+
+fall_of_delhi.2 = {
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.2.title
+	desc = delhi_situation.2.desc
+
+	image = "gfx/interface/illustrations/situation/fall_of_delhi.dds"
+
+	immediate = {
+		capital = { save_scope_as = target_capital }
+		c:DLH = {
+			ruler_or_regent ?= { save_scope_as = target_character }
+			random_owned_location = {
+				limit = {
+					any_neighbor_location = {
+						owner ?= ROOT
+					}
+				}
+				save_scope_as = target_location
+			}
+			if = {
+				limit = {
+					exists = scope:target_location
+				}
+				random_owned_location = {
+					limit = {
+						any_neighbor_location = {
+							owner ?= ROOT
+						}
+						province = {
+							NOT = {
+								any_location_in_province = {
+									this = scope:target_location
+								}
+							}
+						}
+					}
+					save_scope_as = target_location2
+				}
+			}
+			if = {
+				limit = { exists = scope:target_location2 }
+				random_owned_location = {
+					limit = {
+						any_neighbor_location = {
+							owner ?= ROOT
+						}
+						province = {
+							NOT = {
+								any_location_in_province = {
+									OR = {
+										this = scope:target_location
+										this = scope:target_location2
+									}
+								}
+							}
+						}
+
+					}
+					save_scope_as = target_location3
+				}
+			}
+		}
+	}
+
+	option = {
+		name = delhi_situation.2.a
+
+		historical_option = yes
+
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0.1
+				religion.group = religion_group:muslim
+			}
+			modifier = {
+				factor = 1.25
+				religion.group = religion_group:dharmic
+			}
+			modifier = {
+				factor = 0.5
+				opinion = {
+					target = c:DLH
+					value >50
+				}
+			}
+			modifier = {
+				factor = 2
+				relative_strength = {
+					target = c:DLH
+					value >= 0.85
+				}
+			}
+		}
+
+		custom_tooltip = side_with_opposers_tt
+		if = {
+			limit = {
+				is_neighbor_of = c:DLH
+				OR = {
+					is_subject = no
+					AND = {
+						is_subject_of = c:DLH
+						liberty_desire > 50
+					}
+				}
+			}
+			add_casus_belli = { target = c:DLH type = casus_belli:cb_conquer_province province = scope:target_location.province }
+			if = {
+				limit = {
+					exists = scope:target_location2
+				}
+				add_casus_belli = { target = c:DLH type = casus_belli:cb_conquer_province province = scope:target_location2.province }
+			}
+			if = {
+				limit = {
+					exists = scope:target_location3
+				}
+				add_casus_belli = { target = c:DLH type = casus_belli:cb_conquer_province province = scope:target_location3.province }
+			}
+		}
+		if = {
+			limit = {
+				this != c:DLH
+				is_allied_with = { target = c:DLH }
+			}
+			remove_relation = {
+				type = relation_type:alliance
+				first = this
+				second = c:DLH
+			}
+		}
+		add_opinion = { modifier = delhi_claimant_opinion  target = c:DLH }
+		reverse_add_opinion = { modifier = delhi_claimant_opinion  target = c:DLH }
+		hidden_effect = {
+			if = {
+				limit = {
+					is_subject_of = c:DLH
+				}
+				add_liberty_desire = liberty_desire_extreme_plus
+			}
+			situation:fall_of_delhi = {
+				set_vote = {
+					voter = ROOT
+					resolution = resolution:fall_of_delhi_resolution
+					vote = "situation:fall_of_delhi.active_resolution(resolution:fall_of_delhi_resolution).resolution_proposer"
+				}
+			}
+			set_variable = {
+				name = delhi_claimants_variable
+				value = yes
+			}
+			add_cooldown = {
+				type = joined_fod_side_cd
+				years = 3
+			}
+		}
+	}
+
+	option = {
+		name = delhi_situation.2.b
+
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 1.25
+				religion.group = religion_group:dharmic
+			}
+			modifier = {
+				factor = 5
+				religion.group = religion_group:muslim
+			}
+			modifier = {
+				factor = 0.5
+				opinion = {
+					target = c:DLH
+					value <= 0
+				}
+			}
+			modifier = {
+				factor = 1.1
+				relative_strength = {
+					target = c:DLH
+					value <= 0.5
+				}
+			}
+		}
+		custom_tooltip = side_with_delhi_tt
+		add_opinion = { modifier = promise_of_peace  target = c:DLH }
+		reverse_add_opinion = { modifier = promise_of_peace  target = c:DLH }
+		hidden_effect = {
+			situation:fall_of_delhi = {
+				set_vote = {
+					voter = ROOT
+					resolution = resolution:fall_of_delhi_resolution
+					vote = c:DLH
+				}
+			}
+			add_cooldown = {
+				type = joined_fod_side_cd
+				years = 3
+			}
+		}
+	}
+
+	option = {
+		name = delhi_situation.2.c
+
+		ai_chance = {
+			base = 5
+		}
+	}
+}
+
+fall_of_delhi.3 = {
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.3.title
+	desc = delhi_situation.3.desc
+
+	image = "gfx/interface/illustrations/situation/fall_of_delhi.dds"
+
+	immediate = {
+		every_subject = {
+			add_liberty_desire = liberty_desire_extreme_plus
+		}
+		set_variable = {
+			name = dlh_countdown_disaster_variable
+			value = yes
+		}
+	}
+
+	option = {
+		name = delhi_situation.3.a
+
+		custom_tooltip = dlh_situation_commences_tt
+		show_as_tooltip = {
+			every_subject = {
+				add_liberty_desire = liberty_desire_extreme_plus
+			}
+		}
+
+		trigger_event_silently = fall_of_delhi.7
+	}
+}
+
+fall_of_delhi.4 = { #The Heirs of Delhi
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.4.title
+	desc = delhi_situation.4.desc
+
+	image = "gfx/interface/illustrations/situation/fall_of_delhi.dds"
+
+
+	option = {
+		name = delhi_situation.4.a
+
+		if = {
+			limit = {
+				has_variable = strongest_contender_var
+			}
+			add_country_modifier = {
+				modifier = dlh_heirs_of_delhi_modifier
+				years = 20
+				mode = add_and_extend
+			}
+			custom_tooltip = dlh_double_duration_tt
+		}
+		else = {
+			add_country_modifier = {
+				modifier = dlh_heirs_of_delhi_modifier
+				years = 10
+				mode = add_and_extend
+			}
+		}
+	}
+}
+
+fall_of_delhi.5 = {
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.5.title
+	desc = delhi_situation.5.desc
+
+	image = "gfx/interface/illustrations/situation/fall_of_delhi.dds"
+
+	option = {
+		name = delhi_situation.5.a
+
+		if = {
+			limit = { has_country_modifier = dlh_outside_interference_modifier }
+			remove_country_modifier = dlh_outside_interference_modifier
+		}
+		add_stability = stability_mild_bonus
+		add_government_power = government_power_extreme_penalty
+	}
+	after = { remove_variable = dlh_surrendered_territories_var }
+}
+
+fall_of_delhi.6 = {
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.6.title
+	desc = delhi_situation.6.desc
+
+	fire_only_once = yes
+
+	image = "gfx/interface/illustrations/situation/fall_of_delhi.dds"
+
+	option = {
+		name = delhi_situation.6.a
+
+		add_stability = stability_extreme_bonus
+		add_government_power = government_power_ultimate_bonus
+	}
+
+}
+
+fall_of_delhi.7 = {
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.7.title
+	desc = delhi_situation.7.desc
+	fire_only_once = yes
+
+	image = "gfx/interface/illustrations/situation/fall_of_delhi.dds"
+
+	trigger = {
+		NOT = { has_country_modifier = dlh_outside_interference_modifier }
+	}
+
+	immediate = {
+		if = {	#Display the strongest Opposer
+			limit = { exists = situation:fall_of_delhi.var:strongest_claimant_capital }
+			situation:fall_of_delhi.var:strongest_claimant_capital = {
+				owner ?= {
+					ruler_or_regent ?= { save_scope_as = target_character }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = delhi_situation.7.a
+
+		add_country_modifier = {
+			modifier = dlh_outside_interference_modifier
+			months = -1
+			mode = add_and_extend
+			desc = until_end_of_fod_situation_tt
+		}
+	}
+}
+
+fall_of_delhi.8 = {
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.8.title
+	desc = delhi_situation.8.desc
+
+	image = "gfx/interface/illustrations/situation/fall_of_delhi.dds"
+
+	trigger = {
+		any_province = {
+			OR = {
+				province_average_control < 0.25
+				province_satisfaction < 0.25
+			}
+			NOT = {
+				any_location_in_province = {
+					OR = {
+						is_capital = yes
+						has_variable = revolter_location
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		random_province = {
+			limit = {
+				OR = {
+					province_average_control < 0.25
+					province_satisfaction < 0.25
+				}
+				NOT = {
+					any_location_in_province = {
+						OR = {
+							is_capital = yes
+							has_variable = revolter_location
+						}
+					}
+				}
+			}
+			save_scope_as = target_province
+		}
+		if = {
+			limit = { exists = scope:target_province }
+			scope:target_province = {
+				ordered_location_in_province = {
+					order_by = population
+					max = 1
+					check_range_bounds = no
+					save_scope_as = target_capital
+				}
+				every_location_in_province = {
+					remove_core = ROOT
+				}
+			}
+			scope:target_capital = {
+				set_variable = {
+					name = revolter_location
+					value = yes
+					months = 100
+				}
+			}
+		}
+	}
+
+	option = {
+		name = delhi_situation.8.a
+		trigger = {
+			exists = scope:target_province
+		}
+		scope:target_capital = {
+			create_country_from_location = {
+				set_variable = {
+					name = delhi_provincial_sultanate_variable
+					value = yes
+				}
+				save_scope_as = rebellious_country_scope
+			}
+		}
+		scope:target_province = {
+			every_location_in_province = {
+				change_location_owner = scope:rebellious_country_scope
+				add_core = scope:rebellious_country_scope
+			}
+		}
+	}
+
+	option = {
+		name = delhi_situation.8.b
+		if = {
+			limit = { exists = scope:target_province }
+			custom_tooltip = {
+				text = target_province_debuffs_dlh_tt
+				scope:target_province = {
+					every_location_in_province = {
+						change_control = control_mild_penalty
+						every_pop = {
+							limit = {
+								owner = root
+							}
+							add_pop_satisfaction = pop_satisfaction_mild_penalty
+						}
+					}
+				}
+			}
+		}
+		else = {
+			add_stability = stability_mild_penalty
+		}
+	}
+}
+
+fall_of_delhi.9 = {
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.9.title
+	desc = delhi_situation.9.desc
+
+	image = "gfx/interface/illustrations/situation/fall_of_delhi.dds"
+
+	trigger = {
+		situation:fall_of_delhi = { var:strongest_claimant_capital = root.capital }
+		NOT = { has_variable = leadership_secured_variable }
+		sub_continent:south_asia = {
+			any_country_with_capital_in_geography = {
+				has_variable = delhi_claimants_variable
+				relative_strength = {
+					target = root
+					value > 0.5
+				}
+				at_war = no
+				is_subject = no
+			}
+		}
+	}
+
+	immediate = {
+		sub_continent:south_asia = {
+			ordered_country_with_capital_in_geography = {
+				limit = {
+					at_war = no
+					is_subject = no
+					has_variable = delhi_claimants_variable
+					relative_strength = {
+						target = root
+						value > 0.5
+					}
+				}
+				max = 1
+				order_by = country_strength
+				check_range_bounds = no
+				save_scope_as = target_country
+				ruler_or_regent ?= { save_scope_as = target_character }
+			}
+		}
+		save_scope_as = target_country2
+		ruler_or_regent ?= { save_scope_as = target_character2 }
+	}
+
+	option = {
+		name = delhi_situation.9.a
+
+		add_prestige = prestige_extreme_penalty
+		add_government_power = government_power_extreme_penalty
+		remove_country_modifier = dlh_situation_modifier
+
+		scope:target_country = {
+			set_variable = {
+				name = leadership_secured_variable
+				years = 1
+			}
+			trigger_event_non_silently = fall_of_delhi.10
+			hidden_effect = {
+				situation:fall_of_delhi = {remove_variable = strongest_claimant_capital }
+				situation:fall_of_delhi = {
+					set_variable = {
+						name = strongest_claimant_capital
+						value = scope:target_country.capital
+					}
+				}
+			}
+		}
+	}
+}
+
+fall_of_delhi.10 = {
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.10.title
+	desc = delhi_situation.10.desc
+
+	image = "gfx/interface/illustrations/situation/fall_of_delhi.dds"
+
+	option = {
+		name = delhi_situation.10.a
+
+		add_prestige = prestige_extreme_bonus
+		add_government_power = government_power_extreme_bonus
+
+		add_country_modifier = {
+			modifier = dlh_situation_modifier
+			months = -1
+			mode = add_and_extend
+		}
+
+		scope:target_country = {
+			set_variable = {
+				name = leadership_secured_variable
+				years = 1
+			}
+		}
+	}
+}
+
+fall_of_delhi.11 = {
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.11.title
+	desc = delhi_situation.11.desc
+
+	image = "gfx/interface/illustrations/situation/fall_of_delhi.dds"
+
+	immediate = {
+		save_scope_as = target_country
+		random_known_country = {
+			limit = {
+				situation:fall_of_delhi = { var:strongest_claimant_capital = prev.capital }
+			}
+			save_scope_as = target_country2
+		}
+	}
+
+	option = {
+		name = delhi_situation.11.a
+
+		custom_tooltip = gain_5_sop_tt
+		custom_tooltip = opposers_lose_5_sop_tt
+		hidden_effect = {
+			c:DLH = {
+				change_variable = {
+					name = fall_of_delhi_vote_weight
+					add = 0.05
+				}
+			}
+			situation:fall_of_delhi = {
+				"active_resolution(resolution:fall_of_delhi_resolution).resolution_proposer" = {
+					change_variable = {
+						name = fall_of_delhi_vote_weight
+						subtract = 0.05
+					}
+				}
+			}
+		}
+	}
+}
+
+fall_of_delhi.12 = {
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.12.title
+	desc = delhi_situation.12.desc
+
+	image = "gfx/interface/illustrations/situation/fall_of_delhi.dds"
+
+	immediate = {
+		save_scope_as = target_country
+		c:DLH = {
+			save_scope_as = target_country2
+		}
+	}
+
+	option = {
+		name = delhi_situation.12.a
+
+		custom_tooltip = delhi_loses_opposers_gain_1_tt
+		hidden_effect = {
+			c:DLH = {
+				change_variable = {
+					name = fall_of_delhi_vote_weight
+					subtract = 0.05
+				}
+			}
+			situation:fall_of_delhi = {
+				"active_resolution(resolution:fall_of_delhi_resolution).resolution_proposer" = {
+					change_variable = {
+						name = fall_of_delhi_vote_weight
+						add = 0.05
+					}
+				}
+			}
+		}
+	}
+}
+
+fall_of_delhi.13 = {	#Nobles Disagree with our Authority!
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.13.title
+	desc = delhi_situation.13.desc
+
+	image = "gfx/interface/illustrations/situation/fall_of_delhi.dds"
+
+	trigger = {
+		estate_satisfaction:nobles_estate < 0.5
+		NOT = { has_country_modifier = delhi_appeased_the_nobles_modifier }
+	}
+
+	immediate = {
+		random_list = {
+			33 = {
+				set_variable = { name = outcome1 value = yes }
+			}
+			33 = {
+				set_variable = { name = outcome2 value = yes }
+			}
+			33 = {
+				set_variable = { name = outcome3 value = yes }
+			}
+		}
+	}
+
+	option = {
+		name = delhi_situation.13.a
+
+		add_government_power = government_power_mild_penalty
+		if = {
+			limit = { has_variable = outcome1 }
+			change_societal_value = { type = aristocracy_vs_plutocracy value = societal_value_tiny_move_to_left }
+		}
+		if = {
+			limit = { has_variable = outcome2 }
+			change_societal_value = { type = aristocracy_vs_plutocracy value = societal_value_minor_move_to_left }
+		}
+		if = {
+			limit = { has_variable = outcome3 }
+			add_gold = {
+				value = monthly_income_trade_and_tax
+				multiply = -1
+			}
+		}
+	}
+
+	option = {
+		name = delhi_situation.13.b
+
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_extreme_penalty }
+		add_stability = stability_weak_penalty
+	}
+
+	after = {
+		if = {
+			limit = { has_variable = outcome1 }
+			remove_variable = outcome1
+		}
+		if = {
+			limit = { has_variable = outcome2 }
+			remove_variable = outcome2
+		}
+		if = {
+			limit = { has_variable = outcome3 }
+			remove_variable = outcome3
+		}
+	}
+}
+
+fall_of_delhi.14 = {	#Opposer Insults our Authority!
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.14.title
+	desc = delhi_situation.14.desc
+
+	image = "gfx/interface/illustrations/situation/fall_of_delhi.dds"
+
+	trigger = {
+		any_known_country = {
+			NOT = { has_insulted = ROOT }
+			has_variable = delhi_claimants_variable
+			NOT = { has_truce_with = ROOT }
+			NOT = { is_allied_with = { target = ROOT } }
+			at_war = no
+			is_subject = no
+			opinion = {
+				target = ROOT
+				value <= 5
+			}
+		}
+		situation:fall_of_delhi = {
+			has_active_resolution = yes
+		}
+	}
+
+	immediate = {
+		ordered_known_country = {
+			order_by = country_total_army_levy_size
+			limit = {
+				has_variable = delhi_claimants_variable
+				NOT = {
+					has_opinion = {
+						modifier = opinion_insulted
+						target = ROOT
+					}
+				}
+				NOT = { has_truce_with = ROOT }
+				NOT = { is_allied_with = { target = ROOT } }
+				at_war = no
+				is_subject = no
+				opinion = {
+					target = ROOT
+					value <= 5
+				}
+			}
+			max = 5
+			check_range_bounds = no
+			set_variable = {
+				name = offended_opposer
+				value = yes
+				days = 3
+			}
+		}
+		random_known_country = {
+			limit = { has_variable = offended_opposer }
+			save_scope_as = target_country
+			ruler_or_regent ?= { save_scope_as = target_character }
+		}
+		save_scope_as = target_country2
+		ruler_or_regent ?= { save_scope_as = target_character2 }
+	}
+
+	option = {	#Demand an Apology
+		name = delhi_situation.14.a
+
+		custom_tooltip = gain_1_sop_tt
+		custom_tooltip = potential_ramifications_tt
+		scope:target_country = {
+			trigger_event_non_silently = fall_of_delhi.15
+		}
+		hidden_effect = {
+			c:DLH = {
+				change_variable = {
+					name = fall_of_delhi_vote_weight
+					add = 0.01
+				}
+			}
+		}
+		add_opinion = {
+			modifier = opinion_insulted
+			target = scope:target_country
+		}
+		reverse_add_opinion = {
+			modifier = opinion_insulted
+			target = scope:target_country
+		}
+	}
+
+	option = {	#Let it slide
+		name = delhi_situation.14.b
+
+		add_stability = stability_weak_penalty
+		add_government_power = government_power_weak_penalty
+		custom_tooltip = delhi_lose_half_percentage_support_tt
+		hidden_effect = {
+			c:DLH = {
+				change_variable = {
+					name = fall_of_delhi_vote_weight
+					subtract = 0.005
+				}
+			}
+		}
+		custom_tooltip = opposers_gain_1_percentage_support_tt
+		hidden_effect = {
+			situation:fall_of_delhi = {
+				"active_resolution(resolution:fall_of_delhi_resolution).resolution_proposer" = {
+					change_variable = {
+						name = fall_of_delhi_vote_weight
+						add = 0.01
+					}
+				}
+			}
+		}
+	}
+}
+
+fall_of_delhi.15 = {
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.15.title
+	desc = delhi_situation.15.desc
+
+	image = "gfx/interface/illustrations/situation/fall_of_delhi.dds"
+
+	option = {
+		name = delhi_situation.15.a
+
+		custom_tooltip = delhi_damages_relations_with_several_countries_tt
+		hidden_effect = {
+			every_known_country = {
+				limit = { has_variable = offended_opposer }
+				add_opinion = {
+					target = c:DLH
+					modifier = opinion_insulted
+				}
+				reverse_add_opinion = {
+					target = c:DLH
+					modifier = opinion_insulted
+				}
+			}
+		}
+		c:DLH = {
+			add_casus_belli = {
+				target = ROOT
+				type = casus_belli:cb_insulted_us
+			}
+		}
+		change_societal_value = {
+			type = belligerent_vs_conciliatory
+			value = societal_value_minor_move_to_left
+		}
+	}
+
+	option = {
+		name = delhi_situation.15.b
+
+		every_known_country = {
+			limit = { has_variable = offended_opposer }
+			add_opinion = {
+				target = ROOT
+				modifier = opinion_pressured_by_delhi
+			}
+			add_trust = {
+				modifier = trust_betrayed_peers
+				target = ROOT
+			}
+		}
+		change_societal_value = {
+			type = belligerent_vs_conciliatory
+			value = societal_value_minor_move_to_right
+		}
+		add_government_power = government_power_weak_penalty
+	}
+}
+
+fall_of_delhi.16 = {
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.16.title
+	desc = delhi_situation.16.desc
+
+	image = "gfx/interface/illustrations/situation/fall_of_delhi.dds"
+	fire_only_once = yes
+
+	trigger = {
+		situation:fall_of_delhi = {
+			situation_is_active = yes
+			exists = "active_resolution(resolution:fall_of_delhi_resolution)"
+			votes_for_resolution = {
+				resolution = resolution:fall_of_delhi_resolution
+				outcome = "situation:fall_of_delhi.active_resolution(resolution:fall_of_delhi_resolution).resolution_proposer"
+				value >= 0.5
+			}
+		}
+	}
+
+	immediate = {
+		set_variable = harsher_requirements_for_disaster
+		pick_best_capital_bahmanis = yes
+		pick_best_capital_malwa = yes
+		pick_best_capital_gujarat = yes
+		pick_best_capital_jaunpur = yes
+	}
+	option = {
+		name = delhi_situation.16.a
+
+		set_variable = {
+			name = dlh_surrendered_territories_var
+			value = yes
+		}
+		custom_tooltip = end_situation_badly_tt
+		if = {
+			limit = {
+				sub_continent:south_asia = {
+					any_location_in_sub_continent = {
+						is_core_of = ROOT
+						owner != ROOT
+						count >20
+					}
+				}
+			}
+			custom_tooltip = we_will_lose_all_cores_tt
+			hidden_effect = {
+				sub_continent:south_asia = {
+					every_location_in_sub_continent = {
+						limit = {
+							is_core_of = ROOT
+							owner != ROOT
+						}
+						remove_core = ROOT
+					}
+				}
+			}
+			custom_tooltip = {
+				text = powerful_warlords_will_rise_tt
+				if = {
+					limit = {
+						NOT = {
+							any_known_country = {
+								has_variable = bahmanis_var
+								count > 0
+							}
+						}
+						valid_bahmanis_land = yes
+					}
+					release_bahmanis_effect = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_known_country = {
+								has_variable = malwa_var
+								count > 0
+							}
+						}
+						valid_malwa_land = yes
+
+					}
+					release_malwa_effect = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_known_country = {
+								has_variable = gujarat_var
+								count > 0
+							}
+						}
+						valid_gujarat_land = yes
+					}
+					release_gujarat_effect = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_known_country = {
+								has_variable = jaunpur_var
+								count > 0
+							}
+						}
+						valid_jaunpur_land = yes
+					}
+					release_jaunpur_effect = yes
+				}
+			}
+		}
+	}
+
+	option = {
+		name = delhi_situation.16.b
+
+		custom_tooltip = gain_10_progress_for_claimants_tt
+		hidden_effect = {
+			situation:fall_of_delhi = {
+				"active_resolution(resolution:fall_of_delhi_resolution).resolution_proposer" = {
+					change_variable = {
+						name = fall_of_delhi_vote_weight
+						add = 0.1
+					}
+				}
+			}
+		}
+		add_stability = stability_ultimate_penalty
+	}
+}
+
+fall_of_delhi.17 = {	#Irrigation Works along the Yamuna
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.17.title
+	desc = delhi_situation.17.desc
+
+	illustration_tags = {
+		10 = exterior
+		10 = regular
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+		set_variable = {
+			name = recently_chosen_irrigation_works_province_variable
+			years = 10
+		}
+		ordered_province = {
+			limit = {
+				OR = {
+					province_definition = province_definition:puadh_province
+					province_definition = province_definition:delhi_province
+					province_definition = province_definition:upper_doab_province
+					province_definition = province_definition:central_doab_province
+					province_definition = province_definition:lower_doab_province
+					province_definition = province_definition:braj_province
+				}
+			}
+			order_by = {
+				add = province_average_development
+				if = {	#Pick the one with the most least satisfaction / most dev possible
+					limit = { province_satisfaction <= 0 }
+					divide = 0.05
+				}
+				else = { divide = province_satisfaction }
+				if = {
+					limit = { has_variable = recently_chosen_irrigation_works_province_variable }
+					multiply = 0.1
+				}
+
+			}
+			max = 1
+			check_range_bounds = no
+			save_scope_as = target_province
+			set_variable = {
+				name = recently_chosen_irrigation_works_province_variable
+				years = 10
+			}
+			province_capital = { save_scope_as = target_province_capital }
+		}
+	}
+
+	option = {
+		name = delhi_situation.17.a
+
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0.1
+				num_loans > 5
+			}
+			modifier = {
+				factor = 1.5
+				gold >= {
+					value = c:DLH.monthly_income_total
+					multiply = 5
+				}
+			}
+			modifier = {
+				factor = 0
+				is_during_bankruptcy = yes
+			}
+		}
+
+		scope:target_province = {
+			every_location_in_province = {
+				limit = {
+					has_owner = yes
+					owner = root
+				}
+				change_development = {
+					value = development_weak_bonus
+					multiply = local_control
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_buildings_in_location = {
+								building_type = building_type:irrigation_systems
+								is_at_max_level = yes
+							}
+						}
+						OR = {
+							is_coastal = yes
+							has_river = yes
+							is_adjacent_to_lake = yes
+						}
+					}
+					construct_building = { building_type = building_type:irrigation_systems }
+				}
+			}
+		}
+
+		add_gold = {
+			value = {
+				add = scope:target_province.province_tax_base
+				multiply = -6
+				add = {
+					value = monthly_income_total
+					multiply = -1
+				}
+			}
+		}
+
+		custom_tooltip = {
+			text = dev_gain_scales_with_control_and_prov_capital_gains_pop_satisfaction_tt
+			scope:target_province_capital = {
+				every_pop = {
+					limit = { owner = root }
+					add_pop_satisfaction = pop_satisfaction_mild_bonus
+				}
+			}
+		}
+
+	}
+
+	option = {
+		name = delhi_situation.17.b
+
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0.1
+				num_loans < 5
+			}
+			modifier = {
+				factor = 1.5
+				gold >= {
+					value = monthly_income_total
+					multiply = 5
+				}
+			}
+			modifier = {
+				factor = 5
+				is_during_bankruptcy = yes
+			}
+		}
+
+		add_government_power = government_power_mild_penalty
+	}
+}
+
+fall_of_delhi.18 = {
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.18.title
+	desc = delhi_situation.18.desc
+
+	image = "gfx/interface/illustrations/situation/fall_of_delhi.dds"
+	historical_info = delhi_situation.18.historical_info
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = DLH
+		from = 1340.1.1
+		to = 1375.1.1
+		monthly_chance = 1
+	}
+
+	trigger = {
+		is_during_bankruptcy = no
+	}
+
+	immediate = {
+
+		discover_area = area:upper_selenga_area
+		create_mercenary = {
+			name = mongol_converts_name
+			home = location:khar_balgas
+			definitions = {
+				a_steppe_horse_archers = 4
+				a_steppe_horde = 4
+				a_a_urughs = 2
+			}
+			save_scope_as = target_merc
+		}
+
+		create_character = {
+			culture = culture:mongolian_culture
+			birth_location = location:khar_balgas
+			religion = root.religion
+			adm = { 20 100 }
+			dip = { 20 100 }
+			mil = { 20 100 }
+			create_in_limbo = yes
+			save_scope_as = target_character
+		}
+	}
+
+	option = {
+		name = delhi_situation.18.a
+
+		historical_option = yes
+
+		scope:target_character = { move_country = root }
+		hire_mercenary = scope:target_merc
+		scope:target_merc = {
+			random_mercenary_sub_unit = {
+				owning_unit = {
+					set_as_commander = scope:target_character
+				}
+			}
+		}
+		add_gold = -500
+		add_migration = {
+			from = location:khar_balgas.province_definition
+			to = root.capital.province_definition
+			amount = {
+				value = location:khar_balgas.population
+				multiply = 0.01
+			}
+			months = 12
+		}
+
+	}
+
+	option = {
+		name = delhi_situation.17.b
+
+		destroy_mercenary = scope:target_merc
+		add_government_power = government_power_mild_bonus
+
+		hidden_effect = { kill_character_silently = scope:target_character }
+	}
+}
+
+fall_of_delhi.19 = {
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.19.title
+	desc = delhi_situation.19.desc
+
+
+	illustration_tags = {
+		10 = exterior
+		10 = regular
+	}
+
+	trigger = {
+		any_neighbor_country = {
+			country_total_army_levy_size >= {
+				value = root.country_total_army_levy_size
+				multiply = 0.1
+			}
+			NOR = {
+				has_opinion = {
+					target = root
+					modifier = fall_of_delhi_approached_by_delhi_opinion
+				}
+				has_opinion = {
+					target = root
+					modifier = fall_of_delhi_scorned_by_delhi_opinion
+				}
+			}
+		}
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		ruler_or_regent = { save_scope_as = target_character1 }
+		ordered_neighbor_country = {
+			limit = {
+				country_total_army_levy_size >= {
+					value = root.country_total_army_levy_size
+					multiply = 0.1
+				}
+				NOR = {
+					has_opinion = {
+						target = root
+						modifier = fall_of_delhi_approached_by_delhi_opinion
+					}
+					has_opinion = {
+						target = root
+						modifier = fall_of_delhi_scorned_by_delhi_opinion
+					}
+				}
+			}
+			order_by = country_total_army_levy_size
+			max = 1
+			check_range_bounds = no
+			save_scope_as = target_country
+			ruler_or_regent = { save_scope_as = target_character2 }
+		}
+	}
+
+	option = {
+		name = delhi_situation.19.a
+
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0.1
+				num_loans > 5
+			}
+			modifier = {
+				factor = 1.5
+				gold >= {
+					value = c:DLH.monthly_income_total
+					multiply = 5
+				}
+			}
+			modifier = {
+				factor = 0
+				is_during_bankruptcy = yes
+			}
+		}
+
+
+		custom_tooltip = {
+			text = gain_3_sop_tt
+			change_variable = {
+				name = fall_of_delhi_vote_weight
+				add = 0.03
+			}
+		}
+
+		change_gold_effect = { scale = -3 }
+
+		scope:target_country = {
+			add_opinion_mutual_effect = {
+				target = root
+				modifier = fall_of_delhi_approached_by_delhi_opinion
+			}
+
+			add_gold = {
+				value = c:DLH.monthly_income_trade_and_tax
+				multiply = 3
+				add = 3
+			}
+		}
+	}
+
+	option = {
+		name = delhi_situation.19.b
+
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 1.25
+				num_loans > 5
+			}
+			modifier = {
+				factor = 0.5
+				gold >= {
+					value = c:DLH.monthly_income_total
+					multiply = 5
+				}
+			}
+		}
+
+		custom_tooltip = {
+			text = lose_1_sop_tt
+			change_variable = {
+				name = fall_of_delhi_vote_weight
+				subtract = 0.01
+			}
+		}
+
+		scope:target_country = {
+			add_opinion = {
+				target = root
+				modifier = fall_of_delhi_scorned_by_delhi_opinion
+			}
+		}
+
+		add_government_power = government_power_weak_penalty
+	}
+}
+
+fall_of_delhi.20 = {
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.20.title
+	desc = delhi_situation.20.desc
+	historical_info = delhi_situation.20.historical_info
+	image = "gfx/interface/illustrations/situation/fall_of_delhi.dds"
+
+	immediate = {
+		sub_continent:east_africa = {
+			random_location_in_sub_continent = {
+				limit = {
+					has_owner = yes
+				}
+				save_scope_as = target_location
+			}
+		}
+		create_character = {
+			birth_location = scope:target_location
+			adm = {
+				value = { 10 100 }
+				add = {
+					value = "estate_power(estate_type:dhimmi_estate)"
+					multiply = 100
+				}
+				max = 100
+			}
+			dip = {
+				value = { 10 100 }
+				add = {
+					value = "estate_power(estate_type:dhimmi_estate)"
+					multiply = 100
+				}
+				max = 100
+			}
+			mil = {
+				value = { 10 100 }
+				add = {
+					value = "estate_power(estate_type:dhimmi_estate)"
+					multiply = 100
+				}
+				max = 100
+			}
+			add_trait = trait:efficient_administrator
+			save_scope_as = target_character2
+		}
+
+	}
+	option = {
+		name = delhi_situation.20.a
+
+		if = {
+			limit = { has_estate_privilege = estate_privilege:noble_leaders_only }
+			revoke_estate_privilege = estate_privilege:noble_leaders_only
+		}
+
+		unlock_estate_privilege_effect = { type = habshi_advisors_privilege }
+		if = {	#This is quite beneficial and we want the AI to start with it when this event fires
+			limit = { is_human = no }
+			grant_estate_privilege = estate_privilege:dhimmi_in_administration
+			grant_estate_privilege = estate_privilege:habshi_advisors_privilege
+		}
+
+		custom_tooltip = periodically_gain_habshi_advisors_tt
+	}
+}
+
+fall_of_delhi.21 = {
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.21.title
+	desc = delhi_situation.21.desc
+
+	illustration_tags = {
+		10 = interior
+		10 = regular
+	}
+
+	trigger = {
+		has_estate_privilege = estate_privilege:habshi_advisors_privilege
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+		sub_continent:east_africa = {
+			random_location_in_sub_continent = {
+				limit = { has_owner = yes }
+				save_scope_as = target_location
+			}
+		}
+		create_character = {
+			birth_location = scope:target_location
+			adm = {
+				value = { 10 100 }
+				add = {
+					value = "estate_power(estate_type:dhimmi_estate)"
+					multiply = 100
+				}
+				max = 100
+			}
+			dip = {
+				value = { 10 100 }
+				add = {
+					value = "estate_power(estate_type:dhimmi_estate)"
+					multiply = 100
+				}
+				max = 100
+			}
+			mil = {
+				value = { 10 100 }
+				add = {
+					value = "estate_power(estate_type:dhimmi_estate)"
+					multiply = 100
+				}
+				max = 100
+			}
+			add_trait = trait:efficient_administrator
+			create_in_limbo = yes
+			save_scope_as = target_character
+		}
+	}
+	option = {
+		name = delhi_situation.21.a
+
+		scope:target_character = { move_country = root }
+
+		if = {
+			limit = {
+				scope:target_character = { dip >= 90 }
+			}
+			custom_tooltip = great_diplomat_tt
+			add_diplomats = 2
+		}
+		if = {
+			limit = {
+				scope:target_character = { total_abilities > 250 }
+			}
+			custom_tooltip = great_person_tt
+			add_prestige = prestige_extreme_bonus
+		}
+		if = {
+			limit = {
+				scope:target_character = { adm >= 90 }
+			}
+			custom_tooltip = great_administrator_tt
+			add_prestige = prestige_extreme_bonus
+		}
+		if = {
+			limit = {
+				scope:target_character = { mil >= 90 }
+			}
+			custom_tooltip = great_general_tt
+			add_army_tradition = army_tradition_mild_bonus
+			add_navy_tradition = navy_tradition_mild_bonus
+		}
+	}
+}
+
+fall_of_delhi.22 = {
+	type = country_event
+	category = situation_event
+
+	title = delhi_situation.22.title
+	desc = delhi_situation.22.desc
+
+	illustration_tags = {
+		10 = interior
+		10 = regular
+	}
+
+	trigger = {
+		any_rebel = {
+			rebel_progress > 0.5
+		}
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+		ruler_or_regent = { save_scope_as = target_character }
+		ordered_rebel = {
+			limit = { rebel_progress > 0.5 }
+			order_by = rebel_size
+			check_range_bounds = no
+			max = 1
+			save_scope_as = target_rebel
+		}
+	}
+
+
+	option = {
+		name = delhi_situation.22.a
+		ai_chance = { base = 10 }
+
+		scope:target_rebel = { add_rebel_progress = -0.33 }
+		custom_tooltip = {
+			text = lose_1_sop_tt
+			change_variable = {
+				name = fall_of_delhi_vote_weight
+				subtract = 0.01
+			}
+		}
+		add_government_power = government_power_weak_penalty
+		custom_tooltip = {
+			text = every_supporting_pop_gains_25_satisfaction
+			scope:target_rebel = {
+				every_pops_supporting_rebel = { add_pop_satisfaction = pop_satisfaction_extreme_bonus }
+			}
+		}
+	}
+
+	option = {
+		name = delhi_situation.22.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0.1
+				num_loans > 5
+			}
+			modifier = {
+				factor = 1.5
+				gold >= {
+					value = c:DLH.monthly_income_total
+					multiply = 5
+				}
+			}
+			modifier = {
+				factor = 0
+				is_during_bankruptcy = yes
+			}
+		}
+
+		change_gold_effect = { scale = -4 }
+
+		custom_tooltip = {
+			text = every_supporting_pop_gains_25_satisfaction
+			scope:target_rebel = {
+				every_pops_supporting_rebel = { add_pop_satisfaction = 0.25 }
+			}
+		}
+	}
+
+	option = {
+		name = delhi_situation.22.c
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0.1
+				num_loans > 5
+			}
+			modifier = {
+				factor = 1.5
+				gold >= {
+					value = c:DLH.monthly_income_total
+					multiply = 5
+				}
+			}
+			modifier = {
+				factor = 0
+				is_during_bankruptcy = yes
+			}
+		}
+
+		add_stability = stability_mild_penalty
+	}
+}
