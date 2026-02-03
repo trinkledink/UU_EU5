@@ -22,6 +22,7 @@
 - GP score from country ranks halved
 - Added strait crossing between Calais and Dover
 - Delhi disaster now releases Jaunpur, Malwa, Gujarat, Bahmanis as independent nations
+- Rivers now visible in Road/Road Builder mapmodes
 
 
 ## Temporary features:
@@ -31,16 +32,6 @@
 
 ## Integration of mods:
 
-- GDI_JeffL's **Better Road Builder**
-  - Files changed (8):
-    - in_game\gfx\map\map_modes\00_uu_mapmodes.txt
-    - in_game\gfx\map\spline_network\spline_styles\00_default.txt
-    - main_menu\gfx\FX\river_surface.shader
-    - main_menu\gfx\FX\road_gravel.shader
-    - main_menu\gfx\FX\road_modern.shader
-    - main_menu\gfx\FX\road_mulpass.shader
-    - main_menu\gfx\FX\road_paved.shader
-    - main_menu\gfx\FX\road_rail.shader
 - LazyIcarus' **Expanded Build View**
   - *NOTE: Temporarily removed for 1.1.0 Update*
   - Files changed (1):
