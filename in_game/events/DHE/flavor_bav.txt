@@ -2225,6 +2225,7 @@ flavor_bav.1302 = {
 			}
 
 			c:LBV = {
+				leave_all_wars_with = root
 				declare_war_with_cb = {
 					target = root
 					type = casus_belli:cb_subject_broke_free
@@ -2234,6 +2235,7 @@ flavor_bav.1302 = {
 		}
 		else = {
 			c:LBV = {
+				leave_all_wars_with = root
 				declare_war_with_cb = {
 					target = root
 					type = casus_belli:cb_independence_war

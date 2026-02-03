@@ -1,9 +1,4 @@
 ﻿l_english:
-
- mapmode_max_tax_base_name: "Potential Tax Base"
- MAPMODE_MAX_TAX_BASE: "#T $mapmode_max_tax_base_name$#!\n$mapmode_common_start$ their [owner|e]'s [max_tax_base|e]."
- MAX_TAX_BASE_MAPMODE_TT: "The [max_tax_base|e] in [ROOT.GetLocation.GetName] is [ROOT.GetLocation.GetTotalPossibleTaxBase|Y2]@gold!.\n\nMultiplied by [ROOT.GetLocation.GetControl|Y2%] of [control|e], this gives an effective [tax_base|e] of [ROOT.GetLocation.GetTotalTaxBase|Y2]@gold!."
- NO_MAX_TAX_BASE_MAPMODE_TT: "[ROOT.GetLocation.GetName] is a [seazone|e], so it does not have a [max_tax_base|e]."
  
  mapmode_uncontrolled_tax_base_name: "Uncontrolled Tax Base"
  MAPMODE_UNCONTROLLED_TAX_BASE: "#T $mapmode_uncontrolled_tax_base_name$#!\n$mapmode_common_start$ their [owner|e]'s [max_tax_base|e] that is lost due to lack of [control|e]."

@@ -1,6 +1,7 @@
 # A collection of UU developed mods for UU MP Gameplay and Balancing
 
-Current Features:
+## Current Features:
+
 - Removed hour ticks, combat adjusted accordingly
 - Unconditional Surrender Diplomacy Action Added
 - Western Schism Removed, PAP French Cardinals privilege removed
@@ -9,6 +10,7 @@ Current Features:
 - Brittany is a vassal of England instead of France
 - Removed crownpower malus from having debt
 - Centralization gives up to +25% integration speed
+- Decentralization does not give -33% annexation speed
 - Offensive gives up to +20% siege ability and assault ability, and -10% fort defense
 - Defensive gives up to +33% fort defense, and -10% siege ability. No longer affects army movement speed. 
 - French unique govt. reforms both give 1 cultures_capacity
@@ -18,9 +20,17 @@ Current Features:
 - Low relations no longer blocks players from forming alliances
 - Stability cost of deleting markets reduced to 10
 - GP score from country ranks halved
+- Added strait crossing between Calais and Dover
+- Delhi disaster now releases Jaunpur, Malwa, Gujarat, Bahmanis as independent nations
 
 
-Integration of mods:
+## Temporary features:
+
+- Monthly literacy gain rate increased to 10x, until the new pops literacy bug is fixed
+
+
+## Integration of mods:
+
 - GDI_JeffL's **Better Road Builder**
   - Files changed (8):
     - in_game\gfx\map\map_modes\00_uu_mapmodes.txt
@@ -32,6 +42,7 @@ Integration of mods:
     - main_menu\gfx\FX\road_paved.shader
     - main_menu\gfx\FX\road_rail.shader
 - LazyIcarus' **Expanded Build View**
+  - *NOTE: Temporarily removed for 1.1.0 Update*
   - Files changed (1):
     - in_game\gui\build_location_lateralview_expanded.gui
 - Mazutaki's **Dense Tech Tree**
@@ -41,7 +52,6 @@ Integration of mods:
   - Files changed (5):
     - in_game\gfx\map\map_modes\00_uu_mapmodes.txt
     - main_menu\common\script_values\tax_base_values.txt
-    - main_menu\gfx\interface\icons\map_modes\max_tax_base.dds
     - main_menu\gfx\interface\icons\map_modes\uncontrolled_tax_base.dds
     - main_menu\localization\english\max_tax_base_interfaces_l_english.yml  
 - nqwery's **Remove Start Game Smoke Effect**

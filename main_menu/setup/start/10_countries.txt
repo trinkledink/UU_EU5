@@ -350,7 +350,6 @@ countries = {
 
 	NOR = {
 		own_control_core = {
-
 			konghalla stromstad uddevalla hornborg
 			moss halden borg trogstad
 			oslo ski eidsvoll
@@ -368,7 +367,6 @@ countries = {
 			hamar kongsvinger elverum glommadal trysil amot tynset
 			troms trondenes senja bardodalen 
 			bodo birndal alstahaug gildeskal steigen langenes lofotr hamaroy ofoti
-			raisa vardo deatnu porsanger hammerfest lebesby 
 			
 
 			# Northern Isles
@@ -378,7 +376,9 @@ countries = {
 		
 		own_control_integrated = {
 			varanger  alta
+			raisa deatnu porsanger hammerfest lebesby
 			kirkenes
+			vardo  
 		}
 
 		accepted_cultures = {
@@ -1829,7 +1829,8 @@ countries = {
 			budejovice j_hradec benesov mlada_boleslav kourim kutna_hora
 			bechyne jicin podebrady caslav nachod nemecky_brod
 			chrudim hradec_kralove klodzko litomysl trebon
-			bautzen gorlitz hoyerswerda rothenburg_oberlausitz marienstern zittau #uu zittau given to BOH
+			bautzen gorlitz hoyerswerda rothenburg_oberlausitz marienstern 
+			zittau #uu zittau given to BOH
 		}
 
 		starting_technology_level = 3
@@ -3383,12 +3384,13 @@ countries = {
 
 	VYT = {
 		own_control_core = {
-			vyatka ust_cheptsa suna verkhoshizhemye orlov belozerye slobodskoy
-			oparino obyachevo lalsk nikolsk vokhma
-			podosinovets omutninsk kholunitsky kobra nagorsk
+			nikolsk
 		}
 
 		own_control_integrated = {
+			vyatka ust_cheptsa suna verkhoshizhemye orlov belozerye slobodskoy
+			oparino obyachevo lalsk vokhma
+			podosinovets omutninsk kholunitsky kobra nagorsk
 			nikolsky koksharov bolshaya_yakshanga 
 		}
 
@@ -3456,9 +3458,6 @@ countries = {
 		}
 
 		tolerated_cultures = {
-			muscovite
-			udmurt
-			komi
 		}
 
 		dynasty = rurikovich_dynasty
@@ -3474,12 +3473,13 @@ countries = {
 			beryozovka lysva kizel gubakha dobryanka solikamsk
 			usolye yusva chyormoz kudymkar kelich kosa_perm gayny 
 			ochyor okhannoye chastye debyosy stepanenki
-			igra dondykar yakshur_bodya votkings sarapul mozhga yelabuga izhevsk vavozh_mozhga vyatskiye_polyany
-			kilmez stelty falenki uni ural_nema
+			igra dondykar yakshur_bodya votkings sarapul mozhga izhevsk vavozh_mozhga 
+			stelty falenki uni 
 		}
 
 		own_control_integrated = {
 			aspa suksun ust_kishert orda kasevo yanaul tatyshly saygatsky yelovo osa 
+			yelabuga vyatskiye_polyany kilmez ural_nema
 		}
 
 		starting_technology_level = 3
@@ -4051,10 +4051,10 @@ countries = {
 			tarankol kyzylzhar presnowka staroye stanitsa_kokchetavskaya
 			shish muromtsevo ufa askino baltas
 			sartlan taskayevo kargat kainsky_pas kyshtovka
-			bursol kuchukskoye volchikha butyrskoe zmeinogorsk shemonayevskoye oskemen ust_kalmanka
+			bursol kuchukskoye volchikha butyrskoe 
 			krivoshchekovo kamen dovolnoye kozhevnikovo bolotnye
 			suzun berdsk chesnokovka kalmanka barnaul verkhotomsk kolchugino
-			altayskoye onguday ust_koksa smolenskoye mayma biysk
+			mayma biysk
 			kuznetsk salair kytmanovo ust_kabyrza askiz abakasnk beya shushenskoye
 			tomsk melnikovo molchanovo kargasok vasyugan kolpashevo
 			surgut bolshoy_balyk irtysh megion bolshoy_yugan upper_ob
@@ -4110,7 +4110,7 @@ countries = {
 			bolshoy_ik ust_katav mesyagutovo zlatoust
 			chimgi_tura tugulym yalutorovsk shadrinsk
 			tsaryovo_gorodishche burayevo
-			sarybulak zhanaarka arkat balyktykol kaynar_atbai
+			zhanaarka balyktykol kaynar_atbai
 
 			bratslav balta bershad drahushiv karabul savran
 			torhovytsia teplyk tsybuliv uman zavallia
@@ -4176,8 +4176,8 @@ countries = {
 			bashkir
 			uzbek_culture
 			yerle_qaliq_culture
-			smolenskian_culture
 			kyrgyz_culture
+			#smolenskian_culture
 			#ruthenian
 			#ryazanian
 			#severian
@@ -9926,6 +9926,48 @@ countries = {
 
 		country_rank = rank_county
 		dynasty = bardi_dynasty
+
+		include = "expl_mediterranean"
+		include = "expl_silk_road_west"
+		include = "expl_silk_road_center"
+		include = "expl_silk_road_east"
+		include = "expl_indian_trade_route"
+	}
+
+	ACC = {	#Acciaioli
+		type = building
+		starting_technology_level = 3
+		include = "catholic_republic_not_present"
+
+		capital = florence
+		government = {
+			type = republic
+			heir_selection = bank_selection
+			reforms = {	banking_country }
+			ruler = acc_acciaiolo_acciaioli
+
+			centralization_vs_decentralization = 20
+			aristocracy_vs_plutocracy = 70
+			serfdom_vs_free_subjects = 70
+			traditionalist_vs_innovative = 30
+			spiritualist_vs_humanist = 20
+			mercantilism_vs_free_trade = -40
+			belligerent_vs_conciliatory = 0
+			quality_vs_quantity = -20
+			offensive_vs_defensive = 30
+			land_vs_naval = 40
+			capital_economy_vs_traditional_economy = -50
+			individualism_vs_communalism = -50
+			outward_vs_inward = -90
+
+			laws = {
+				marriage_law = monogamous_marriage
+				heir_religion_law = heir_same_religion
+			}
+
+		}
+
+		country_rank = rank_county
 
 		include = "expl_mediterranean"
 		include = "expl_silk_road_west"
@@ -17625,7 +17667,7 @@ countries = {
 			veszprem gyor komarom fehervar esztergom
 			somogyvar tolna pecs segesd
 			bacs zenta bodrog halas
-			bratislava samorin nitra hlohovec holic
+			samorin nitra hlohovec holic
 			hont balassagyarmat stary_tekov banska_bystrica
 			trencin oravsky_podzamok turciansky_svaty_martin liptovsky_mikulas
 			gemer rimavska_sobota levoca lubica presov turna
@@ -17649,7 +17691,7 @@ countries = {
 		}
 
 		own_control_integrated = {
-			olsnica jaszbereny
+			bratislava olsnica jaszbereny
 		}
 
 		starting_technology_level = 3
@@ -17663,17 +17705,26 @@ countries = {
 			ruler = hun_karoly_robert
 			consort = pol_elzbieta_piast
 
-			ruler_term = { character = hun_bela_iv_arpad start_date = 1235.9.21 end_date = 1270.5.3 }
-			ruler_term = { character = hun_stephen_v_arpad start_date = 1270.5.3 end_date = 1272.1.1 }
-			ruler_term = { character = hun_ladislaus_iv_arpad start_date = 1272.1.1 end_date = 1290.1.1 }
-			ruler_term = { character = hun_andrew_iii_arpad start_date = 1290.1.1 end_date = 1301.1.14 }
+			ruler_term = { character = hun_bela_iv_arpad start_date = 1235.9.21 end_date = 1270.5.3 regnal_number = 4 }
+			ruler_term = { character = hun_stephen_v_arpad start_date = 1270.5.3 end_date = 1272.1.1 regnal_number = 5 }
+			ruler_term = { character = hun_ladislaus_iv_arpad start_date = 1272.1.1 end_date = 1290.1.1 regnal_number = 4 }
+			ruler_term = { character = hun_andrew_iii_arpad start_date = 1290.1.1 end_date = 1301.1.14 regnal_number = 3 }
+			ruler_term = { character = boh_wenceslaus_iii_premyslid start_date = 1301.8.27 end_date = 1305.10.9 regnal_number = 1 }
 			ruler_term = { character = lbv_otto_iii_wittelsbach start_date = 1305.10.9 end_date = 1307.6.1 regnal_number = 1 }
 			ruler_term = { character = hun_karoly_robert start_date = 1308.11.17 regnal_number = 1 }
 			regnal_numbers = {
-				name_bela = 4
 				name_stephen = 5
-				name_vladislav = 4
+				name_peter = 1
+				name_samuel = 1
 				name_andrew = 3
+				name_bela = 4
+				name_solomon = 1
+				name_geza = 2
+				name_vladislav = 4
+				name_kalman = 1
+				name_emmerich = 1
+				name_wenceslas = 1
+				name_otto = 1
 				name_charles = 1
 			}
 			laws = {
@@ -21836,6 +21887,8 @@ countries = {
 			mizrahi
 		}
 
+		currency_data = { complacency = 15 }
+
 	capital = cairo
 	}
 
@@ -23336,11 +23389,17 @@ countries = {
 			gwiju jeongju_jeongju
 			seogyeong jeungsan samhwa junghwa
 			gaeju sukju sunju
-			deokju yeongwon unju huicheon
+			deokju yeongwon 
+			huicheon unju
 			seongcheon
 			myeongju uljin samcheok jeongseon
 			goseong tongcheon ingnyeong
+		}
 
+		own_control_integrated = {
+			ganggye huju chosan 
+			jangjin
+			gapsan samsu linjiang_jurchen
 		}
 
 		our_cores_conquered_by_others = {
@@ -23428,11 +23487,12 @@ countries = {
 
 	SYG = { #Shenyang
 		own_control_core = {
-			liaoyang dingliao dandong
+			liaoyang fushun_liaoyang hetu_ala jabiyan qinhe shenyang 
+			dingliao dandong donggo kuandian wanggika
 			gaizhou fuzhou_liaoyang jinzhou_dalian xiuyan zhuanghe
 			guangning kaicheng wangping yizhou_jinzhou
 			jinzhou_liaoyang dalinghe haizhou_liaoyang ningyuan_jinzhou
-			yizhou_jurchen ningchang tongliao
+			kaiyuan_jurchen tieling
 		}
 
 		own_control_integrated = {
@@ -23454,7 +23514,7 @@ countries = {
 		}
 
 		country_rank = rank_kingdom
-		capital = liaoyang
+		capital = shenyang
 	}
 
 	#Tamna https://en.wikipedia.org/wiki/Tamna_Prefectures
@@ -28974,10 +29034,11 @@ countries = {
 			jiande chunan suian tonglu
 
 			ansu dingxing gaoyang_baoding laishui boye mancheng wanzhou_baoding qingyuan_baoding puyin tangxian gecheng xincheng_baoding shulu guixin yixian_yizhou
-			baochang songzhou shangdu dongliangting yixingzhou pingdisonglin enhua fuzhou kuanhe_xingzhou niushan limin baitan weining chagannur quanning taipingzhuang liuyuan xiabancheng yingchang huanzhou gaoyuan zhangsanying zhongdu
+			baochang songzhou shangdu dongliangting yixingzhou enhua fuzhou kuanhe_xingzhou niushan limin baitan weining chagannur taipingzhuang liuyuan xiabancheng huanzhou gaoyuan zhangsanying zhongdu
 			changyuan yuancheng baima_daming dongming nanle neihuang puyang qingfeng weixian xunxian
-			xiankang xingzhong lizhou daning_pingquan longshan huihe hezhong naiman pingquan chuanzhou wuping_daning shenshui fushu
+			xiankang xingzhong lizhou daning_pingquan longshan huihe hezhong naiman pingquan chuanzhou wuping_daning shenshui fushu yizhou_jurchen 
 			qinghe guangping handan yongnian mingshui quzhou
+			ningchang tongliao yehe
 			jiaohe qingchi dongguang fucheng_hejian liguo hejian jinghai tiaoxian leshou nanpi ningjin qingyun huichuan renqiu wuqiao suning dagu zhigu yanshan gucheng_jingzhou
 			guangzong renxian julu neiqiu shahe xingtai
 			luanyang banbishan baodi yijin dadu changping fangshan fengrun guan huairou daxing yuyang sanhe_tongzhou shicheng_jizhou dongan_shuntian lutai miyun pinggu dacheng shunyi xianghe luxian wenan wuqing wanping yongqing yutian fanyang zunhua
@@ -29027,7 +29088,7 @@ countries = {
 			bafan
 			qingjiang_liping taigong
 			ganzhou gaotai hongshui liyuan qidaban qilian sanjiaocheng shandan yongchang_ganzhou
-			anding_suzhou dangcheng kuyu_shazhou guazhou jinta niuquanzi shazhou suzhou_gansu chijin yangguan
+			anding_suzhou dangcheng kuyu_shazhou guazhou jinta shazhou suzhou_gansu chijin yangguan
 			anyuan datong_xining gulang gushan jinchang xiliang haomen nianbo xining baiting zhuanglang zhenfan
 			baoji fengxiang fufeng linyou longzhou_fengxiang meixian qianyang qishan longan
 			chengzhou dingxi fuqiang longxi_gongchang xihe_huizhou huizhou_gongchang huizhou jiezhou liangdang ningyuan_gongchang baimaguan tongwei qinan chengji sancha qingshui zhangxian
@@ -29055,93 +29116,59 @@ countries = {
 			mingshan yandao rongjing
 
 			#Mongolia
-			buir_nuur barun_xiabaer khalkh tamsabulag
-			bars_khot bayan_tumen bayantsagaan dalai_nuur menen
-			hailar bayan_ula hulun xuguit yimin
-			avraga kherlen rahsaan_khad uguumur undurkhaan
-			enhe_hada jiliu lower_gazimur merelka upper_gazimur urov
-			abagaita gegen hasar khirkhira talman_boorj
+			avraga rahsaan_khad 
+			enhe_hada jiliu lower_gazimur merelka urov
 			choyrin_datsan bayan gazrin_chuluu takhilyn ulziit
-			tavan_tolgoi matad sharga_uul sumtiin zara_uul
+			tavan_tolgoi sumtiin zara_uul
 			jingzhou_dorbod bathahalak chahar muumyangan ulan_hua ulanchab
 			erenkhot avga baganuur khobootsar shuluun_khoboot_tsagaan sonod
 			bishreit dalay doloodyn_gobi ikh_narttin_chuluu saikhandulaan ulaanbadrakh
-			avnagar chono khuuchid sangiin_dalai sorin_nuur ulgain uzemchin
-			kyakhta khadanzaa khan_khentii tsokh
+			kyakhta khadanzaa 
 			selenge khimni ulenkhe zed zelterijin
 			amarbayas_galang bornuur eroo
 			sulkhari khilgo khilgoson ung
 			ude_baikal anaa bureen khudan khurbe
-			khovd achit_nuur haerhhana huysiyn khurgan tahiltyn_khotgot tsagaan_usun
-			ulaagchiin airag_nuur hunguy khyargas_nuur telmen
-			ulaamgom dzaigil erzin tes turuum
-			uliastai ogomoor teel zavkhan
-			nibuchu ingedei
-			qorqonaq_yubur aga boorj unda
 			silkari kara_shilka
-			tsagaan baruun_tar_nuur lower_ulz upper_ulz yakhi zyyn_tar_nuur
-			onon balj baldan_bereeven kyra
 			bayankhot alxa bagh bayannurhong urad
 			del_khad galbyn_gobi khatanbulag oiyin_korken ooshiyn_gobi zhavklant_khairkhan
 			bayannur uraqai xinhure
-			khara_khoto banzart_khairkhan naraan_chilaun noyon_uul zag_suujiyn_gobi
+			banzart_khairkhan zag_suujiyn_gobi
 			ordos aerzhai otog tongwancheng
-			bii choigan systyg
-			kaa balyktyg buren_khem busiyn
-			den_terek khemchik ulug usun
-			khatgal eringiin uur
-			karakorum khar_balgas orkhon tsetserleg
-			baibalyk alyanbulag kharkhul mori_baridag tarvagatai
+			karakorum orkhon
+			alyanbulag tarvagatai
 			urga kedun khar_bukhyn kharuukh manzushir tuul
-			zagzuugiin_balgas altan_gadas chuluutyn delger_moron ider
-			barkul altayn_ovor_gobi naomao santokhe zuun_garyn_gobi
-			otegu_qulan bugat chikhan_agui tevsh_uul tsagaan_agui tsogt
 			ongiin_khiid gimpil_darjaalan shaazan_khot shaazan_tolgoi suriig
 			ulaan bogd khadat ukhaa_khudag
-			khalzan_shireg baidrag biger boontsagaan khangal naran orog tuin
-			tost_uul gaxun_gobi shargyn_gobi shira_qulusun
 			fuxin
 		}
 
 		own_control_integrated = {
-			chit nurchuu tura uldurga kuenga uryum
-
+			nurchuu kuenga uryum
 			lingfang xuanhua_nanning ningpu
-		}
 
-		own_control_conquered = {
 			amgun dukin dzhuk imilen kerbi suluk
 			nurgan bulava shantar torom tugur usalgin
-			boli achan nemptu simmi uninka xungake
+			achan nemptu simmi uninka xungake
 			kedar bitki evur pilda uschu
 			nanghaer idy_sakhalin porokotan wuliehe
 			guohuo boluohe kushunkotan nayoro
 			datta deren kema koppi samarginka tumzhdin
 			urmi bidzhan bira kukan kur sutara
+			namunka noto_ussuri
+			bikinka xunka
+			chalin
+			mergen dobkuri gan kuile menlu non
 			yakesa amazar emuer mohe ollo urka
 			gilyuy bryante mogot tukuringra tynda urkan
 			humar bir_amur kuanhe pangu sahar tahe
-			aigun arkhara chenqing jiajin nioman xunhe zhanhe
+			aigun arkhara chenqing jiajin taowen nioman xunhe zhanhe
 			gromatukha birma tehcha tom tygde yor
 			selemde burunda buse kogan mamyn nehru ulma
 			upper_nioman akishma olongki tujun tyrma urgal
 			djee argi dep kupuri mulmuga tok
-			hulan bayan_susu hailun hvlan ougen
-			shangjing boduna hulawen yushu zhaozhou_jurchen
-			ilan_hala hailang malong mudan_ula ningguta
-			chalin taowen wanhufu wehe
-			taizhou_jurchen buteha chol hurle
-			talaha dalaiketun nemeri sart yilaha zhalong
-			qiqihar arun bila laha nuomin
-			chaghankhot gorlos huolin taluhe tuliemao wafang
-			mergen dobkuri gan kuile menlu non
-			zhengjiatun haihaer kailu linhuang qingzhou_mongol xinkai
-			alchan bikinka imanka katen vaka xunka
-			juru_hoton dongning jixi mishan mulun
-			anchun hulin namunka noto_ussuri yiman
-			lahasusu futi nuoluo shuangyashan tulguur
-			kaiyuan_warka anju_nurgan nogule shili yongmingcheng
-			huncun kahari tulazi
+		}
+
+		own_control_conquered = {
 		}
 
 		include = "far_east_asia_monarchy"
@@ -29272,6 +29299,10 @@ countries = {
 			start_date = 1328.1.1
 			date = 1368.1.1
 			size = 1
+		}
+
+		currency_data = {
+			complacency = 25
 		}
 	}
 
@@ -29624,6 +29655,454 @@ countries = {
 		capital = liaoyang
 	}
 
+	OGE = { #Ögedei Horde
+		type = army
+		own_control_core = {
+			kurchum kandysu kokpekty shar zyryan
+			arkat sarybulak 
+			zmeinogorsk shemonayevskoye oskemen ust_kalmanka
+			altayskoye onguday ust_koksa smolenskoye 
+		}
+
+		own_control_integrated = {
+			ayagoz 
+			burqin jeminay 
+			tsagaan_usun
+		}
+
+		starting_technology_level = 3
+		include = "expl_mongols"
+		include = "eurasian_horde_no_muslim"
+		government = {
+
+			type = steppe_horde
+			heir_selection = tribal_oldest_male
+			ruler = oge_temurchi_borjigin
+
+			ruler_term = { character = oge_temurchi_borjigin start_date = 1333.1.1 regnal_number = 1	}
+
+			reforms = {
+				legacy_of_genghis
+			}
+		}
+		country_rank = rank_kingdom
+
+		tolerated_cultures = {
+			uzbek_culture
+			telengit_culture
+		}
+
+		capital = kurchum
+	}
+
+	BAT = { #Baatud Horde
+		type = army
+		own_control_core = {
+			altayn_ovor_gobi naomao zuun_garyn_gobi
+			otegu_qulan bugat chikhan_agui tevsh_uul tsogt
+			tost_uul gaxun_gobi shargyn_gobi shira_qulusun
+			noyon_uul 
+			niuquanzi 
+		}
+		own_control_integrated = {
+			barkul santokhe khara_khoto naraan_chilaun 
+		}
+
+		starting_technology_level = 3
+		include = "expl_mongols"
+		include = "eurasian_horde_no_muslim"
+		government = {
+
+			type = steppe_horde
+			heir_selection = tribal_oldest_male
+			ruler = random
+
+			reforms = {
+				
+			}
+		}
+		tolerated_cultures = {
+			mongolian_culture
+		}
+
+		dynasty = baatud_dynasty
+		capital = naomao
+	}
+
+	CRS = { #Choros Horde
+		type = army
+		own_control_core = {
+			khovd achit_nuur khurgan
+			ulaagchiin airag_nuur hunguy khyargas_nuur telmen
+			ulaamgom dzaigil erzin tes turuum
+			zagzuugiin_balgas altan_gadas chuluutyn delger_moron ider
+			khatgal eringiin uur
+			baibalyk kharkhul mori_baridag 
+			khar_balgas tsetserleg
+			kaa 
+		}
+
+		own_control_integrated = {
+			bii choigan systyg
+			balyktyg buren_khem busiyn
+			den_terek khemchik ulug usun
+		}
+
+		starting_technology_level = 3
+		include = "expl_mongols"
+		include = "eurasian_horde_no_muslim"
+		government = {
+
+			type = steppe_horde
+			heir_selection = tribal_oldest_male
+			ruler = random
+
+			reforms = {
+				
+			}
+		}
+		tolerated_cultures = {
+			mongolian_culture
+		}
+
+		dynasty = choros_dynasty
+		capital = khar_balgas
+	}
+
+	KHD = { #Khoid Horde
+		type = army
+		own_control_core = {
+			khalzan_shireg baidrag biger boontsagaan khangal naran orog tuin
+			uliastai ogomoor teel zavkhan
+			haerhhana huysiyn tahiltyn_khotgot 
+			tsagaan_agui 
+		}
+
+		starting_technology_level = 3
+		include = "expl_mongols"
+		include = "eurasian_horde_no_muslim"
+		government = {
+
+			type = steppe_horde
+			heir_selection = tribal_oldest_male
+			ruler = random
+
+			reforms = {
+				
+			}
+		}
+		tolerated_cultures = {
+			mongolian_culture
+		}
+
+		dynasty = khoid_dynasty
+		capital = zavkhan
+	}
+
+	TRH = { #Torghut Horde
+		type = army
+		own_control_core = {
+			atanuul bodonch bulgan chinggil ulungur kara_irtysh 
+		}
+
+		starting_technology_level = 3
+		include = "expl_mongols"
+		include = "eurasian_horde_no_muslim"
+		government = {
+
+			type = steppe_horde
+			heir_selection = tribal_oldest_male
+			ruler = random
+
+			reforms = {
+				
+			}
+		}
+		tolerated_cultures = {
+			mongolian_culture
+		}
+
+		dynasty = torghut_dynasty
+		capital = bulgan
+	}
+
+	TVA = { #Tuvan People
+		type = pop
+		add_pops_from_locations = {
+			bii choigan systyg
+			balyktyg buren_khem busiyn
+			den_terek khemchik ulug usun
+		}
+
+		starting_technology_level = 1
+		include = "expl_mongols"
+		include = "asia_tribe"
+		government = {
+
+			ruler = random
+
+			reforms = {
+				
+			}
+		}
+		tolerated_cultures = {
+			
+		}
+
+		capital = buren_khem
+	}
+
+	BGT = { #Belgutei Horde
+		type = army
+		own_control_core = {
+			onon balj baldan_bereeven kyra
+			bars_khot bayan_tumen bayantsagaan menen
+			lower_ulz upper_ulz yakhi
+			kherlen uguumur undurkhaan
+			khan_khentii tsokh
+			ingedei 
+		}
+
+		starting_technology_level = 3
+		include = "expl_mongols"
+		include = "eurasian_horde_no_muslim_no_protected_faith"
+		government = {
+
+			type = steppe_horde
+			heir_selection = tribal_oldest_male
+			ruler = bgt_alguncha_borjigin
+
+			ruler_term = { character = bgt_alguncha_borjigin start_date = 1330.1.1 regnal_number = 1	}
+
+			reforms = {
+				legacy_of_genghis
+			}
+		}
+		country_rank = rank_kingdom
+
+		tolerated_cultures = {
+			
+		}
+
+		capital = balj
+	}
+
+	HCN = { #Hachiun Horde
+		type = army
+		own_control_core = {
+			avnagar chono khuuchid sangiin_dalai sorin_nuur ulgain uzemchin
+			haihaer kailu linhuang qingzhou_mongol xinkai
+			pingdisonglin quanning yingchang 
+			tuliemao 
+			buir_nuur barun_xiabaer tamsabulag
+			matad sharga_uul 
+		}
+
+		starting_technology_level = 3
+		include = "expl_mongols"
+		include = "eurasian_horde_no_muslim"
+		government = {
+
+			type = steppe_horde
+			heir_selection = tribal_oldest_male
+			ruler = hcn_munanzi_borjigin
+
+			ruler_term = {	 character = hcn_munanzi_borjigin start_date = 1330.1.1 regnal_number = 1	}
+
+			reforms = {
+				legacy_of_genghis
+			}
+		}
+		country_rank = rank_kingdom
+
+		tolerated_cultures = {
+			jurchen_culture
+		}
+
+		capital = qingzhou_mongol
+	}
+	
+	OTC = { #Otchigin Horde
+		type = army
+		own_control_core = {
+			chaghankhot gorlos huolin taluhe wafang
+			taizhou_jurchen buteha chol hurle
+			bayan_ula xuguit yimin
+			zhengjiatun 
+			khalkh 
+			hailar 
+			talaha sart 
+		}
+		
+		own_control_integrated = {
+			nongan
+			zhaozhou_jurchen
+			zhalong
+			arun bila nuomin
+		}
+
+		starting_technology_level = 3
+		include = "expl_mongols"
+		include = "eurasian_horde_no_muslim"
+		government = {
+
+			type = steppe_horde
+			heir_selection = tribal_oldest_male
+			ruler = otc_yanashiri_borjigin
+
+			ruler_term = {	 character = otc_yanashiri_borjigin start_date = 1328.11.14 regnal_number = 1	}
+
+			reforms = {
+				legacy_of_genghis
+			}
+		}
+		country_rank = rank_kingdom
+
+		tolerated_cultures = {
+			daur_culture
+			sibe_culture
+		}
+
+		capital = taizhou_jurchen
+	}
+	
+	QAS = { #Qasar Horde
+		type = army
+		own_control_core = {
+			chit nibuchu tura uldurga 
+			qorqonaq_yubur aga boorj unda
+			upper_gazimur 
+			baruun_tar_nuur tsagaan zyyn_tar_nuur 
+			abagaita gegen hasar khirkhira talman_boorj
+			dalai_nuur 
+		}
+
+		own_control_integrated = {
+			hulun 
+		}
+
+		starting_technology_level = 3
+		include = "expl_mongols"
+		include = "eurasian_horde_no_muslim_no_protected_faith"
+		government = {
+
+			type = steppe_horde
+			heir_selection = tribal_oldest_male
+			ruler = qas_shiliemen_borjigin
+
+			ruler_term = {	 character = qas_shiliemen_borjigin start_date = 1329.2.5 regnal_number = 1	}
+
+			reforms = {
+				legacy_of_genghis
+			}
+		}
+		country_rank = rank_kingdom
+
+		tolerated_cultures = {
+			daur_culture
+			evenk_culture
+		}
+
+		capital = boorj
+	}
+
+	DGH = { #Dughlats
+		type = army
+		own_control_core = {
+			kashgar artush barchuk maralbexi payzawat tokkuzak yingisar yopurga
+			khotan karakax keriya lop mazar_tagh qira
+			yarkand guma kargilik poskam
+			charchan niya 
+		}
+
+		starting_technology_level = 3
+		include = "expl_mongols"
+		include = "eurasian_horde_no_muslim"
+		government = {
+
+			type = steppe_horde
+			heir_selection = tribal_oldest_male
+			ruler = random
+
+			reforms = {
+				legacy_of_genghis
+			}
+		}
+		country_rank = rank_duchy
+
+		tolerated_cultures = {
+			khorezmian_culture
+			uyghur_culture
+		}
+
+		capital = kashgar
+	}
+
+	BKH = { #Badakhshan
+		own_control_core = {
+			fayzabad jurm sar_sang zebak 
+			qalai_khumb kham_bahar ragh vanch
+			shighnan gunt murghab oksu shiveh vamar
+			qila_panjeh ishkashim roshtqala sarhad
+		}
+
+		starting_technology_level = 3
+		include = "expl_mongols"
+		include = "east_asia_monarchy_no_coast"
+		government = {
+			ruler = random
+		}
+
+		tolerated_cultures = {
+			pamiri_culture
+		}
+
+		capital = fayzabad
+	}
+
+	KRG = { #Karategin
+		own_control_core = {
+			gharm daroot_korgon karakol muksu sangvor
+		}
+
+		starting_technology_level = 3
+		include = "expl_mongols"
+		include = "muslim_monarchy_no_abrahamic_dhimmi_no_coast"
+		government = {
+			type = monarchy
+			heir_selection = cognatic_primogeniture
+			ruler = random
+		}
+
+		tolerated_cultures = {
+			khorezmian_culture
+		}
+
+		religious_school = hanafi_school
+
+		capital = gharm
+	}
+
+
+	SRL = { #Sarikol
+		own_control_core = {
+			sarikol akto kizilsu zarafshan 
+		}
+
+		starting_technology_level = 3
+		include = "expl_mongols"
+		include = "east_asia_monarchy_no_coast"
+		government = {
+			ruler = random
+		}
+
+		tolerated_cultures = {
+			khorezmian_culture
+		}
+
+		capital = sarikol
+	}
+
 	MMA = { #Mong Mao
 		own_control_core = {
 			luchuan_mangshi mangshi longchuan
@@ -29673,6 +30152,8 @@ countries = {
 			ruler_term = { character = tughluq_borjigin start_date = 1334.1.1 regnal_number = 1 }
 
 			ruler = tughluq_borjigin
+
+			centralization_vs_decentralization = 60
 
 		}
 		tolerated_cultures = {
@@ -31636,7 +32117,7 @@ countries = {
 			kayseri bogazliyan comana_cil develi tomarza
 			hacibektas urgup
 			sivas darende dasmenda deliktash gemerek gurun hafik sarkisla zara
-			bayburt erzincan ilic kelkit kemah sebinkarahisar siran
+			erzincan ilic kelkit kemah sebinkarahisar siran
 			yahyali malatya
 			}
 
@@ -31673,8 +32154,12 @@ countries = {
 		own_control_core = {
 			mihaliccik sivrihisar bozan kaymaz
 			altintas emirdag seyitgazi
-			kutahya aslanapa emet simav tavsanli
+			aslanapa emet simav tavsanli
 			usak banaz gediz seyhli
+		}
+
+		own_control_integrated = {
+			kutahya 
 		}
 
 		starting_technology_level = 3
@@ -32044,7 +32529,7 @@ countries = {
 			ahlat bargiri ercis
 			diyarbekir ergani
 			erzurum tercan
-			cermik
+			cermik bayburt 
 		}
 		own_control_integrated = {
 			mosul qayyarah tal_afar
@@ -33245,6 +33730,58 @@ countries = {
 		
 	}
 
+	#Aq Qoyunlu - AQQ
+	AQQ = {
+		our_cores_conquered_by_others = {
+			harput adakli palu
+			bayburt 
+		}
+
+		include = "expl_middle_east"
+		include = "muslim_tribe_no_coast_not_present"
+
+
+		government = {
+			type = tribe
+			heir_selection = tribal_oldest_male
+			ruler = random
+
+			laws = {
+				sharia_law = hanafi_policy
+			}
+		}
+
+		capital = palu
+		religious_school = hanafi_school
+		government = { mysticism_vs_jurisprudence = -15 }	
+	}
+
+	#Qara Qoyunlu - QAR
+	QAR = {
+		our_cores_conquered_by_others = {
+			ercis bargiri
+			qayyarah tal_afar
+		}
+
+		include = "expl_middle_east"
+		include = "muslim_tribe_no_coast_not_present"
+
+
+		government = {
+			type = tribe
+			heir_selection = tribal_oldest_male
+			ruler = random
+
+			laws = {
+				sharia_law = hanafi_policy #There is no proof that they were shiite as claimed in EU4
+			}
+		}
+
+		capital = ercis
+		religious_school = hanafi_school
+		government = { mysticism_vs_jurisprudence = -15 }	
+	}
+
 	#Al 'Alī - AAL
 	AAL = {
 		own_control_core = {
@@ -33989,8 +34526,12 @@ countries = {
 
 	BAM = {	#Bamberg
 		own_control_core = {
-			bamberg wolfsberg villach kronach
+			bamberg wolfsberg kronach
 			forchheim lichtenfels pegnitz
+		}
+
+		own_control_integrated = {
+			villach
 		}
 
 		starting_technology_level = 3
@@ -39409,19 +39950,26 @@ countries = {
 
 	#-------------------------- Silesia + Poland + Lithuania + Ruthenia ----------------------------
 
+	# UU Deleted silesian minors
+
 	SIL = {	#uu formed Silesia independent from BOH
 		own_control_core = {
 			glogow gora kozuchow szprotawa zielona_gora
 			legnica boleslawiec jawor wolow zlotoryja
 			olesnica milicz namyslow sycow trzebnica
-			opava fryvaldov glubczyce hlucin krnov
+			glubczyce hlucin 
 			opole kluczbork lubliniec olesno prudnik strzelce_opolskie
 			swidnica kamienna_gora rychbach niemcza ziebice
-			tesin bielsko bytom kozle pszczyna raciborz siewierz toszek
+			tesin bielsko bytom kozle pszczyna raciborz  toszek
 			wroclaw brzeg grodkow nysa niemodlin olawa sroda_slaska
-			zagan krosno_odrzanskie sulechow zary
+			zagan krosno_odrzanskie sulechow 
 			oswiecim zywiec wschowa
 		}
+		
+		own_control_integrated = {
+			opava fryvaldov krnov siewierz zary
+		}
+
 		starting_technology_level = 3
 		include = "catholic_monarchy_no_coast"
 		include = "expl_northern_europe"
@@ -39429,11 +39977,9 @@ countries = {
 		government = {
 			type = monarchy
 			heir_selection = cognatic_primogeniture
-			ruler = swd_bolko_ii_small
-
-			ruler_term = { character = swd_bernard_ii_swidnicki start_date = 1301.1.1 end_date = 1326.5.6 regnal_number = 2 }
-			ruler_term = { character = swd_bolko_ii_small start_date = 1326.5.6 regnal_number = 2 }
-
+			ruler = opl_boleslaw_ii_piast
+			ruler_term = {	character = opl_boleslaw_i_piast start_date = 1281.5.14 end_date = 1313.5.14 regnal_number = 1	}
+			ruler_term = {	character = opl_boleslaw_ii_piast start_date = 1313.5.14 regnal_number = 2	}
 			regnal_numbers = {
 				Bolko = 2
 			}
@@ -39441,634 +39987,12 @@ countries = {
 
 		tolerated_cultures = {
 			german_silesian
+			moravian
 		}
 
 		capital = opole
 		dynasty = piast_dynasty
 	}
-
-	# ZAG = { #Zagan
-	# 	own_control_core = {
-	# 		zagan krosno_odrzanskie sulechow zary
-	# 	}
-
-	# 	starting_technology_level = 3
-	# 	include = "expl_eastern_europe"
-	# 	include = "eastern_european_catholic_monarchy_no_coast"
-	# 	include = "eastern_european_catholic"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-	# 		ruler = zag_henryk_iv_wierny_piast
-	# 		ruler_term = {	character = glg_henryk_iii_piast start_date = 1304.1.1 end_date = 1310.12.11 regnal_number = 3	}
-	# 		ruler_term = {	character = zag_henryk_iv_wierny_piast start_date = 1310.12.11 regnal_number = 4	}
-
-	# 		regnal_numbers = {
-	# 			name_henry = 4
-	# 			Przemko = 1
-	# 		}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		german_silesian
-	# 		sorbian
-	# 	}
-
-	# 	capital = zagan
-	# 	dynasty = piast_dynasty
-	# }
-
-	# LGC = { #Legnica
-	# 	own_control_core = {
-	# 		legnica zlotoryja #Duchy of Legnica
-	# 		kluczbork #Duchy of Brzeg
-	# 	}
-
-	# 	starting_technology_level = 3
-	# 	include = "expl_eastern_europe"
-	# 	include = "eastern_european_catholic_monarchy_no_coast"
-	# 	include = "eastern_european_catholic"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-	# 		ruler = lgc_boleslaw_iii_the_generous_piast
-	# 		ruler_term = {	character = lgc_henryk_v_the_fat_piast start_date = 1278.1.1 end_date = 1296.2.22 regnal_number = 5	}
-	# 		ruler_term = {	character = lgc_boleslaw_iii_the_generous_piast start_date = 1296.2.22 regnal_number = 3	}
-
-	# 		regnal_numbers = {
-	# 			name_henry = 5
-	# 			name_boleslav = 3
-	# 		}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		german_silesian
-	# 		moravian
-	# 	}
-
-	# 	capital = legnica
-	# 	dynasty = piast_dynasty
-	# }
-
-	# OEL = { #Oels
-	# 	own_control_core = {
-	# 		olesnica milicz sycow trzebnica
-	# 		jawor boleslawiec
-	# 		opole olesno
-	# 		lubliniec
-	# 	}
-
-	# 	starting_technology_level = 3
-	# 	include = "expl_eastern_europe"
-	# 	include = "eastern_european_catholic_monarchy_no_coast"
-	# 	include = "eastern_european_catholic"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-	# 		ruler = oel_konrad_i_piast
-	# 		ruler_term = {	character = oel_konrad_i_piast start_date = 1321.1.1 regnal_number = 1	}
-
-	# 		regnal_numbers = {
-	# 			name_conrad = 1
-	# 		}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		german_silesian
-	# 	}
-
-	# 	capital = olesnica
-	# 	dynasty = piast_dynasty
-	# }
-
-	# JAW = { #Jawor
-	# 	own_control_core = {
-	# 		jawor boleslawiec #Duchy of Jawor
-	# 		zittau
-	# 	}
-
-	# 	starting_technology_level = 3
-	# 	include = "catholic_monarchy_no_coast"
-	# 	include = "expl_northern_europe"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-
-	# 		ruler = jaw_henryk_i_javorski
-
-	# 		ruler_term = {	character = jaw_bolko_i_the_strict start_date = 1278.1.1 end_date = 1301.11.9 regnal_number = 1	}
-	# 		ruler_term = {	character = jaw_henryk_i_javorski start_date = 1301.11.9 regnal_number = 1	}
-
-	# 		regnal_numbers = {
-	# 			Bolko = 1
-	# 			name_henry = 1
-	# 		}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		german_silesian
-	# 		sorbian
-	# 	}
-
-	# 	capital = jawor
-	# 	dynasty = piast_dynasty
-	# }
-
-	# OPL = {	#Opole
-	# 	own_control_core = {
-	# 		opole olesno #Duchy of Opole
-	# 		lubliniec #Duchy of Strzelce
-	# 	}
-
-	# 	starting_technology_level = 3
-	# 	include = "catholic_monarchy_no_coast"
-	# 	include = "expl_northern_europe"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-	# 		ruler = opl_boleslaw_ii_piast
-	# 		ruler_term = {	character = opl_boleslaw_i_piast start_date = 1281.5.14 end_date = 1313.5.14 regnal_number = 1	}
-	# 		ruler_term = {	character = opl_boleslaw_ii_piast start_date = 1313.5.14 regnal_number = 2	}
-	# 		regnal_numbers = {
-	# 			Bolko = 2
-	# 		}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		german_silesian
-	# 		moravian
-	# 	}
-
-	# 	capital = opole
-	# 	dynasty = piast_dynasty
-	# }
-
-	# PDK = {	#Prudnik
-	# 	own_control_core = {
-	# 		prudnik #Duchy of Prudnik
-	# 	}
-
-	# 	starting_technology_level = 3
-	# 	include = "catholic_monarchy_no_coast"
-	# 	include = "expl_northern_europe"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-	# 		ruler = nmd_boleslaw_elder
-	# 		ruler_term = {	character = opv_mikolaj_ii_premyslid start_date = 1318.1.1 end_date = 1337.1.1 regnal_number = 1	}
-	# 		ruler_term = {	character = nmd_boleslaw_elder start_date = 1337.1.1 regnal_number = 1	}
-	# 	}
-
-	# 	capital = prudnik
-	# 	dynasty = piast_dynasty
-	# }
-
-	# BYM = {	#Bytom
-	# 	own_control_core = {
-	# 		bytom kozle toszek
-	# 	}
-
-	# 	starting_technology_level = 3
-	# 	include = "catholic_monarchy_no_coast"
-	# 	include = "expl_northern_europe"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-	# 		ruler = bym_wladislaw_i_piast
-	# 		ruler_term = {	character = bym_kazimierz_i_piast start_date = 1281.5.14 end_date = 1312.3.10 regnal_number = 1	}
-	# 		ruler_term = {	character = bym_wladislaw_i_piast start_date = 1313.5.14 regnal_number = 1	}
-	# 		regnal_numbers = {
-	# 			name_casimir = 1
-	# 			name_vladislav = 1
-	# 		}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		german_silesian
-	# 	}
-
-	# 	capital = bytom
-	# 	dynasty = piast_dynasty
-	# }
-
-	# OPV = {	#Opava
-	# 	own_control_core = {
-	# 		opava hlucin #Duchy of Opava
-	# 		krnov glubczyce #Duchy of Krnov
-	# 	}
-
-	# 	starting_technology_level = 3
-	# 	include = "catholic_monarchy_no_coast"
-	# 	include = "expl_northern_europe"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-
-	# 		ruler = opv_mikolaj_ii_premyslid
-	# 		ruler_term = {	character = opv_mikolaj_ii_premyslid start_date = 1318.2.22 regnal_number = 2	}
-
-	# 		regnal_numbers = {
-	# 			name_nicholas = 2
-	# 		}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		german_silesian
-	# 		moravian
-	# 	}
-
-	# 	capital = raciborz
-	# 	dynasty = premyslid_dynasty
-	# }
-
-	# RCB = {	#Racibórz
-	# 	own_control_core = {
-	# 		raciborz #Duchy of Raciborz
-	# 		pszczyna #Duchy of Pszczyna
-	# 	}
-
-	# 	starting_technology_level = 3
-	# 	include = "catholic_monarchy_no_coast"
-	# 	include = "expl_northern_europe"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-
-	# 		ruler = opv_mikolaj_ii_premyslid
-	# 		ruler_term = {	character = opv_mikolaj_ii_premyslid start_date = 1318.2.22 regnal_number = 2	}
-
-	# 		regnal_numbers = {
-	# 			name_nicholas = 2
-	# 		}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		german_silesian
-	# 	}
-
-	# 	capital = raciborz
-	# 	dynasty = premyslid_dynasty
-	# }
-
-	# TES = {	#Tesin
-	# 	own_control_core = {
-	# 		tesin bielsko #Duchy of Cieszyn
-	# 	}
-	# 	starting_technology_level = 3
-	# 	include = "catholic_monarchy_no_coast"
-	# 	include = "expl_northern_europe"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-
-	# 		ruler = tes_kazimir_piast
-	# 		ruler_term = {	character = tes_kazimir_piast start_date = 1315.1.1 regnal_number = 1	}
-
-	# 		regnal_numbers = {
-	# 			Miszko = 1
-	# 			Kazimir = 1
-	# 		}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		german_silesian
-	# 		moravian
-	# 	}
-
-	# 	capital = tesin
-	# 	dynasty = piast_dynasty
-	# }
-
-	# OSW = {	#Oświęcim
-	# 	own_control_core = {
-	# 		oswiecim zywiec
-	# 	}
-	# 	starting_technology_level = 3
-	# 	include = "catholic_monarchy_no_coast"
-	# 	include = "expl_northern_europe"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-	# 		ruler = osw_jan_piast
-	# 		ruler_term = {	character = osw_wladyslaw_piast start_date = 1315.1.1 end_date = 1324.5.15 regnal_number = 1	}
-	# 		ruler_term = {	character = osw_jan_piast start_date = 1324.5.15 regnal_number = 1	}
-	# 		regnal_numbers = {
-	# 			name_john = 1
-	# 			name_vladislav = 1
-	# 		}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		lesser_polish
-	# 	}
-
-	# 	capital = oswiecim
-	# 	dynasty = piast_dynasty
-	# }
-
-	# SWD = {	#Świdnica
-	# 	own_control_core = {
-	# 		kamienna_gora swidnica rychbach
-	# 	}
-	# 	starting_technology_level = 3
-	# 	include = "catholic_monarchy_no_coast"
-	# 	include = "expl_northern_europe"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-	# 		ruler = swd_bolko_ii_small
-
-	# 		ruler_term = { character = swd_bernard_ii_swidnicki start_date = 1301.1.1 end_date = 1326.5.6 regnal_number = 2 }
-	# 		ruler_term = { character = swd_bolko_ii_small start_date = 1326.5.6 regnal_number = 2 }
-
-	# 		regnal_numbers = {
-	# 			Bolko = 2
-	# 		}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		german_silesian
-	# 	}
-
-	# 	capital = swidnica
-	# 	dynasty = piast_dynasty
-	# }
-
-	# SCI = {	#Ścinawa
-	# 	own_control_core = {
-	# 		wolow gora
-	# 	}
-	# 	starting_technology_level = 3
-	# 	include = "catholic_monarchy_no_coast"
-	# 	include = "expl_northern_europe"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-	# 		ruler = sci_jan_scinawski
-	# 		ruler_term = {	character = sci_jan_scinawski start_date = 1324.5.15 regnal_number = 1	}
-	# 		regnal_numbers = {
-	# 			name_john = 1
-	# 		}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		german_silesian
-	# 	}
-
-	# 	capital = wolow
-	# 	dynasty = piast_dynasty
-	# }
-
-	# ZIE = {	#Ziębice
-	# 	own_control_core = {
-	# 		ziebice 
-	# 	}
-	# 	starting_technology_level = 3
-	# 	include = "catholic_monarchy_no_coast"
-	# 	include = "expl_northern_europe"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-	# 		ruler = zie_bolko_ii_ziebice
-	# 		ruler_term = { character = zie_bolko_ii_ziebice start_date = 1324.5.15 regnal_number = 2 }
-	# 		regnal_numbers = {
-	# 			Bolko = 2
-	# 		}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		german_silesian
-	# 	}
-
-	# 	capital = ziebice
-	# 	dynasty = piast_dynasty
-	# }
-
-	# BRZ = {	#Brzeg
-	# 	own_control_core = {
-	# 		brzeg olawa niemcza
-	# 	}
-	# 	starting_technology_level = 3
-	# 	include = "catholic_monarchy_no_coast"
-	# 	include = "expl_northern_europe"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-	# 		ruler = lgc_boleslaw_iii_the_generous_piast
-	# 		ruler_term = {	character = lgc_boleslaw_iii_the_generous_piast start_date = 1296.2.22 regnal_number = 1	}
-	# 		regnal_numbers = {
-	# 			name_boleslav = 1
-	# 		}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		german_silesian
-	# 	}
-
-	# 	capital = brzeg
-	# 	dynasty = piast_dynasty
-	# }
-
-	# NMS = {	#Namysłów
-	# 	own_control_core = {
-	# 		namyslow
-	# 	}
-	# 	starting_technology_level = 3
-	# 	include = "catholic_monarchy_no_coast"
-	# 	include = "expl_northern_europe"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-	# 		ruler = tes_kazimir_piast
-	# 		ruler_term = {	character = tes_kazimir_piast start_date = 1321.1.1 regnal_number = 1	}
-	# 		regnal_numbers = {
-	# 			Kazimir = 1
-	# 		}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		german_silesian
-	# 	}
-
-	# 	capital = namyslow
-	# 	dynasty = piast_dynasty
-	# }
-
-	# STZ = {	#Strzelce
-	# 	own_control_core = {
-	# 		strzelce_opolskie
-	# 	}
-	# 	starting_technology_level = 3
-	# 	include = "catholic_monarchy_no_coast"
-	# 	include = "expl_northern_europe"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-	# 		ruler = stz_albert_strzelce
-	# 		ruler_term = {	character = stz_albert_strzelce start_date = 1323.1.1 regnal_number = 1	}
-	# 		regnal_numbers = {
-	# 			name_albert = 1
-	# 		}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		german_silesian
-	# 	}
-
-	# 	capital = strzelce_opolskie
-	# 	dynasty = piast_dynasty
-	# }
-
-	# NMD = {	#Niemodlin
-	# 	own_control_core = {
-	# 		niemodlin
-	# 	}
-	# 	starting_technology_level = 3
-	# 	include = "catholic_monarchy_no_coast"
-	# 	include = "expl_northern_europe"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-	# 		ruler = nmd_boleslaw_elder
-	# 		ruler_term = {	character = nmd_boleslaw_elder start_date = 1313.1.1 regnal_number = 1	}
-	# 		regnal_numbers = {
-	# 			name_boleslav = 1
-	# 		}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		german_silesian
-	# 	}
-
-	# 	capital = niemodlin
-	# 	dynasty = piast_dynasty
-	# }
-
-	# SIZ = {	#Siewierz
-	# 	own_control_core = {
-	# 		siewierz
-	# 	}
-	# 	starting_technology_level = 3
-	# 	include = "catholic_monarchy_no_coast"
-	# 	include = "expl_northern_europe"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-	# 		ruler = tes_kazimir_piast
-	# 		ruler_term = {	character = tes_kazimir_piast start_date = 1337.1.1 regnal_number = 1	}
-	# 		regnal_numbers = {
-	# 			Kazimir = 1
-	# 		}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		german_silesian
-	# 		lesser_polish
-	# 	}
-
-	# 	capital = siewierz
-	# 	dynasty = piast_dynasty
-	# }
-
-	# WRC = {	#Wrocław
-	# 	own_control_core = {
-	# 		wroclaw sroda_slaska
-	# 	}
-	# 	starting_technology_level = 3
-	# 	include = "catholic_monarchy_no_coast"
-	# 	include = "expl_northern_europe"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-	# 		ruler = boh_john_luxembourg
-	# 		ruler_term = {	character = boh_john_luxembourg start_date = 1335.11.24 regnal_number = 1	}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		silesian
-	# 	}
-
-	# 	capital = wroclaw
-	# }
-
-	# NYS = {	#Nysa
-	# 	own_control_core = {
-	# 		nysa grodkow fryvaldov
-	# 	}
-	# 	starting_technology_level = 3
-	# 	include = "catholic_german_bishopric_no_coast"
-	# 	include = "expl_northern_europe"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = theocracy
-	# 		ruler = nys_nanker
-	# 		ruler_term = {	character = nys_nanker start_date = 1326.1.1 regnal_number = 1	}
-	# 		regnal_numbers = {
-	# 			name_john = 1
-	# 		}
-
-	# 		laws = {
-	# 			mining_law = nobles_mining_law
-	# 		}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		german_silesian
-	# 		moravian
-	# 	}
-
-	# 	capital = nysa
-	# 	dynasty = piast_dynasty
-	# }
-
-	# GLO = {	#Głogów
-	# 	own_control_core = {
-	# 		glogow szprotawa kozuchow wschowa zielona_gora
-	# 	}
-	# 	starting_technology_level = 3
-	# 	include = "catholic_monarchy_no_coast"
-	# 	include = "expl_northern_europe"
-	# 	country_rank = rank_duchy
-	# 	government = {
-	# 		type = monarchy
-	# 		heir_selection = cognatic_primogeniture
-	# 		ruler = jaw_henryk_i_javorski
-
-	# 		ruler_term = {	character = glg_mechthild_von_braunschweig_luneburg start_date = 1310.12.11 end_date = 1318.4.26 regnal_number = 1 }
-	# 		ruler_term = {	character = jaw_henryk_i_javorski start_date = 1337.1.1 regnal_number = 1	}
-			
-	# 		regnal_numbers = {
-	# 			name_henry = 1
-	# 		}
-	# 	}
-
-	# 	tolerated_cultures = {
-	# 		german_silesian
-	# 	}
-
-	# 	capital = glogow
-	# 	dynasty = piast_dynasty
-	# }
 
 	POL = {	#Poland
 		own_control_core = {
@@ -47218,22 +47142,8 @@ countries = {
 	CHG = { #Chagatai
 		type = army
 		own_control_core = {
-			akto kizilsu
-			kashgar artush barchuk maralbexi payzawat tokkuzak yingisar yopurga
-			khotan karakax keriya lop qira
-			yarkand guma kargilik poskam
-			karasahr bosten
-			kurla bugur kuerchu
-			charchan charklik niya qietai tatrang waxxari
 			urumqi
 			manas
-			mazar_tagh tikenliq
-			
-			fayzabad
-			jurm
-			 shiveh
-			kham_bahar ragh
-			qalai_khumb vanch
 			tamdy akkesene baba_ata nurlykent saudakent shavgar sholakkorgan
 			almaty boyauli karakastek karamergen kargaly kurty shengeldy talkhir
 			balasagun dzhul harandzuvan kysmyci nuzket sargau soltobe
@@ -47250,18 +47160,14 @@ countries = {
 			koshoy_korgon cholok_kaiyn chon_naryn jumgal ketmen_tobe naryn
 			otrar artyk_ata kyr_uzkand mardankuyik sutkent zemukh zhaushikumtobe
 			turkestan aktas_kystagy baydibek_ata ikan karnak sawran shilik
-			gharm daroot_korgon karakol muksu sangvor
-			kurchum kandysu kokpekty shar zyryan
 		}
 
 		own_control_integrated = {
-			almaliq gulja narat nilka tokkuztara sarikol yulduz bortala jing 
+			almaliq gulja narat nilka tokkuztara bortala jing 
 			kuytun urghtbulaq usu_xinjiang yangjibaliq kutubi ulan_us qanbalik 
 			hoboksar gonganbao utbulaq zhekdeliq targabatay dahra_sasykkol emin 
-			ilanbalyk koktuma toli atanuul bodonch bulgan chinggil ulungur kara_irtysh 
-			burqin jeminay qila_panjeh ishkashim roshtqala sarhad sar_sang zebak 
-			shighnan vamar ilibalyk koktal kayalyk ayagoz tansyk
-			zarafshan gunt murghab oksu
+			ilanbalyk koktuma toli 
+			ilibalyk koktal kayalyk tansyk
 		}
 
 		starting_technology_level = 3
@@ -47394,9 +47300,16 @@ countries = {
 			qocho turpan lukchun pichan toksun
 			beshbalik dunla guchung mori
 			dashahai bailongdui miran loulan
-			kumux
+			karasahr bosten kumux 
+			kurla bugur kuerchu
 			yuanhu
 			nazhi hami geziyandun
+			charklik qietai tatrang waxxari
+			tikenliq
+		}
+
+		own_control_integrated = {
+			yulduz 
 		}
 
 		starting_technology_level = 3
@@ -47406,6 +47319,7 @@ countries = {
 			ruler = qch_uruktemur
 		}
 
+		country_rank = rank_kingdom
 		capital = qocho
 	}
 
@@ -47993,17 +47907,11 @@ countries = {
 		type = pop
 
 		add_pops_from_locations = {
-			boorj qorqonaq_yubur
-			bir_amur
-			tehcha
-			dobkuri kuile
-			emuer mohe
-			laha
-			nioman
-			sahar
-			yilaha
-			enhe_hada jiliu lower_gazimur merelka upper_gazimur urov abagaita gegen hasar khirkhira talman_boorj aga
-			unda silkari kara_shilka gromatukha birma tom yor gan
+			yakesa amazar emuer mohe ollo urka gilyuy bryante mogot tukuringra tynda urkan humar kuanhe 
+			pangu sahar tahe aigun dalaiketun yilaha zhalong qiqihar arun bila laha nuomin mergen dobkuri
+			gan kuile menlu non enhe_hada jiliu lower_gazimur merelka upper_gazimur urov abagaita gegen 
+			hasar khirkhira talman_boorj khilgo ude_baikal khudan nibuchu ingedei tura qorqonaq_yubur aga
+			boorj unda silkari kara_shilka kuenga uryum baruun_tar_nuur lower_ulz zyyn_tar_nuur kyra narhata
 		}
 
 		include = "expl_manchurian_tribe"
@@ -48017,23 +47925,14 @@ countries = {
 		type = pop
 
 		add_pops_from_locations = {
-			tujun urgal
-			amazar ollo urka
-			dep
-			bolodek maya tul_kichan udskoye
-			tynda urkan
-			mamyn ulma
-			nibuchu tura
-			imilen kerbi
-			evur kedar
-			kuenga uryum
-			tugur
-			tygde
-			nikolsky_pogost irkutsk_kazachinskoye ust_kut reka_tuba
-			lower_angara kezhma upper_angara yarkino bratsk chuva boguchany
-			manzaya chunoyar aban dzerzhinskoye taseyevo pashino motygino
-			chit nurchuu uldurga dukin suluk shantar torom gilyuy bryante mogot tukuringra selemde burunda buse kogan nehru
-			upper_nioman akishma olongki djee argi kupuri mulmuga tok
+			amgun dukin dzhuk imilen kerbi suluk torom tugur usalgin kedar bitki evur kukan sutara
+			amazar ollo urka gilyuy bryante mogot tukuringra tynda urkan bir_amur arkhara chenqing
+			nioman xunhe zhanhe gromatukha birma tehcha tom tygde yor selemde burunda buse kogan 
+			mamyn nehru ulma upper_nioman akishma olongki tujun tyrma urgal djee argi dep kupuri 
+			mulmuga tok nibuchu chit nurchuu tura uldurga kuenga uryum ust_kut reka_tuba
+			nikolsky_pogost irkutsk_kazachinskoye dzerzhinskoye motygino taseyevo pashino bratsk 
+			chuva kezhma upper_angara lower_angara educhanka yarkino manzaya boguchany chunoyar aban 
+			udskoye	bolodek tul_kichan maya 
 		}
 
 		include = "expl_manchurian_tribe"
@@ -48099,32 +47998,26 @@ countries = {
 		}
 	}
 
-	NAN = { #Nanai
-		type = pop
-
-		add_pops_from_locations = {
-			achan boli nemptu
-			arkhara jiajin
-			ilan_hala
-			lahasusu nuoluo shuangyashan
-			wehe
-			tyrma
-			simmi urmi bidzhan bira kukan kur sutara chalin taowen wanhufu futi tulguur
-		}
-
-		include = "expl_manchurian_tribe"
-		include = "yeren_tribe"
-		government = {
-			ruler = random
-			heir_selection = ritual_selection
-		}
-	}
+	#NAN = { #Nanai
+	#	type = pop
+#
+	#	add_pops_from_locations = {
+	#	}
+#
+	#	include = "expl_manchurian_tribe"
+	#	include = "yeren_tribe"
+	#	government = {
+	#		ruler = random
+	#		heir_selection = ritual_selection
+	#	}
+	#}
 
 	NVK = { #Nivkh
 		type = pop
 
 		add_pops_from_locations = {
-			usalgin amgun bitki bulava dzhuk nurgan nanghaer idy_sakhalin porokotan wuliehe
+			amgun dzhuk imilen nurgan bulava shantar torom tugur usalgin nanghaer idy_sakhalin 
+			porokotan wuliehe deren tumzhdin
 		}
 
 		include = "expl_manchurian_tribe"
@@ -48138,9 +48031,7 @@ countries = {
 		type = pop
 
 		add_pops_from_locations = {
-			tumzhdin xungake
-			uschu
-			datta
+			bulava datta deren koppi samarginka tumzhdin
 		}
 
 		include = "expl_manchurian_tribe"
@@ -48154,10 +48045,8 @@ countries = {
 		type = pop
 
 		add_pops_from_locations = {
-			humar kuanhe pangu tahe
-			menlu mergen non
-			aigun chenqing xunhe zhanhe
-			yakesa
+			yakesa emuer mohe ollo urka tynda urkan humar bir_amur kuanhe pangu tahe aigun chenqing 
+			nioman xunhe zhanhe tehcha hulan hailun nemeri yilaha laha mergen dobkuri kuile	menlu non
 		}
 
 		include = "expl_manchurian_tribe"
@@ -48171,12 +48060,9 @@ countries = {
 		type = pop
 
 		add_pops_from_locations = {
-			bayan_ula hulun
-			gorlos
-			kailu xinkai zhengjiatun
-			khalkh
-			hailar xuguit yimin taizhou_jurchen buteha chol hurle qiqihar arun bila nuomin chaghankhot huolin taluhe tuliemao
-			wafang
+			tongliao boduna zhaozhou_jurchen changchun taizhou_jurchen buteha chol hurle talaha dalaiketun
+			sart zhalong qiqihar arun bila nuomin chaghankhot gorlos huolin taluhe tuliemao wafang
+			zhengjiatun kailu xinkai buir_nuur khalkh dalai_nuur hailar	bayan_ula hulun xuguit yimin		
 		}
 
 		include = "expl_manchurian_tribe"
@@ -48186,32 +48072,26 @@ countries = {
 		}
 	}
 
-	SOL = { #Solon
-		type = pop
-
-		add_pops_from_locations = {
-			boduna yushu
-			dalaiketun nemeri
-			hulan bayan_susu hailun hvlan ougen shangjing hulawen zhaozhou_jurchen talaha sart zhalong
-		}
-
-		include = "expl_manchurian_tribe"
-		include = "asia_tribe"
-		government = {
-			ruler = random
-		}
-	}
+	#SOL = { #Solon
+	#	type = pop
+#
+	#	add_pops_from_locations = {
+	#	}
+#
+	#	include = "expl_manchurian_tribe"
+	#	include = "asia_tribe"
+	#	government = {
+	#		ruler = random
+	#	}
+	#}
 
 	UDE = { #Udege
 		type = pop
 
 		add_pops_from_locations = {
-			alchan katen xunka
-			hulin
-			jixi mishan
-			koppi
-			uninka
-			kema samarginka bikinka imanka vaka anchun namunka noto_ussuri yiman anju_nurgan nogule shili
+			boli nemptu simmi uninka xungake kema koppi samarginka urmi bidzhan bira kukan
+			kur sutara arkhara jiajin bayan_susu hvlan chalin taowen wanhufu wehe bikinka imanka 
+			katen xunka	anchun namunka noto_ussuri lahasusu tulguur anju_nurgan nogule
 		}
 
 		include = "expl_manchurian_tribe"
@@ -48227,8 +48107,8 @@ countries = {
 		type = pop
 
 		add_pops_from_locations = {
-			pilda
-			deren
+			achan nemptu simmi uninka xungake kedar bitki evur pilda uschu kur xunka
+			
 		}
 
 		include = "expl_manchurian_tribe"
@@ -48239,30 +48119,26 @@ countries = {
 
 	}
 
-	WRK = { #Warkha
-		type = pop
-
-		add_pops_from_locations = {
-			malong mudan_ula
-			juru_hoton mulun
-			hailang ningguta dongning kaiyuan_warka yongmingcheng huncun tulazi
-			kahari 
-		}
-
-		include = "expl_manchurian_tribe"
-		include = "yeren_tribe"
-		government = {
-			ruler = random
-			heir_selection = ritual_selection
-		}
-	}
+	#WRK = { #Warkha
+	#	type = pop
+#
+	#	add_pops_from_locations = {
+	#		
+	#	}
+#
+	#	include = "expl_manchurian_tribe"
+	#	include = "yeren_tribe"
+	#	government = {
+	#		ruler = random
+	#		heir_selection = ritual_selection
+	#	}
+	#}
 
 	HDA = { #Hada
 		own_control_core = {
-			kaiyuan_jurchen tieling
 		}
 
-		include = "haixi_tribe"
+		include = "haixi_tribe_not_present"
 		include = "expl_manchurian_tribe"
 
 		dynasty = hada_nara_dynasty
@@ -48276,11 +48152,10 @@ countries = {
 
 	HOI = { #Hoifa
 		own_control_core = {
-			hoifa huifacheng
 		}
 
 		include = "expl_manchurian_tribe"
-		include = "haixi_tribe"
+		include = "haixi_tribe_not_present"
 
 		dynasty = hoifa_nara_dynasty
 
@@ -48293,11 +48168,10 @@ countries = {
 
 	ULA = { #Ula
 		own_control_core = {
-			girin_ula gongjiang_jurchen lefu odoli shulan
 		}
 
 		include = "expl_manchurian_tribe"
-		include = "haixi_tribe"
+		include = "haixi_tribe_not_present"
 
 		dynasty = ula_nara_dynasty
 
@@ -48310,11 +48184,10 @@ countries = {
 
 	YEH = { #Yehe
 		own_control_core = {
-			changchun itu_jilin nongan yehe
 		}
 
 		include = "expl_manchurian_tribe"
-		include = "haixi_tribe"
+		include = "haixi_tribe_not_present"
 
 		dynasty = yehe_nara_dynasty
 
@@ -48327,11 +48200,10 @@ countries = {
 
 	DNG = { #Donggo
 		own_control_core = {
-			donggo kuandian
 		}
 
 		include = "expl_manchurian_tribe"
-		include = "jianzhou_tribe"
+		include = "jianzhou_tribe_not_present"
 
 		dynasty = donggo_dynasty
 
@@ -48344,11 +48216,10 @@ countries = {
 
 	HJN = { #Holjaon
 		own_control_core = {
-			onseong heoryeong
 		}
 
 		include = "expl_manchurian_tribe"
-		include = "jianzhou_tribe"
+		include = "jianzhou_tribe_not_present"
 
 		dynasty = holjaon_dynasty
 
@@ -48361,11 +48232,10 @@ countries = {
 
 	HNE = { #Hunehe
 		own_control_core = {
-			shenyang
 		}
 
 		include = "expl_manchurian_tribe"
-		include = "jianzhou_tribe"
+		include = "jianzhou_tribe_not_present"
 
 		dynasty = bira_hala_dynasty
 
@@ -48378,11 +48248,10 @@ countries = {
 
 	HUL = { #Huligai
 		own_control_core = {
-			ganggye huju
 		}
 
 		include = "expl_manchurian_tribe"
-		include = "jianzhou_tribe"
+		include = "jianzhou_tribe_not_present"
 
 		capital = ganggye
 		government = {
@@ -48393,11 +48262,10 @@ countries = {
 
 	JEC = { #Jecen
 		own_control_core = {
-			hetu_ala jabiyan
 		}
 
 		include = "expl_manchurian_tribe"
-		include = "jianzhou_tribe"
+		include = "jianzhou_tribe_not_present"
 
 		dynasty = jecen_dynasty
 
@@ -48408,16 +48276,15 @@ countries = {
 		}
 	}
 
-	JUS = { #Jusheli
+	JUS = { #Jusheri
 		own_control_core = {
-			helong juxeri longjing yenji
-			musan
+			juxeri
 		}
 
 		include = "expl_manchurian_tribe"
 		include = "jianzhou_tribe"
 
-		dynasty = jusheli_dynasty
+		dynasty = jusheri_dynasty
 
 		capital = juxeri
 		government = {
@@ -48428,11 +48295,10 @@ countries = {
 
 	MAO = { #Maolian
 		own_control_core = {
-			gyeongseong buryeong gilju myeongcheon
 		}
 
 		include = "expl_manchurian_tribe"
-		include = "jianzhou_tribe"
+		include = "jianzhou_tribe_not_present"
 
 		capital = gyeongseong
 		government = {
@@ -48443,7 +48309,7 @@ countries = {
 
 	NEY = { #Neyen
 		own_control_core = {
-			golmin_salggiyan sunggari
+			golmin_salggiyan
 		}
 
 		include = "expl_manchurian_tribe"
@@ -48460,11 +48326,11 @@ countries = {
 
 	ODO = { #Odoli
 		own_control_core = {
-			chosan
+			
 		}
 
 		include = "expl_manchurian_tribe"
-		include = "jianzhou_tribe"
+		include = "jianzhou_tribe_not_present"
 
 		capital = chosan
 		government = {
@@ -48475,11 +48341,10 @@ countries = {
 
 	SSH = { #Suksuhu
 		own_control_core = {
-			fushun_liaoyang qinhe
 		}
 
 		include = "expl_manchurian_tribe"
-		include = "jianzhou_tribe"
+		include = "jianzhou_tribe_not_present"
 
 		dynasty = aisin_gioro_dynasty
 
@@ -48492,12 +48357,10 @@ countries = {
 
 	URY = { #Uryangkhad
 		own_control_core = {
-			hamheung dancheon bukcheong
-			jangjin
 		}
 
 		include = "expl_manchurian_tribe"
-		include = "jianzhou_tribe"
+		include = "jianzhou_tribe_not_present"
 
 		capital = hamheung
 		government = {
@@ -48508,12 +48371,10 @@ countries = {
 
 	YAL = { #Yalu
 		own_control_core = {
-			linjiang_jurchen
-			gapsan samsu
 		}
 
 		include = "expl_manchurian_tribe"
-		include = "jianzhou_tribe"
+		include = "jianzhou_tribe_not_present"
 
 		dynasty = yalu_dynasty
 
@@ -48526,15 +48387,759 @@ countries = {
 
 	WGG = { #Wanggiya
 		own_control_core = {
-			wanggika
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe_not_present"
+
+		dynasty = wanyan_dynasty
+
+		capital = wanggika
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	#Haixi TAGS
+	EJI = { #Ejimi
+		own_control_core = {
+			hvlan
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "haixi_tribe"
+
+		capital = hvlan
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	FUY = { #Fuyu
+		own_control_core = {
+			dalaiketun 
+		}
+
+		own_control_integrated = {
+			laha qiqihar
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "haixi_tribe"
+
+		capital = dalaiketun
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	NAL = { #Nalaji
+		own_control_core = {
+			ougen
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "haixi_tribe"
+
+		capital = ougen
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	NEM = { #Nemer
+		own_control_core = {
+			nemeri
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "haixi_tribe"
+
+
+		capital = nemeri
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	SNC = { #Sancaha
+		own_control_core = {
+			boduna
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "haixi_tribe"
+
+		capital = boduna
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+	
+	TAS = { #Tashan
+		own_control_core = {
+			hulan
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "haixi_tribe"
+
+		capital = hulan
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	WEJ = { #Weji
+		own_control_core = {
+			hailun
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "haixi_tribe"
+
+		capital = hailun
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	#Hurga TAGS
+	ASU = { #Asu
+		own_control_core = {
+			ningguta
 		}
 
 		include = "expl_manchurian_tribe"
 		include = "jianzhou_tribe"
 
-		dynasty = wanyan_dynasty
+		capital = ningguta
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
 
-		capital = wanggika
+	BAY = { #Bayan
+		own_control_core = {
+			bayan_susu
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = bayan_susu
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	DLA = { #Dala
+		own_control_core = {
+			odoli
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = odoli
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	FLN = { #Fulun
+		own_control_core = {
+			hailang
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = hailang
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	GIL = { #Gilemi
+		own_control_core = {
+			lahasusu
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = lahasusu
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	HIJ = { #Hijan
+		own_control_core = {
+			boli
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = boli
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	HRO = { #Horo
+		own_control_core = {
+			katen
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = katen
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	HUR = { #Hurga
+		own_control_core = {
+			ilan_hala mudan_ula tulguur
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = ilan_hala
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	ILU = { #Ilu
+		own_control_core = {
+			anchun
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = anchun
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	IMN = { #Imanka
+		own_control_core = {
+			imanka vaka
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = imanka
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	MRE = { #Muren
+		own_control_core = {
+			jixi mishan mulun
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = jixi
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	MUU = { #Mulun
+		own_control_core = {
+			
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe_not_present"
+
+		capital = bayan_susu
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	NRO = { #Noro
+		own_control_core = {
+			nuoluo shuangyashan
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = nuoluo
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	SMN = { #Shilimian
+		own_control_core = {
+			hulin yiman
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = hulin
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	TOX = { #Ton
+		own_control_core = {
+			wanhufu
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = wanhufu
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	USS = { #Ussuri
+		own_control_core = {
+			alchan
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = alchan
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	WEK = { #Weken
+		own_control_core = {
+			wehe
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = wehe
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	WNL = { #Wanlin
+		own_control_core = {
+			
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe_not_present"
+
+		capital = futi
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	#Jurchen TAGS
+	AID = { #Aidan
+		own_control_core = {
+			yenji
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = yenji
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	AAR = { #Abdari
+		own_control_core = {
+			kahari
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = kahari
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	FUT = { #Futi
+		own_control_core = {
+			futi
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = futi
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	HIY = { #Haiyan
+		own_control_core = {
+			musan 
+			gyeongseong buryeong gilju myeongcheon onseong heoryeong
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = gyeongseong
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	HLN = { #Halan
+		own_control_core = {
+			helong longjing 
+			hamheung dancheon bukcheong
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = helong
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	HNC = { #Huncun
+		own_control_core = {
+			huncun
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = huncun
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	HOT = { #Hotonggi
+		own_control_core = {
+			sunggari
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = sunggari
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	HUI = { #Huiba
+		own_control_core = {
+			hoifa huifacheng
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = huifacheng
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	ITU = { #Itun
+		own_control_core = {
+			changchun
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = changchun
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	JHT = { #Juru Hoton
+		own_control_core = {
+			juru_hoton
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = juru_hoton
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	LAL = { #Lalin
+		own_control_core = {
+			shangjing shulan yushu
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = shangjing
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	LEF = { #Lefu
+		own_control_core = {
+			
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe_not_present"
+
+		capital = juru_hoton
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	LLU = { #Lalu
+		own_control_core = {
+			hulawen
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = hulawen
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	MAH = { #Mahiyan
+		own_control_core = {
+			malong
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = malong
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	MIC = { #Michen
+		own_control_core = {
+			yilaha
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = yilaha
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	MUH = { #Muhiya
+		own_control_core = {
+			yongmingcheng
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = yongmingcheng
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	SHI = { #Shilin
+		own_control_core = {
+			tulazi
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = tulazi
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	SIR = { #Sirin
+		own_control_core = {
+			shili
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = shili
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	SUI = { #Suifun
+		own_control_core = {
+			kaiyuan_warka dongning
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = kaiyuan_warka
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	TOD = { #Todo
+		own_control_core = {
+			lefu
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = lefu
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	WUY = { #Wuyemu
+		own_control_core = {
+			girin_ula gongjiang_jurchen
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = girin_ula
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	YRN = { #Yaran
+		own_control_core = {
+			anju_nurgan
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = anju_nurgan
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	YIM = { #Yimahu
+		own_control_core = {
+			itu_jilin
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = itu_jilin
+		government = {
+			ruler = random
+			heir_selection = ritual_selection
+		}
+	}
+
+	YOO = { #Yoose
+		own_control_core = {
+			nogule
+		}
+
+		include = "expl_manchurian_tribe"
+		include = "jianzhou_tribe"
+
+		capital = nogule
 		government = {
 			ruler = random
 			heir_selection = ritual_selection
@@ -49369,7 +49974,7 @@ countries = {
 		}
 	}
 
-	BHM = { #Bhamo
+		BHM = { #Bhamo
 		own_control_core = {
 			manmaw
 			shwegu
@@ -49378,6 +49983,7 @@ countries = {
 		include = "south_east_asia_monarchy_no_coast"
 
 		tolerated_cultures = {
+			ngacang_culture
 			palaung_culture
 		}
 
@@ -49389,8 +49995,11 @@ countries = {
 
 	KTG = { #Kengtung
 		own_control_core = {
-			kengtung
-			mongping
+			kengtung mongping
+		}
+
+		own_control_integrated = {
+			
 		}
 
 		include = "south_east_asia_monarchy_no_coast"
@@ -49609,6 +50218,10 @@ countries = {
 	PTC = { #Phetchaburi
 		own_control_core = {
 			phetchaburi muang_na_rang chumphon
+		}
+
+		own_control_integrated = {
+			
 		}
 
 		include = "south_east_asia_monarchy"
@@ -56138,11 +56751,11 @@ countries = {
 	BDS = { #Baduspanids
 		own_control_core = {
 			kojur chalus tonekabon
-			rey karaj savojbolagh
+			rey karaj 
 		}
 
 		own_control_integrated = {
-			qazvin
+			qazvin savojbolagh
 		}
 
 		include = "expl_middle_east"

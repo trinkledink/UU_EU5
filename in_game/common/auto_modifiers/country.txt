@@ -14,7 +14,7 @@ country_base_values = {
 	
 	global_trades_per_burgher = 1.0
 	
-	global_monthly_control_decline = -0.005
+	global_monthly_control_decline = 0.005
 
 	max_war_exhaustion = 20
 	stability_decay = 0.005
@@ -32,8 +32,18 @@ country_base_values = {
 
 	global_monthly_art_start_chance = 0.1
 	
+	global_peasant_enfranchisment = 0.25
+	
+	num_local_governors = 1
+
 	
 	ship_capture_chance = 0.025
+	
+	combined_arms_max_threshold = 0.5
+	combined_arms_min_percent_for_bonus = 0.1
+	combined_bonus_per_type = 0.05
+	
+	annexation_speed_base = 0.5
 	
 	tolerance_own = 1
 	tolerance_heathen = -5
@@ -41,11 +51,15 @@ country_base_values = {
 	
 	military_tactics = 1.0
 	experience_decay = 0.05
+	
+	goods_gold_impacts_inflation = 1.0
+	silver_impacts_inflation = 1.0
+
 
 	supply_depot_capacity = 50
 	
 	artillery_bonus_vs_fort = 5
-	fort_limit = 1 #default to everyone can have one fort
+	fort_limit = 1 #default so everyone can have one fort
 
 	government_reform_slots = 1
 	government_size = 2
@@ -61,9 +75,8 @@ country_base_values = {
 	
 	maximum_religious_influence = 100
 	
-	global_pop_assimilation_speed = 0.001
+	global_pop_assimilation_speed = 0.002
 	global_pop_conversion_speed = 0.002
-	
 	
 	diplomatic_range = 1000
 	naval_range = 1000
@@ -75,10 +88,13 @@ country_base_values = {
 	army_logistics_distance = 50
 	
 	raw_material_in_province_impact = 0.1
+	produced_in_market_bonus = 0.2
 	
-	estate_satisfaction_from_building = 0.05
+	estate_satisfaction_from_building = 0.025
 	
 	minting_inflation_threshold = 0.05
+	
+	global_food_decay = 0.005
 	
 	diplomatic_capacity = 1
 	max_diplomats = 1
@@ -98,6 +114,7 @@ country_base_values = {
 	dhimmi_estate_target_satisfaction = dhimmi_default_satisfaction
 	tribes_estate_target_satisfaction = tribes_default_satisfaction
 	cossacks_estate_target_satisfaction = cossacks_default_satisfaction
+	
 	
 	global_estate_satisfaction_decay = 0.05
 	global_estate_satisfaction_recovery = 0.002
@@ -119,8 +136,8 @@ country_base_values = {
 	road_cost_on_distance_from_capital = 20
 	land_cost_on_distance_from_capital = 40
 	port_cost_distance_from_capital = 40
-	land_cost_going_upstream	= 10
-	land_cost_going_downstream	= 10
+	land_cost_going_upstream	= 12
+	land_cost_going_downstream	= 12
 	land_cost_on_frozen_water = 20
 	
 	global_migration_speed = 0.0001
@@ -299,7 +316,7 @@ num_colonial_charters_impact = {
 		subtract = 1
 	}
 	
-	colonial_maintenance_cost = 0.2
+	colonial_maintenance_cost = 0.5
 }
 
 
@@ -309,7 +326,7 @@ debt_impact = {
 		divide = country_economical_base
 	}
 
-	#global_crown_estate_power = -0.025	#uu removed
+	#global_crown_estate_power = -0.025	#UU removed
 	monthly_doom = 0.005
 	monthly_righteousness = -0.001
 }
@@ -336,11 +353,6 @@ stability_impact = {
 	
 	pop_join_rebel_threshold = -0.1
 	pop_leave_rebels_threshold = -0.05
-	
-	
-
-
-	great_power_score = 5.0
 }
 
 positive_stability_impact = {
@@ -382,15 +394,45 @@ negative_stability_impact = {
 war_exhaustion_impact = {
 	scales_with = war_exhaustion
 
-	land_morale_modifier = -0.02
-	naval_morale_modifier = -0.02
+	land_morale_modifier = -0.025
+	naval_morale_modifier = -0.025
 	
 	
 	global_production_efficiency = scaled_production_efficiency_penalty
 	trade_efficiency = scaled_trade_efficiency_penalty
-	global_population_growth = -0.0003
+	global_population_growth = -0.0005
 }
 
+
+complacency_impact = {
+	potential_trigger = {
+		modifier:has_complacency_effects = yes
+	}
+
+
+	scales_with = {
+		value = complacency
+		multiply = 0.01
+	}
+
+
+	army_tradition_decay = 0.01
+	navy_tradition_decay = 0.01
+	
+	estate_enrichment = 0.2
+	
+	
+	research_speed_modifier = -0.5
+	country_cabinet_efficiency = -0.5
+	pop_join_rebel_threshold = 0.1
+
+	
+	
+	# good stuff
+	global_monthly_prosperity = 0.01
+
+	
+}
 
 
 prestige = {
@@ -404,10 +446,16 @@ prestige = {
 	diplomatic_reputation = diplomatic_reputation_severe_bonus
 	skill_of_new_artists = 0.1
 
-	great_power_score_exempt_from_forfeit = 25
-
 	antagonism_monthly_change_modifier = 0.25
 }
+
+
+num_non_rural_impact = {
+	scales_with = num_of_non_rural
+	
+	num_bailiffs = 1
+}
+
 
 army_tradition = {
 	scales_with = {
@@ -420,8 +468,6 @@ army_tradition = {
 	monthly_karma = -0.1
 	
 	monthly_towards_land = societal_value_monthly_move
-
-	great_power_score_exempt_from_forfeit = 10
 }
 
 navy_tradition = {
@@ -434,8 +480,6 @@ navy_tradition = {
 	global_maritime_presence_modifier = 0.5
 	
 	monthly_towards_naval = societal_value_monthly_move
-
-	great_power_score_exempt_from_forfeit = 10
 }
 
 
@@ -467,8 +511,6 @@ high_legitimacy = {
 
 	global_crown_estate_power = 0.10
 	pop_leave_rebels_threshold = -0.05
-
-	great_power_score_exempt_from_forfeit = 10
 	monthly_righteousness = 0.5
 	monthly_doom = -0.1
 	monthly_towards_absolutism = societal_value_minor_monthly_move
@@ -503,8 +545,6 @@ high_republican_tradition = {
 	legislative_efficiency = 0.10
 	pop_leave_rebels_threshold = -0.05
 	monthly_towards_liberalism = societal_value_monthly_move
-
-	great_power_score = 10
 }
 low_republican_tradition = {
 	potential_trigger = {
@@ -530,8 +570,6 @@ high_devotion = {
 
 	monthly_religious_influence = 0.1
 	pop_leave_rebels_threshold = -0.05
-
-	great_power_score = 10
 }
 low_devotion = {
 	potential_trigger = {
@@ -558,8 +596,6 @@ high_horde_unity = {
 
 	discipline = 0.10
 	pop_leave_rebels_threshold = -0.05
-
-	great_power_score = 10
 }
 low_horde_unity = {
 	potential_trigger = {
@@ -585,8 +621,6 @@ high_tribal_cohesion = {
 
 	global_levy_size_modifier = 0.25
 	pop_leave_rebels_threshold = -0.05
-
-	great_power_score = 10
 }
 low_tribal_cohesion = {
 	potential_trigger = {
@@ -870,16 +904,17 @@ low_purity = {
 doom = {
 	potential_trigger = {
 		exists = religion
-		religion = { has_doom = yes }
+		has_doom = yes
 	}
 	scales_with = {
 		value = doom
 	}
 
-	loyalty_to_overlord = -1
-	global_estate_target_satisfaction = tiny_satisfaction_scaled_down
+	subject_loyalty = -1
+	global_estate_target_satisfaction = tiny_satisfaction_scaled_down_penalty
 	stability_decay = 0.001
 }
+
 
 
 country_population = {
@@ -892,7 +927,7 @@ country_population = {
 country_control_scaled_population = {
 	scales_with = total_control_scaled_population
 
-	great_power_score = 0.05
+	great_power_score = 0.01
 }
 
 
@@ -977,9 +1012,6 @@ total_merchant_capacity_impact = {
 
 monthly_income_impact = {
 	scales_with = monthly_income_trade_and_tax
-
-	great_power_score = 0.05
-
 }
 
 num_embraced_institutions = {
@@ -1000,8 +1032,6 @@ lack_of_rivals = {
 		min = 0
 	}
 
-
-	monthly_prestige = -0.1
 	antagonism_received_modifier = 0.1
 	counter_espionage = -0.1
 	spy_network_construction = -0.1
@@ -1016,7 +1046,7 @@ larger_than_expected_army = {
 
 horde_army_expectation = {
 	potential_trigger = { 
-		government_type = government_type:steppe_horde
+		government_type ?= government_type:steppe_horde
 	}
 
 	scales_with = {
@@ -1040,8 +1070,6 @@ power_projection = {
 	scales_with = power_projection
 
 	global_integration_speed_modifier = 0.01
-	
-	great_power_score = 1.0
 }
 
 
@@ -1068,6 +1096,7 @@ in_civil_war = {
 
 	pop_join_rebel_threshold  = -0.1
 	pop_leave_rebels_threshold = -0.1
+	monthly_complacency = -0.05
 	global_estate_target_satisfaction = medium_permanent_target_satisfaction
 }
 
@@ -1098,6 +1127,7 @@ ruler_has_general_trait = {
 	potential_trigger = { 
 		ruler ?= {
 			has_trait_category = general
+			NOT = { has_trait = unsuited_for_army_command }
 		}
 	}
 	
@@ -1109,6 +1139,7 @@ ruler_has_admiral_trait = {
 	potential_trigger = { 
 		ruler ?= {
 			has_trait_category = admiral
+			NOT = { has_trait = unsuited_for_naval_command }
 		}
 	}
 	
@@ -1146,6 +1177,8 @@ ruler_is_not_a_commander_during_war = {
 			NOT = { is_leading_largest_navy_of = root }
 		}
 	}
+
+	alert = yes
 	
 	monthly_legitimacy = -0.5
 	monthly_tribal_cohesion = -0.5
@@ -1308,4 +1341,88 @@ ruler_has_all_traits = {
 	monthly_devotion = 0.1
 	monthly_horde_unity = 0.1
 	monthly_republican_tradition = -0.1 # isn't he becoming a despot?
+}
+
+below_half_fort_limit = {
+	potential_trigger = { 
+		used_fort_limit_percentage < 0.5
+	}
+
+	scales_with = {
+		value = 0.5
+		subtract = used_fort_limit_percentage
+		multiply = 2
+	}
+	
+	monthly_towards_conciliatory = societal_value_monthly_move
+	monthly_towards_offensive = societal_value_monthly_move
+}
+
+over_fort_limit = {
+	potential_trigger = { 
+		used_fort_limit_percentage > 1.0
+	}
+
+	scales_with = {
+		value = used_fort_limit_percentage
+		subtract = 1.0
+	}
+	
+	monthly_towards_conciliatory = societal_value_monthly_move
+	monthly_towards_defensive = societal_value_monthly_move
+}
+
+country_tax_base = {
+
+	scales_with = {
+		value = country_tax_base
+	}
+	
+	great_power_score = 0.025
+}
+
+regular_army_size = {
+
+	scales_with = {
+		value = regular_army_size
+	}
+	
+	great_power_score = 1.25
+}
+regular_navy_size = {
+
+	scales_with = {
+		value = regular_navy_size
+	}
+	
+	great_power_score = 0.5
+}
+
+country_total_army_levy_size = {
+
+	scales_with = {
+		value = country_total_army_levy_size
+	}
+	
+	great_power_score = 0.25
+
+}
+
+country_total_navy_levy_size = {
+
+	scales_with = {
+		value = country_total_navy_levy_size
+	}
+	
+	great_power_score = 0.01
+
+}
+
+used_fort_limit = {
+
+	scales_with = {
+		value = used_fort_limit
+	}
+	
+	great_power_score = 0.3
 }

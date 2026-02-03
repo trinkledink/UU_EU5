@@ -1,5 +1,5 @@
 ﻿NDiplomacy = {
-	SEND_GIFT_COOLDOWN = 0 					#was 120
+	SEND_GIFT_COOLDOWN = 0 					#was 120 months
 }
 
 NGame = {
@@ -8,13 +8,15 @@ NGame = {
 	
 	GAME_SPEED_TICKS = {					#unchanged
 		1
-		0.4
+		0.5
+		0.25
 		0.1
+		0.05
 		0.02
 		0.0
 	}
 
-	GAME_SPEED_FOR_MULTI_PLAYERS_WARS = 3	#was 2
+	GAME_SPEED_FOR_MULTI_PLAYERS_WARS = 4	#same as 1.0.10 speed 3
 }
 
 NUnit = {

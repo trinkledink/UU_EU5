@@ -1,9 +1,4 @@
-﻿ntbmm_max_tax_base = {
-	value = location_tax_base
-	divide = local_control
-}
-
-ntbmm_uncontrolled_tax_base = {
+﻿ntbmm_uncontrolled_tax_base = {
 	value = ntbmm_max_tax_base
 	subtract = location_tax_base
 }

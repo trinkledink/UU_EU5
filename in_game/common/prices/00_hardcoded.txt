@@ -119,7 +119,7 @@ war_when_military_acces = {
 }
 
 war_no_cb = {
-	stability = 25
+	stability = 30
 	war_exhaustion = 2
 	karma = 20
 	righteousness = 20
@@ -164,22 +164,22 @@ buy_fleet_basing_rights = {
 }
 
 replace_rival = {
-	stability = 25
+	stability = 5
 }
 
 # this is multiplied by his attributes and other factors
 hire_mercenary_leader = {
-	gold = 1
+	gold = 0.25
 }
 
 # this is multiplied by the total hire cost of the unit.
 hire_mercenary_premium = {
-	gold = 1.5
+	gold = 0.25
 }
 
 # this is multiplied by the total hire cost of the unit.
 bribe_units = {
-	gold = 2.5
+	gold = 2.0
 }
 
 # this is multiplied by the total hire cost of the unit.
@@ -231,7 +231,7 @@ recruit_explorer = {
 
 
 hire_advisor = {
-	government_power = 20
+	government_power = 5
 }
 
 hire_artist = {
@@ -239,8 +239,8 @@ hire_artist = {
 }
 
 destroy_market = {
-	stability = 10 #uu decrease from 50
-	#prestige = 25 #uu removed
+	stability = 10 #UU decrease from 50
+	#prestige = 25 #UU removed
 }
 
 change_court_language = {
@@ -770,6 +770,10 @@ rtr_rein_in_area_price = {
 	scaled_gold = 12.0
 }
 
+rtr_demand_annexation_price = {
+	scaled_gold = 2
+}
+
 restrict_peranakan_trading_rights_price = {
 	stability = 10
 }
@@ -909,6 +913,10 @@ peasants_war_actions_price = {
 	government_power = 10
 }
 
+provoke_rebels_price = {
+	stability = 10
+}
+
 religious_turmoil_actions_price = {
 	government_power = 10
 }
@@ -1002,6 +1010,11 @@ give_colony_rebellion_support = {
 move_good_to_new_location = {
 	prestige = 5
 	gold = 100
+}
+
+complacent_decline_actions_price = {
+	prestige = 5
+	government_power = 5
 }
 
 violate_treaty_of_tordesillas = {

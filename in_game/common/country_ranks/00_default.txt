@@ -6,6 +6,8 @@
 		diplomatic_range = 1000
 		great_power_score_exempt_from_forfeit = 100	#UU
 		
+		monthly_prestige = 0.2
+
 		num_possible_rivals = 4
 		num_possible_artists = 2
 		
@@ -21,6 +23,8 @@
 		allowed_support_rebels = yes
 
 		mercenary_range_modifier = 1
+		
+		num_local_governors = 1
 		
 		
 	}
@@ -53,6 +57,8 @@ rank_kingdom = {
 		great_power_score_exempt_from_forfeit = 50 #UU
 		
 		num_possible_rivals = 3
+
+		monthly_prestige = 0.1
 		
 		fort_limit = 1
 		
@@ -64,6 +70,7 @@ rank_kingdom = {
 		allowed_alliance = yes
 		allowed_guarantee = yes
 		allowed_support_rebels = yes
+		
 		
 		mercenary_range_modifier = 0.5
 	}
@@ -87,6 +94,8 @@ rank_duchy = {
 		great_power_score_exempt_from_forfeit = 25 #UU
 		
 		diplomatic_range = 200
+		
+		monthly_prestige = 0.05
 		
 		num_possible_rivals = 2
 		diplomatic_capacity = 1

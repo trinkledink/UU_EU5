@@ -5,8 +5,6 @@
 	automation_tick = never
 	player_automated_category = parliament
 
-
-
 	allow = {
 		scope:actor = {
 			is_active_parliament = no
@@ -81,6 +79,18 @@
 			scope:actor = {
 				every_possible_parliament_issue = {
 					add_to_list = source
+				}
+			}
+		}
+		ai_interaction_source_list = {
+			scope:actor = {
+				every_possible_parliament_issue = {
+					if = {
+						limit = {
+							"ai_parliament_issue_resolution_vote_bias(scope:actor)" >= 0
+						}
+						add_to_list = source
+					}
 				}
 			}
 		}

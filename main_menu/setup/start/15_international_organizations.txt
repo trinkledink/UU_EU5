@@ -214,9 +214,10 @@ international_organization_manager = {
 			#Tributaries
 			CHA DAI
 			#Vassals
-			MMA KOR CHH CDL LJG TIB DUR EVK NAN NVK ORC ORQ SIB SOL UDE ULC HDA HOI ULA YEH DNG HJN 
-			HNE HUL JEC JUS MAO NEY ODO SSH URY YAL WGG WRK
-			SNP MNZ TAZ HEZ JIZ SYG TMN SSG MLM LNG
+			MMA KOR CHH CDL LJG TIB DUR EVK NVK ORC ORQ SIB UDE ULC	JUS NEY	SNP MNZ TAZ HEZ JIZ 
+			SYG TMN SSG MLM LNG OGE BAT CRS KHD TRH TVA BGT HCN OTC QAS AAR AID ASU BAY DLA	EJI 
+			FLN FUT FUY GIL HIJ HIY HLN HNC HOT HRO HUI HUR ILU IMN ITU JHT LAL LLU MAH MIC MRE 
+			MUH NAL NEM NRO SHI SIR SMN SNC SUI TAS TOD TOX USS WEJ WEK WUY YRN YIM YOO
 			#Tusi
 			GYT YNG TNQ MCI WMO TSK LGZ KHG BIR MHK MHN MTG MGN MHA MWO MGK YNJ NWU NYZ NLU YJI BZH YAN HQG NNN AGN MLE JSI SPG NGZ
 			LLS CGZ XLG WDG RND DCN WNG MHU LBO YNL ZNX WSA ZYI QJG YZO MLG LLN LXG GGX SZG SXI CLE BZU NPG RNG GNG ZNZ SZU ZGL TGY
@@ -740,17 +741,22 @@ international_organization_manager = {
 	add_international_organization = {
 		type = jurchen_confederation
 		creation_date = 1300.1.1
-		members = { DNG HNE JEC SSH WGG }
+		members = { 
+			#Jurchen
+			HUI JUS NEY AID AAR FUT HIY HLN HNC HOT ITU JHT LAL LLU MAH MIC MUH SHI SIR SUI TOD WUY YRN YIM YOO 
+			#Hurga
+			ASU BAY DLA FLN GIL HIJ HRO HUR ILU IMN MRE NRO SMN TOX USS WEK 
+		}
 	}
 	add_international_organization = {
 		type = jurchen_confederation
 		creation_date = 1300.1.1
-		members = { HDA HOI ULA YEH }
+		members = { FUY EJI NAL NEM SNC TAS WEJ  }
 	}
 	add_international_organization = {
 		type = jurchen_confederation
 		creation_date = 1300.1.1
-		members = { JUS NEY YAL }
+		members = { UDE }
 	}
 
 	#################################################################

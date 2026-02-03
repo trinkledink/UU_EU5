@@ -26158,18 +26158,31 @@ character_db={
 		tag = GEN
 	}
 
-	# HOUSE OF THE ALBIZZI
-	
-	flo_niccolo_acciaioli = {
-		first_name = { name = name_nicholas }
+	acc_acciaiolo_acciaioli = {
+		first_name = { name = name_acciaiolo }
+		culture = tuscan
+		religion = catholic
+		birth_date = 1280.1.1 #Unknown
+		birth = florence
 		dynasty = acciaioli_dynasty
+		spouse = "random"
+		tag = ACC
+	}
+	
+	acc_niccolo_acciaioli = {
+		first_name = { name = name_nicholas }
 		culture = tuscan
 		religion = catholic
 		adm = 47 dip = 57 mil = 74
 		birth_date = 1310.1.1
 		birth = florence
-		tag = NAP
+		father = acc_acciaiolo_acciaioli
+		dynasty = acciaioli_dynasty
+		spouse = "random"
+		tag = ACC
 	}
+	
+	# HOUSE OF THE ALBIZZI
 	
 	flo_filippo_albizzi = {
 		first_name = { name = name_philip }
@@ -70026,6 +70039,291 @@ adm = 31 dip = 34 mil = 24
 		tag = CHI
 	}
 
+	#Belgutei
+	bgt_belgutei_borjigin = {
+		first_name = { name = name_belgutei }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1161.1.1 
+		birth = balj
+		death_date = 1261.1.1 #changed to 100 due to error log, some accounts claim he lived up to 110 years.
+		father = yesugei_borjigin
+		tag = BGT
+	}
+
+	bgt_kumun_buqa_borjigin = {
+		first_name = { name = name_kumun.name_buqa }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1191.1.1 #Unknown
+		birth = balj
+		death_date = 1251.1.1 #Unknown
+		father = bgt_belgutei_borjigin
+		tag = BGT
+	}
+
+	bgt_onggiradai_borjigin = {
+		first_name = { name = name_onggiradai }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1221.1.1 #Unknown
+		birth = balj
+		death_date = 1269.1.1 #Unknown
+		father = bgt_kumun_buqa_borjigin
+		tag = BGT
+	}
+
+	bgt_cherik_temur_borjigin = {
+		first_name = { name = name_cherik.name_temur }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1261.1.1 #Unknown
+		birth = balj
+		death_date = 1326.1.1 #Unknown
+		father = bgt_onggiradai_borjigin
+		tag = BGT
+	}
+
+	bgt_alguncha_borjigin = {
+		first_name = { name = name_alguncha }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1291.1.1 #Unknown
+		birth = balj
+		father = bgt_cherik_temur_borjigin
+		tag = BGT
+	}
+
+	bgt_temur_buqa_borjigin = {
+		first_name = { name = name_temur.name_buqa  }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1316.1.1 #Unknown
+		birth = balj
+		father = bgt_alguncha_borjigin
+		tag = BGT
+	}
+
+	#Hachiun
+	hcn_eljigidey_borjigin = {
+		first_name = { name = name_eljigidey }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1186.1.1 
+		birth = qingzhou_mongol
+		death_date = 1252.1.1 #Unknown
+		father = hachiun_borjigin
+		tag = HCN
+	}
+
+	hcn_chahur_borjigin = {
+		first_name = { name = name_chahur }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1216.1.1 
+		birth = qingzhou_mongol
+		death_date = 1283.1.1 #Unknown, but in this year Shengnahar was Khan
+		father = hcn_eljigidey_borjigin
+		tag = HCN
+	}
+
+	hcn_khulahur_borjigin = {
+		first_name = { name = name_khulahur }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1250.1.1 
+		birth = qingzhou_mongol
+		death_date = 1299.1.1 #Unknown
+		father = hcn_chahur_borjigin
+		tag = HCN
+	}
+
+	hcn_munanzi_borjigin = {
+		first_name = { name = name_munanzi }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1280.1.1 
+		birth = qingzhou_mongol
+		father = hcn_khulahur_borjigin
+		tag = HCN
+	}
+	
+	hcn_munanzi_son_borjigin = { #"Shuo Sijian/搠思监" in Chinese
+		first_name = "random"
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1310.1.1 
+		birth = qingzhou_mongol
+		father = hcn_munanzi_borjigin
+		tag = HCN
+	}
+
+	#Qasar
+	qas_yesunge_borjigin = { 
+		first_name = { name = Yesunge }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1200.1.1 #Unknown
+		birth = boorj
+		death_date = 1275.1.1 #Unknown
+		father = qasar_borjigin
+		tag = QAS
+	}
+
+	qas_esen_emugen_borjigin = { 
+		first_name = { name = name_esen.name_emugen }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1223.1.1 #Unknown
+		birth = boorj
+		death_date = 1275.1.1 #Unknown
+		father = qas_yesunge_borjigin
+		tag = QAS
+	}
+
+	qas_shigdur_borjigin = { 
+		first_name = { name = name_shigdur }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1245.1.1 #Unknown
+		birth = boorj
+		death_date = 1307.1.1 #Unknown
+		father = qas_esen_emugen_borjigin
+		tag = QAS
+	}
+
+	qas_qongur_borjigin = { 
+		first_name = { name = name_qongur }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1270.1.1 #Unknown
+		birth = boorj
+		death_date = 1325.1.1 #Unknown
+		father = qas_shigdur_borjigin
+		tag = QAS
+	}
+
+	qas_orug_temur_borjigin = { #Also known as Yuelu Temur
+		first_name = { name = name_orug.name_temur }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1289.1.1 #Unknown
+		birth = boorj
+		death_date = 1329.2.5
+		father = qas_qongur_borjigin
+		tag = QAS
+	}
+
+	qas_shiliemen_borjigin = {
+		first_name = { name = name_shilieman }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1313.1.1 #Unknown
+		birth = boorj
+		father = qas_orug_temur_borjigin
+		tag = QAS
+	}
+
+	#Otchigin
+	otc_jibugen_borjigin = {
+		first_name = { name = name_jibugen }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1190.1.1 
+		birth = taizhou_jurchen
+		death_date = 1225.1.1 
+		father = temuge_borjigin
+		tag = OTC
+	}
+
+	otc_taghachar_borjigin = {
+		first_name = { name = name_taghachar }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1210.1.1 
+		birth = taizhou_jurchen
+		death_date = 1246.1.1
+		father = otc_jibugen_borjigin
+		tag = OTC
+	}
+
+	otc_ajul_borjigin = {
+		first_name = { name = name_ajul }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1230.1.1 
+		birth = taizhou_jurchen
+		death_date = 1263.1.1 #Unknown
+		father = otc_taghachar_borjigin
+		tag = OTC
+	}
+
+	otc_nayan_borjigin = {
+		first_name = { name = name_nayan }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = nestorianism
+		birth_date = 1257.1.1
+		birth = taizhou_jurchen
+		death_date = 1287.7.1
+		father = otc_ajul_borjigin
+		tag = OTC
+	}
+
+	otc_toqto_borjigin = {
+		first_name = { name = name_toqta }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = nestorianism
+		birth_date = 1280.1.1 
+		birth = taizhou_jurchen
+		death_date = 1328.11.14
+		father = otc_nayan_borjigin
+		tag = OTC
+	}
+
+	otc_yanashiri_borjigin = {
+		first_name = { name = name_yanashiri }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1310.1.1
+		birth = taizhou_jurchen
+		father = otc_toqto_borjigin
+		tag = OTC
+	}
+
+	otc_ajashiri_borjigin = {
+		first_name = { name = name_ajashiri }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1337.1.1 #Unknown
+		birth = taizhou_jurchen
+		father = otc_yanashiri_borjigin
+		tag = OTC
+	}
+
 	#Mong Mao
 	#Ruler
 	mma_hkan_hpa = {
@@ -83098,7 +83396,7 @@ adm = 31 dip = 34 mil = 24
 		culture = rhine_franconian
 		religion = catholic
 		estate = nobles_estate
-		adm = 30 dip = 37 mil = 31
+		adm = 46 dip = 57 mil = 31
 		birth_date = 1306.8.4
 		birth = tolz	#Wolfratshausen
 		father = ubv_rudolf_i_wittelsbach
@@ -92100,7 +92398,7 @@ adm = 31 dip = 34 mil = 24
 		first_name = { name = name_kadan }
 		culture = mongolian_culture
 		religion = tengri
-		birth_date = 1230.1.1 #Unknown
+		birth_date = 1215.1.1 #Unknown
 		birth = khan_khentii
 		death_date = 1300.1.1 #Unknown
 		father = chg_ogedei_borjigin
@@ -92118,6 +92416,114 @@ adm = 31 dip = 34 mil = 24
 		dynasty = borjigin_dynasty
 		tag = CHG
 	}
+	
+	#Ögedei Horde
+	oge_melig_borjigin = {
+		first_name = { name = name_melig }
+		culture = mongolian_culture
+		religion = sunni
+		birth_date = 1224.1.1 #Unknown
+		birth = khan_khentii
+		death_date = 1270.1.1 #Unknown
+		father = chg_ogedei_borjigin
+		dynasty = borjigin_dynasty
+		tag = OGE
+	}
+
+	oge_tuhu_borjigin = {
+		first_name = { name = name_tuhu }
+		culture = mongolian_culture
+		religion = sunni
+		birth_date = 1247.1.1 #Unknown
+		birth = kurchum
+		death_date = 1282.1.1 #Unknown
+		father = oge_melig_borjigin
+		dynasty = borjigin_dynasty
+		tag = OGE
+	}
+
+	oge_abdullah_borjigin = {
+		first_name = { name = name_abdullah }
+		culture = mongolian_culture
+		religion = sunni
+		birth_date = 1249.1.1 #Unknown
+		birth = kurchum
+		death_date = 1308.1.1 #Unknown
+		father = oge_melig_borjigin
+		dynasty = borjigin_dynasty
+		tag = OGE
+	}
+
+	oge_ayachi_borjigin = {
+		first_name = { name = name_ayachi }
+		culture = mongolian_culture
+		religion = sunni
+		birth_date = 1272.1.1 #Unknown
+		birth = kurchum
+		death_date = 1323.1.1 
+		father = oge_abdullah_borjigin
+		dynasty = borjigin_dynasty
+		tag = OGE
+	}
+
+	oge_taiping_borjigin = {
+		first_name = { name = taiping }
+		culture = mongolian_culture
+		religion = sunni
+		birth_date = 1297.1.1 #Unknown
+		birth = kurchum
+		death_date = 1333.1.1 
+		father = oge_ayachi_borjigin
+		dynasty = borjigin_dynasty
+		tag = OGE
+	}
+
+	oge_tumen_borjigin = {
+		first_name = { name = Tumen }
+		culture = mongolian_culture
+		religion = sunni
+		birth_date = 1253.1.1 #Unknown
+		birth = kurchum
+		death_date = 1324.1.1 #Unknown
+		father = oge_melig_borjigin
+		dynasty = borjigin_dynasty
+		tag = OGE
+	}
+
+	oge_khuchun_borjigin = {
+		first_name = { name = name_khuchun }
+		culture = mongolian_culture
+		religion = sunni
+		birth_date = 1278.1.1 #Unknown
+		birth = kurchum
+		death_date = 1330.1.1 #Unknown
+		father = oge_tumen_borjigin
+		dynasty = borjigin_dynasty
+		tag = OGE
+	}
+
+	oge_temurchi_borjigin = {
+		first_name = { name = name_temurchi }
+		culture = mongolian_culture
+		religion = sunni
+		birth_date = 1303.1.1 #Unknown
+		birth = kurchum
+		father = oge_khuchun_borjigin
+		dynasty = borjigin_dynasty
+		tag = OGE
+	}
+
+	oge_arug_temur_borjigin = {
+		first_name = { name = name_arug }
+		culture = mongolian_culture
+		religion = sunni
+		birth_date = 1328.1.1 #Unknown
+		birth = kurchum
+		father = oge_temurchi_borjigin
+		dynasty = borjigin_dynasty
+		tag = OGE
+	}
+
 	
 	#Qocho
 	qch_uruktemur = {#Ruler
@@ -96671,6 +97077,30 @@ adm = 31 dip = 34 mil = 24
 		tag = MGE
 	}
 
+	hachiun_borjigin = {
+		first_name = { name = name_hachiun }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1166.1.1 
+		birth = khan_khentii
+		death_date = 1208.1.1 #Unknown
+		father = yesugei_borjigin
+		tag = MGE
+	}
+
+	temuge_borjigin = {
+		first_name = { name = name_temuge }
+		dynasty = borjigin_dynasty
+		culture = mongolian_culture
+		religion = tengri
+		birth_date = 1168.1.1
+		birth = khan_khentii
+		death_date = 1246.1.1 
+		father = yesugei_borjigin
+		tag = MGE
+	}
+
 	kaybad_borjigin = {
 		first_name = { name = Kaybad }
 		dynasty = borjigin_dynasty
@@ -96732,7 +97162,7 @@ adm = 31 dip = 34 mil = 24
 	}
 
 	baba_borjigin = {
-		first_name = { name = Baba }
+		first_name = { name = Baba.name_bahadur }
 		dynasty = borjigin_dynasty
 		culture = mongolian_culture
 		religion = tengri

@@ -96,7 +96,6 @@ randers = { topography = flatland vegetation = grasslands climate = oceanic reli
 viborg = { topography = flatland vegetation = farmland climate = oceanic religion = catholic culture = danish raw_material = wheat natural_harbor_suitability = -0.25}
 aalborg = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = danish raw_material = livestock natural_harbor_suitability = 0.50}
 ars = { topography = flatland vegetation = farmland climate = oceanic religion = catholic culture = danish raw_material = beeswax natural_harbor_suitability = -0.25}
-limfjorden = { topography = narrows climate = oceanic}
 bolling = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = danish raw_material = salt natural_harbor_suitability = 0.00}
 ringkobing = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = danish raw_material = amber natural_harbor_suitability = 0.00}
 holstebro_lundenes = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = danish raw_material = wool natural_harbor_suitability = -0.25}
@@ -602,7 +601,8 @@ kattegatt = { topography = inland_sea climate = continental}
 oresund = { topography = narrows climate = continental}
 stora_balt = { topography = narrows climate = oceanic}
 lilla_balt = { topography = narrows climate = oceanic}
-kalmar_sund = { topography = inland_sea climate = continental}
+limfjorden = { topography = narrows climate = oceanic}
+kalmar_sund = { topography = narrows climate = continental}
 skanska_kusten = { topography = narrows climate = continental}
 blekinge_kust = { topography = inland_sea climate = continental}
 central_baltic = { topography = inland_sea climate = continental}
@@ -886,7 +886,7 @@ luckau = { topography = flatland vegetation = woods climate = continental religi
 beeskow = { topography = flatland vegetation = forest climate = continental religion = catholic culture = sorbian raw_material = fish}
 zossen = { topography = flatland vegetation = woods climate = continental religion = catholic culture = markish raw_material = fur}
 bitburg = { topography = hills vegetation = woods climate = oceanic religion = catholic culture = westphalian raw_material = fur}
-prum = { topography = hills vegetation = woods climate = continental religion = catholic culture = westphalian raw_material = silver} #uu moved out medicaments
+    prum = { topography = hills vegetation = woods climate = continental religion = catholic culture = westphalian raw_material = silver} #uu moved out medicaments
 daun = { topography = hills vegetation = woods climate = continental religion = catholic culture = westphalian raw_material = lead}
 wittlich = { topography = hills vegetation = woods climate = oceanic religion = catholic culture = westphalian raw_material = lumber}
 cochem = { topography = hills vegetation = woods climate = oceanic religion = catholic culture = westphalian raw_material = wine}
@@ -1187,7 +1187,7 @@ gmunden = { topography = hills vegetation = woods climate = continental religion
 kirchdorf = { topography = mountains vegetation = forest climate = continental religion = catholic culture = danube_bavarian raw_material = lumber}
 wels = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = danube_bavarian raw_material = livestock}
 salzburg = { topography = hills vegetation = farmland climate = continental religion = catholic culture = danube_bavarian raw_material = salt}
-berchtesgaden = { topography = mountains vegetation = forest climate = continental religion = catholic culture = danube_bavarian raw_material = goods_gold} #uu moved out legumes
+    berchtesgaden = { topography = mountains vegetation = forest climate = continental religion = catholic culture = danube_bavarian raw_material = goods_gold} #uu moved out legumes
 hallein = { topography = mountains vegetation = forest climate = continental religion = catholic culture = danube_bavarian raw_material = salt}
 zell_am_see = { topography = mountains vegetation = grasslands climate = continental religion = catholic culture = danube_bavarian raw_material = iron}
 mittersill = { topography = mountains vegetation = grasslands climate = continental religion = catholic culture = danube_bavarian raw_material = gems}
@@ -1489,7 +1489,7 @@ decin = { topography = hills vegetation = woods climate = continental religion =
 usti_nad_labem = { topography = flatland vegetation = forest climate = continental religion = catholic culture = czech raw_material = fur}
 plzen = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = czech raw_material = wheat}
 domazlice = { topography = flatland vegetation = woods climate = continental religion = catholic culture = czech raw_material = fur}
-klatovy = { topography = plateau vegetation = woods climate = continental religion = catholic culture = czech raw_material = coal} #uu moved gold
+    klatovy = { topography = plateau vegetation = woods climate = continental religion = catholic culture = czech raw_material = coal} #uu moved gold
 tachov = { topography = plateau vegetation = woods climate = continental religion = catholic culture = czech raw_material = lumber}
 tepla = { topography = plateau vegetation = grasslands climate = continental religion = catholic culture = czech raw_material = silver}
 caslav = { topography = flatland vegetation = woods climate = continental religion = catholic culture = czech raw_material = copper}
@@ -1710,7 +1710,7 @@ tongue = { topography = wetlands vegetation = sparse climate = oceanic religion 
 thurso = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = norwegian raw_material = fish natural_harbor_suitability = 0.25}
 ben_klibreck = { topography = mountain_wasteland vegetation = sparse climate = oceanic}
 inverary = { topography = hills vegetation = forest climate = oceanic religion = catholic culture = highland raw_material = lumber natural_harbor_suitability = 0.40}
-oban = { topography = mountains vegetation = forest climate = oceanic religion = catholic culture = highland raw_material = clay natural_harbor_suitability = 0.5}
+oban = { topography = mountains vegetation = forest climate = oceanic religion = catholic culture = highland raw_material = clay natural_harbor_suitability = 0.50}
 cowal = { topography = mountains vegetation = forest climate = oceanic religion = catholic culture = highland raw_material = lumber natural_harbor_suitability = 0.00}
 lochaber = { topography = mountains vegetation = forest climate = oceanic religion = catholic culture = highland raw_material = alum natural_harbor_suitability = 0.00}
 ardtornish = { topography = mountains vegetation = woods climate = oceanic religion = catholic culture = highland raw_material = salt natural_harbor_suitability = 0.50}
@@ -1789,7 +1789,7 @@ cardiff = { topography = flatland vegetation = grasslands climate = oceanic reli
 monmouth = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = welsh raw_material = fruit natural_harbor_suitability = 0.00}
 newport = { topography = flatland vegetation = woods climate = oceanic religion = catholic culture = welsh raw_material = iron natural_harbor_suitability = 0.25}
 neath = { topography = hills vegetation = woods climate = oceanic religion = catholic culture = welsh raw_material = stone natural_harbor_suitability = 0.20}
-swansea = { topography = hills vegetation = grasslands climate = oceanic religion = catholic culture = welsh raw_material = coal natural_harbor_suitability = 0.5}
+swansea = { topography = hills vegetation = grasslands climate = oceanic religion = catholic culture = welsh raw_material = coal natural_harbor_suitability = 0.50}
 caerphilly = { topography = hills vegetation = woods climate = oceanic religion = catholic culture = welsh raw_material = coal}
 rhine_estuary = { topography = coastal_ocean climate = oceanic}
 scheldt_estuary = { topography = narrows climate = oceanic}
@@ -1881,7 +1881,7 @@ lough_erne = { topography = lakes climate = oceanic}
 derry = { topography = hills vegetation = grasslands climate = oceanic religion = catholic culture = irish raw_material = horses natural_harbor_suitability = 0.60}
 coleraine = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = irish raw_material = millet natural_harbor_suitability = 0.00}
 magherafelt = { topography = flatland vegetation = grasslands climate = oceanic religion = catholic culture = irish raw_material = fiber_crops}
-donegal = { topography = hills vegetation = sparse climate = oceanic religion = catholic culture = irish raw_material = fish natural_harbor_suitability = 0.5}
+donegal = { topography = hills vegetation = sparse climate = oceanic religion = catholic culture = irish raw_material = fish natural_harbor_suitability = 0.50}
 kilmacrennan = { topography = hills vegetation = sparse climate = oceanic religion = catholic culture = irish raw_material = salt natural_harbor_suitability = 0.00}
 inishowen = { topography = hills vegetation = sparse climate = oceanic religion = catholic culture = irish raw_material = fish natural_harbor_suitability = 0.25}
 raphoe = { topography = flatland vegetation = sparse climate = oceanic religion = catholic culture = irish raw_material = livestock natural_harbor_suitability = 0.00}
@@ -2607,12 +2607,12 @@ vitoria = { topography = plateau vegetation = woods climate = oceanic religion =
 anana = { topography = plateau vegetation = grasslands climate = oceanic religion = catholic culture = basque raw_material = salt}
 laguardia = { topography = hills vegetation = woods climate = oceanic religion = catholic culture = basque raw_material = wine}
 salvatierra = { topography = plateau vegetation = woods climate = oceanic religion = catholic culture = basque raw_material = fiber_crops}
-bilbao = { topography = hills vegetation = woods climate = oceanic religion = catholic culture = basque raw_material = iron natural_harbor_suitability = 0.40}
+bilbao = { topography = hills vegetation = woods climate = oceanic religion = catholic culture = basque raw_material = iron natural_harbor_suitability = 0.80}
 durango = { topography = hills vegetation = woods climate = oceanic religion = catholic culture = basque raw_material = millet}
-valmaseda = { topography = hills vegetation = woods climate = oceanic religion = catholic culture = basque raw_material = wool natural_harbor_suitability = 0.00}
+valmaseda = { topography = hills vegetation = woods climate = oceanic religion = catholic culture = basque raw_material = wool natural_harbor_suitability = 0.50}
 san_sebastian = { topography = hills vegetation = woods climate = oceanic religion = catholic culture = basque raw_material = fish natural_harbor_suitability = 0.75}
 onate = { topography = hills vegetation = woods climate = oceanic religion = catholic culture = basque raw_material = stone}
-tolosa = { topography = hills vegetation = woods climate = oceanic religion = catholic culture = basque raw_material = fish natural_harbor_suitability = 0.00}
+tolosa = { topography = hills vegetation = woods climate = oceanic religion = catholic culture = basque raw_material = fish natural_harbor_suitability = 0.50}
 pamplona = { topography = hills vegetation = woods climate = oceanic religion = catholic culture = basque raw_material = livestock}
 elizondo = { topography = mountains vegetation = forest climate = oceanic religion = catholic culture = basque raw_material = lumber}
 estella = { topography = hills vegetation = grasslands climate = oceanic religion = catholic culture = basque raw_material = wheat}
@@ -3911,7 +3911,7 @@ namyslow = { topography = flatland vegetation = woods climate = continental reli
 sycow = { topography = flatland vegetation = woods climate = continental religion = catholic culture = silesian raw_material = livestock}
 trzebnica = { topography = flatland vegetation = woods climate = continental religion = catholic culture = silesian raw_material = iron}
 opava = { topography = flatland vegetation = forest climate = continental religion = catholic culture = silesian raw_material = lumber}
-fryvaldov = { topography = hills vegetation = forest climate = continental religion = catholic culture = silesian raw_material = iron}	#uu moved silver
+    fryvaldov = { topography = hills vegetation = forest climate = continental religion = catholic culture = silesian raw_material = iron}	#uu moved silver
 glubczyce = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = silesian raw_material = livestock}
 hlucin = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = silesian raw_material = livestock}
 krnov = { topography = hills vegetation = forest climate = continental religion = catholic culture = silesian raw_material = goods_gold}
@@ -3925,7 +3925,7 @@ swidnica = { topography = flatland vegetation = grasslands climate = continental
 kamienna_gora = { topography = flatland vegetation = grasslands climate = continental religion = catholic culture = silesian raw_material = iron}
 rychbach = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = silesian raw_material = livestock}
 niemcza = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = silesian raw_material = stone}
-ziebice = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = silesian raw_material = gems} #uu moved gold
+    ziebice = { topography = flatland vegetation = farmland climate = continental religion = catholic culture = silesian raw_material = gems} #uu moved gold
 tesin = { topography = hills vegetation = woods climate = continental religion = catholic culture = silesian raw_material = stone}
 bielsko = { topography = hills vegetation = woods climate = continental religion = catholic culture = silesian raw_material = lumber}
 bytom = { topography = flatland vegetation = woods climate = continental religion = catholic culture = silesian raw_material = silver}
@@ -8260,12 +8260,12 @@ kuwait_bay = { topography = inland_sea climate = arid}
 zawr_cape = { topography = inland_sea climate = arid}
 mishab_cape = { topography = inland_sea climate = arid}
 alaly_cape = { topography = inland_sea climate = arid}
-ningde = { topography = mountains vegetation = forest climate = subtropical religion = sanjiao culture = funing_culture raw_material = legumes natural_harbor_suitability = 0.00}
+ningde = { topography = mountains vegetation = forest climate = subtropical religion = sanjiao culture = funing_culture raw_material = legumes natural_harbor_suitability = 0.40}
 fuan = { topography = hills vegetation = woods climate = subtropical religion = sanjiao culture = funing_culture raw_material = tea natural_harbor_suitability = 0.40}
 changshi = { topography = hills vegetation = woods climate = subtropical religion = sanjiao culture = funing_culture raw_material = alum natural_harbor_suitability = 0.40}
 minxian = { topography = flatland vegetation = farmland climate = subtropical religion = sanjiao culture = fuzhou_culture raw_material = sugar natural_harbor_suitability = 0.00}
 lianjiang = { topography = hills vegetation = grasslands climate = subtropical religion = sanjiao culture = fuzhou_culture raw_material = salt natural_harbor_suitability = 0.40}
-luoyuan = { topography = hills vegetation = woods climate = subtropical religion = sanjiao culture = fuzhou_culture raw_material = fish natural_harbor_suitability = 0.00}
+luoyuan = { topography = hills vegetation = woods climate = subtropical religion = sanjiao culture = fuzhou_culture raw_material = fish natural_harbor_suitability = 0.40}
 houguan = { topography = hills vegetation = woods climate = subtropical religion = sanjiao culture = fuzhou_culture raw_material = lumber}
 minqing = { topography = hills vegetation = woods climate = subtropical religion = sanjiao culture = fuzhou_culture raw_material = sugar}
 changle_fujian = { topography = hills vegetation = farmland climate = subtropical religion = sanjiao culture = fuzhou_culture raw_material = fish natural_harbor_suitability = 0.00}
@@ -8308,7 +8308,7 @@ jiangle = { topography = mountains vegetation = forest climate = subtropical rel
 shunchang = { topography = hills vegetation = forest climate = subtropical religion = mahayana culture = fuzhou_culture raw_material = wild_game}
 yongan_sha = { topography = mountains vegetation = woods climate = subtropical religion = mahayana culture = jianning_culture raw_material = legumes}
 youxi = { topography = hills vegetation = woods climate = subtropical religion = mahayana culture = fuzhou_culture raw_material = lumber}
-longxi = { topography = flatland vegetation = grasslands climate = subtropical religion = mahayana culture = minnan_culture raw_material = medicaments natural_harbor_suitability = 0.00}
+longxi = { topography = flatland vegetation = grasslands climate = subtropical religion = mahayana culture = minnan_culture raw_material = medicaments natural_harbor_suitability = 0.25}
 zhaoan = { topography = hills vegetation = woods climate = subtropical religion = mahayana culture = minnan_culture raw_material = fish natural_harbor_suitability = 0.40}
 huafeng = { topography = mountains vegetation = forest climate = subtropical religion = mahayana culture = minnan_culture raw_material = lumber}
 longyan = { topography = mountains vegetation = forest climate = subtropical religion = mahayana culture = minnan_culture raw_material = stone}
@@ -8729,16 +8729,16 @@ takbanuao = { topography = mountains vegetation = forest climate = oceanic relig
 truku = { topography = mountains vegetation = forest climate = subtropical religion = formosan_religion culture = formosan_culture raw_material = gems natural_harbor_suitability = 0.00}
 nanhudashan = { topography = mountain_wasteland vegetation = forest climate = oceanic}
 yushan = { topography = mountain_wasteland vegetation = forest climate = oceanic}
-basai = { topography = hills vegetation = forest climate = subtropical religion = formosan_religion culture = formosan_culture raw_material = sugar natural_harbor_suitability = 0.00}
+basai = { topography = hills vegetation = forest climate = subtropical religion = formosan_religion culture = formosan_culture raw_material = sugar natural_harbor_suitability = 0.50}
 kavalan = { topography = flatland vegetation = forest climate = subtropical religion = formosan_religion culture = formosan_culture raw_material = fruit natural_harbor_suitability = 0.00}
 ketagalan = { topography = hills vegetation = forest climate = subtropical religion = formosan_religion culture = formosan_culture raw_material = sugar}
-kulun = { topography = flatland vegetation = woods climate = subtropical religion = formosan_religion culture = formosan_culture raw_material = rice natural_harbor_suitability = 0.25}
-pakuali = { topography = mountains vegetation = forest climate = subtropical religion = formosan_religion culture = formosan_culture raw_material = fish natural_harbor_suitability = 0.00}
+kulun = { topography = flatland vegetation = woods climate = subtropical religion = formosan_religion culture = formosan_culture raw_material = rice natural_harbor_suitability = 0.50}
+pakuali = { topography = mountains vegetation = forest climate = subtropical religion = formosan_religion culture = formosan_culture raw_material = fish natural_harbor_suitability = 0.25}
 squliq = { topography = mountains vegetation = forest climate = subtropical religion = formosan_religion culture = formosan_culture raw_material = fur}
 siraya = { topography = flatland vegetation = grasslands climate = subtropical religion = formosan_religion culture = formosan_culture raw_material = fruit natural_harbor_suitability = 0.00}
 ishbukun = { topography = mountains vegetation = forest climate = continental religion = formosan_religion culture = formosan_culture raw_material = lumber}
 lloa = { topography = flatland vegetation = grasslands climate = subtropical religion = formosan_religion culture = formosan_culture raw_material = rice natural_harbor_suitability = 0.00}
-makatao = { topography = flatland vegetation = jungle climate = tropical religion = formosan_religion culture = formosan_culture raw_material = millet natural_harbor_suitability = 0.00}
+makatao = { topography = flatland vegetation = jungle climate = tropical religion = formosan_religion culture = formosan_culture raw_material = millet natural_harbor_suitability = 0.25}
 rukai = { topography = mountains vegetation = jungle climate = continental religion = formosan_religion culture = formosan_culture raw_material = fur}
 takitudu = { topography = mountains vegetation = forest climate = continental religion = formosan_religion culture = formosan_culture raw_material = fur}
 tsou = { topography = mountains vegetation = forest climate = continental religion = formosan_religion culture = formosan_culture raw_material = wild_game}
@@ -8804,7 +8804,7 @@ ninghai = { topography = hills vegetation = woods climate = subtropical religion
 wenling = { topography = flatland vegetation = grasslands climate = subtropical religion = sanjiao culture = taizhou_wu_culture raw_material = fish natural_harbor_suitability = 0.40}
 tiantai = { topography = hills vegetation = woods climate = subtropical religion = sanjiao culture = taizhou_wu_culture raw_material = lumber}
 xianju = { topography = hills vegetation = woods climate = subtropical religion = sanjiao culture = taizhou_wu_culture raw_material = horses}
-yongjia = { topography = hills vegetation = grasslands climate = subtropical religion = sanjiao culture = ouhai_culture raw_material = alum natural_harbor_suitability = 0.00}
+yongjia = { topography = hills vegetation = grasslands climate = subtropical religion = sanjiao culture = ouhai_culture raw_material = alum natural_harbor_suitability = 0.50}
 pingyang = { topography = hills vegetation = woods climate = subtropical religion = sanjiao culture = ouhai_culture raw_material = fish natural_harbor_suitability = 0.00}
 yueqing = { topography = hills vegetation = grasslands climate = subtropical religion = sanjiao culture = ouhai_culture raw_material = salt natural_harbor_suitability = 0.40}
 luoyang_wenzhou = { topography = hills vegetation = woods climate = subtropical religion = sanjiao culture = chuzhou_culture raw_material = livestock}
@@ -9649,7 +9649,7 @@ fuxin = { topography = flatland vegetation = woods climate = continental religio
 kaicheng = { topography = wetlands vegetation = grasslands climate = continental religion = mahayana culture = jurchen_culture raw_material = cotton}
 wangping = { topography = flatland vegetation = grasslands climate = continental religion = mahayana culture = jurchen_culture raw_material = millet}
 yizhou_jinzhou = { topography = hills vegetation = grasslands climate = continental religion = mahayana culture = jurchen_culture raw_material = wheat}
-jinzhou_liaoyang = { topography = flatland vegetation = grasslands climate = continental religion = mahayana culture = kharchin_culture raw_material = wheat natural_harbor_suitability = 0.00}
+jinzhou_liaoyang = { topography = flatland vegetation = grasslands climate = continental religion = mahayana culture = kharchin_culture raw_material = wheat natural_harbor_suitability = 0.25}
 dalinghe = { topography = wetlands vegetation = grasslands climate = continental religion = mahayana culture = jurchen_culture raw_material = rice natural_harbor_suitability = 0.00}
 haizhou_liaoyang = { topography = flatland vegetation = farmland climate = continental religion = mahayana culture = jurchen_culture raw_material = wheat natural_harbor_suitability = 0.00}
 ningyuan_jinzhou = { topography = flatland vegetation = grasslands climate = continental religion = tengri culture = kharchin_culture raw_material = fish natural_harbor_suitability = 0.00}
@@ -9685,10 +9685,10 @@ usalgin = { topography = hills vegetation = woods climate = continental religion
 lake_chiya = { topography = lakes climate = continental}
 lake_orel = { topography = lakes climate = continental}
 yam_alin = { topography = mountain_wasteland vegetation = sparse climate = arctic}
-boli = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = nanai_culture raw_material = millet}
-achan = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = nanai_culture raw_material = millet}
-nemptu = { topography = wetlands vegetation = forest climate = continental religion = shamanism culture = nanai_culture raw_material = fur}
-simmi = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = nanai_culture raw_material = millet}
+boli = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = hurga_culture raw_material = millet}
+achan = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = hurga_culture raw_material = millet}
+nemptu = { topography = wetlands vegetation = forest climate = continental religion = shamanism culture = hurga_culture raw_material = fur}
+simmi = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = hurga_culture raw_material = millet}
 uninka = { topography = mountains vegetation = forest climate = continental religion = shamanism culture = udege_culture raw_material = lumber}
 xungake = { topography = hills vegetation = woods climate = arctic religion = shamanism culture = oroch_culture raw_material = fur}
 lake_bolon = { topography = lakes climate = continental}
@@ -9715,12 +9715,12 @@ koppi = { topography = hills vegetation = forest climate = arctic religion = sha
 samarginka = { topography = mountains vegetation = forest climate = arctic religion = shamanism culture = udege_culture raw_material = fur natural_harbor_suitability = 0.00}
 tumzhdin = { topography = hills vegetation = forest climate = arctic religion = shamanism culture = oroch_culture raw_material = wild_game natural_harbor_suitability = 0.00}
 lake_kizi = { topography = lakes climate = continental}
-urmi = { topography = flatland vegetation = woods climate = continental religion = shamanism culture = nanai_culture raw_material = wild_game}
-bidzhan = { topography = flatland vegetation = woods climate = continental religion = shamanism culture = nanai_culture raw_material = fur}
-bira = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = nanai_culture raw_material = wheat}
-kukan = { topography = hills vegetation = forest climate = continental religion = shamanism culture = nanai_culture raw_material = fur}
-kur = { topography = hills vegetation = woods climate = continental religion = shamanism culture = nanai_culture raw_material = lumber}
-sutara = { topography = hills vegetation = forest climate = continental religion = shamanism culture = nanai_culture raw_material = lumber}
+urmi = { topography = flatland vegetation = woods climate = continental religion = shamanism culture = hurga_culture raw_material = wild_game}
+bidzhan = { topography = flatland vegetation = woods climate = continental religion = shamanism culture = hurga_culture raw_material = fur}
+bira = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = hurga_culture raw_material = wheat}
+kukan = { topography = hills vegetation = forest climate = continental religion = shamanism culture = hurga_culture raw_material = fur}
+kur = { topography = hills vegetation = woods climate = continental religion = shamanism culture = hurga_culture raw_material = lumber}
+sutara = { topography = hills vegetation = forest climate = continental religion = shamanism culture = hurga_culture raw_material = lumber}
 yakesa = { topography = flatland vegetation = woods climate = continental religion = shamanism culture = oroqen_culture raw_material = fish}
 amazar = { topography = hills vegetation = forest climate = continental religion = shamanism culture = evenk_culture raw_material = goods_gold}
 emuer = { topography = plateau vegetation = forest climate = continental religion = shamanism culture = daur_culture raw_material = millet}
@@ -9740,9 +9740,9 @@ pangu = { topography = flatland vegetation = forest climate = continental religi
 sahar = { topography = hills vegetation = forest climate = continental religion = shamanism culture = daur_culture raw_material = lumber}
 tahe = { topography = hills vegetation = forest climate = continental religion = shamanism culture = oroqen_culture raw_material = lumber}
 aigun = { topography = plateau vegetation = woods climate = continental religion = shamanism culture = oroqen_culture raw_material = millet}
-arkhara = { topography = flatland vegetation = woods climate = continental religion = shamanism culture = nanai_culture raw_material = fur}
+arkhara = { topography = flatland vegetation = woods climate = continental religion = shamanism culture = hurga_culture raw_material = fur}
 chenqing = { topography = plateau vegetation = forest climate = continental religion = shamanism culture = oroqen_culture raw_material = lumber}
-jiajin = { topography = hills vegetation = forest climate = continental religion = shamanism culture = nanai_culture raw_material = fish}
+jiajin = { topography = hills vegetation = forest climate = continental religion = shamanism culture = hurga_culture raw_material = fish}
 nioman = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = daur_culture raw_material = wild_game}
 xunhe = { topography = plateau vegetation = woods climate = continental religion = shamanism culture = oroqen_culture raw_material = amber}
 zhanhe = { topography = plateau vegetation = forest climate = continental religion = shamanism culture = oroqen_culture raw_material = horses}
@@ -9763,7 +9763,7 @@ upper_nioman = { topography = mountains vegetation = woods climate = continental
 akishma = { topography = hills vegetation = forest climate = continental religion = shamanism culture = evenk_culture raw_material = stone}
 olongki = { topography = hills vegetation = forest climate = continental religion = shamanism culture = evenk_culture raw_material = fur}
 tujun = { topography = hills vegetation = forest climate = continental religion = shamanism culture = evenk_culture raw_material = livestock}
-tyrma = { topography = plateau vegetation = forest climate = continental religion = shamanism culture = nanai_culture raw_material = lumber}
+tyrma = { topography = plateau vegetation = forest climate = continental religion = shamanism culture = hurga_culture raw_material = lumber}
 urgal = { topography = flatland vegetation = forest climate = continental religion = shamanism culture = evenk_culture raw_material = wild_game}
 djee = { topography = hills vegetation = woods climate = continental religion = shamanism culture = evenk_culture raw_material = lumber}
 argi = { topography = wetlands vegetation = woods climate = continental religion = shamanism culture = evenk_culture raw_material = wild_game}
@@ -9771,34 +9771,34 @@ dep = { topography = flatland vegetation = woods climate = continental religion 
 kupuri = { topography = hills vegetation = woods climate = continental religion = shamanism culture = evenk_culture raw_material = lumber}
 mulmuga = { topography = plateau vegetation = woods climate = continental religion = shamanism culture = evenk_culture raw_material = lumber}
 tok = { topography = hills vegetation = woods climate = continental religion = shamanism culture = evenk_culture raw_material = fur}
-hulan = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = solon_culture raw_material = wheat}
-bayan_susu = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = solon_culture raw_material = medicaments}
-hailun = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = solon_culture raw_material = fur}
-hvlan = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = solon_culture raw_material = millet}
-ougen = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = solon_culture raw_material = millet}
+hulan = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = haixi_culture raw_material = wheat}
+bayan_susu = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = haixi_culture raw_material = medicaments}
+hailun = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = haixi_culture raw_material = fur}
+hvlan = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = haixi_culture raw_material = millet}
+ougen = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = haixi_culture raw_material = millet}
 lake_qingken = { topography = lakes climate = continental}
-shangjing = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = solon_culture raw_material = wheat}
-boduna = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = solon_culture raw_material = millet}
-hulawen = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = solon_culture raw_material = wheat}
+shangjing = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = haixi_culture raw_material = wheat}
+boduna = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = haixi_culture raw_material = millet}
+hulawen = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = haixi_culture raw_material = wheat}
 shulan = { topography = hills vegetation = grasslands climate = continental religion = shamanism culture = jurchen_culture raw_material = beeswax}
-yushu = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = solon_culture raw_material = fiber_crops}
-zhaozhou_jurchen = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = solon_culture raw_material = millet}
+yushu = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = haixi_culture raw_material = fiber_crops}
+zhaozhou_jurchen = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = haixi_culture raw_material = millet}
 girin_ula = { topography = hills vegetation = grasslands climate = continental religion = shamanism culture = jurchen_culture raw_material = cotton}
 changchun = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = jurchen_culture raw_material = legumes}
 gongjiang_jurchen = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = jurchen_culture raw_material = medicaments}
 itu_jilin = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = jurchen_culture raw_material = wheat}
 nongan = { topography = flatland vegetation = farmland climate = continental religion = shamanism culture = jurchen_culture raw_material = fiber_crops}
-ilan_hala = { topography = hills vegetation = forest climate = continental religion = shamanism culture = nanai_culture raw_material = livestock}
+ilan_hala = { topography = hills vegetation = forest climate = continental religion = shamanism culture = hurga_culture raw_material = livestock}
 hailang = { topography = hills vegetation = grasslands climate = continental religion = shamanism culture = jurchen_culture raw_material = wheat}
 malong = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = jurchen_culture raw_material = millet}
 mudan_ula = { topography = hills vegetation = grasslands climate = continental religion = shamanism culture = jurchen_culture raw_material = horses}
 ningguta = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = jurchen_culture raw_material = rice}
 odoli = { topography = hills vegetation = forest climate = continental religion = shamanism culture = jurchen_culture raw_material = legumes}
 lake_jingpo = { topography = lakes climate = continental}
-chalin = { topography = hills vegetation = woods climate = continental religion = shamanism culture = nanai_culture raw_material = fish}
-taowen = { topography = plateau vegetation = forest climate = continental religion = shamanism culture = nanai_culture raw_material = fur}
-wanhufu = { topography = hills vegetation = forest climate = continental religion = shamanism culture = nanai_culture raw_material = lumber}
-wehe = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = nanai_culture raw_material = legumes}
+chalin = { topography = hills vegetation = woods climate = continental religion = shamanism culture = hurga_culture raw_material = fish}
+taowen = { topography = plateau vegetation = forest climate = continental religion = shamanism culture = hurga_culture raw_material = fur}
+wanhufu = { topography = hills vegetation = forest climate = continental religion = shamanism culture = hurga_culture raw_material = lumber}
+wehe = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = hurga_culture raw_material = legumes}
 huifacheng = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = jurchen_culture raw_material = wild_game}
 golmin_salggiyan = { topography = plateau vegetation = forest climate = continental religion = shamanism culture = jurchen_culture raw_material = medicaments}
 hoifa = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = jurchen_culture raw_material = horses}
@@ -9809,12 +9809,12 @@ taizhou_jurchen = { topography = flatland vegetation = grasslands climate = cont
 buteha = { topography = hills vegetation = woods climate = continental religion = shamanism culture = sibe_culture raw_material = wild_game}
 chol = { topography = hills vegetation = woods climate = continental religion = shamanism culture = sibe_culture raw_material = lumber}
 hurle = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = sibe_culture raw_material = fiber_crops}
-talaha = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = solon_culture raw_material = sand}
-dalaiketun = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = solon_culture raw_material = wheat}
-nemeri = { topography = flatland vegetation = woods climate = continental religion = shamanism culture = solon_culture raw_material = lumber}
-sart = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = solon_culture raw_material = millet}
+talaha = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = haixi_culture raw_material = sand}
+dalaiketun = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = haixi_culture raw_material = wheat}
+nemeri = { topography = flatland vegetation = woods climate = continental religion = shamanism culture = haixi_culture raw_material = lumber}
+sart = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = haixi_culture raw_material = millet}
 yilaha = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = daur_culture raw_material = wheat}
-zhalong = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = solon_culture raw_material = medicaments}
+zhalong = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = haixi_culture raw_material = medicaments}
 northern_daqing_lakes = { topography = lakes climate = continental}
 southern_daqing_lakes = { topography = lakes climate = continental}
 qiqihar = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = sibe_culture raw_material = fur}
@@ -9850,20 +9850,20 @@ vaka = { topography = hills vegetation = forest climate = continental religion =
 xunka = { topography = mountains vegetation = forest climate = continental religion = shamanism culture = udege_culture raw_material = stone}
 juru_hoton = { topography = flatland vegetation = woods climate = continental religion = shamanism culture = jurchen_culture raw_material = fiber_crops}
 dongning = { topography = hills vegetation = forest climate = continental religion = shamanism culture = jurchen_culture raw_material = legumes}
-jixi = { topography = hills vegetation = grasslands climate = continental religion = shamanism culture = nanai_culture raw_material = medicaments}
-mishan = { topography = flatland vegetation = woods climate = continental religion = shamanism culture = nanai_culture raw_material = clay}
+jixi = { topography = hills vegetation = grasslands climate = continental religion = shamanism culture = hurga_culture raw_material = medicaments}
+mishan = { topography = flatland vegetation = woods climate = continental religion = shamanism culture = hurga_culture raw_material = clay}
 mulun = { topography = hills vegetation = grasslands climate = continental religion = shamanism culture = jurchen_culture raw_material = wild_game}
 anchun = { topography = flatland vegetation = woods climate = continental religion = shamanism culture = udege_culture raw_material = wheat}
-hulin = { topography = wetlands vegetation = woods climate = continental religion = shamanism culture = nanai_culture raw_material = legumes}
+hulin = { topography = wetlands vegetation = woods climate = continental religion = shamanism culture = hurga_culture raw_material = legumes}
 namunka = { topography = hills vegetation = forest climate = continental religion = shamanism culture = udege_culture raw_material = fur}
 noto_ussuri = { topography = hills vegetation = forest climate = continental religion = shamanism culture = udege_culture raw_material = lumber}
 yiman = { topography = flatland vegetation = woods climate = continental religion = shamanism culture = udege_culture raw_material = fiber_crops}
 lake_khanka = { topography = lakes climate = continental}
-lahasusu = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = nanai_culture raw_material = wheat}
-futi = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = nanai_culture raw_material = wheat}
-nuoluo = { topography = hills vegetation = grasslands climate = continental religion = shamanism culture = nanai_culture raw_material = livestock}
-shuangyashan = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = nanai_culture raw_material = legumes}
-tulguur = { topography = wetlands vegetation = woods climate = continental religion = shamanism culture = nanai_culture raw_material = wild_game}
+lahasusu = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = hurga_culture raw_material = wheat}
+futi = { topography = wetlands vegetation = grasslands climate = continental religion = shamanism culture = hurga_culture raw_material = wheat}
+nuoluo = { topography = hills vegetation = grasslands climate = continental religion = shamanism culture = hurga_culture raw_material = livestock}
+shuangyashan = { topography = flatland vegetation = grasslands climate = continental religion = shamanism culture = hurga_culture raw_material = legumes}
+tulguur = { topography = wetlands vegetation = woods climate = continental religion = shamanism culture = hurga_culture raw_material = wild_game}
 kaiyuan_warka = { topography = hills vegetation = forest climate = continental religion = shamanism culture = jurchen_culture raw_material = fur}
 anju_nurgan = { topography = mountains vegetation = forest climate = continental religion = shamanism culture = udege_culture raw_material = sand natural_harbor_suitability = 0.00}
 nogule = { topography = mountains vegetation = forest climate = continental religion = shamanism culture = udege_culture raw_material = fish natural_harbor_suitability = 0.00}
@@ -10466,10 +10466,10 @@ laiyang = { topography = flatland vegetation = grasslands climate = continental 
 huangxian = { topography = flatland vegetation = grasslands climate = continental religion = mahayana culture = jiaodong_culture raw_material = beeswax natural_harbor_suitability = 0.00}
 qixia = { topography = hills vegetation = woods climate = continental religion = mahayana culture = jiaodong_culture raw_material = stone}
 zhaoyuan = { topography = flatland vegetation = grasslands climate = continental religion = mahayana culture = jiaodong_culture raw_material = goods_gold natural_harbor_suitability = 0.00}
-jiaoxi = { topography = flatland vegetation = grasslands climate = continental religion = mahayana culture = jiaodong_culture raw_material = salt natural_harbor_suitability = 0.40}
-fushan_jiaozhou = { topography = hills vegetation = woods climate = continental religion = mahayana culture = jiaodong_culture raw_material = fish natural_harbor_suitability = 0.40}
+jiaoxi = { topography = flatland vegetation = grasslands climate = continental religion = mahayana culture = jiaodong_culture raw_material = salt natural_harbor_suitability = 0.00}
+fushan_jiaozhou = { topography = hills vegetation = woods climate = continental religion = mahayana culture = jiaodong_culture raw_material = fish natural_harbor_suitability = 0.50}
 jimo = { topography = flatland vegetation = grasslands climate = continental religion = mahayana culture = jiaodong_culture raw_material = fruit natural_harbor_suitability = 0.00}
-lingshanwei = { topography = flatland vegetation = farmland climate = continental religion = mahayana culture = jiaodong_culture raw_material = wheat natural_harbor_suitability = 0.40}
+lingshanwei = { topography = flatland vegetation = farmland climate = continental religion = mahayana culture = jiaodong_culture raw_material = wheat natural_harbor_suitability = 0.25}
 juxian = { topography = hills vegetation = farmland climate = continental religion = mahayana culture = jiaodong_culture raw_material = legumes}
 yiyuan = { topography = hills vegetation = woods climate = continental religion = mahayana culture = jilu_culture raw_material = livestock}
 gegou = { topography = flatland vegetation = grasslands climate = continental religion = mahayana culture = zhongyuan_culture raw_material = wheat}
@@ -10487,11 +10487,11 @@ zhucheng = { topography = flatland vegetation = grasslands climate = continental
 anqiu = { topography = flatland vegetation = grasslands climate = continental religion = mahayana culture = jiaodong_culture raw_material = pepper}
 changle = { topography = flatland vegetation = grasslands climate = continental religion = mahayana culture = jilu_culture raw_material = livestock}
 wulian = { topography = hills vegetation = grasslands climate = continental religion = mahayana culture = jiaodong_culture raw_material = livestock}
-muping = { topography = hills vegetation = woods climate = continental religion = mahayana culture = jiaodong_culture raw_material = livestock natural_harbor_suitability = 0.00}
-chengshan = { topography = flatland vegetation = grasslands climate = continental religion = mahayana culture = jiaodong_culture raw_material = fish natural_harbor_suitability = 0.00}
-fushan_muping = { topography = flatland vegetation = grasslands climate = continental religion = mahayana culture = jiaodong_culture raw_material = wheat natural_harbor_suitability = 0.00}
+muping = { topography = hills vegetation = woods climate = continental religion = mahayana culture = jiaodong_culture raw_material = livestock natural_harbor_suitability = 0.25}
+chengshan = { topography = flatland vegetation = grasslands climate = continental religion = mahayana culture = jiaodong_culture raw_material = fish natural_harbor_suitability = 0.25}
+fushan_muping = { topography = flatland vegetation = grasslands climate = continental religion = mahayana culture = jiaodong_culture raw_material = wheat natural_harbor_suitability = 0.25}
 rushan = { topography = flatland vegetation = grasslands climate = continental religion = mahayana culture = jiaodong_culture raw_material = legumes natural_harbor_suitability = 0.00}
-weihai = { topography = flatland vegetation = grasslands climate = continental religion = mahayana culture = jiaodong_culture raw_material = livestock natural_harbor_suitability = 0.00}
+weihai = { topography = flatland vegetation = grasslands climate = continental religion = mahayana culture = jiaodong_culture raw_material = livestock natural_harbor_suitability = 0.50}
 wendeng = { topography = flatland vegetation = woods climate = continental religion = mahayana culture = jiaodong_culture raw_material = fish natural_harbor_suitability = 0.00}
 yidu_qingzhou = { topography = flatland vegetation = grasslands climate = continental religion = mahayana culture = jiaodong_culture raw_material = tin}
 boxing = { topography = wetlands vegetation = grasslands climate = continental religion = mahayana culture = jilu_culture raw_material = fish}
@@ -10746,7 +10746,7 @@ anyuan_lianzhou = { topography = flatland vegetation = grasslands climate = subt
 ruxi = { topography = hills vegetation = woods climate = subtropical religion = mahayana culture = malao_culture raw_material = fish natural_harbor_suitability = 0.40}
 xiaodong = { topography = hills vegetation = woods climate = subtropical religion = mahayana culture = malao_culture raw_material = livestock}
 gaoyang = { topography = hills vegetation = forest climate = subtropical religion = mahayana culture = malao_culture raw_material = lumber}
-yilun = { topography = flatland vegetation = grasslands climate = tropical religion = satsana_phi culture = hlai_culture raw_material = beeswax natural_harbor_suitability = 0.00}
+yilun = { topography = flatland vegetation = grasslands climate = tropical religion = satsana_phi culture = hlai_culture raw_material = beeswax natural_harbor_suitability = 0.25}
 yande = { topography = flatland vegetation = jungle climate = tropical religion = satsana_phi culture = hlai_culture raw_material = wild_game natural_harbor_suitability = 0.00}
 ganen = { topography = hills vegetation = jungle climate = tropical religion = satsana_phi culture = hlai_culture raw_material = medicaments natural_harbor_suitability = 0.00}
 changhua = { topography = hills vegetation = forest climate = tropical religion = satsana_phi culture = hlai_culture raw_material = legumes natural_harbor_suitability = 0.00}
@@ -10756,20 +10756,20 @@ dingan = { topography = flatland vegetation = forest climate = tropical religion
 lehui = { topography = flatland vegetation = jungle climate = tropical religion = sanjiao culture = qiong_culture raw_material = rice natural_harbor_suitability = 0.00}
 chengmai = { topography = flatland vegetation = grasslands climate = tropical religion = satsana_phi culture = hlai_culture raw_material = rice natural_harbor_suitability = 0.00}
 lingao = { topography = flatland vegetation = farmland climate = tropical religion = satsana_phi culture = hlai_culture raw_material = fish natural_harbor_suitability = 0.00}
-wenchang = { topography = flatland vegetation = grasslands climate = tropical religion = mahayana culture = fuzhou_culture raw_material = livestock natural_harbor_suitability = 0.00}
+wenchang = { topography = flatland vegetation = grasslands climate = tropical religion = mahayana culture = fuzhou_culture raw_material = livestock natural_harbor_suitability = 0.25}
 wanan_wananjun = { topography = hills vegetation = jungle climate = tropical religion = sanjiao culture = qiong_culture raw_material = lumber natural_harbor_suitability = 0.00}
-lingshui = { topography = flatland vegetation = jungle climate = tropical religion = satsana_phi culture = hlai_culture raw_material = lumber natural_harbor_suitability = 0.00}
-ningyuan_wananjun = { topography = hills vegetation = jungle climate = tropical religion = satsana_phi culture = hlai_culture raw_material = salt natural_harbor_suitability = 0.00}
+lingshui = { topography = flatland vegetation = jungle climate = tropical religion = satsana_phi culture = hlai_culture raw_material = lumber natural_harbor_suitability = 0.25}
+ningyuan_wananjun = { topography = hills vegetation = jungle climate = tropical religion = satsana_phi culture = hlai_culture raw_material = salt natural_harbor_suitability = 0.50}
 limushan = { topography = mountains vegetation = jungle climate = subtropical religion = satsana_phi culture = hlai_culture raw_material = lumber}
 haiyang = { topography = wetlands vegetation = woods climate = subtropical religion = mahayana culture = chaozhou_culture raw_material = tin natural_harbor_suitability = 0.40}
 sanhe_chaozhou = { topography = hills vegetation = woods climate = subtropical religion = mahayana culture = kejia_culture raw_material = sugar}
 pantian = { topography = mountains vegetation = forest climate = subtropical religion = mahayana culture = chaozhou_culture raw_material = lumber}
 chengxiang = { topography = hills vegetation = forest climate = subtropical religion = mahayana culture = kejia_culture raw_material = wild_game}
 huilai = { topography = hills vegetation = woods climate = subtropical religion = mahayana culture = chaozhou_culture raw_material = rice natural_harbor_suitability = 0.00}
-chaoyang = { topography = flatland vegetation = woods climate = subtropical religion = mahayana culture = chaozhou_culture raw_material = rice natural_harbor_suitability = 0.00}
+chaoyang = { topography = flatland vegetation = woods climate = subtropical religion = mahayana culture = chaozhou_culture raw_material = rice natural_harbor_suitability = 0.25}
 pingyuan_mei = { topography = hills vegetation = forest climate = subtropical religion = mahayana culture = kejia_culture raw_material = fur}
 puning = { topography = hills vegetation = forest climate = subtropical religion = mahayana culture = chaozhou_culture raw_material = lumber}
-sanrao = { topography = flatland vegetation = woods climate = subtropical religion = mahayana culture = chaozhou_culture raw_material = livestock natural_harbor_suitability = 0.00}
+sanrao = { topography = flatland vegetation = woods climate = subtropical religion = mahayana culture = chaozhou_culture raw_material = livestock natural_harbor_suitability = 0.25}
 jieyang = { topography = hills vegetation = forest climate = subtropical religion = mahayana culture = chaozhou_culture raw_material = lumber natural_harbor_suitability = 0.00}
 duanxi = { topography = hills vegetation = forest climate = subtropical religion = mahayana culture = yuehai_culture raw_material = fruit}
 shuangshui = { topography = flatland vegetation = forest climate = subtropical religion = mahayana culture = yuehai_culture raw_material = lumber}
@@ -10793,7 +10793,7 @@ khuzhupai = { topography = flatland vegetation = forest climate = subtropical re
 haifeng = { topography = flatland vegetation = farmland climate = subtropical religion = mahayana culture = fulao_culture raw_material = beeswax natural_harbor_suitability = 0.40}
 lufeng_haifeng = { topography = hills vegetation = woods climate = subtropical religion = mahayana culture = fulao_culture raw_material = salt natural_harbor_suitability = 0.40}
 boluo = { topography = flatland vegetation = forest climate = subtropical religion = mahayana culture = kejia_culture raw_material = lumber}
-pingshan_huiyang = { topography = hills vegetation = woods climate = subtropical religion = mahayana culture = huizhou_hakka_culture raw_material = salt natural_harbor_suitability = 0.00}
+pingshan_huiyang = { topography = hills vegetation = woods climate = subtropical religion = mahayana culture = huizhou_hakka_culture raw_material = salt natural_harbor_suitability = 0.50}
 qinjiang = { topography = hills vegetation = woods climate = subtropical religion = mahayana culture = kejia_culture raw_material = sugar}
 zuokeng = { topography = mountains vegetation = woods climate = subtropical religion = mahayana culture = huizhou_hakka_culture raw_material = rice}
 liannan = { topography = mountains vegetation = woods climate = subtropical religion = yao_religion culture = yao_china_culture raw_material = legumes}
@@ -10804,7 +10804,7 @@ yangjiang = { topography = flatland vegetation = woods climate = subtropical rel
 yangchun = { topography = hills vegetation = woods climate = subtropical religion = mahayana culture = yangjiang_culture raw_material = cotton}
 enping = { topography = hills vegetation = woods climate = subtropical religion = mahayana culture = xinhui_culture raw_material = livestock}
 guliang = { topography = hills vegetation = woods climate = subtropical religion = mahayana culture = yangjiang_culture raw_material = livestock}
-duling = { topography = flatland vegetation = woods climate = subtropical religion = mahayana culture = yangjiang_culture raw_material = beeswax natural_harbor_suitability = 0.00}
+duling = { topography = flatland vegetation = woods climate = subtropical religion = mahayana culture = yangjiang_culture raw_material = beeswax natural_harbor_suitability = 0.40}
 xinxing_nanen = { topography = hills vegetation = woods climate = subtropical religion = mahayana culture = xinhui_culture raw_material = tea}
 baochang_nanxiong = { topography = flatland vegetation = forest climate = subtropical religion = mahayana culture = kejia_culture raw_material = lumber}
 shixing = { topography = hills vegetation = forest climate = subtropical religion = mahayana culture = kejia_culture raw_material = rice}
@@ -21804,7 +21804,7 @@ devil_lake = { topography = lakes climate = continental}
 saakak_hukaahaanu = { topography = flatland vegetation = grasslands climate = continental religion = midewiwin_religion culture = haaninin_culture raw_material = wild_game}
 metigoshe = { topography = flatland vegetation = grasslands climate = continental religion = midewiwin_religion culture = haaninin_culture raw_material = legumes}
 itscheabine = { topography = flatland vegetation = grasslands climate = continental religion = midewiwin_religion culture = akainaa_culture raw_material = wild_game}
-xaltocan = { topography = hills vegetation = grasslands climate = cold_arid religion = chichimecah_religion culture = otomanguean_culture raw_material = maize}
+xaltocan = { topography = hills vegetation = grasslands climate = cold_arid religion = chichimecah_religion culture = otomanguean_culture raw_material = stone}
 tehotihuacan = { topography = plateau vegetation = grasslands climate = cold_arid religion = nahuatl culture = nahua_culture raw_material = fish}
 culhuacan = { topography = hills vegetation = grasslands climate = continental religion = nahuatl culture = nahua_culture raw_material = maize}
 tetzcoco = { topography = hills vegetation = grasslands climate = continental religion = nahuatl culture = nahua_culture raw_material = legumes}
@@ -21833,10 +21833,10 @@ huajuapan = { topography = mountains vegetation = sparse climate = cold_arid rel
 silacayoapam = { topography = mountains vegetation = forest climate = tropical religion = mesoamerican culture = mixtec_culture raw_material = lumber}
 chiautla = { topography = hills vegetation = forest climate = tropical religion = nahuatl culture = nahua_culture raw_material = livestock}
 cuauhteopan = { topography = hills vegetation = forest climate = tropical religion = nahuatl culture = nahua_culture raw_material = goods_gold}
-tlazcozauhtitlan = { topography = mountains vegetation = forest climate = tropical religion = nahuatl culture = nahua_culture raw_material = wild_game}
+tlazcozauhtitlan = { topography = mountains vegetation = forest climate = tropical religion = nahuatl culture = nahua_culture raw_material = stone}
 yopitzinco = { topography = flatland vegetation = forest climate = tropical religion = mesoamerican culture = mephaa_culture raw_material = pearls natural_harbor_suitability = 0.50}
 tixtla = { topography = mountains vegetation = forest climate = tropical religion = mesoamerican culture = mephaa_culture raw_material = cotton}
-chilapa = { topography = mountains vegetation = forest climate = tropical religion = mesoamerican culture = mephaa_culture raw_material = beeswax}
+chilapa = { topography = mountains vegetation = forest climate = tropical religion = mesoamerican culture = mephaa_culture raw_material = copper}
 tecoanapa = { topography = flatland vegetation = forest climate = tropical religion = nahuatl culture = mephaa_culture raw_material = dyes natural_harbor_suitability = 0.00}
 cihuatlan = { topography = hills vegetation = forest climate = tropical religion = nahuatl culture = cuitlatec_culture raw_material = fruit natural_harbor_suitability = 0.00}
 tecpan = { topography = hills vegetation = forest climate = tropical religion = nahuatl culture = cuitlatec_culture raw_material = pearls natural_harbor_suitability = 0.00}
@@ -21937,7 +21937,7 @@ cholollan = { topography = plateau vegetation = grasslands climate = continental
 tepozan_mountains = { topography = mountain_wasteland vegetation = sparse climate = continental}
 xicotepec = { topography = mountains vegetation = forest climate = oceanic religion = nahuatl culture = nahua_culture raw_material = legumes}
 zacatlan = { topography = hills vegetation = forest climate = oceanic religion = chichimecah_religion culture = otomanguean_culture raw_material = tobacco}
-tetela = { topography = mountains vegetation = forest climate = oceanic religion = mayan culture = totonac_culture raw_material = maize}
+tetela = { topography = mountains vegetation = forest climate = oceanic religion = mayan culture = totonac_culture raw_material = stone}
 ixtacamaxtitlan = { topography = mountains vegetation = forest climate = oceanic religion = mayan culture = totonac_culture raw_material = gems}
 tepeyahualco = { topography = plateau vegetation = forest climate = oceanic religion = nahuatl culture = nahua_culture raw_material = beeswax}
 tepeyacac = { topography = hills vegetation = sparse climate = continental religion = nahuatl culture = nahua_culture raw_material = gems}
@@ -21951,7 +21951,7 @@ nauhtlan = { topography = flatland vegetation = jungle climate = tropical religi
 tuzapan = { topography = flatland vegetation = jungle climate = tropical religion = mayan culture = totonac_culture raw_material = silver}
 papantla = { topography = flatland vegetation = jungle climate = tropical religion = mayan culture = totonac_culture raw_material = maize natural_harbor_suitability = 0.00}
 tlapacoyan = { topography = flatland vegetation = jungle climate = subtropical religion = mayan culture = totonac_culture raw_material = cocoa}
-cuyuxquihui = { topography = flatland vegetation = jungle climate = tropical religion = mayan culture = totonac_culture raw_material = fish natural_harbor_suitability = 0.00}
+cuyuxquihui = { topography = flatland vegetation = jungle climate = tropical religion = mayan culture = totonac_culture raw_material = lumber natural_harbor_suitability = 0.00}
 xalapa = { topography = mountains vegetation = jungle climate = oceanic religion = nahuatl culture = nahua_culture raw_material = livestock}
 xalacinco = { topography = plateau vegetation = woods climate = oceanic religion = nahuatl culture = nahua_culture raw_material = fiber_crops}
 mizantla = { topography = hills vegetation = jungle climate = subtropical religion = mayan culture = totonac_culture raw_material = cocoa}
@@ -22004,7 +22004,7 @@ tetellan = { topography = mountains vegetation = forest climate = tropical relig
 zompanco = { topography = mountains vegetation = forest climate = tropical religion = nahuatl culture = nahua_culture raw_material = incense}
 oztoman = { topography = plateau vegetation = forest climate = tropical religion = nahuatl culture = nahua_culture raw_material = fiber_crops}
 tlachco = { topography = mountains vegetation = forest climate = tropical religion = nahuatl culture = chontal_culture raw_material = silver}
-temascaltepec = { topography = mountains vegetation = forest climate = tropical religion = nahuatl culture = nahua_culture raw_material = livestock}
+temascaltepec = { topography = mountains vegetation = forest climate = tropical religion = nahuatl culture = nahua_culture raw_material = stone}
 zacazonapan = { topography = mountains vegetation = forest climate = continental religion = nahuatl culture = nahua_culture raw_material = lumber}
 malinalco = { topography = mountains vegetation = forest climate = continental religion = nahuatl culture = matlatzinca_culture raw_material = livestock}
 tlalpujahua = { topography = mountains vegetation = forest climate = continental religion = nahuatl culture = nahua_culture raw_material = dyes}
@@ -22021,10 +22021,10 @@ ixtachichimecapan = { topography = plateau vegetation = sparse climate = cold_ar
 kerhiretarhu = { topography = mountains vegetation = sparse climate = cold_arid religion = chichimecah_religion culture = otomanguean_culture raw_material = sand}
 tetzapotitlan = { topography = flatland vegetation = jungle climate = tropical religion = mayan culture = huastec_culture raw_material = lumber}
 huayacocotla = { topography = hills vegetation = jungle climate = subtropical religion = mayan culture = huastec_culture raw_material = dyes}
-tutotepec = { topography = hills vegetation = jungle climate = subtropical religion = mayan culture = huastec_culture raw_material = cotton}
+tutotepec = { topography = hills vegetation = jungle climate = subtropical religion = mayan culture = huastec_culture raw_material = lumber}
 metztitlan = { topography = mountains vegetation = forest climate = subtropical religion = chichimecah_religion culture = otomanguean_culture raw_material = gems}
 jalpan = { topography = mountains vegetation = forest climate = subtropical religion = nahuatl culture = nahua_culture raw_material = stone}
-tziuhcoac = { topography = flatland vegetation = jungle climate = tropical religion = mayan culture = huastec_culture raw_material = beeswax}
+tziuhcoac = { topography = flatland vegetation = jungle climate = tropical religion = mayan culture = huastec_culture raw_material = lumber}
 oxtlipan = { topography = flatland vegetation = jungle climate = tropical religion = mayan culture = huastec_culture raw_material = gems}
 copuz = { topography = hills vegetation = sparse climate = cold_arid religion = chichimecah_religion culture = iztachichimecah_culture raw_material = wild_game}
 cocomacan = { topography = plateau vegetation = sparse climate = cold_arid religion = chichimecah_religion culture = guamar_culture raw_material = livestock}
@@ -22048,9 +22048,9 @@ quechula = { topography = hills vegetation = jungle climate = tropical religion 
 ocosingo = { topography = mountains vegetation = forest climate = oceanic religion = mayan culture = chol_culture raw_material = lumber}
 lakam_tun = { topography = mountains vegetation = forest climate = continental religion = mayan culture = chol_culture raw_material = marble}
 tenamitl = { topography = plateau vegetation = forest climate = tropical religion = mayan culture = tzotzil_culture raw_material = amber}
-zinacantan = { topography = mountains vegetation = forest climate = continental religion = mayan culture = tzeltal_culture raw_material = beeswax}
+zinacantan = { topography = mountains vegetation = forest climate = continental religion = mayan culture = tzeltal_culture raw_material = stone}
 pochutla = { topography = hills vegetation = forest climate = tropical religion = mayan culture = chol_culture raw_material = clay}
-tila = { topography = mountains vegetation = forest climate = tropical religion = mayan culture = chol_culture raw_material = amber}
+tila = { topography = mountains vegetation = forest climate = tropical religion = mayan culture = chol_culture raw_material = copper}
 lacandon_jungle = { topography = hills_wasteland vegetation = forest climate = tropical}
 tonala_chiapas = { topography = flatland vegetation = forest climate = tropical religion = mayan culture = tapachultec_culture raw_material = cotton natural_harbor_suitability = 0.00}
 napinaica = { topography = hills vegetation = forest climate = tropical religion = mayan culture = tzotzil_culture raw_material = gems}
@@ -22073,11 +22073,11 @@ dzilam = { topography = flatland vegetation = grasslands climate = tropical reli
 titsimin = { topography = flatland vegetation = grasslands climate = tropical religion = mayan culture = yucatec_culture raw_material = salt natural_harbor_suitability = 0.00}
 chichen_itza = { topography = flatland vegetation = woods climate = tropical religion = mayan culture = yucatec_culture raw_material = dyes}
 tases = { topography = flatland vegetation = woods climate = tropical religion = mayan culture = yucatec_culture raw_material = cotton}
-kalotmul = { topography = flatland vegetation = woods climate = tropical religion = mayan culture = yucatec_culture raw_material = beeswax}
+kalotmul = { topography = flatland vegetation = woods climate = tropical religion = mayan culture = yucatec_culture raw_material = stone}
 zaci = { topography = flatland vegetation = forest climate = tropical religion = mayan culture = yucatec_culture raw_material = cocoa}
 kaan_peech = { topography = flatland vegetation = woods climate = tropical religion = mayan culture = putun_culture raw_material = legumes natural_harbor_suitability = 0.00}
 calkini = { topography = wetlands vegetation = woods climate = tropical religion = mayan culture = yucatec_culture raw_material = fruit natural_harbor_suitability = 0.00}
-edzna = { topography = flatland vegetation = forest climate = tropical religion = mayan culture = putun_culture raw_material = wild_game}
+edzna = { topography = flatland vegetation = forest climate = tropical religion = mayan culture = putun_culture raw_material = stone}
 hochob = { topography = flatland vegetation = forest climate = tropical religion = mayan culture = putun_culture raw_material = maize}
 dzibilnocac = { topography = flatland vegetation = forest climate = tropical religion = mayan culture = yucatec_culture raw_material = fiber_crops}
 chakan_putum = { topography = flatland vegetation = forest climate = tropical religion = mayan culture = putun_culture raw_material = chili natural_harbor_suitability = 0.00}
@@ -23197,7 +23197,7 @@ north_pacific_high_sea56 = { topography = ocean climate = arctic}
 north_pacific_high_sea59 = { topography = ocean climate = arctic}
 north_pacific_high_sea63 = { topography = ocean climate = arctic}
 north_pacific_high_sea64 = { topography = ocean climate = arctic}
-north_pacific_high_sea67 = { topography = ocean climate = arctic}
+north_pacific_high_sea67 = { topography = deep_ocean climate = arctic movement_assistance = { -90.16 4.98 }}
 north_pacific_high_sea69 = { topography = ocean climate = arctic}
 north_pacific_high_sea72 = { topography = ocean climate = arctic}
 north_pacific_high_sea74 = { topography = ocean climate = arctic}
@@ -23215,10 +23215,10 @@ north_pacific_high_sea23 = { topography = ocean climate = arctic}
 north_pacific_high_sea37 = { topography = ocean climate = arctic}
 norton_bay = { topography = coastal_ocean climate = arctic}
 nome_coast = { topography = coastal_ocean climate = arctic}
-clarence_gulf = { topography = coastal_ocean climate = arctic}
-shishmarev_inlet = { topography = coastal_ocean climate = arctic}
+clarence_gulf = { topography = deep_ocean climate = arctic movement_assistance = { -90.16 4.98 }}
+shishmarev_inlet = { topography = deep_ocean climate = arctic movement_assistance = { -90.16 4.98 }}
 north_pacific_high_sea40 = { topography = ocean climate = arctic}
-north_pacific_high_sea42 = { topography = ocean climate = arctic}
+north_pacific_high_sea42 = { topography = deep_ocean climate = arctic movement_assistance = { -90.16 4.98 }}
 hotham_inlet = { topography = coastal_ocean climate = arctic}
 krusenstern_lagoon = { topography = coastal_ocean climate = arctic}
 point_hope = { topography = coastal_ocean climate = arctic}
@@ -23226,8 +23226,8 @@ wevok_point = { topography = coastal_ocean climate = arctic}
 amiq_coast5 = { topography = coastal_ocean climate = arctic}
 stmatthew_coast3 = { topography = coastal_ocean climate = arctic}
 kialegak_cape = { topography = coastal_ocean climate = arctic}
-sevuokuk_point = { topography = coastal_ocean climate = arctic}
-kongkok_bay = { topography = coastal_ocean climate = arctic}
+sevuokuk_point = { topography = deep_ocean climate = arctic movement_assistance = { -90.16 4.98 }}
+kongkok_bay = { topography = deep_ocean climate = arctic movement_assistance = { -90.16 4.98 }}
 north_pacific_high_sea35 = { topography = ocean climate = arctic}
 north_pacific_high_sea24 = { topography = ocean climate = arctic}
 north_pacific_high_sea27 = { topography = ocean climate = arctic}
@@ -23235,7 +23235,7 @@ north_pacific_high_sea25 = { topography = ocean climate = arctic}
 north_pacific_high_sea29 = { topography = ocean climate = arctic}
 north_pacific_high_sea31 = { topography = ocean climate = arctic}
 north_pacific_high_sea44 = { topography = ocean climate = arctic}
-north_pacific_high_sea47 = { topography = ocean climate = arctic}
+north_pacific_high_sea47 = { topography = deep_ocean climate = arctic movement_assistance = { -90.16 4.98 }}
 north_pacific_high_sea52 = { topography = ocean climate = arctic}
 north_pacific_high_sea50 = { topography = ocean climate = arctic}
 north_pacific_high_sea55 = { topography = ocean climate = arctic}
@@ -23987,6 +23987,7 @@ negro_amazon_jungle = { topography = flatland_wasteland vegetation = jungle clim
 purus_amazon_jungle = { topography = flatland_wasteland vegetation = jungle climate = tropical}
 solimoes_amazon_jungle = { topography = flatland_wasteland vegetation = jungle climate = tropical}
 cabaliana_lake = { topography = lakes climate = tropical}
+madeira_amazon_jungle = { topography = flatland_wasteland vegetation = jungle climate = tropical}
 curumu = { topography = wetlands vegetation = jungle climate = tropical religion = doi_wahire_religion culture = marajo_culture raw_material = fish natural_harbor_suitability = 0.00}
 ananatuba = { topography = wetlands vegetation = jungle climate = tropical religion = doi_wahire_religion culture = marajo_culture raw_material = fish natural_harbor_suitability = 0.00}
 anajas = { topography = wetlands vegetation = jungle climate = tropical religion = doi_wahire_religion culture = marajo_culture raw_material = lumber natural_harbor_suitability = 0.00}
@@ -24017,10 +24018,48 @@ itandeua_lake = { topography = lakes climate = tropical}
 itarim_lake = { topography = lakes climate = tropical}
 monte_alegre_lake = { topography = lakes climate = tropical}
 caxiuana_bay = { topography = lakes climate = tropical}
+mundurukania = { topography = flatland vegetation = jungle climate = tropical religion = namandu_religion culture = wuyjuyu_culture raw_material = wild_game}
+satere_mawe = { topography = flatland vegetation = jungle climate = tropical religion = namandu_religion culture = satere_mawe_culture raw_material = medicaments}
+curuai = { topography = wetlands vegetation = jungle climate = tropical religion = namandu_religion culture = wuyjuyu_culture raw_material = beeswax}
+tupulicus = { topography = wetlands vegetation = jungle climate = tropical religion = namandu_religion culture = tapajo_culture raw_material = lumber}
+ukarangma = { topography = wetlands vegetation = jungle climate = tropical religion = zemi_religion culture = ukaragma_culture raw_material = lumber}
+kuben_kran_ken = { topography = flatland vegetation = jungle climate = tropical religion = zemi_religion culture = ukaragma_culture raw_material = wild_game}
+xingu_amazon_jungle = { topography = flatland_wasteland vegetation = jungle climate = tropical}
+tapajos_amazon_jungle = { topography = flatland_wasteland vegetation = jungle climate = tropical}
+evuevi = { topography = flatland vegetation = woods climate = tropical religion = nallagdigua_religion culture = guaikuru_culture raw_material = fiber_crops}
+sucuriu = { topography = hills vegetation = woods climate = tropical religion = doi_wahire_religion culture = boe_culture raw_material = iron}
+piquiri = { topography = flatland vegetation = woods climate = tropical religion = doi_wahire_religion culture = boe_culture raw_material = wild_game}
+camapua = { topography = hills vegetation = woods climate = tropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = gems}
+ytykyra = { topography = flatland vegetation = woods climate = tropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = wild_game}
+pantanal_swamp = { topography = wetlands_wasteland vegetation = grasslands climate = tropical}
+pantanal_forest = { topography = flatland_wasteland vegetation = jungle climate = tropical}
+mebengokre = { topography = flatland vegetation = woods climate = tropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = wild_game}
+aquidauana = { topography = flatland vegetation = woods climate = tropical religion = nallagdigua_religion culture = terena_culture raw_material = clay}
+kadiweu = { topography = hills vegetation = forest climate = tropical religion = nallagdigua_religion culture = guaikuru_culture raw_material = wild_game}
+piripucu = { topography = flatland vegetation = woods climate = tropical religion = nallagdigua_religion culture = guaikuru_culture raw_material = legumes}
+terena = { topography = flatland vegetation = woods climate = tropical religion = nallagdigua_religion culture = terena_culture raw_material = wild_game}
+nioac = { topography = flatland vegetation = woods climate = tropical religion = nallagdigua_religion culture = guaikuru_culture raw_material = wild_game}
+dawande = { topography = flatland vegetation = grasslands climate = tropical religion = zemi_religion culture = nambikwara_culture raw_material = fiber_crops}
+balotipone = { topography = flatland vegetation = woods climate = tropical religion = doi_wahire_religion culture = boe_culture raw_material = wild_game}
+parecis = { topography = hills vegetation = woods climate = tropical religion = zemi_religion culture = haliti_culture raw_material = legumes}
+haliti = { topography = flatland vegetation = woods climate = tropical religion = zemi_religion culture = haliti_culture raw_material = wild_game}
+ikuiapa = { topography = hills vegetation = woods climate = tropical religion = doi_wahire_religion culture = boe_culture raw_material = goods_gold}
+guato = { topography = flatland vegetation = woods climate = tropical religion = doi_wahire_religion culture = guato_culture raw_material = beeswax}
+otuques = { topography = flatland vegetation = woods climate = tropical religion = doi_wahire_religion culture = boe_culture raw_material = wild_game}
+paranaiba = { topography = plateau vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = wild_game}
+porekry = { topography = plateau vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = legumes}
+opaye = { topography = flatland vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = ofaie_culture raw_material = wild_game}
+ofaie = { topography = flatland vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = ofaie_culture raw_material = beeswax}
+taquarucu = { topography = flatland vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = ofaie_culture raw_material = legumes}
+anhandui = { topography = plateau vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = ofaie_culture raw_material = wild_game}
+kaiowa = { topography = plateau vegetation = woods climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = fiber_crops}
+kaiwa = { topography = flatland vegetation = forest climate = tropical religion = tunpa_religion culture = ava_culture raw_material = medicaments}
+chiripa = { topography = flatland vegetation = forest climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = lumber}
+maracaju = { topography = plateau vegetation = grasslands climate = tropical religion = tunpa_religion culture = ava_culture raw_material = wild_game}
+tacuru_jungle = { topography = flatland_wasteland vegetation = jungle climate = subtropical}
 bakairi = { topography = flatland vegetation = woods climate = tropical religion = akinha_ekugu_religion culture = kura_culture raw_material = fiber_crops}
 kukuro_kalapalo = { topography = flatland vegetation = jungle climate = tropical religion = akinha_ekugu_religion culture = kuikuro_culture raw_material = legumes}
 kuhikugu = { topography = wetlands vegetation = jungle climate = tropical religion = akinha_ekugu_religion culture = kuikuro_culture raw_material = wild_game}
-xingu_amazon_jungle = { topography = flatland_wasteland vegetation = jungle climate = tropical}
 irantxe = { topography = plateau vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = manoki_culture raw_material = gems}
 enawene = { topography = plateau vegetation = jungle climate = tropical religion = zemi_religion culture = enawene_nawe_culture raw_material = wild_game}
 kajkwakratxi = { topography = plateau vegetation = jungle climate = tropical religion = akinha_ekugu_religion culture = kajkwakratxi_culture raw_material = legumes}
@@ -24030,19 +24069,12 @@ rikbaktsa = { topography = flatland vegetation = jungle climate = tropical relig
 manoki = { topography = plateau vegetation = jungle climate = tropical religion = doi_wahire_religion culture = manoki_culture raw_material = gems}
 apiaka_jungle = { topography = flatland_wasteland vegetation = jungle climate = tropical}
 kayabi_jungle = { topography = flatland_wasteland vegetation = jungle climate = tropical}
-mundurukania = { topography = flatland vegetation = jungle climate = tropical religion = namandu_religion culture = wuyjuyu_culture raw_material = wild_game}
-satere_mawe = { topography = flatland vegetation = jungle climate = tropical religion = namandu_religion culture = satere_mawe_culture raw_material = medicaments}
-curuai = { topography = wetlands vegetation = jungle climate = tropical religion = namandu_religion culture = wuyjuyu_culture raw_material = beeswax}
-tupulicus = { topography = wetlands vegetation = jungle climate = tropical religion = namandu_religion culture = tapajo_culture raw_material = lumber}
-ukarangma = { topography = wetlands vegetation = jungle climate = tropical religion = zemi_religion culture = ukaragma_culture raw_material = lumber}
-kuben_kran_ken = { topography = flatland vegetation = jungle climate = tropical religion = zemi_religion culture = ukaragma_culture raw_material = wild_game}
 kura = { topography = flatland vegetation = jungle climate = tropical religion = akinha_ekugu_religion culture = kuikuro_culture raw_material = wild_game}
 kajabi = { topography = flatland vegetation = jungle climate = tropical religion = namandu_religion culture = kawaiwete_culture raw_material = fruit}
 kaiabi = { topography = flatland vegetation = jungle climate = tropical religion = namandu_religion culture = kawaiwete_culture raw_material = lumber}
 panara = { topography = flatland vegetation = jungle climate = tropical religion = doi_wahire_religion culture = panara_culture raw_material = medicaments}
 apiacas = { topography = flatland vegetation = jungle climate = tropical religion = doi_wahire_religion culture = panara_culture raw_material = medicaments}
 ikpeng = { topography = flatland vegetation = jungle climate = tropical religion = zemi_religion culture = ikpeng_culture raw_material = fiber_crops}
-tapajos_amazon_jungle = { topography = flatland_wasteland vegetation = jungle climate = tropical}
 oro_win = { topography = flatland vegetation = jungle climate = tropical religion = txapakura_religion culture = txapakura_culture raw_material = lumber}
 karipuna = { topography = flatland vegetation = jungle climate = tropical religion = tunpa_religion culture = kagwahiva_culture raw_material = wild_game}
 pakaasnovos = { topography = flatland vegetation = jungle climate = tropical religion = txapakura_religion culture = txapakura_culture raw_material = tin}
@@ -24050,7 +24082,6 @@ yjxa = { topography = wetlands vegetation = jungle climate = tropical religion =
 ahe = { topography = flatland vegetation = jungle climate = tropical religion = tunpa_religion culture = kagwahiva_culture raw_material = lumber}
 wari = { topography = flatland vegetation = jungle climate = tropical religion = txapakura_religion culture = txapakura_culture raw_material = wild_game}
 kaxarari = { topography = flatland vegetation = jungle climate = tropical religion = yage_religion culture = kaxarari_culture raw_material = medicaments}
-madeira_amazon_jungle = { topography = flatland_wasteland vegetation = jungle climate = tropical}
 uru_pa_in = { topography = flatland vegetation = jungle climate = tropical religion = tunpa_religion culture = kagwahiva_culture raw_material = fiber_crops}
 jiparana = { topography = flatland vegetation = jungle climate = tropical religion = tunpa_religion culture = kagwahiva_culture raw_material = legumes}
 uru_eu_wau_wau = { topography = hills vegetation = jungle climate = tropical religion = tunpa_religion culture = kagwahiva_culture raw_material = tin}
@@ -24183,9 +24214,9 @@ caninde = { topography = flatland vegetation = grasslands climate = arid religio
 piaui = { topography = flatland vegetation = forest climate = tropical religion = jurema_religion culture = pankara_culture raw_material = wild_game}
 kaapiuara = { topography = flatland vegetation = grasslands climate = arid religion = jurema_religion culture = tumbalala_culture raw_material = wild_game}
 tubiba = { topography = flatland vegetation = grasslands climate = arid religion = jurema_religion culture = tarairiu_culture raw_material = wild_game}
-quixara = { topography = flatland vegetation = grasslands climate = arid religion = jurema_religion culture = tarairiu_culture raw_material = wild_game}
+quixara = { topography = flatland vegetation = grasslands climate = tropical religion = jurema_religion culture = tarairiu_culture raw_material = wild_game}
 utuva = { topography = flatland vegetation = grasslands climate = arid religion = namandu_religion culture = potiguara_culture raw_material = fiber_crops}
-monxoro = { topography = flatland vegetation = grasslands climate = arid religion = namandu_religion culture = potiguara_culture raw_material = sand natural_harbor_suitability = 0.00}
+monxoro = { topography = flatland vegetation = grasslands climate = tropical religion = namandu_religion culture = potiguara_culture raw_material = sand natural_harbor_suitability = 0.00}
 jucas = { topography = hills vegetation = grasslands climate = arid religion = jurema_religion culture = kiriri_culture raw_material = gems}
 telha = { topography = hills vegetation = woods climate = tropical religion = jurema_religion culture = kiriri_culture raw_material = goods_gold}
 paiaco = { topography = flatland vegetation = woods climate = arid religion = jurema_religion culture = kiriri_culture raw_material = wild_game}
@@ -24194,22 +24225,22 @@ acarau = { topography = hills vegetation = grasslands climate = tropical religio
 tapuia = { topography = plateau vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = akwe_culture raw_material = wild_game}
 tremembe = { topography = flatland vegetation = forest climate = tropical religion = namandu_religion culture = tremembe_culture raw_material = fish natural_harbor_suitability = 0.00}
 arerius = { topography = flatland vegetation = grasslands climate = tropical religion = jurema_religion culture = tarairiu_culture raw_material = wild_game}
-reriu = { topography = flatland vegetation = grasslands climate = tropical religion = jurema_religion culture = tarairiu_culture raw_material = wild_game}
+reriu = { topography = flatland vegetation = grasslands climate = arid religion = jurema_religion culture = tarairiu_culture raw_material = wild_game}
 payaku = { topography = flatland vegetation = grasslands climate = tropical religion = namandu_religion culture = potiguara_culture raw_material = fish natural_harbor_suitability = 0.00}
 pitaguari = { topography = flatland vegetation = grasslands climate = tropical religion = jurema_religion culture = pitaguary_culture raw_material = fish natural_harbor_suitability = 0.00}
 kaninde = { topography = flatland vegetation = grasslands climate = tropical religion = jurema_religion culture = kaninde_culture raw_material = legumes}
 tapeba = { topography = flatland vegetation = grasslands climate = tropical religion = jurema_religion culture = pitaguary_culture raw_material = fish natural_harbor_suitability = 0.00}
 anace = { topography = flatland vegetation = grasslands climate = tropical religion = namandu_religion culture = tremembe_culture raw_material = salt natural_harbor_suitability = 0.00}
 karapoto = { topography = flatland vegetation = forest climate = tropical religion = jurema_religion culture = kiriri_culture raw_material = fish natural_harbor_suitability = 0.00}
-ipojuca = { topography = hills vegetation = woods climate = arid religion = namandu_religion culture = kaete_culture raw_material = wild_game}
+ipojuca = { topography = hills vegetation = woods climate = tropical religion = namandu_religion culture = kaete_culture raw_material = wild_game}
 yapuata = { topography = flatland vegetation = forest climate = tropical religion = jurema_religion culture = kiriri_culture raw_material = lumber natural_harbor_suitability = 0.00}
-fulni_o = { topography = plateau vegetation = woods climate = arid religion = jurema_religion culture = fulnio_culture raw_material = wild_game}
+fulni_o = { topography = plateau vegetation = woods climate = tropical religion = jurema_religion culture = fulnio_culture raw_material = wild_game}
 iate = { topography = hills vegetation = woods climate = tropical religion = namandu_religion culture = kaete_culture raw_material = legumes}
 kambiwa = { topography = plateau vegetation = woods climate = arid religion = jurema_religion culture = kambiwa_culture raw_material = fiber_crops}
 caxanga = { topography = flatland vegetation = forest climate = tropical religion = namandu_religion culture = kaete_culture raw_material = fish natural_harbor_suitability = 0.00}
 xukuru = { topography = plateau vegetation = grasslands climate = arid religion = jurema_religion culture = tarairiu_culture raw_material = wild_game}
 kaaysara = { topography = flatland vegetation = grasslands climate = arid religion = namandu_religion culture = potiguara_culture raw_material = salt natural_harbor_suitability = 0.00}
-potiguara = { topography = flatland vegetation = grasslands climate = arid religion = namandu_religion culture = potiguara_culture raw_material = salt natural_harbor_suitability = 0.40}
+potiguara = { topography = flatland vegetation = grasslands climate = tropical religion = namandu_religion culture = potiguara_culture raw_material = salt natural_harbor_suitability = 0.40}
 caico = { topography = flatland vegetation = grasslands climate = arid religion = jurema_religion culture = kiriri_culture raw_material = beeswax}
 paraiba = { topography = flatland vegetation = forest climate = tropical religion = namandu_religion culture = potiguara_culture raw_material = salt natural_harbor_suitability = 0.00}
 pegas = { topography = plateau vegetation = grasslands climate = arid religion = jurema_religion culture = pegas_culture raw_material = wild_game}
@@ -24217,14 +24248,14 @@ coremas = { topography = flatland vegetation = woods climate = tropical religion
 quincu = { topography = flatland vegetation = grasslands climate = tropical religion = jurema_religion culture = kiriri_culture raw_material = legumes}
 fernando_noronha = { topography = hills_wasteland vegetation = grasslands climate = tropical}
 kariri = { topography = flatland vegetation = forest climate = tropical religion = jurema_religion culture = kiriri_culture raw_material = fish natural_harbor_suitability = 0.00}
-caete = { topography = flatland vegetation = grasslands climate = arid religion = namandu_religion culture = kaete_culture raw_material = wild_game}
+caete = { topography = flatland vegetation = grasslands climate = tropical religion = namandu_religion culture = kaete_culture raw_material = wild_game}
 xoko = { topography = flatland vegetation = grasslands climate = arid religion = jurema_religion culture = xoco_culture raw_material = legumes}
 arakaiu = { topography = wetlands vegetation = forest climate = tropical religion = namandu_religion culture = tupinamba_culture raw_material = lumber natural_harbor_suitability = 0.00}
 pankararu = { topography = flatland vegetation = grasslands climate = arid religion = namandu_religion culture = pankararu_culture raw_material = wild_game}
 tuxa = { topography = flatland vegetation = grasslands climate = arid religion = jurema_religion culture = tumbalala_culture raw_material = wild_game}
 kaimbe = { topography = hills vegetation = woods climate = arid religion = jurema_religion culture = kiriri_culture raw_material = wild_game}
 itabaiana = { topography = flatland vegetation = grasslands climate = tropical religion = namandu_religion culture = tupinamba_culture raw_material = wild_game}
-ouricuri = { topography = plateau vegetation = grasslands climate = tropical religion = namandu_religion culture = arua_culture raw_material = iron}
+ouricuri = { topography = plateau vegetation = grasslands climate = arid religion = namandu_religion culture = arua_culture raw_material = iron}
 truka = { topography = flatland vegetation = grasslands climate = arid religion = jurema_religion culture = truka_culture raw_material = wild_game}
 paranabuku = { topography = flatland vegetation = grasslands climate = arid religion = namandu_religion culture = pankararu_culture raw_material = stone}
 jaguarari = { topography = flatland vegetation = grasslands climate = arid religion = namandu_religion culture = pankararu_culture raw_material = wild_game}
@@ -24239,16 +24270,16 @@ itaboca = { topography = plateau vegetation = grasslands climate = tropical reli
 ibotirama = { topography = flatland vegetation = woods climate = tropical religion = namandu_religion culture = catagua_culture raw_material = legumes}
 kayapo = { topography = plateau vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = iron}
 irece = { topography = plateau vegetation = grasslands climate = arid religion = doi_wahire_religion culture = kren_culture raw_material = fiber_crops}
-andarai = { topography = hills vegetation = woods climate = tropical religion = namandu_religion culture = tupiniquim_culture raw_material = goods_gold}
+andarai = { topography = hills vegetation = woods climate = arid religion = namandu_religion culture = tupiniquim_culture raw_material = goods_gold}
 sauipe = { topography = flatland vegetation = forest climate = tropical religion = namandu_religion culture = tupinamba_culture raw_material = fish natural_harbor_suitability = 0.00}
 kiriri = { topography = flatland vegetation = woods climate = tropical religion = jurema_religion culture = kiriri_culture raw_material = legumes}
 tanhacu = { topography = hills vegetation = grasslands climate = arid religion = namandu_religion culture = tupiniquim_culture raw_material = gems}
 tupiniquim = { topography = hills vegetation = forest climate = tropical religion = namandu_religion culture = tupinamba_culture raw_material = fish natural_harbor_suitability = 0.00}
 guanambi = { topography = hills vegetation = woods climate = tropical religion = namandu_religion culture = catagua_culture raw_material = beeswax}
-itaberaba = { topography = hills vegetation = woods climate = tropical religion = namandu_religion culture = tupiniquim_culture raw_material = wild_game}
-itaitu = { topography = plateau vegetation = woods climate = tropical religion = namandu_religion culture = tupiniquim_culture raw_material = goods_gold}
+itaberaba = { topography = hills vegetation = woods climate = arid religion = namandu_religion culture = tupiniquim_culture raw_material = wild_game}
+itaitu = { topography = plateau vegetation = woods climate = arid religion = namandu_religion culture = tupiniquim_culture raw_material = goods_gold}
 uaua = { topography = flatland vegetation = woods climate = arid religion = namandu_religion culture = tupiniquim_culture raw_material = wild_game}
-itapicuru = { topography = flatland vegetation = grasslands climate = arid religion = jurema_religion culture = kiriri_culture raw_material = wild_game}
+itapicuru = { topography = flatland vegetation = grasslands climate = tropical religion = jurema_religion culture = kiriri_culture raw_material = wild_game}
 jiribatuba = { topography = wetlands vegetation = forest climate = tropical religion = namandu_religion culture = tupinamba_culture raw_material = sand natural_harbor_suitability = 0.85}
 jiboia_jungle = { topography = hills_wasteland vegetation = jungle climate = tropical}
 paracatu = { topography = plateau vegetation = grasslands climate = tropical religion = jurema_religion culture = kaninde_culture raw_material = wild_game}
@@ -24260,10 +24291,10 @@ anais = { topography = plateau vegetation = grasslands climate = tropical religi
 jaiba = { topography = flatland vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = maxakali_culture raw_material = legumes}
 janauba = { topography = flatland vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = maxakali_culture raw_material = wild_game}
 montes_claros = { topography = hills vegetation = woods climate = tropical religion = doi_wahire_religion culture = maxakali_culture raw_material = fruit}
-cataguases = { topography = hills vegetation = forest climate = tropical religion = namandu_religion culture = catagua_culture raw_material = legumes}
+cataguases = { topography = hills vegetation = forest climate = subtropical religion = namandu_religion culture = catagua_culture raw_material = legumes}
 kaxixo = { topography = plateau vegetation = grasslands climate = tropical religion = tunpa_religion culture = kaxixo_culture raw_material = wild_game}
 pinheiro = { topography = plateau vegetation = forest climate = tropical religion = jurema_religion culture = kiriri_culture raw_material = lumber}
-curvelo = { topography = plateau vegetation = forest climate = tropical religion = doi_wahire_religion culture = maxakali_culture raw_material = fiber_crops}
+curvelo = { topography = plateau vegetation = forest climate = subtropical religion = doi_wahire_religion culture = maxakali_culture raw_material = fiber_crops}
 sabarabucu = { topography = plateau vegetation = forest climate = subtropical religion = namandu_religion culture = catagua_culture raw_material = goods_gold}
 santa_luzia = { topography = plateau vegetation = forest climate = subtropical religion = doi_wahire_religion culture = kren_culture raw_material = goods_gold}
 sete_lagoas = { topography = plateau vegetation = forest climate = subtropical religion = doi_wahire_religion culture = kren_culture raw_material = lumber}
@@ -24271,28 +24302,28 @@ goianas = { topography = plateau vegetation = grasslands climate = tropical reli
 pirapora = { topography = plateau vegetation = woods climate = tropical religion = doi_wahire_religion culture = maxakali_culture raw_material = medicaments}
 jequitinhonha = { topography = hills vegetation = forest climate = tropical religion = doi_wahire_religion culture = kren_culture raw_material = wild_game}
 maxakali = { topography = hills vegetation = forest climate = tropical religion = doi_wahire_religion culture = maxakali_culture raw_material = lumber}
-itakangapyra = { topography = hills vegetation = forest climate = tropical religion = doi_wahire_religion culture = maxakali_culture raw_material = legumes}
+itakangapyra = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = maxakali_culture raw_material = legumes}
 almenara = { topography = hills vegetation = forest climate = tropical religion = doi_wahire_religion culture = maxakali_culture raw_material = beeswax}
-salinas = { topography = hills vegetation = forest climate = subtropical religion = namandu_religion culture = tupinamba_culture raw_material = salt}
-rio_pardo = { topography = hills vegetation = forest climate = tropical religion = namandu_religion culture = tupinamba_culture raw_material = wild_game}
+salinas = { topography = hills vegetation = forest climate = tropical religion = namandu_religion culture = tupinamba_culture raw_material = salt}
+rio_pardo = { topography = hills vegetation = forest climate = subtropical religion = namandu_religion culture = tupinamba_culture raw_material = wild_game}
 hahahae = { topography = hills vegetation = forest climate = tropical religion = namandu_religion culture = tupinamba_culture raw_material = dyes natural_harbor_suitability = 0.00}
 itaratim = { topography = hills vegetation = forest climate = tropical religion = namandu_religion culture = tupinamba_culture raw_material = lumber}
 maxakali_jungle = { topography = hills vegetation = jungle climate = tropical}
-bocaiuva = { topography = hills vegetation = woods climate = tropical religion = doi_wahire_religion culture = maxakali_culture raw_material = wild_game}
-tijuco = { topography = hills vegetation = woods climate = tropical religion = doi_wahire_religion culture = maxakali_culture raw_material = gems}
-itamarandiba = { topography = hills vegetation = woods climate = continental religion = doi_wahire_religion culture = maxakali_culture raw_material = lumber}
+bocaiuva = { topography = hills vegetation = woods climate = subtropical religion = doi_wahire_religion culture = maxakali_culture raw_material = wild_game}
+tijuco = { topography = hills vegetation = woods climate = subtropical religion = doi_wahire_religion culture = maxakali_culture raw_material = gems}
+itamarandiba = { topography = hills vegetation = woods climate = subtropical religion = doi_wahire_religion culture = maxakali_culture raw_material = lumber}
 tamoio = { topography = wetlands vegetation = forest climate = tropical religion = namandu_religion culture = tupiniquim_culture raw_material = lumber natural_harbor_suitability = 0.00}
 cunhambebe = { topography = flatland vegetation = forest climate = subtropical religion = namandu_religion culture = tupiniquim_culture raw_material = salt natural_harbor_suitability = 0.00}
-iguape = { topography = wetlands vegetation = forest climate = tropical religion = tunpa_religion culture = ava_culture raw_material = salt natural_harbor_suitability = 0.00}
-cananeia = { topography = hills vegetation = forest climate = tropical religion = tunpa_religion culture = ava_culture raw_material = fish natural_harbor_suitability = 0.00}
-marataiama = { topography = hills vegetation = forest climate = tropical religion = tunpa_religion culture = ava_culture raw_material = legumes}
-gohayo = { topography = wetlands vegetation = forest climate = oceanic religion = namandu_religion culture = tupiniquim_culture raw_material = fish natural_harbor_suitability = 0.00}
-sao_sebastiao = { topography = flatland vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = fish natural_harbor_suitability = 0.20}
+iguape = { topography = wetlands vegetation = forest climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = salt natural_harbor_suitability = 0.00}
+cananeia = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = fish natural_harbor_suitability = 0.00}
+marataiama = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = legumes}
+gohayo = { topography = wetlands vegetation = forest climate = tropical religion = namandu_religion culture = tupiniquim_culture raw_material = fish natural_harbor_suitability = 0.00}
+sao_sebastiao = { topography = flatland vegetation = forest climate = tropical religion = tunpa_religion culture = kanhgag_culture raw_material = fish natural_harbor_suitability = 0.20}
 mogi_forest = { topography = hills_wasteland vegetation = forest climate = oceanic}
 tamoio_forest = { topography = hills_wasteland vegetation = forest climate = oceanic}
-marataiama_forest = { topography = hills_wasteland vegetation = forest climate = subtropical}
+marataiama_forest = { topography = hills_wasteland vegetation = forest climate = oceanic}
 itu = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = medicaments}
-sorocaba = { topography = hills vegetation = forest climate = oceanic religion = tunpa_religion culture = ava_culture raw_material = legumes}
+sorocaba = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = legumes}
 araritaguaba = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = lumber}
 mogi_mirim = { topography = plateau vegetation = forest climate = subtropical religion = namandu_religion culture = tupiniquim_culture raw_material = lumber}
 campinas = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = wild_game}
@@ -24304,34 +24335,34 @@ parnaiba = { topography = hills vegetation = forest climate = oceanic religion =
 piratininga = { topography = hills vegetation = forest climate = oceanic religion = namandu_religion culture = tupiniquim_culture raw_material = lumber}
 aruja = { topography = hills vegetation = forest climate = subtropical religion = namandu_religion culture = tupiniquim_culture raw_material = lumber}
 mogi_das_cruzes = { topography = hills vegetation = forest climate = oceanic religion = namandu_religion culture = tupiniquim_culture raw_material = wild_game}
-jundiai_forest = { topography = hills_wasteland vegetation = forest climate = subtropical}
-atibaia_forest = { topography = hills_wasteland vegetation = forest climate = subtropical}
+jundiai_forest = { topography = hills_wasteland vegetation = forest climate = oceanic}
+atibaia_forest = { topography = hills_wasteland vegetation = forest climate = oceanic}
 camanducaia_forest = { topography = hills_wasteland vegetation = forest climate = oceanic}
 aimore = { topography = flatland vegetation = forest climate = tropical religion = namandu_religion culture = tupiniquim_culture raw_material = fish natural_harbor_suitability = 0.00}
 kiri_kere = { topography = flatland vegetation = forest climate = tropical religion = namandu_religion culture = tupiniquim_culture raw_material = salt natural_harbor_suitability = 0.00}
 malalis = { topography = hills vegetation = forest climate = tropical religion = doi_wahire_religion culture = kren_culture raw_material = fiber_crops}
 coutins = { topography = flatland vegetation = forest climate = tropical religion = namandu_religion culture = tupiniquim_culture raw_material = fish natural_harbor_suitability = 0.00}
-pecanha = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = kren_culture raw_material = lumber}
+pecanha = { topography = hills vegetation = forest climate = tropical religion = doi_wahire_religion culture = kren_culture raw_material = lumber}
 borun = { topography = hills vegetation = forest climate = tropical religion = doi_wahire_religion culture = kren_culture raw_material = fruit}
-mucuri = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = kren_culture raw_material = wild_game}
+mucuri = { topography = hills vegetation = forest climate = tropical religion = doi_wahire_religion culture = kren_culture raw_material = wild_game}
 urucu = { topography = hills vegetation = forest climate = tropical religion = doi_wahire_religion culture = kren_culture raw_material = lumber}
 fanado = { topography = hills vegetation = forest climate = tropical religion = doi_wahire_religion culture = maxakali_culture raw_material = goods_gold}
-aracuai = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = kren_culture raw_material = wild_game}
+aracuai = { topography = hills vegetation = forest climate = tropical religion = doi_wahire_religion culture = kren_culture raw_material = wild_game}
 nanuque = { topography = hills vegetation = forest climate = tropical religion = doi_wahire_religion culture = kren_culture raw_material = legumes}
 guaitaca = { topography = hills vegetation = forest climate = tropical religion = doi_wahire_religion culture = guaitaka_culture raw_material = lumber natural_harbor_suitability = 0.00}
-jose_calcado = { topography = hills vegetation = forest climate = tropical religion = namandu_religion culture = tupiniquim_culture raw_material = beeswax}
+jose_calcado = { topography = hills vegetation = forest climate = subtropical religion = namandu_religion culture = tupiniquim_culture raw_material = beeswax}
 itapemirim = { topography = hills vegetation = forest climate = tropical religion = namandu_religion culture = tupiniquim_culture raw_material = fish natural_harbor_suitability = 0.00}
 guarapiri = { topography = hills vegetation = forest climate = tropical religion = namandu_religion culture = tupiniquim_culture raw_material = fish natural_harbor_suitability = 0.00}
-itaparica = { topography = hills vegetation = forest climate = tropical religion = namandu_religion culture = tupiniquim_culture raw_material = fish natural_harbor_suitability = 0.00}
-nandu = { topography = hills vegetation = forest climate = tropical religion = namandu_religion culture = tupiniquim_culture raw_material = legumes}
+itaparica = { topography = hills vegetation = forest climate = oceanic religion = namandu_religion culture = tupiniquim_culture raw_material = fish natural_harbor_suitability = 0.00}
+nandu = { topography = hills vegetation = forest climate = subtropical religion = namandu_religion culture = tupiniquim_culture raw_material = legumes}
 krenak = { topography = hills vegetation = forest climate = tropical religion = doi_wahire_religion culture = kren_culture raw_material = medicaments}
 itanhomi = { topography = hills vegetation = forest climate = tropical religion = doi_wahire_religion culture = kren_culture raw_material = lumber}
-caratinga = { topography = hills vegetation = forest climate = tropical religion = doi_wahire_religion culture = kren_culture raw_material = fiber_crops}
+caratinga = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = kren_culture raw_material = fiber_crops}
 mutum = { topography = hills vegetation = forest climate = tropical religion = doi_wahire_religion culture = kren_culture raw_material = maize}
-manhuacu = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = kren_culture raw_material = lumber}
-matipo = { topography = hills vegetation = forest climate = tropical religion = doi_wahire_religion culture = kren_culture raw_material = lumber}
-gouveia = { topography = hills vegetation = woods climate = continental religion = doi_wahire_religion culture = maxakali_culture raw_material = maize}
-conceicao = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = kren_culture raw_material = lumber}
+manhuacu = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = kren_culture raw_material = lumber}
+matipo = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = kren_culture raw_material = lumber}
+gouveia = { topography = hills vegetation = woods climate = subtropical religion = doi_wahire_religion culture = maxakali_culture raw_material = maize}
+conceicao = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = kren_culture raw_material = lumber}
 itabira = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = kren_culture raw_material = wild_game}
 serro = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = kren_culture raw_material = legumes}
 porte = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = kren_culture raw_material = lumber}
@@ -24340,7 +24371,7 @@ guaitaka = { topography = flatland vegetation = forest climate = tropical religi
 sao_fidelis = { topography = hills vegetation = forest climate = tropical religion = doi_wahire_religion culture = puri_culture raw_material = medicaments}
 cantagalo = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = fruit}
 mokaie = { topography = flatland vegetation = forest climate = tropical religion = namandu_religion culture = tupiniquim_culture raw_material = fish natural_harbor_suitability = 0.00}
-nova_friburgo = { topography = hills vegetation = forest climate = oceanic religion = namandu_religion culture = tupiniquim_culture raw_material = lumber}
+nova_friburgo = { topography = hills vegetation = forest climate = subtropical religion = namandu_religion culture = tupiniquim_culture raw_material = lumber}
 feia_lake = { topography = lakes climate = tropical}
 goitaca = { topography = hills_wasteland vegetation = forest climate = oceanic}
 kapiwary = { topography = flatland vegetation = forest climate = tropical religion = namandu_religion culture = tupiniquim_culture raw_material = fish natural_harbor_suitability = 0.00}
@@ -24349,14 +24380,14 @@ nheteroia = { topography = flatland vegetation = forest climate = tropical relig
 mage = { topography = flatland vegetation = forest climate = tropical religion = namandu_religion culture = tupiniquim_culture raw_material = legumes natural_harbor_suitability = 0.00}
 y_uasu = { topography = flatland vegetation = forest climate = tropical religion = namandu_religion culture = tupiniquim_culture raw_material = fish natural_harbor_suitability = 0.00}
 goana_para = { topography = flatland vegetation = forest climate = tropical religion = namandu_religion culture = tupiniquim_culture raw_material = fish natural_harbor_suitability = 1.00}
-ita_kua_y = { topography = flatland vegetation = forest climate = tropical religion = namandu_religion culture = tupiniquim_culture raw_material = fish natural_harbor_suitability = 0.00}
+ita_kua_y = { topography = flatland vegetation = forest climate = subtropical religion = namandu_religion culture = tupiniquim_culture raw_material = fish natural_harbor_suitability = 0.00}
 santa_barbara = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = kren_culture raw_material = goods_gold}
-caete_brasil = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = kren_culture raw_material = lumber}
-itacolomi = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = puri_culture raw_material = goods_gold}
+caete_brasil = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = kren_culture raw_material = lumber}
+itacolomi = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = goods_gold}
 mariana = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = kren_culture raw_material = clay}
 ponte_nova = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = wild_game}
 piranga = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = lumber}
-coropo = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = puri_culture raw_material = lumber}
+coropo = { topography = hills vegetation = forest climate = oceanic religion = doi_wahire_religion culture = puri_culture raw_material = lumber}
 praiba_sul = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = lumber}
 tampruns = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = lumber}
 piray = { topography = hills vegetation = forest climate = subtropical religion = namandu_religion culture = tupiniquim_culture raw_material = medicaments}
@@ -24367,38 +24398,38 @@ tapuy = { topography = flatland vegetation = forest climate = tropical religion 
 jucuru = { topography = flatland vegetation = forest climate = tropical religion = namandu_religion culture = tupinamba_culture raw_material = fish natural_harbor_suitability = 0.00}
 caravelas = { topography = flatland vegetation = forest climate = tropical religion = doi_wahire_religion culture = maxakali_culture raw_material = fish natural_harbor_suitability = 0.00}
 vicosa = { topography = flatland vegetation = forest climate = tropical religion = doi_wahire_religion culture = maxakali_culture raw_material = fish natural_harbor_suitability = 0.00}
-sao_luis_do_paraitinga = { topography = mountains vegetation = forest climate = continental religion = namandu_religion culture = tupiniquim_culture raw_material = lumber}
+sao_luis_do_paraitinga = { topography = mountains vegetation = forest climate = tropical religion = namandu_religion culture = tupiniquim_culture raw_material = lumber}
 lorena = { topography = hills vegetation = forest climate = subtropical religion = namandu_religion culture = tupiniquim_culture raw_material = beeswax}
 guaratingueta = { topography = hills vegetation = forest climate = subtropical religion = namandu_religion culture = tupiniquim_culture raw_material = lumber}
 taubate = { topography = hills vegetation = forest climate = subtropical religion = namandu_religion culture = tupiniquim_culture raw_material = fruit}
 paraibuna = { topography = hills vegetation = forest climate = oceanic religion = namandu_religion culture = tupiniquim_culture raw_material = lumber}
 jacarei = { topography = hills vegetation = forest climate = subtropical religion = namandu_religion culture = tupiniquim_culture raw_material = lumber}
-cunhambebe_forest = { topography = mountain_wasteland vegetation = forest climate = continental}
+cunhambebe_forest = { topography = mountain_wasteland vegetation = forest climate = oceanic}
 paraibuna_forest = { topography = hills_wasteland vegetation = forest climate = subtropical}
 santo_antonio_monte = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = wild_game}
 formiga = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = medicaments}
-piumhi = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = puri_culture raw_material = goods_gold}
+piumhi = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = goods_gold}
 tres_pontas = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = lumber}
-passos = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = puri_culture raw_material = lumber}
-sao_sebastiao_paraiso = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = puri_culture raw_material = lumber}
-cabo_verde = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = puri_culture raw_material = wild_game}
-cataguas = { topography = hills vegetation = forest climate = continental religion = namandu_religion culture = tupiniquim_culture raw_material = lumber}
-alfenas = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = puri_culture raw_material = clay}
-mandiyu = { topography = hills vegetation = forest climate = oceanic religion = doi_wahire_religion culture = puri_culture raw_material = fiber_crops}
-camanducaia = { topography = hills vegetation = forest climate = oceanic religion = doi_wahire_religion culture = puri_culture raw_material = wild_game}
-parapopeba = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = puri_culture raw_material = maize}
-sao_joao_rei = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = puri_culture raw_material = wild_game}
-oliveira = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = puri_culture raw_material = lumber}
-lavras = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = puri_culture raw_material = legumes}
-porto_turvo = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = puri_culture raw_material = clay}
-baependi = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = puri_culture raw_material = wild_game}
-campanha = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = puri_culture raw_material = lumber}
-itajuba = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = puri_culture raw_material = medicaments}
-baependi_forest = { topography = hills_wasteland vegetation = forest climate = continental}
-itajuba_forest = { topography = hills_wasteland vegetation = forest climate = continental}
-rio_preto = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = puri_culture raw_material = lumber}
+passos = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = lumber}
+sao_sebastiao_paraiso = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = lumber}
+cabo_verde = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = wild_game}
+cataguas = { topography = hills vegetation = forest climate = subtropical religion = namandu_religion culture = tupiniquim_culture raw_material = lumber}
+alfenas = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = clay}
+mandiyu = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = fiber_crops}
+camanducaia = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = wild_game}
+parapopeba = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = maize}
+sao_joao_rei = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = wild_game}
+oliveira = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = lumber}
+lavras = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = legumes}
+porto_turvo = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = clay}
+baependi = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = wild_game}
+campanha = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = lumber}
+itajuba = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = medicaments}
+baependi_forest = { topography = hills_wasteland vegetation = forest climate = oceanic}
+itajuba_forest = { topography = hills_wasteland vegetation = forest climate = oceanic}
+rio_preto = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = lumber}
 juiz_fora = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = wild_game}
-barbacena = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = puri_culture raw_material = fiber_crops}
+barbacena = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = fiber_crops}
 leopoldina = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = lumber}
 rio_pomba = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = fruit}
 muriae = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = puri_culture raw_material = wild_game}
@@ -24409,12 +24440,12 @@ bocaiuva_do_sul = { topography = hills vegetation = forest climate = oceanic rel
 palmeira_brasil = { topography = hills vegetation = forest climate = oceanic religion = tunpa_religion culture = laklano_culture raw_material = medicaments}
 sao_jose_pinhais = { topography = hills vegetation = forest climate = oceanic religion = tunpa_religion culture = ava_culture raw_material = fruit}
 parnanguara = { topography = hills vegetation = forest climate = subtropical religion = namandu_religion culture = tupiniquim_culture raw_material = fish natural_harbor_suitability = 0.00}
-pinhais_forest = { topography = hills_wasteland vegetation = forest climate = subtropical}
-bocaiuva_forest = { topography = hills_wasteland vegetation = forest climate = tropical}
+pinhais_forest = { topography = hills_wasteland vegetation = forest climate = oceanic}
+bocaiuva_forest = { topography = hills_wasteland vegetation = forest climate = oceanic}
 karai_yo = { topography = flatland vegetation = forest climate = subtropical religion = tunpa_religion culture = kaxixo_culture raw_material = salt natural_harbor_suitability = 0.00}
 xokleng = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = kaxixo_culture raw_material = fish natural_harbor_suitability = 0.00}
 itapocu = { topography = hills vegetation = forest climate = oceanic religion = tunpa_religion culture = laklano_culture raw_material = lumber}
-itajai = { topography = hills vegetation = forest climate = oceanic religion = tunpa_religion culture = laklano_culture raw_material = lumber}
+itajai = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = laklano_culture raw_material = lumber}
 mafra = { topography = plateau vegetation = forest climate = oceanic religion = tunpa_religion culture = laklano_culture raw_material = wild_game}
 santo_antonio = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = clay}
 chopim = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = lumber}
@@ -24426,7 +24457,7 @@ lages = { topography = hills vegetation = forest climate = oceanic religion = tu
 sao_joaquim = { topography = hills vegetation = forest climate = oceanic religion = tunpa_religion culture = laklano_culture raw_material = lumber}
 urubici = { topography = hills vegetation = forest climate = oceanic religion = tunpa_religion culture = laklano_culture raw_material = fiber_crops}
 kariio = { topography = flatland vegetation = forest climate = subtropical religion = tunpa_religion culture = kaxixo_culture raw_material = fish natural_harbor_suitability = 0.00}
-apytere = { topography = flatland vegetation = forest climate = subtropical religion = tunpa_religion culture = kaxixo_culture raw_material = fish natural_harbor_suitability = 0.00}
+apytere = { topography = flatland vegetation = forest climate = oceanic religion = tunpa_religion culture = kaxixo_culture raw_material = fish natural_harbor_suitability = 0.00}
 tubarao = { topography = flatland vegetation = forest climate = subtropical religion = tunpa_religion culture = kaxixo_culture raw_material = lumber}
 sambaqui = { topography = flatland vegetation = forest climate = subtropical religion = tunpa_religion culture = kaxixo_culture raw_material = fish natural_harbor_suitability = 0.00}
 iaguarauna = { topography = flatland vegetation = grasslands climate = subtropical religion = tunpa_religion culture = kaxixo_culture raw_material = salt natural_harbor_suitability = 0.00}
@@ -24434,27 +24465,27 @@ nononai_forest = { topography = hills_wasteland vegetation = forest climate = oc
 umuarama = { topography = plateau vegetation = forest climate = subtropical religion = namandu_religion culture = xeta_culture raw_material = fiber_crops}
 mbya = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = lumber}
 campo_mourao = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = lumber}
-iguazu = { topography = hills vegetation = forest climate = oceanic religion = tunpa_religion culture = kanhgag_culture raw_material = wild_game}
+iguazu = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = wild_game}
 guarapuava = { topography = hills vegetation = forest climate = oceanic religion = tunpa_religion culture = kanhgag_culture raw_material = beeswax}
 mbai_yuru = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = medicaments}
-bauru = { topography = plateau vegetation = forest climate = tropical religion = tunpa_religion culture = kanhgag_culture raw_material = lumber}
+bauru = { topography = plateau vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = lumber}
 botucatu = { topography = plateau vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = wild_game}
-kaingang = { topography = hills vegetation = forest climate = tropical religion = tunpa_religion culture = kanhgag_culture raw_material = maize}
+kaingang = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = maize}
 porto_tibirica = { topography = hills vegetation = forest climate = tropical religion = tunpa_religion culture = kanhgag_culture raw_material = fruit}
 valparaiso = { topography = hills vegetation = forest climate = tropical religion = tunpa_religion culture = kanhgag_culture raw_material = lumber}
 tiete = { topography = hills vegetation = forest climate = tropical religion = tunpa_religion culture = kanhgag_culture raw_material = lumber}
-sapukaia = { topography = plateau vegetation = forest climate = tropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = fruit}
+sapukaia = { topography = plateau vegetation = forest climate = subtropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = fruit}
 mantiqueira = { topography = plateau vegetation = forest climate = subtropical religion = namandu_religion culture = tupiniquim_culture raw_material = medicaments}
-caiapo = { topography = plateau vegetation = forest climate = tropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = legumes}
-araquara = { topography = plateau vegetation = forest climate = tropical religion = tunpa_religion culture = kanhgag_culture raw_material = fiber_crops}
+caiapo = { topography = plateau vegetation = forest climate = subtropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = legumes}
+araquara = { topography = plateau vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = fiber_crops}
 itapeva = { topography = plateau vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = beeswax}
 itapetininga = { topography = plateau vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = lumber}
 abare_i = { topography = plateau vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = fiber_crops}
 itaporanga = { topography = plateau vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = lumber}
 apiai = { topography = hills vegetation = woods climate = oceanic religion = tunpa_religion culture = kanhgag_culture raw_material = wild_game}
-capao_bonito = { topography = hills vegetation = forest climate = oceanic religion = tunpa_religion culture = ava_culture raw_material = lumber}
+capao_bonito = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = lumber}
 barretos = { topography = plateau vegetation = forest climate = tropical religion = tunpa_religion culture = kanhgag_culture raw_material = lumber}
-jaboticabal = { topography = plateau vegetation = forest climate = tropical religion = tunpa_religion culture = kanhgag_culture raw_material = lumber}
+jaboticabal = { topography = plateau vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = lumber}
 tanabi = { topography = hills vegetation = forest climate = tropical religion = tunpa_religion culture = kanhgag_culture raw_material = lumber}
 sao_jose_preto = { topography = hills vegetation = forest climate = tropical religion = tunpa_religion culture = kanhgag_culture raw_material = wild_game}
 brotas = { topography = plateau vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = lumber}
@@ -24476,9 +24507,9 @@ apucarana = { topography = hills vegetation = forest climate = subtropical relig
 itarare = { topography = plateau vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = lumber}
 bororos = { topography = plateau vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = legumes}
 uberaba = { topography = plateau vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = wild_game}
-bagagem = { topography = hills vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = beeswax}
-aratu = { topography = hills vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = beeswax}
-pium_i = { topography = hills vegetation = forest climate = continental religion = doi_wahire_religion culture = mebengokre_culture raw_material = lumber}
+bagagem = { topography = hills vegetation = grasslands climate = subtropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = beeswax}
+aratu = { topography = hills vegetation = grasslands climate = subtropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = beeswax}
+pium_i = { topography = hills vegetation = forest climate = subtropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = lumber}
 buzare_point = { topography = coastal_ocean climate = tropical}
 approuage_mouth = { topography = coastal_ocean climate = tropical}
 cassipore_mouth = { topography = coastal_ocean climate = tropical}
@@ -24513,7 +24544,7 @@ praia_mansa = { topography = coastal_ocean climate = tropical}
 pontal_point = { topography = coastal_ocean climate = tropical}
 mel_point = { topography = coastal_ocean climate = arid}
 tourinhos_coast = { topography = coastal_ocean climate = arid}
-pititinga_coast = { topography = coastal_ocean climate = arid}
+pititinga_coast = { topography = coastal_ocean climate = tropical}
 western_atlantic_high_sea28 = { topography = ocean climate = tropical}
 western_atlantic_high_sea29 = { topography = ocean climate = tropical}
 western_atlantic_high_sea30 = { topography = ocean climate = tropical}
@@ -24521,7 +24552,7 @@ western_atlantic_high_sea31 = { topography = ocean climate = tropical}
 fernando_noronha_coast = { topography = coastal_ocean climate = tropical}
 fernando_noronha_high_sea2 = { topography = ocean climate = tropical}
 fernando_noronha_high_sea1 = { topography = ocean climate = tropical}
-negra_point = { topography = coastal_ocean climate = arid}
+negra_point = { topography = coastal_ocean climate = tropical}
 cabedello_point = { topography = coastal_ocean climate = tropical}
 itamaraca_island = { topography = coastal_ocean climate = tropical}
 mangue_point = { topography = coastal_ocean climate = tropical}
@@ -24554,16 +24585,16 @@ western_atlantic_high_sea42 = { topography = ocean climate = tropical}
 western_atlantic_high_sea43 = { topography = ocean climate = tropical}
 guanabara_bay = { topography = coastal_ocean climate = tropical}
 grande_island = { topography = coastal_ocean climate = subtropical}
-caraguatatuba_bay = { topography = coastal_ocean climate = subtropical}
-boi_point = { topography = coastal_ocean climate = subtropical}
+caraguatatuba_bay = { topography = coastal_ocean climate = tropical}
+boi_point = { topography = coastal_ocean climate = tropical}
 guarau_island = { topography = coastal_ocean climate = tropical}
-small_sea = { topography = coastal_ocean climate = tropical}
+small_sea = { topography = coastal_ocean climate = subtropical}
 paranagua_bay = { topography = coastal_ocean climate = subtropical}
-western_atlantic_high_sea44 = { topography = ocean climate = subtropical}
-western_atlantic_high_sea45 = { topography = ocean climate = subtropical}
+western_atlantic_high_sea44 = { topography = ocean climate = tropical}
+western_atlantic_high_sea45 = { topography = ocean climate = tropical}
 western_atlantic_high_sea46 = { topography = ocean climate = subtropical}
 grande_floripa_bay = { topography = coastal_ocean climate = subtropical}
-santa_catarina_island = { topography = coastal_ocean climate = subtropical}
+santa_catarina_island = { topography = coastal_ocean climate = oceanic}
 imarui_lagoon = { topography = coastal_ocean climate = subtropical}
 sombrio_lagoon = { topography = coastal_ocean climate = subtropical}
 western_atlantic_high_sea47 = { topography = ocean climate = subtropical}
@@ -25162,17 +25193,17 @@ akaray = { topography = flatland vegetation = woods climate = subtropical religi
 kaarendy = { topography = flatland vegetation = forest climate = subtropical religion = tunpa_religion culture = ache_culture raw_material = fiber_crops}
 canindeyu = { topography = flatland vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = lumber}
 takuru_puku = { topography = flatland vegetation = forest climate = subtropical religion = tunpa_religion culture = ache_culture raw_material = fruit}
-ycuamandiyu = { topography = flatland vegetation = woods climate = tropical religion = tunpa_religion culture = ache_culture raw_material = lumber}
+ycuamandiyu = { topography = flatland vegetation = woods climate = subtropical religion = tunpa_religion culture = ache_culture raw_material = lumber}
 ayvu_pora = { topography = flatland vegetation = woods climate = tropical religion = tunpa_religion culture = ava_culture raw_material = maize}
-pai_tavytera = { topography = hills vegetation = woods climate = tropical religion = tunpa_religion culture = ava_culture raw_material = lumber}
-kuarepoti = { topography = flatland vegetation = forest climate = tropical religion = tunpa_religion culture = ava_culture raw_material = lumber}
+pai_tavytera = { topography = hills vegetation = woods climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = lumber}
+kuarepoti = { topography = flatland vegetation = forest climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = lumber}
 curuguaty = { topography = flatland vegetation = woods climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = maize}
 kaaguy_jehasapa = { topography = flatland vegetation = woods climate = subtropical religion = tunpa_religion culture = ache_culture raw_material = wild_game}
 yguazu = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = legumes}
 tsiripa = { topography = flatland vegetation = woods climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = lumber}
 ygana = { topography = flatland vegetation = forest climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = maize}
 enlhet = { topography = flatland vegetation = forest climate = tropical religion = kilyikhama_religion culture = enlhet_culture raw_material = lumber}
-enxet = { topography = flatland vegetation = forest climate = tropical religion = kilyikhama_religion culture = enxet_culture raw_material = fruit}
+enxet = { topography = flatland vegetation = forest climate = subtropical religion = kilyikhama_religion culture = enxet_culture raw_material = fruit}
 guana = { topography = flatland vegetation = forest climate = tropical religion = kilyikhama_religion culture = guana_culture raw_material = beeswax}
 nenlhet = { topography = flatland vegetation = forest climate = tropical religion = kilyikhama_religion culture = nenlhet_culture raw_material = fruit}
 enenlhet = { topography = flatland vegetation = forest climate = tropical religion = kilyikhama_religion culture = enenlhet_culture raw_material = lumber}
@@ -25278,37 +25309,6 @@ mrubicha = { topography = flatland vegetation = woods climate = arid religion = 
 pilaya_jungle = { topography = hills_wasteland vegetation = jungle climate = subtropical}
 yungas_jungle = { topography = hills_wasteland vegetation = jungle climate = continental}
 muyupampa_forest = { topography = flatland_wasteland vegetation = forest climate = arid}
-evuevi = { topography = flatland vegetation = woods climate = tropical religion = nallagdigua_religion culture = guaikuru_culture raw_material = fiber_crops}
-sucuriu = { topography = hills vegetation = woods climate = tropical religion = doi_wahire_religion culture = boe_culture raw_material = iron}
-piquiri = { topography = flatland vegetation = woods climate = tropical religion = doi_wahire_religion culture = boe_culture raw_material = wild_game}
-camapua = { topography = hills vegetation = woods climate = tropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = gems}
-ytykyra = { topography = flatland vegetation = woods climate = tropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = wild_game}
-pantanal_swamp = { topography = wetlands_wasteland vegetation = grasslands climate = tropical}
-pantanal_forest = { topography = flatland_wasteland vegetation = jungle climate = tropical}
-mebengokre = { topography = flatland vegetation = woods climate = tropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = wild_game}
-aquidauana = { topography = flatland vegetation = woods climate = tropical religion = nallagdigua_religion culture = terena_culture raw_material = clay}
-kadiweu = { topography = hills vegetation = forest climate = tropical religion = nallagdigua_religion culture = guaikuru_culture raw_material = wild_game}
-piripucu = { topography = flatland vegetation = woods climate = tropical religion = nallagdigua_religion culture = guaikuru_culture raw_material = legumes}
-terena = { topography = flatland vegetation = woods climate = tropical religion = nallagdigua_religion culture = terena_culture raw_material = wild_game}
-nioac = { topography = flatland vegetation = woods climate = tropical religion = nallagdigua_religion culture = guaikuru_culture raw_material = wild_game}
-dawande = { topography = flatland vegetation = grasslands climate = tropical religion = zemi_religion culture = nambikwara_culture raw_material = fiber_crops}
-balotipone = { topography = flatland vegetation = woods climate = tropical religion = doi_wahire_religion culture = boe_culture raw_material = wild_game}
-parecis = { topography = hills vegetation = woods climate = tropical religion = zemi_religion culture = haliti_culture raw_material = legumes}
-haliti = { topography = flatland vegetation = woods climate = tropical religion = zemi_religion culture = haliti_culture raw_material = wild_game}
-ikuiapa = { topography = hills vegetation = woods climate = tropical religion = doi_wahire_religion culture = boe_culture raw_material = goods_gold}
-guato = { topography = flatland vegetation = woods climate = tropical religion = doi_wahire_religion culture = guato_culture raw_material = beeswax}
-otuques = { topography = flatland vegetation = woods climate = tropical religion = doi_wahire_religion culture = boe_culture raw_material = wild_game}
-paranaiba = { topography = plateau vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = wild_game}
-porekry = { topography = plateau vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = mebengokre_culture raw_material = legumes}
-opaye = { topography = flatland vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = ofaie_culture raw_material = wild_game}
-ofaie = { topography = flatland vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = ofaie_culture raw_material = beeswax}
-taquarucu = { topography = flatland vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = ofaie_culture raw_material = legumes}
-anhandui = { topography = plateau vegetation = grasslands climate = tropical religion = doi_wahire_religion culture = ofaie_culture raw_material = wild_game}
-kaiowa = { topography = plateau vegetation = woods climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = fiber_crops}
-kaiwa = { topography = flatland vegetation = forest climate = tropical religion = tunpa_religion culture = ava_culture raw_material = medicaments}
-chiripa = { topography = flatland vegetation = forest climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = lumber}
-maracaju = { topography = plateau vegetation = grasslands climate = tropical religion = tunpa_religion culture = ava_culture raw_material = wild_game}
-tacuru_jungle = { topography = flatland_wasteland vegetation = jungle climate = subtropical}
 jeguakava = { topography = flatland vegetation = grasslands climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = wild_game}
 ibicui = { topography = flatland vegetation = grasslands climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = fiber_crops}
 ibirapuita = { topography = flatland vegetation = grasslands climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = legumes}
@@ -25317,9 +25317,9 @@ ibaje = { topography = flatland vegetation = grasslands climate = subtropical re
 inhandui = { topography = flatland vegetation = grasslands climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = wild_game}
 cruz_alta = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = medicaments}
 palmeira = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = lumber}
-nandeva = { topography = hills vegetation = grasslands climate = oceanic religion = tunpa_religion culture = ava_culture raw_material = legumes}
+nandeva = { topography = hills vegetation = grasslands climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = legumes}
 lagoa_vermelha = { topography = hills vegetation = forest climate = oceanic religion = tunpa_religion culture = kanhgag_culture raw_material = maize}
-passo_fundo = { topography = hills vegetation = forest climate = oceanic religion = tunpa_religion culture = kanhgag_culture raw_material = beeswax}
+passo_fundo = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = kanhgag_culture raw_material = beeswax}
 vacaria = { topography = hills vegetation = forest climate = oceanic religion = tunpa_religion culture = kanhgag_culture raw_material = wild_game}
 carijo = { topography = wetlands vegetation = grasslands climate = subtropical religion = tunpa_religion culture = kaxixo_culture raw_material = fish natural_harbor_suitability = 0.00}
 piratinin = { topography = flatland vegetation = grasslands climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = wild_game natural_harbor_suitability = 0.00}
@@ -25338,7 +25338,7 @@ vacacai = { topography = flatland vegetation = grasslands climate = subtropical 
 tapes = { topography = flatland vegetation = forest climate = subtropical religion = tunpa_religion culture = laklano_culture raw_material = wild_game natural_harbor_suitability = 0.40}
 patos = { topography = hills vegetation = grasslands climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = fruit}
 jacui = { topography = flatland vegetation = grasslands climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = beeswax natural_harbor_suitability = 0.00}
-sao_leopoldo = { topography = hills vegetation = forest climate = oceanic religion = tunpa_religion culture = ava_culture raw_material = lumber}
+sao_leopoldo = { topography = hills vegetation = forest climate = subtropical religion = tunpa_religion culture = ava_culture raw_material = lumber}
 san_antonio_patrulha = { topography = hills vegetation = forest climate = oceanic religion = tunpa_religion culture = ava_culture raw_material = medicaments}
 arroio = { topography = flatland vegetation = grasslands climate = subtropical religion = tunpa_religion culture = kaxixo_culture raw_material = fish natural_harbor_suitability = 0.00}
 charrua = { topography = flatland vegetation = grasslands climate = subtropical religion = tunpa_religion culture = charrua_culture raw_material = sand natural_harbor_suitability = 0.60}
@@ -25577,14 +25577,14 @@ tombo_point = { topography = coastal_ocean climate = cold_arid}
 san_julian_bay = { topography = coastal_ocean climate = cold_arid}
 western_atlantic_high_sea59 = { topography = ocean climate = cold_arid}
 western_atlantic_high_sea63 = { topography = ocean climate = cold_arid}
-samborombon_bay = { topography = coastal_ocean climate = subtropical}
+samborombon_bay = { topography = coastal_ocean climate = oceanic}
 la_plata_river_mouth = { topography = narrows climate = subtropical}
 uruguay_river = { topography = narrows climate = subtropical}
 artilleros_point = { topography = narrows climate = subtropical}
 brava_point = { topography = coastal_ocean climate = subtropical}
-este_point = { topography = coastal_ocean climate = subtropical}
-western_atlantic_high_sea52 = { topography = ocean climate = subtropical}
-santa_maria_cape = { topography = coastal_ocean climate = subtropical}
+este_point = { topography = coastal_ocean climate = oceanic}
+western_atlantic_high_sea52 = { topography = ocean climate = oceanic}
+santa_maria_cape = { topography = coastal_ocean climate = oceanic}
 polonio_cape = { topography = coastal_ocean climate = subtropical}
 barros_lagoon = { topography = coastal_ocean climate = subtropical}
 peixe_lagoon = { topography = coastal_ocean climate = subtropical}
@@ -25594,7 +25594,7 @@ mirim_lagoon = { topography = coastal_ocean climate = subtropical}
 western_atlantic_high_sea49 = { topography = ocean climate = subtropical}
 western_atlantic_high_sea50 = { topography = ocean climate = subtropical}
 western_atlantic_high_sea51 = { topography = ocean climate = subtropical}
-western_atlantic_high_sea80 = { topography = ocean climate = subtropical}
+western_atlantic_high_sea80 = { topography = ocean climate = oceanic}
 nuevo_gulf = { topography = coastal_ocean climate = cold_arid}
 san_matias_gulf = { topography = coastal_ocean climate = cold_arid}
 bermeja_point = { topography = coastal_ocean climate = cold_arid}

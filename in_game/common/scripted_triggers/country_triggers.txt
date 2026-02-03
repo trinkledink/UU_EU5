@@ -132,9 +132,9 @@ can_create_subject_alliance = {
 
 alliance_can_exist = {
 	scope:actor = {
-		OR = {
+		OR = {		#UU
 			opinion = { target = scope:recipient value >= 0 }
-			is_ai = no	#uu added
+			is_ai = no	
 		}
 		not = { has_blocked_treaties = scope:recipient }
 		not = { is_subject_of = scope:recipient }
@@ -152,9 +152,9 @@ alliance_can_exist = {
 		is_rebel_country = no
 	}
 	scope:recipient = {
-		OR = {	
+		OR = {		#UU
 			opinion = { target = scope:actor value >= 0 }
-			is_ai = no	#uu added
+			is_ai = no	
 		}
 		not = { has_blocked_treaties = scope:actor }
 		not = { is_subject_of = scope:actor }
@@ -172,8 +172,8 @@ alliance_can_exist = {
 		actor = scope:actor
 		recipient = scope:recipient
 	}
-	not = {
-		and = {
+	NOT = {
+		 AND = {
 			scope:actor = {
 				is_hegemon = yes
 			}
@@ -1177,6 +1177,13 @@ colonial_nation_can_declare_wars_trigger = {
 	}
 }
 
+can_declare_legal_war_on = {
+	NOT = { is_fighting_war_together_with = $target$ }
+	NOT = { has_truce_with = $target$ }
+	NOT = { is_at_war_with = $target$ }
+	can_declare_war_on = $target$
+}
+
 has_compatible_heir_religion_law_with = {
 	custom_description = {
 		text = has_compatible_heir_religion_law_with_text
@@ -1235,5 +1242,41 @@ peaceful_and_rich = {
 	gold >= {
 		value = monthly_income_trade_and_tax
 		multiply = 2
+	}
+}
+
+is_country_valid_for_tusi_subject = {
+	OR = {
+		country_rank_level = 1
+		government_type = government_type:tribe
+	}
+	culture = {
+		NOT = { has_culture_group = culture_group:chinese_group }
+	}
+	capital ?= {
+		OR = {
+			region = region:west_china_region
+			region = region:south_china_region
+			region = region:east_china_region
+			region = region:tibet_region
+			region = region:indochina_region
+		}
+	}
+	num_locations <= 15
+}
+
+can_country_have_tusi = {
+	exists = international_organization:middle_kingdom
+	OR = {
+		is_leader_of_international_organization = international_organization:middle_kingdom
+		AND = {
+			is_subject = yes
+			subject_type = subject_type:tusi
+		}
+		AND = {
+			exists = international_organization:middle_kingdom.leader_country
+			is_subject_of = international_organization:middle_kingdom.leader_country
+			culture = overlord.culture
+		}
 	}
 }
