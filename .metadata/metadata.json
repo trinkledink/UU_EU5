@@ -1,8 +1,8 @@
 ﻿{
 	"name":	"UU Hedgehog EU5",
 	"id":	"uuhedgehog",
-	"version":	"0.1",
-	"supported_game_version":	"1.0.*",
+	"version":	"1.0",
+	"supported_game_version":	"1.1.*",
 	"short_description":	"99% of The Universalis Union is troll, the people in general are lovely so don't take offence but from the mods to the rules to most of the playerbase in the games it's all  troll. There's method to the trollness I'm sure but none that I can fathom. Why we are wasting any of our time arguing over that ruleset in that server idk.",
 	"tags":	["Balance", "Fixes", "Gameplay"],
 	"relationships":	[],

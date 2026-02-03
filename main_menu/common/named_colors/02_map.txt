@@ -14,6 +14,7 @@ colors = {
 	map_MNG = rgb { 239 67 70 }			#Red Ming 
 	map_ILK = rgb { 232 48 2 }			#EU4 Ilkhanate
 	map_croatian = rgb { 104 94 247 } 	#EU4 Croatia
+	map_TUS = rgb { 236 47 47 }			#EU4 Florence
 
 	########################
 
@@ -177,16 +178,51 @@ colors = {
 	
 	map_hansa = rgb { 256 32 32 }
 	map_lubeck = rgb { 156 179 189 }
-	map_novgorod = rgb { 97 126 37 }
-	map_pskov = rgb { 82 123 95 }
+
+	map_NOV = rgb { 97 126 37 }
+	map_PSK = rgb { 82 123 95 }
 	map_MOS = rgb { 206 181 97 } #same as in EU4
 	map_RUS = rgb { 96 131 80 }
-	map_oreshek = rgb { 126 97 37 }
-	
+	map_ORE = rgb { 126 97 37 }
+	map_SMO = rgb { 106 160 437 }
+	map_FMB = rgb { 160 60 143 }
+	map_PZL = rgb { 175 65 181 }
+	map_KLM = rgb { 75 265 81 }
+	map_VLR = rgb { 112 165 175 }
+	map_UGL = rgb { 212 65 75 }
+	map_YRV = rgb { 12 165 75 }
+	map_TPS = rgb { 12 65 175 }
+	map_BLO = hsv { 0.78 0.6 0.38 }
+	map_YAR = rgb { 131 141 242 }
+	map_RSO = rgb { 227 221 77 }
+	map_TVE = rgb { 136 158 183 }
+	map_KAS = rgb { 15 102 255 }
+	map_KLN = rgb { 120 102 147 }
+	map_ZUB = rgb { 150 82 233 }
+	map_DMI = rgb { 189 189 189 }
+	map_GLM = rgb { 187 43 76 }
+	map_RZH = rgb { 202 78 43 }
+	map_VYA = rgb { 0 102 54 }
+	map_TRB = rgb { 165 165 22 }
+	map_BRY = rgb { 255 165 110 }
+	map_NSL = hsv360 { 120 71 81 }
+	map_KCH = rgb { 112 212 112 }
+	map_KZK = rgb { 231 87 87 }
+	map_TRS = rgb { 87 146 112 }
+	map_RYA = rgb { 146 134 77 } #same as in EU4
+	map_PRK = rgb { 46 234 177 }
+	map_SKY = rgb { 55 112 196 }
+	map_NZH = rgb { 176 72 77 }
+	map_GRS = rgb { 76 172 77 }
+	map_SZL = rgb { 76 172 177 }
+	map_MRM = rgb { 26 13 155 }
+	map_KOS = rgb { 121 185 234 }
+	map_MOG = rgb { 178 125 169 }
+	map_PRM = rgb { 236 159 90 }
+	map_VYT = rgb { 110 165 232 }	
 	
 	map_golden_horde = hsv360 { 42 77 81 }
 	map_rome = rgb { 162 22 61 }
-	
 	
 	
 	#France
@@ -268,8 +304,11 @@ colors = {
 	map_LIT = rgb { 154 69 116 } #same as in EU4
 	map_SIL = rgb { 84 166 93 } #same as in EU4
 	map_MVA = rgb { 232 149 18 } #same as in EU4
-	map_RYA = rgb { 146 134 77 } #same as in EU4
 	map_CHR = rgb { 190 190 190 }
+	map_STS = rgb { 123 214 190 }
+	map_NVS = rgb { 214 214 145 }
+	map_RYL = rgb { 255 255 58 }
+
 	map_galicia_lodomeria = rgb { 1 78 254 }
 
 	#Russia
@@ -316,7 +355,8 @@ colors = {
 	map_kumandin = rgb { 221 223 74 }
 	map_tubalar = rgb { 112 227 223 }
 	map_shor = rgb { 66 179 210 }
-	map_MGE = rgb { 180 240 130 }
+	map_MGE = rgb { 130 180 240 }
+	map_MGO = rgb { 180 240 130 }
 	map_OIR = rgb { 204 184 177 }
 	# map_ILK = rgb { 200 185 50 }		#UU
 
@@ -704,7 +744,7 @@ colors = {
 	map_fermo = rgb { 65 171 80 }
 	map_ferrara = rgb { 98 166 37 }
 	map_florence = rgb { 205 85 85 }
-	map_TUS = rgb { 84 96 136 }
+	# map_TUS = rgb { 84 96 136 }
 	map_genoa = rgb { 218 215 56 }
 	map_gubbio = rgb { 160 10 10 }
 	map_imola = rgb { 0 116 200 }
@@ -747,6 +787,7 @@ colors = {
 	map_volterra = rgb { 249 203 30 }
 	map_PRZ = rgb { 40 60 180 }
 	map_BRD = rgb { 200 175 60 }
+	map_ACC = rgb { 120 100 195 }
 	
 	map_north_italian = rgb { 137 98 195 }
 	map_south_italian = rgb { 160 30 154 }
@@ -2205,7 +2246,7 @@ colors = {
 	map_HNE = rgb { 233 150 122 } #Hunehe
 	map_HUL = rgb { 219 112 147 } #Huligai
 	map_JEC = rgb { 238 232 170 } #Jecen
-	map_JUS = rgb { 124 252 0 } #Jusheli
+	map_JUS = rgb { 124 252 0 } #Jusheri
 	map_MAO = rgb { 50 232 128 } #Maolian
 	map_ODO = rgb { 255 248 220 } #Odoli
 	map_NEY = rgb { 220 20 60 } #Neyen
@@ -2214,7 +2255,68 @@ colors = {
 	map_YAL = rgb { 100 149 237 } #Yalu
 	map_WGG = rgb { 153 50 204 } #Wanggiya
 	
-
+	map_AAR = rgb { 53 50 204 } #Abdari
+	map_AID = rgb { 53 50 104 } #Aidan
+	map_ASU = rgb { 176 246 22 } #Asu
+	map_BAY = rgb { 176 246 122 } #Bayan
+	map_DLA = rgb { 176 246 222 } #Dala
+	map_EJI = rgb { 53 150 104 } #Ejimi
+	map_FLN = rgb { 55 25 35 } #Fulun
+	map_FUT = rgb { 53 150 204 } #Futi
+	map_FUY = rgb { 53 250 104 } #Fuyu
+	map_GIL = rgb { 55 25 135 } #Gilemi
+	map_HIJ = rgb { 55 25 235 } #Hijan
+	map_HIY = rgb { 176 146 222 } #Haiyan
+	map_HLN = rgb { 53 250 204 } #Halan
+	map_HNC = rgb { 153 50 104 } #Huncun
+	map_HOT = rgb { 153 150 104 } #Hotonggi
+	map_HRO = rgb { 55 125 135 } #Horo
+	map_HUI = rgb { 153 150 204 } #Huiba
+	map_HUR = rgb { 55 125 235 } #Hurga
+	map_ILU = rgb { 55 225 35 } #Ilu
+	map_IMN = rgb { 55 225 135 } #Imanka
+	map_ITU = rgb { 153 250 104 } #Itun
+	map_JHT = rgb { 153 250 204 } #Juru Hoton
+	map_LAL = rgb { 253 50 104 } #Lalin
+	map_LEF = rgb { 253 50 204 } #Lefu
+	map_LLU = rgb { 253 150 104 } #Lalu
+	map_MAH = rgb { 253 150 204 } #Mahiyan
+	map_MIC = rgb { 253 250 104 } #Michen
+	map_MRE = rgb { 55 225 235 } #Muren
+	map_MUH = rgb { 253 250 204 } #Muhiya
+	map_MUU = rgb { 76 46 22 } #Mulun
+	map_NAL = rgb { 76 46 122 } #Nalaji
+	map_NEM = rgb { 76 46 222 } #Nemer
+	map_NRO = rgb { 155 25 135 } #Noro
+	map_SHI = rgb { 76 146 22 } #Shilin
+	map_SIR = rgb { 76 146 122 } #Sirin
+	map_SMN = rgb { 155 25 235 } #Shilimian
+	map_SNC = rgb { 76 146 222 } #Sancaha
+	map_SUI = rgb { 76 246 22  } #Suifun
+	map_TAS = rgb { 76 246 122 } #Tashan
+	map_TOD = rgb { 76 246 222 } #Todo
+	map_TOX = rgb { 155 125 35 } #Ton
+	map_USS = rgb { 155 125 135 } #Ussuri
+	map_WEJ = rgb { 176 46 22 } #Weji
+	map_WEK = rgb { 155 125 235 } #Weken
+	map_WNL = rgb { 155 225 35 } #Wanlin
+	map_WUY = rgb { 176 46 122 } #Wuyemu
+	map_YIM = rgb { 176 146 22 } #Yimahu
+	map_YOO = rgb { 176 146 122 } #Yoose
+	map_YRN = rgb { 176 46 222 } #Yaran
+	
+	#map_ = rgb { 155 25 35 } #
+	#map_ = rgb { 155 225 135 } #
+	#map_ = rgb { 155 225 235 } #
+	#map_ = rgb { 255 25 35 } #
+	#map_ = rgb { 255 25 135 } #
+	#map_ = rgb { 255 25 235 } #
+	#map_ = rgb { 255 125 35 } #
+	#map_ = rgb { 255 125 135 } #
+	#map_ = rgb { 255 125 235 } #
+	#map_ = rgb { 255 225 35 } #
+	#map_ = rgb { 255 225 135 } #
+	#map_ = rgb { 255 225 235 } #
 
 	map_tougoku = rgb { 100 27 38 }
 	map_touhoku = rgb { 100 60 66 }
@@ -2223,6 +2325,8 @@ colors = {
 	map_HKZ = hsv { 0.18 0.62 0.38 }
 	map_CHZ = hsv { 0.83 0.62 0.38 }
 	map_NZN = hsv { 0.35 0.62 0.38 }
+	map_haixi = rgb { 65 132 57 }
+	map_hurga = rgb { 165 32 57 }
 	map_jurchen = hsv { 0.87 0.51 0.38 }
 	map_MCH = rgb { 165 132 57 }
 	map_yue = rgb { 89 113 223 }
@@ -2355,7 +2459,7 @@ colors = {
 	map_CXI = rgb { 140 183 154 }
 	map_CTG = rgb { 218 234 15 }
 	map_CFN = rgb { 239 228 176 }
-	map_CMO = rgb { 179 128 104 }		#UU swapped with Ming
+	map_CMO = rgb { 179 128 104 }		#UU swapped their colour with Ming
 	map_CGU = rgb { 70 239 160 }
 	map_CNP = rgb { 254 173 200 }
 	map_CDN = rgb { 163 177 255 }
@@ -2535,6 +2639,19 @@ colors = {
 	map_tumed = rgb { 190 190 40 }
 	map_tuvan = rgb { 190 30 40 }
 	map_solon = rgb { 32 119 115 }
+	map_OGE = rgb { 61 208 181 }
+	map_BAT = rgb { 216 128 81 }
+	map_CRS = rgb { 16 128 81 }
+	map_KHD = rgb { 161 108 181 }
+	map_TRH = rgb { 216 208 81 }
+	map_BGT = rgb { 61 108 181 }
+	map_HCN = rgb { 61 108 81 }
+	map_OTC = rgb { 61 108 118 }
+	map_QAS = rgb { 61 108 18 }
+	map_BKH = rgb { 190 105 88 }
+	map_DGH = rgb { 88 190 88 }
+	map_KRG = rgb { 105 88 190 }
+	map_SRL = rgb { 88 105 88 }
 
 	#South East Asia
 
@@ -2850,6 +2967,8 @@ colors = {
 	map_sabuli = rgb { 190 54 190 }
 	map_saqiyya = rgb { 90 90 172 }
 	map_zebari = rgb { 254 54 254 }
+	map_AQQ = rgb { 31 49 138} #same as in EU4
+	map_QAR = rgb { 54 117 136 } #same as in EU4
 
 	
 	color_culture_cappadocian_greek = rgb { 141 150 218 }
