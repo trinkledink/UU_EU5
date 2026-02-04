@@ -5,7 +5,7 @@
 		global_integration_speed_modifier = 0.25	#UU
 		
 		subject_loyalty = -20
-		annexation_speed_modifier = 0.33
+		# annexation_speed_modifier = 0.33			#UU
 		
 		control_importance_modifier = 0.2
 
@@ -15,7 +15,7 @@
 		global_estate_satisfaction_recovery = 0.002
 
 		subject_loyalty = 30
-		# annexation_speed_modifier = -0.33	#UU
+		annexation_speed_modifier = -0.33
 		
 		control_importance_modifier = -0.1
 	}

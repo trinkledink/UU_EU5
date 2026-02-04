@@ -9,8 +9,7 @@
 - Flanders starts independent and as an HRE prince
 - Brittany is a vassal of England instead of France
 - Removed crownpower malus from having debt
-- Centralization gives up to +25% integration speed
-- Decentralization does not give -33% annexation speed
+- Centralization gives up to +25% integration speed. No longer affects annexation speed
 - Offensive gives up to +20% siege ability and assault ability, and -10% fort defense
 - Defensive gives up to +33% fort defense, and -10% siege ability. No longer affects army movement speed. 
 - French unique govt. reforms both give 1 cultures_capacity
