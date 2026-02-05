@@ -22,6 +22,8 @@
 - Added strait crossing between Calais and Dover
 - Delhi disaster now releases Jaunpur, Malwa, Gujarat, Bahmanis as independent nations
 - Rivers now visible in Road/Road Builder mapmodes
+- Max fort limit from number of locations halved
+- Forts cannot be placed adjacent to another fort of the same owner
 
 
 ## Temporary features:

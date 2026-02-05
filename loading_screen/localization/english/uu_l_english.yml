@@ -1,0 +1,6 @@
+﻿l_english:
+ uu_events.1.title: "No Adjacent Forts Allowed"
+ uu_events.1.desc: "Two of our neighboring forts aren't getting along and need more space."
+ uu_events.1.a: "Put the fort in [uu_fort_location_1.GetNameWithNoTooltip] up for adoption"
+ uu_events.1.b: "Find a home in the countryside the [uu_fort_location_2.GetNameWithNoTooltip] fort"
+ uu_events.1.c: "I still have the receipts for both"

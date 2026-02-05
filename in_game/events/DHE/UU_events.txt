@@ -1,0 +1,123 @@
+﻿namespace = uu_events
+
+#No adjacent forts allowed
+uu_events.1 = {
+	type = country_event
+
+	title = uu_events.1.title
+	desc = uu_events.1.desc
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	trigger = {
+		is_ai = no
+		any_owned_location = {
+			AND = {
+				OR = {
+					has_building = building_type:stockade
+					has_building = building_type:castle
+					has_building = building_type:bastion
+					has_building = building_type:star_fort
+					has_building = building_type:fortress
+				}
+				any_neighbor_location = {
+					OR = {
+						has_building = building_type:stockade
+						has_building = building_type:castle
+						has_building = building_type:bastion
+						has_building = building_type:star_fort
+						has_building = building_type:fortress
+					}
+					owner = root
+				}
+			}
+		}
+	}
+
+	immediate = {
+		random_owned_location = {
+			limit = {
+				AND = {
+					OR = {
+						has_building = building_type:stockade
+						has_building = building_type:castle
+						has_building = building_type:bastion
+						has_building = building_type:star_fort
+						has_building = building_type:fortress
+					}
+					any_neighbor_location = {
+						AND = {
+							OR = {
+								has_building = building_type:stockade
+								has_building = building_type:castle
+								has_building = building_type:bastion
+								has_building = building_type:star_fort
+								has_building = building_type:fortress
+							}
+							owner = root
+						}
+					}
+				}
+			}
+			save_scope_as = uu_fort_location_1
+		}
+		scope:uu_fort_location_1 = {
+			random_neighbor_location = {
+				limit = {
+					AND = {
+						OR = {
+							has_building = building_type:stockade
+							has_building = building_type:castle
+							has_building = building_type:bastion
+							has_building = building_type:star_fort
+							has_building = building_type:fortress
+						}
+						owner = root
+					}
+				}
+				save_scope_as = uu_fort_location_2
+			}
+		}
+	}
+
+	option = {
+		name = uu_events.1.a
+		scope:uu_fort_location_1 = {
+			destroy_building = "building(building_type:stockade|owner)"
+			destroy_building = "building(building_type:castle|owner)"
+			destroy_building = "building(building_type:bastion|owner)"
+			destroy_building = "building(building_type:star_fort|owner)"
+			destroy_building = "building(building_type:fortress|owner)"
+		}
+	}
+	option = {
+		name = uu_events.1.b
+		scope:uu_fort_location_2 = {
+			destroy_building = "building(building_type:stockade|owner)"
+			destroy_building = "building(building_type:castle|owner)"
+			destroy_building = "building(building_type:bastion|owner)"
+			destroy_building = "building(building_type:star_fort|owner)"
+			destroy_building = "building(building_type:fortress|owner)"
+		}
+	}
+	option = { #destory both
+		name = uu_events.1.c
+		scope:uu_fort_location_1 = {
+			destroy_building = "building(building_type:stockade|owner)"
+			destroy_building = "building(building_type:castle|owner)"
+			destroy_building = "building(building_type:bastion|owner)"
+			destroy_building = "building(building_type:star_fort|owner)"
+			destroy_building = "building(building_type:fortress|owner)"
+		}
+		scope:uu_fort_location_2 = {
+			destroy_building = "building(building_type:stockade|owner)"
+			destroy_building = "building(building_type:castle|owner)"
+			destroy_building = "building(building_type:bastion|owner)"
+			destroy_building = "building(building_type:star_fort|owner)"
+			destroy_building = "building(building_type:fortress|owner)"
+		}
+	}
+}

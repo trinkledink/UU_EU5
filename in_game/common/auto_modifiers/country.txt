@@ -307,7 +307,7 @@ num_locations_impact = {
 		divide = 10
 	}
 	
-	fort_limit = 1
+	fort_limit = 0.5 #uu down from 1
 }
 
 num_colonial_charters_impact = {
