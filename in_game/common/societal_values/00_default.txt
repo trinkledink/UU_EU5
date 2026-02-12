@@ -120,8 +120,9 @@ serfdom_vs_free_subjects = {
 		court_language_is_common_language_importance_modifier = -0.25
 	}
 	right_modifier = {
-		global_monthly_prosperity = 0.0025
+		global_monthly_prosperity = 0.0025	#uu kept/preserved from earlier patches
 		global_pop_promotion_speed_modifier = 1.0
+	
 		
 		peasants_estate_target_satisfaction = large_permanent_target_satisfaction
 		
