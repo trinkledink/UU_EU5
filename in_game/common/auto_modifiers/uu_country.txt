@@ -1,0 +1,26 @@
+﻿## Not hardcoded
+# Modifiers in this file will automatically be applied to all countries
+#	- Tooltips will also be generated
+#	- The AI will also understand them
+
+REPLACE:num_locations_impact = {
+	scales_with = {
+		value = num_locations
+		divide = 10
+	}
+	
+	fort_limit = 0.5 #uu down from 1
+}
+
+
+REPLACE:debt_impact = {
+	scales_with = {
+		value = total_debt
+		divide = country_economical_base
+	}
+
+	#global_crown_estate_power = -0.025	#UU removed
+	monthly_doom = 0.005
+	monthly_righteousness = -0.001
+}
+

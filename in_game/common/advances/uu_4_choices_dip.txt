@@ -1,0 +1,24 @@
+﻿
+REPLACE:shrewd_commerce_practice = {
+	age = age_2_renaissance
+	icon = zmw_merchant_taxes
+	for = dip
+	
+	requires = spy_construction_renaissance
+	
+	global_trade_center_power = 0.05
+	trade_range = 250	 #uu added
+}
+
+
+REPLACE:tribute_system = {
+	age = age_2_renaissance
+	icon = debt_and_loans
+	for = dip
+
+	requires = benign_diplomats
+
+	
+	subject_income_modifier = 0.05 	#uu increased from 0.025
+}
+

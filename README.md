@@ -25,7 +25,6 @@
 - Max fort limit from number of locations halved
 - Non-AI forts cannot be placed adjacent to another fort of the same owner
 - Age of Renaissance diplo focus buffed: +2.5% income from vassals, +250 trade range
-- 0.25% monthly prosperity back 
 
 
 ## Temporary features:

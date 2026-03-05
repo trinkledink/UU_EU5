@@ -1,0 +1,7 @@
+﻿
+REPLACE:by_the_grace_of_god = {
+	age = age_1_traditions
+	government = theocracy
+	
+	military_tactics = 0.25 #uu fixed pdx rounding error
+}

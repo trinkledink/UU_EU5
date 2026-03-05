@@ -1,0 +1,5 @@
+﻿
+REPLACE:destroy_market = {
+	stability = 10 #UU decrease from 50
+	#prestige = 25 #UU removed
+}

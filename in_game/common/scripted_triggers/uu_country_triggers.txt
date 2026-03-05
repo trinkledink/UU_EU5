@@ -1,0 +1,54 @@
+﻿
+REPLACE:alliance_can_exist = {
+	scope:actor = {
+		OR = {		#UU
+			opinion = { target = scope:recipient value >= 0 }
+			is_ai = no	
+		}
+		not = { has_blocked_treaties = scope:recipient }
+		not = { is_subject_of = scope:recipient }
+		not = { is_rival_of = scope:recipient }
+		modifier:allowed_alliance = yes
+		NOT = {
+			is_member_of_international_organization_of_type = {
+				type = coalition
+				target = scope:recipient
+			}
+		}
+		NOT = {
+			in_union_with = scope:recipient
+		}
+		is_rebel_country = no
+	}
+	scope:recipient = {
+		OR = {		#UU
+			opinion = { target = scope:actor value >= 0 }
+			is_ai = no	
+		}
+		not = { has_blocked_treaties = scope:actor }
+		not = { is_subject_of = scope:actor }
+		not = { is_rival_of = scope:actor }
+		modifier:allowed_alliance = yes
+		NOT = {
+			is_member_of_international_organization_of_type = {
+				type = coalition
+				target = scope:actor
+			}
+		}
+		is_rebel_country = no
+	}
+	can_create_subject_alliance = {
+		actor = scope:actor
+		recipient = scope:recipient
+	}
+	NOT = {
+		 AND = {
+			scope:actor = {
+				is_hegemon = yes
+			}
+			scope:recipient = {
+				is_hegemon = yes
+			}
+		}
+	}
+}

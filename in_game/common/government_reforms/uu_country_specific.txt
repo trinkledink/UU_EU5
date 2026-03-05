@@ -1,0 +1,57 @@
+﻿
+
+REPLACE:french_feudal_nobility = { # French Feudalism
+    unique = yes
+	potential = {
+		has_or_had_tag = FRA
+		government_type = government_type:monarchy
+		NOT = { has_reform = government_reform:feudal_nobility }
+		NOT = { has_reform = government_reform:french_centralized_monarchy }
+		NOT = { has_variable = enable_centralized_fra_reform }
+	}
+	allow = {
+		has_or_had_tag = FRA
+		NOT = { has_reform = government_reform:french_centralized_monarchy }
+		NOT = { has_variable = enable_centralized_fra_reform }
+	}
+	locked = {
+		custom_tooltip = {
+			text = fra_removed_when_no_appanages_tt
+			is_locked_mechanic = {
+				mechanic = government_reform
+				type = french_feudal_nobility
+			}
+		}
+	}
+	country_modifier = {
+		has_appanages_subjects = yes
+		diplomatic_capacity = 1
+		cultures_capacity = 1	#UU Decrease from 2
+		monthly_towards_serfdom = societal_value_large_monthly_move
+		monthly_towards_aristocracy = societal_value_monthly_move
+	}
+	years = 2
+}
+
+REPLACE:french_centralized_monarchy = { # Centralized French Monarchy
+    unique = yes
+	potential = {
+		has_or_had_tag = FRA
+		government_type = government_type:monarchy
+		NOT = { has_reform = government_reform:french_feudal_nobility }
+		has_variable = enable_centralized_fra_reform
+	}
+	allow = {
+		has_or_had_tag = FRA
+		has_variable = enable_centralized_fra_reform
+	}
+	country_modifier = {
+		nobles_estate_target_satisfaction = small_permanent_target_satisfaction
+		legislative_efficiency = 0.10
+		cultures_capacity = 1	#UU Increase from 0
+		power_projection = 5
+		revoke_privilege_cost_modifier = -0.1
+		government_reform_slots = 1
+	}
+	years = 2
+}

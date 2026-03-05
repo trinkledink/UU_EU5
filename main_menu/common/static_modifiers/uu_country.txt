@@ -1,0 +1,8 @@
+﻿
+#multiplied by 1 for each month over 10 years - this can be set with PARLIAMENT_MONTHS_NOT_CALLED_THRESHOLD
+REPLACE:parliament_not_called = {
+	game_data = {
+		category = country
+	}
+	#UU made nothing
+}

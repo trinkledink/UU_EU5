@@ -1,0 +1,50 @@
+﻿REPLACE:centralization_vs_decentralization = {
+	left_modifier = {
+		global_crown_estate_power = 0.5
+		global_distance_from_capital_speed_propagation = 0.2
+		global_integration_speed_modifier = 0.25	#UU
+		
+		subject_loyalty = -20
+		# annexation_speed_modifier = 0.33			#UU
+		
+		control_importance_modifier = 0.2
+
+	}
+	right_modifier = {
+		global_estate_target_satisfaction = medium_permanent_target_satisfaction
+		global_estate_satisfaction_recovery = 0.002
+
+		subject_loyalty = 30
+		annexation_speed_modifier = -0.33
+		
+		control_importance_modifier = -0.1
+	}
+
+	opinion_importance_multiplier = 0.5
+}
+
+##############################################
+REPLACE:offensive_vs_defensive = {	#UU Changed
+	left_modifier = {
+		siege_ability = 0.2
+		assault_ability = 0.2
+		
+		global_defensive = -0.1
+		army_movement_speed = 0.1
+		defence_importance_modifier = -0.2
+		bias_for_militarist_policies = 50
+
+		antagonism_declared_war_no_cb_giving_modifier = -0.1
+	}
+	right_modifier = {
+		fort_maintenance_cost = -0.2
+		combat_speed_modifier = 0.1
+		
+		global_defensive = 0.33
+		siege_ability = -0.1
+		defence_importance_modifier = 0.2
+		bias_for_diplomat_policies = 50
+		fort_limit_modifier = 0.5
+	}
+}
+

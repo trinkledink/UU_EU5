@@ -1,0 +1,17 @@
+﻿# starting_technology_level is only relevant in age of traditions, where advances with higher value than the countries value starts as unresearched
+
+#Written Alphabet
+REPLACE:written_alphabet = {
+	age = age_1_traditions
+	icon = abacus_advance
+	depth = 0
+	research_cost = 2.0
+	
+	
+	global_max_literacy = 5
+	# global_monthly_literacy = 0.01
+	global_monthly_literacy = 0.1			#UU This is a placeholder until PDX fixes the bug with new pops spawning with 0 literacy
+	
+	starting_technology_level = 2
+	
+}
