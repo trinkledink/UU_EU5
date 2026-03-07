@@ -173,7 +173,7 @@ scripted_effect release_bahmanis_effect = {
 		}
 	}
 	scope:target_bahmanis_revolter_scope = {
-		change_country_tag = BAH
+		define_unique_country_tag = BAH
 		change_country_name = BAH
 		change_country_adjective = BAH
 		change_country_color = map_bahmanis
@@ -222,7 +222,7 @@ scripted_effect release_malwa_effect = {
 		}
 	}
 	scope:target_malwa_revolter_scope = {
-		change_country_tag = MLW
+		define_unique_country_tag = MLW
 		change_country_name = MLW
 		change_country_adjective = MLW_ADJ
 		change_country_color = map_malwa
@@ -270,7 +270,7 @@ scripted_effect release_gujarat_effect = {
 		}
 	}
 	scope:target_gujarat_revolter_scope = {
-		change_country_tag = GJR
+		define_unique_country_tag = GJR
 		change_country_name = GJR
 		change_country_adjective = GJR_ADJ
 		change_country_color = map_gujarat
@@ -311,7 +311,7 @@ scripted_effect release_jaunpur_effect = {
 		}
 	}
 	scope:target_jaunpur_revolter_scope = {
-		change_country_tag = JNP
+		define_unique_country_tag = JNP
 		change_country_name = JNP
 		change_country_adjective = JNP_ADJ
 		change_country_color = map_jaunpur
