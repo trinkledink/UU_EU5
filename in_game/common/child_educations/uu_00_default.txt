@@ -1,0 +1,17 @@
+﻿#scope for allow is the character.
+
+REPLACE:expensive_in_depth_education =
+{
+	allow = {
+	}
+
+	price_to_select = select_expensive_child_education
+	price_to_deselect = deselect_expensive_child_education
+
+	modifier = {
+		character_child_education = 0.75
+	}
+	country_modifier = {
+		court_spending_cost = 0.03	#uu increased from 0.01
+	}
+}

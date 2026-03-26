@@ -3,3 +3,7 @@ REPLACE:destroy_market = {
 	stability = 10 #UU decrease from 50
 	#prestige = 25 #UU removed
 }
+REPLACE:select_expensive_child_education = {
+	government_power = -5 #gain a bit of legitimacy for doing the best for your kid
+	#gold = 250		#UU removed
+}
