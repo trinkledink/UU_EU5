@@ -14,7 +14,6 @@ colors = {
 	map_MNG = rgb { 239 67 70 }			#Red Ming 
 	map_ILK = rgb { 232 48 2 }			#EU4 Ilkhanate
 	map_croatian = rgb { 104 94 247 } 	#EU4 Croatia
-	map_TUS = rgb { 236 47 47 }			#EU4 Florence
 
 	########################
 
@@ -744,7 +743,7 @@ colors = {
 	map_fermo = rgb { 65 171 80 }
 	map_ferrara = rgb { 98 166 37 }
 	map_florence = rgb { 205 85 85 }
-	# map_TUS = rgb { 84 96 136 }
+	map_TUS = rgb { 84 96 136 }
 	map_genoa = rgb { 218 215 56 }
 	map_gubbio = rgb { 160 10 10 }
 	map_imola = rgb { 0 116 200 }
