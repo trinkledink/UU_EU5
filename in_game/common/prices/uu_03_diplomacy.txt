@@ -1,0 +1,4 @@
+﻿
+REPLACE:imperial_army_contribution_price = {
+	manpower = 0.05		##UU nerfed from 0.25
+}
