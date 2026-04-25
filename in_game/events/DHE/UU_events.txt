@@ -130,6 +130,7 @@ uu_events.2 = {		#Copy of western_schism.4.  Carveout so that the Hussite event 
 
 	image = "gfx/interface/illustrations/situation/western_schism.dds"
 
+	fire_only_once = yes
 	dynamic_historical_event = {
 		tag = BOH
 		from = 1402.1.1
